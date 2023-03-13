@@ -11314,3 +11314,9 @@ html {
 .navcolor {
   background: linear-gradient(100deg, white, #4D141C);
 }
+.fondo {
+    background-image: url("https://heredadaduna.com/wp-content/uploads/2018/02/cuidados-vi%C3%B1as.jpg");
+   background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
