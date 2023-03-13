@@ -188,7 +188,7 @@ ol ol,
 ul ul,
 ol ul,
 ul ol {
-  margin-bottom: 0;
+  margin-bottom: 20;
 }
 
 dt {
@@ -11307,4 +11307,10 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 15rem;
+}
+
+
+
+.navcolor {
+  background: linear-gradient(100deg, white, #4D141C);
 }
