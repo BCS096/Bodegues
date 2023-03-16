@@ -2,6 +2,7 @@ window.onload = function () {
     var aux = document.getElementById("prueba");
     aux.href = "javascript:initButtons()";
     crearCarouselPrincipal();
+    filtrado();
 }
 
 function initButtons() {
@@ -50,7 +51,7 @@ function crearCarouselPrincipal() {
     for (var i = 0; i < divClasses.length; i++) {
         var div = document.createElement("div");
         div.className = divClasses[i];
-        if(i == 1){
+        if (i == 1) {
             div.setAttribute("id", "pointer");
         }
         dad.appendChild(div);
@@ -247,4 +248,154 @@ function createCarousel(dad) {
 
     carousel.appendChild(prevBtn);
     carousel.appendChild(nextBtn);
+}
+
+function filtrado() {
+    const dad = document.getElementById("seccion");
+    // Crear el elemento contenedor y añadir las clases necesarias
+    const container = document.createElement('div');
+    container.classList.add('container', 'granate', 'aplicar-borde');
+
+    // Crear el formulario
+    const form = document.createElement('form');
+
+    // Crear la fila de columnas
+    const row = document.createElement('div');
+    row.classList.add('row');
+
+    // Crear las columnas
+    for (let i = 0; i < 6; i++) {
+        const col = document.createElement('div');
+        col.classList.add('col-md-4');
+
+        // Crear el grupo de formulario y añadir las clases necesarias
+        const formGroup = document.createElement('div');
+        formGroup.classList.add('form-group', 'has-feedback', 'has-clear');
+
+        // Crear la etiqueta y el campo de entrada
+        const label = document.createElement('label');
+        label.classList.add('letras');
+        label.setAttribute('for', `exampleInput${i + 1}`);
+        label.textContent = 'Name';
+
+        const input = document.createElement('input');
+        input.classList.add('form-control', 'no-rounded');
+        input.setAttribute('type', 'text');
+        input.setAttribute('id', `exampleInput${i + 1}`);
+        input.setAttribute('placeholder', 'Enter text here');
+
+        // Añadir el campo de entrada y la etiqueta al grupo de formulario
+        formGroup.appendChild(label);
+        formGroup.appendChild(input);
+
+        // Crear el icono de borrado y añadir las clases necesarias
+        const clearIcon = document.createElement('span');
+        clearIcon.classList.add('form-control-clear', 'glyphicon', 'glyphicon-remove', 'form-control-feedback', 'hidden');
+
+        // Añadir el icono de borrado al grupo de formulario
+        formGroup.appendChild(clearIcon);
+
+        // Añadir el grupo de formulario a la columna
+        col.appendChild(formGroup);
+
+        // Añadir la columna a la fila
+        row.appendChild(col);
+    }
+
+    // Añadir la fila al formulario
+    form.appendChild(row);
+
+    // Crear la fila de botones
+    const margen = document.createElement('div');
+    margen.classList.add('margen');
+
+    const buttonRow = document.createElement('div');
+    buttonRow.classList.add('row', 'margen');
+
+    const buttonCol = document.createElement('div');
+    buttonCol.classList.add('col-md-12', 'margen');
+
+    const button = document.createElement('button');
+    button.classList.add('btn', 'btn-primary', 'pull-right');
+    button.setAttribute('type', 'submit');
+    button.textContent = 'Aplicar';
+
+    // Añadir el botón a la columna y la columna a la fila de botones
+    buttonCol.appendChild(button);
+    buttonRow.appendChild(buttonCol);
+
+    // Añadir la fila de botones al elemento de margen y el elemento de margen al formulario
+    margen.appendChild(buttonRow);
+    form.appendChild(margen);
+
+    // Añadir el formulario al contenedor
+    container.appendChild(form);
+
+    dad.appendChild(container);
+
+}
+
+function listadoCardXL() {
+    const container1 = document.createElement("div");
+    container1.className = "container granate aplicar-borde margen";
+
+    const card1 = document.createElement("div");
+    card1.className = "card-body";
+
+    const containerCard = document.createElement("div");
+    containerCard.className = "container granate aplicar-borde margen";
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "wrapper row gris aplicar-borde";
+
+    const preview = document.createElement("div");
+    preview.className = "preview col-md-6 margen";
+
+    const previewPic = document.createElement("div");
+    previewPic.classList.add("preview-pic", "tab-content");
+
+    const pic1 = document.createElement("div");
+    pic1.classList.add("tab-pane", "active");
+    pic1.id = "pic-1";
+    const pic1Img = document.createElement("img");
+    pic1Img.src = "http://placekitten.com/400/252";
+    pic1.appendChild(pic1Img);
+
+    const pic2 = document.createElement("div");
+    pic2.classList.add("tab-pane");
+    pic2.id = "pic-2";
+    const pic2Img = document.createElement("img");
+    pic2Img.src = "http://placekitten.com/400/252";
+    pic2.appendChild(pic2Img);
+
+    const pic3 = document.createElement("div");
+    pic3.classList.add("tab-pane");
+    pic3.id = "pic-3";
+    const pic3Img = document.createElement("img");
+    pic3Img.src = "http://placekitten.com/400/252";
+    pic3.appendChild(pic3Img);
+
+    const pic4 = document.createElement("div");
+    pic4.classList.add("tab-pane");
+    pic4.id = "pic-4";
+    const pic4Img = document.createElement("img");
+    pic4Img.src = "http://placekitten.com/400/252";
+    pic4.appendChild(pic4Img);
+
+    const pic5 = document.createElement("div");
+    pic5.classList.add("tab-pane");
+    pic5.id = "pic-5";
+    const pic5Img = document.createElement("img");
+    pic5Img.src = "http://placekitten.com/400/252";
+    pic5.appendChild(pic5Img);
+
+    previewPic.appendChild(pic1);
+    previewPic.appendChild(pic2);
+    previewPic.appendChild(pic3);
+    previewPic.appendChild(pic4);
+    previewPic.appendChild(pic5);
+
+    preview.appendChild(previewpic);
+
+
 }
