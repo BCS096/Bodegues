@@ -11201,7 +11201,12 @@ html {
   margin-bottom: 25px;
 }
 
-
+.divPadre {
+  display: flex;
+}
+.divHijo {
+  margin: auto;
+}
 
 
 
