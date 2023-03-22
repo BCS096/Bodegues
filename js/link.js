@@ -325,6 +325,7 @@ function filtrado() {
     buttonCol.appendChild(button);
     buttonRow.appendChild(buttonCol);
 
+
     // Añadir la fila de botones al elemento de margen y el elemento de margen al formulario
     margen.appendChild(buttonRow);
     form.appendChild(margen);
@@ -340,6 +341,27 @@ function listadoCardXL() {
     const dad = document.getElementById("seccion");
     const container1 = document.createElement("div");
     container1.className = "container granate aplicar-borde margen";
+
+    const row = document.createElement("div");
+    row.className = "row";
+
+    const containerIcons = document.createElement('div');
+    containerIcons.className = 'container';
+
+    const icon1 = document.createElement('i');
+    icon1.className = "fa-solid fa-map-location iconosVisionado";
+
+    const icon2 = document.createElement('i');
+    icon2.className = "fa-solid fa-table-cells iconosVisionado";
+
+    const icon3 = document.createElement('i');
+    icon3.className = "fa-solid fa-list iconosVisionado";
+
+    containerIcons.appendChild(icon1);
+    containerIcons.appendChild(icon2);
+    containerIcons.appendChild(icon3);
+
+    row.appendChild(containerIcons);
 
     for (let i = 0; i < 3; i++) {
         const card1 = document.createElement("div");
@@ -593,9 +615,10 @@ function listadoCardXL() {
         wrapper.appendChild(detailsDiv);
         containerCard.appendChild(wrapper);
         card1.appendChild(containerCard);
-        container1.appendChild(card1);
+        row.appendChild(card1);
     }
 
+    container1.appendChild(row);
     dad.appendChild(container1);
 
 }

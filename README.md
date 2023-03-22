@@ -11,3 +11,4 @@ Apartado de comentarios de cada bodega.
 Apartado de calificación por estrellitas.
 Pensar en los filtrados que hay que poner para encontrar bodegas.
 Apartado de bodegas favoritas del usuario.
+Poner foto de fondo de la página web
