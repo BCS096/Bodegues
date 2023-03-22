@@ -3,7 +3,7 @@ window.onload = function () {
     aux.href = "javascript:initButtons()";
     crearCarouselPrincipal();
     filtrado();
-    listadoCardXL();
+    listadoCard();
 }
 
 function initButtons() {
@@ -353,9 +353,15 @@ function listadoCardXL() {
 
     const icon2 = document.createElement('i');
     icon2.className = "fa-solid fa-table-cells iconosVisionado";
+    icon2.onclick = function () {
+        gestorVisionado(0);
+    };
 
     const icon3 = document.createElement('i');
     icon3.className = "fa-solid fa-list iconosVisionado";
+    icon3.onclick = function () {
+        gestorVisionado(1);
+    };
 
     containerIcons.appendChild(icon1);
     containerIcons.appendChild(icon2);
@@ -481,15 +487,15 @@ function listadoCardXL() {
         preview.appendChild(previewThumbnail);
 
         const detailsDiv = document.createElement('div');
-        detailsDiv.classList.add('details', 'col-md-6', 'margen','divPadre');
+        detailsDiv.classList.add('details', 'col-md-6', 'margen', 'divPadre');
 
         const titleH3 = document.createElement('h3');
-        titleH3.classList.add('product-title', 'letras','divHijo');
+        titleH3.classList.add('product-title', 'letras', 'divHijo');
         titleH3.textContent = "men's shoes fashion";
         detailsDiv.appendChild(titleH3);
 
         const ratingDiv = document.createElement('div');
-        ratingDiv.classList.add('rating','divHijo');
+        ratingDiv.classList.add('rating', 'divHijo');
         const starsDiv = document.createElement('div');
         starsDiv.classList.add('stars');
         const checkedStarSpan1 = document.createElement('span');
@@ -515,12 +521,12 @@ function listadoCardXL() {
         detailsDiv.appendChild(ratingDiv);
 
         const descriptionP = document.createElement('p');
-        descriptionP.classList.add('product-description', 'letras','divHijo');
+        descriptionP.classList.add('product-description', 'letras', 'divHijo');
         descriptionP.textContent = 'Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.';
         detailsDiv.appendChild(descriptionP);
 
         const priceH4 = document.createElement('h4');
-        priceH4.classList.add('price', 'letras','divHijo');
+        priceH4.classList.add('price', 'letras', 'divHijo');
         priceH4.textContent = 'current price: ';
         const priceSpan = document.createElement('span');
         priceSpan.textContent = '$180';
@@ -528,7 +534,7 @@ function listadoCardXL() {
         detailsDiv.appendChild(priceH4);
 
         const voteP = document.createElement('p');
-        voteP.classList.add('vote', 'letras','divHijo');
+        voteP.classList.add('vote', 'letras', 'divHijo');
         const strong1 = document.createElement('strong');
         strong1.textContent = '91%';
         voteP.appendChild(strong1);
@@ -539,7 +545,7 @@ function listadoCardXL() {
         detailsDiv.appendChild(voteP);
 
         const sizesH5 = document.createElement('h5');
-        sizesH5.classList.add('sizes', 'bi-layout-text-sidebar-reverse', 'letras','divHijo');
+        sizesH5.classList.add('sizes', 'bi-layout-text-sidebar-reverse', 'letras', 'divHijo');
         sizesH5.textContent = 'sizes: ';
         const sizeSpan1 = document.createElement('span');
         sizeSpan1.classList.add('size', 'letras');
@@ -570,7 +576,7 @@ function listadoCardXL() {
         detailsDiv.appendChild(sizesH5);
 
         const sizesH51 = document.createElement('h5');
-        sizesH51.classList.add('colors', 'letras','divHijo');
+        sizesH51.classList.add('colors', 'letras', 'divHijo');
         sizesH51.textContent = 'colors:';
 
         const span1 = document.createElement('span');
@@ -591,7 +597,7 @@ function listadoCardXL() {
         detailsDiv.appendChild(sizesH51);
 
         const finalDiv = document.createElement('div');
-        finalDiv.classList.add('action','divHijo');
+        finalDiv.classList.add('action', 'divHijo');
 
         const boton1 = document.createElement('button');
         boton1.classList.add('add-to-cart');
@@ -621,4 +627,111 @@ function listadoCardXL() {
     container1.appendChild(row);
     dad.appendChild(container1);
 
+}
+
+function listadoCard() {
+    const dad = document.getElementById("seccion");
+    const container1 = document.createElement("div");
+    container1.className = "container granate aplicar-borde margen";
+
+    const row = document.createElement("div");
+    row.className = "row";
+
+    const containerIcons = document.createElement('div');
+    containerIcons.className = 'container';
+
+    const icon1 = document.createElement('i');
+    icon1.className = "fa-solid fa-map-location iconosVisionado";
+
+    const icon2 = document.createElement('i');
+    icon2.className = "fa-solid fa-table-cells iconosVisionado";
+    icon2.onclick = function () {
+        gestorVisionado(0);
+    };
+
+    const icon3 = document.createElement('i');
+    icon3.className = "fa-solid fa-list iconosVisionado";
+    icon3.onclick = function () {
+        gestorVisionado(1);
+    };
+
+    containerIcons.appendChild(icon1);
+    containerIcons.appendChild(icon2);
+    containerIcons.appendChild(icon3);
+
+    row.appendChild(containerIcons);
+
+    const rowCard = document.createElement('div');
+    rowCard.className = "row pb-4 mb-1";
+
+    for (let i = 0; i < 5; i++) {
+
+
+        const colCard = document.createElement('div');
+        colCard.className = "col-lg-3 col-md-6 mb-4 mb-lg-0";
+
+        const card = document.createElement('div');
+        card.className = "card rounded shadow-sm border-0";
+
+        const cardBody = document.createElement('div');
+        cardBody.className = "card-body p-0";
+
+        const imgCard = document.createElement('img');
+        imgCard.className = "img-fluid d-block mx-auto mb-3";
+        imgCard.setAttribute('src', 'https://bootstrapious.com/i/snippets/sn-cards/shoes-1_gthops.jpg');
+
+        const h5 = document.createElement('h5');
+        h5.innerText = "Awesome Product";
+
+        const desc = document.createElement('p');
+        desc.className = "small text-muted font-italic";
+        desc.innerText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
+
+        const starsOut = document.createElement('div');
+        starsOut.className = "stars-outer";
+
+        const starsIn = document.createElement('div');
+        starsIn.className = "stars-inner";
+
+        starsOut.appendChild(starsIn);
+
+        const button = document.createElement('button');
+        button.className = "add-to-cart margen";
+        button.innerText = "Add to cart";
+
+        cardBody.appendChild(imgCard);
+        cardBody.appendChild(h5);
+        cardBody.appendChild(desc);
+        cardBody.appendChild(starsOut);
+        cardBody.appendChild(button);
+
+        card.appendChild(cardBody);
+
+        colCard.appendChild(card);
+
+        rowCard.appendChild(colCard);
+    }
+
+    row.appendChild(rowCard);
+
+    container1.appendChild(row);
+
+    dad.appendChild(container1);
+}
+
+function gestorVisionado(vision) {
+    var seccion = document.getElementById("seccion");
+
+    if (seccion.hasChildNodes()) {
+        while (seccion.childNodes.length >= 1) {
+            seccion.removeChild(seccion.firstChild);
+        }
+    }
+    filtrado();
+    switch (vision) {
+        case 1: listadoCardXL();
+            break;
+        case 0: listadoCard();
+            break;
+    }
 }
