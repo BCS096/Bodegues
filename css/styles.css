@@ -665,23 +665,7 @@ progress {
     max-width: 1320px;
   }
 }
-.row {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x));
-}
-.row > * {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
-  margin-top: var(--bs-gutter-y);
-}
+
 
 .col {
   flex: 1 0 0%;
@@ -11174,7 +11158,6 @@ html {
   border-radius: 25px;
 }
 
-
 .card-title, .card-text:last-child , .letras{
   color: white;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
@@ -11201,6 +11184,7 @@ html {
   margin-bottom: 25px;
 }
 
+
 .divPadre {
   display: flex;
 }
@@ -11215,9 +11199,6 @@ html {
   margin-right: 20px;
   color: white;
 }
-
-
-
 
 /*****************globals*************/
 body {
