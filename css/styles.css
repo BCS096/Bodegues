@@ -11200,6 +11200,15 @@ html {
   color: white;
 }
 
+.redimension img {
+    width: 100%;
+    max-height: 460px;
+}
+
+.redimension{
+ height: 400px;
+}
+
 .custom-scrollbar-js,
 .custom-scrollbar-css {
   height: 300px;

@@ -130,7 +130,7 @@ function createCarousel(dad) {
     ratio1.setAttribute('class', 'ratio ratio-21x9');
 
     const img1 = document.createElement('img');
-    img1.setAttribute('src', 'img/fondo.jpg');
+    img1.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_1234231_569643109759057_294746408_n.jpg');
     img1.setAttribute('class', 'd-block w-100');
     img1.setAttribute('alt', '...');
 
@@ -159,7 +159,7 @@ function createCarousel(dad) {
     ratio2.setAttribute('class', 'ratio ratio-21x9');
 
     const img2 = document.createElement('img');
-    img2.setAttribute('src', 'img/fondo.jpg');
+    img2.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_1376994_597700826953285_1533645700_n.jpg');
     img2.setAttribute('class', 'd-block w-100');
     img2.setAttribute('alt', '...');
 
@@ -188,7 +188,7 @@ function createCarousel(dad) {
     ratio3.setAttribute('class', 'ratio ratio-21x9');
 
     const img3 = document.createElement('img');
-    img3.setAttribute('src', 'img/fondo.jpg');
+    img3.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_1383991_597701483619886_1555644589_n.jpg');
     img3.setAttribute('class', 'd-block w-100');
     img3.setAttribute('alt', '...');
 
@@ -786,13 +786,13 @@ function listadoMap() {
     carousel.setAttribute('data-bs-ride', 'carousel');
 
     const carouselInner = document.createElement('div');
-    carouselInner.classList.add('carousel-inner');
+    carouselInner.classList.add('carousel-inner','redimension');
 
     const carouselItem1 = document.createElement('div');
     carouselItem1.classList.add('carousel-item', 'active');
 
     const img1 = document.createElement('img');
-    img1.setAttribute('src', 'img/fondo.jpg');
+    img1.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_QQ6A0199-1.jpg');
     img1.classList.add('d-block', 'w-100');
     carouselItem1.appendChild(img1);
 
@@ -800,7 +800,7 @@ function listadoMap() {
     carouselItem2.classList.add('carousel-item');
 
     const img2 = document.createElement('img');
-    img2.setAttribute('src', 'img/fondo.jpg');
+    img2.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_20140228_172220.jpg');
     img2.classList.add('d-block', 'w-100');
     carouselItem2.appendChild(img2);
 
@@ -808,7 +808,7 @@ function listadoMap() {
     carouselItem3.classList.add('carousel-item');
 
     const img3 = document.createElement('img');
-    img3.setAttribute('src', 'img/fondo.jpg');
+    img3.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_P1090717.jpg');
     img3.classList.add('d-block', 'w-100');
     carouselItem3.appendChild(img3);
 
@@ -867,17 +867,17 @@ function listadoMap() {
     const dl = document.createElement('dl');
 
     const dt1 = document.createElement('dt');
-    dt1.textContent = 'Horario:';
+    dt1.textContent = 'Horario: ';
     const dd1 = document.createElement('dd');
     dd1.textContent = 'Mo,Tu,We,Th,Fr 08:00-16:00';
 
     const dt2 = document.createElement('dt');
-    dt2.textContent = 'Teléfono:';
+    dt2.textContent = 'Teléfono: ';
     const dd2 = document.createElement('dd');
     dd2.textContent = '971533889';
 
     const dt3 = document.createElement('dt');
-    dt3.textContent = 'Email:';
+    dt3.textContent = 'Email: ';
     const dd3 = document.createElement('dd');
     const a = document.createElement('a');
     a.setAttribute('href', '#');
@@ -886,7 +886,7 @@ function listadoMap() {
     dd3.appendChild(a);
 
     const dt4 = document.createElement('dt');
-    dt4.textContent = 'Web:';
+    dt4.textContent = 'Web: ';
     const dd4 = document.createElement('dd');
     const a2 = document.createElement('a');
     a2.setAttribute('href', 'http://www.vinyesmortitx.com');
@@ -895,7 +895,7 @@ function listadoMap() {
     dd4.appendChild(a2);
 
     const dt5 = document.createElement('dt');
-    dt5.textContent = 'Dirección:';
+    dt5.textContent = 'Dirección: ';
     const br = document.createElement('br');
     const dd5_1 = document.createElement('dd');
     dd5_1.textContent = 'Ctra. Pollença - Lluc- Km 10,9';
@@ -903,14 +903,29 @@ function listadoMap() {
     dd5_2.textContent = 'Mallorca, Escorca, 07315';
 
     dl.appendChild(dt1);
+    const iconHorario = document.createElement('i');
+    iconHorario.className = "fa-solid fa-clock";
+    dt1.appendChild(iconHorario);
     dl.appendChild(dd1);
     dl.appendChild(dt2);
+    const iconPhone = document.createElement('i');
+    iconPhone.className = "fa-solid fa-phone";
+    dt2.appendChild(iconPhone);
     dl.appendChild(dd2);
     dl.appendChild(dt3);
+    const iconEmail = document.createElement('i');
+    iconEmail.className = "fa-solid fa-envelope";
+    dt3.appendChild(iconEmail);
     dl.appendChild(dd3);
     dl.appendChild(dt4);
+    const iconWeb = document.createElement('i');
+    iconWeb.className = "fa-solid fa-at";
+    dt4.appendChild(iconWeb);
     dl.appendChild(dd4);
     dl.appendChild(dt5);
+    const iconDir = document.createElement('i');
+    iconDir.className = "fa-solid fa-location-dot";
+    dt5.appendChild(iconDir);
     dl.appendChild(br);
     dl.appendChild(dd5_1);
     dl.appendChild(dd5_2);
@@ -988,7 +1003,7 @@ function gestorVisionado(vision) {
     }
 }
 
-$(function () {
+(function () {
     /* Rounded Dots Dark */
     $("#content-1").mCustomScrollbar({
         theme: "rounded-dots-dark"
