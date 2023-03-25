@@ -350,6 +350,9 @@ function listadoCardXL() {
 
     const icon1 = document.createElement('i');
     icon1.className = "fa-solid fa-map-location iconosVisionado";
+    icon1.onclick = function () {
+        gestorVisionado(2);
+    };
 
     const icon2 = document.createElement('i');
     icon2.className = "fa-solid fa-table-cells iconosVisionado";
@@ -642,6 +645,9 @@ function listadoCard() {
 
     const icon1 = document.createElement('i');
     icon1.className = "fa-solid fa-map-location iconosVisionado";
+    icon1.onclick = function () {
+        gestorVisionado(2);
+    };
 
     const icon2 = document.createElement('i');
     icon2.className = "fa-solid fa-table-cells iconosVisionado";
@@ -662,13 +668,13 @@ function listadoCard() {
     row.appendChild(containerIcons);
 
     const rowCard = document.createElement('div');
-    rowCard.className = "row pb-4 mb-1";
+    rowCard.className = "row ";
 
     for (let i = 0; i < 5; i++) {
 
 
         const colCard = document.createElement('div');
-        colCard.className = "col-lg-3 col-md-6 mb-4 mb-lg-0";
+        colCard.className = "col-lg-3 margen";
 
         const card = document.createElement('div');
         card.className = "card rounded shadow-sm border-0";
@@ -719,6 +725,250 @@ function listadoCard() {
     dad.appendChild(container1);
 }
 
+function listadoMap() {
+    const dad = document.getElementById('seccion');
+    const container = document.createElement('div');
+    container.classList.add('container', 'granate', 'aplicar-borde','margen');
+
+    const row = document.createElement('div');
+    row.classList.add('row');
+
+    const containerIcons = document.createElement('div');
+    containerIcons.className = 'container';
+
+    const icon1 = document.createElement('i');
+    icon1.className = "fa-solid fa-map-location iconosVisionado";
+    icon1.onclick = function () {
+        gestorVisionado(2);
+    };
+
+    const icon2 = document.createElement('i');
+    icon2.className = "fa-solid fa-table-cells iconosVisionado";
+    icon2.onclick = function () {
+        gestorVisionado(0);
+    };
+
+    const icon3 = document.createElement('i');
+    icon3.className = "fa-solid fa-list iconosVisionado";
+    icon3.onclick = function () {
+        gestorVisionado(1);
+    };
+
+    containerIcons.appendChild(icon1);
+    containerIcons.appendChild(icon2);
+    containerIcons.appendChild(icon3);
+
+    row.appendChild(containerIcons);
+
+    const col1 = document.createElement('div');
+    col1.classList.add('col-auto');
+
+    const img = document.createElement('img');
+    img.classList.add('margen');
+    img.setAttribute('src', '/img/maps.png');
+    col1.appendChild(img);
+
+    const col2 = document.createElement('div');
+    col2.classList.add('col-sm');
+
+    const col3 = document.createElement('div');
+    col3.classList.add('col-lg-auto', 'bg-white', 'aplicar-borde', 'margen');
+
+    const colLabel = document.createElement('div');
+    colLabel.classList.add('col-form-label');
+
+    const container2 = document.createElement('div');
+    container2.classList.add('container', 'margen');
+
+    const carousel = document.createElement('div');
+    carousel.setAttribute('id', 'carouselExamplex');
+    carousel.classList.add('carousel', 'slide', 'margen');
+    carousel.setAttribute('data-bs-ride', 'carousel');
+
+    const carouselInner = document.createElement('div');
+    carouselInner.classList.add('carousel-inner');
+
+    const carouselItem1 = document.createElement('div');
+    carouselItem1.classList.add('carousel-item', 'active');
+
+    const img1 = document.createElement('img');
+    img1.setAttribute('src', 'img/fondo.jpg');
+    img1.classList.add('d-block', 'w-100');
+    carouselItem1.appendChild(img1);
+
+    const carouselItem2 = document.createElement('div');
+    carouselItem2.classList.add('carousel-item');
+
+    const img2 = document.createElement('img');
+    img2.setAttribute('src', 'img/fondo.jpg');
+    img2.classList.add('d-block', 'w-100');
+    carouselItem2.appendChild(img2);
+
+    const carouselItem3 = document.createElement('div');
+    carouselItem3.classList.add('carousel-item');
+
+    const img3 = document.createElement('img');
+    img3.setAttribute('src', 'img/fondo.jpg');
+    img3.classList.add('d-block', 'w-100');
+    carouselItem3.appendChild(img3);
+
+    carouselInner.appendChild(carouselItem1);
+    carouselInner.appendChild(carouselItem2);
+    carouselInner.appendChild(carouselItem3);
+
+    const prevButton = document.createElement('button');
+    prevButton.setAttribute('type', 'button');
+    prevButton.setAttribute('data-bs-target', '#carouselExamplex');
+    prevButton.setAttribute('data-bs-slide', 'prev');
+    prevButton.classList.add('carousel-control-prev');
+
+    const prevIcon = document.createElement('span');
+    prevIcon.classList.add('carousel-control-prev-icon');
+    prevIcon.setAttribute('aria-hidden', 'true');
+    prevButton.appendChild(prevIcon);
+
+    const prevText = document.createElement('span');
+    prevText.classList.add('visually-hidden');
+    prevText.innerText = 'Previous';
+    prevButton.appendChild(prevText);
+
+    const nextButton = document.createElement('button');
+    nextButton.setAttribute('type', 'button');
+    nextButton.setAttribute('data-bs-target', '#carouselExamplex');
+    nextButton.setAttribute('data-bs-slide', 'next');
+    nextButton.classList.add('carousel-control-next');
+
+    const nextIcon = document.createElement('span');
+    nextIcon.classList.add('carousel-control-next-icon');
+    nextIcon.setAttribute('aria-hidden', 'true');
+    nextButton.appendChild(nextIcon);
+
+    const nextText = document.createElement('span');
+    nextText.classList.add('visually-hidden');
+    nextText.innerText = 'Next';
+    nextButton.appendChild(nextText);
+
+    carousel.appendChild(carouselInner);
+    carousel.appendChild(prevButton);
+    carousel.appendChild(nextButton);
+
+    const row2 = document.createElement('div');
+    row2.classList.add('row');
+
+    const col4 = document.createElement('div');
+    col4.classList.add('col');
+
+    const logoimg = document.createElement('img');
+    logoimg.classList.add('margen');
+    logoimg.setAttribute('src', 'http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png');
+    logoimg.setAttribute('width', '150');
+    logoimg.setAttribute('height', '65');
+
+    const dl = document.createElement('dl');
+
+    const dt1 = document.createElement('dt');
+    dt1.textContent = 'Horario:';
+    const dd1 = document.createElement('dd');
+    dd1.textContent = 'Mo,Tu,We,Th,Fr 08:00-16:00';
+
+    const dt2 = document.createElement('dt');
+    dt2.textContent = 'Teléfono:';
+    const dd2 = document.createElement('dd');
+    dd2.textContent = '971533889';
+
+    const dt3 = document.createElement('dt');
+    dt3.textContent = 'Email:';
+    const dd3 = document.createElement('dd');
+    const a = document.createElement('a');
+    a.setAttribute('href', '#');
+    a.classList.add('text-navy');
+    a.textContent = 'info@vinyesmortitx.com';
+    dd3.appendChild(a);
+
+    const dt4 = document.createElement('dt');
+    dt4.textContent = 'Web:';
+    const dd4 = document.createElement('dd');
+    const a2 = document.createElement('a');
+    a2.setAttribute('href', 'http://www.vinyesmortitx.com');
+    a2.classList.add('text-navy');
+    a2.textContent = 'http://www.vinyesmortitx.com';
+    dd4.appendChild(a2);
+
+    const dt5 = document.createElement('dt');
+    dt5.textContent = 'Dirección:';
+    const br = document.createElement('br');
+    const dd5_1 = document.createElement('dd');
+    dd5_1.textContent = 'Ctra. Pollença - Lluc- Km 10,9';
+    const dd5_2 = document.createElement('dd');
+    dd5_2.textContent = 'Mallorca, Escorca, 07315';
+
+    dl.appendChild(dt1);
+    dl.appendChild(dd1);
+    dl.appendChild(dt2);
+    dl.appendChild(dd2);
+    dl.appendChild(dt3);
+    dl.appendChild(dd3);
+    dl.appendChild(dt4);
+    dl.appendChild(dd4);
+    dl.appendChild(dt5);
+    dl.appendChild(br);
+    dl.appendChild(dd5_1);
+    dl.appendChild(dd5_2);
+
+    const div1 = document.createElement('div');
+    div1.classList.add('col-sm');
+    div1.appendChild(dl);
+
+    const div2 = document.createElement('div');
+    div2.classList.add('col-sm');
+    div2.appendChild(div1);
+
+    col4.appendChild(logoimg);
+    col4.appendChild(div2);
+
+    const colSmDiv = document.createElement('div');
+    colSmDiv.className = 'col-sm';
+
+    const containerDiv = document.createElement('div');
+    containerDiv.className = 'container margen';
+
+    const customScrollbarDiv = document.createElement('div');
+    customScrollbarDiv.className = 'custom-scrollbar-css';
+
+    const italicPara = document.createElement('p');
+    italicPara.className = 'font-italic';
+    italicPara.textContent = 'El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.';
+
+    customScrollbarDiv.appendChild(italicPara);
+    containerDiv.appendChild(customScrollbarDiv);
+    colSmDiv.appendChild(containerDiv);
+
+    const moreInfoButton = document.createElement('button');
+    moreInfoButton.className = 'add-to-cart margen';
+    moreInfoButton.textContent = 'Más información';
+
+    colSmDiv.appendChild(moreInfoButton);
+
+    row2.appendChild(col4);
+    row2.appendChild(colSmDiv);
+
+    container2.appendChild(carousel);
+    container2.appendChild(row2);
+
+    colLabel.appendChild(container2);
+
+    col3.appendChild(colLabel);
+
+    col2.appendChild(col3);
+
+    row.appendChild(col1);
+    row.appendChild(col2);
+
+    container.appendChild(row);
+
+    dad.appendChild(container);
+}
+
 function gestorVisionado(vision) {
     var seccion = document.getElementById("seccion");
 
@@ -733,5 +983,34 @@ function gestorVisionado(vision) {
             break;
         case 0: listadoCard();
             break;
+        case 2: listadoMap();
+            break;
     }
 }
+
+$(function () {
+    /* Rounded Dots Dark */
+    $("#content-1").mCustomScrollbar({
+        theme: "rounded-dots-dark"
+    });
+
+    /* Rounded Dark */
+    $("#content-2").mCustomScrollbar({
+        theme: "rounded-dark"
+    });
+
+    /* Inset Dark */
+    $("#content-3").mCustomScrollbar({
+        theme: "inset-3-dark"
+    });
+
+    /* 3d Dark */
+    $("#content-4").mCustomScrollbar({
+        theme: "3d-dark"
+    });
+
+    /* Dark Thin */
+    $("#content-5").mCustomScrollbar({
+        theme: "dark-thin"
+    });
+});

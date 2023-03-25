@@ -11200,6 +11200,32 @@ html {
   color: white;
 }
 
+.custom-scrollbar-js,
+.custom-scrollbar-css {
+  height: 300px;
+}
+
+
+.custom-scrollbar-css {
+  overflow-y: scroll;
+}
+
+.custom-scrollbar-css::-webkit-scrollbar {
+  width: 7px;
+}
+
+.custom-scrollbar-css::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+.custom-scrollbar-css::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: #00d2ff;
+  background-image: linear-gradient(to top, white 0%, #6a1a21 100%);
+}
+
+
+
 /*****************globals*************/
 body {
   font-family: 'open sans';

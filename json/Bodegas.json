@@ -1,0 +1,194 @@
+{
+    "@context": "https://schema.org",
+    "@type": "itemList",
+    "itemListElement":[
+        {
+            "@type": "Winery",
+            "name": "Bodegas Mortitx",
+            "description": "El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Escorca",
+                "postalCode": "07315",
+                "streetAddress": "Ctra. Pollença - Lluc- Km 10,9"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "Bodegues Mortitx - finca-privat.de",
+                        "contentUrl":"https://www.youtube.com/embed/eBpI0tEdTtM"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "Video Spot Vinyes Mortitx l’U",
+                        "contentUrl": "https://player.vimeo.com/video/50682416?h=978c69d38a"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Mortitx Tinto 2019",
+                                "description": "Variedades:   Merlot, Mantonegro, Cabernet Sauvignon, Syrah. Con un grado de alcohol de 13%.",
+                                "image": "http://www.vinyesmortitx.com/img_blog/1584635839.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "12.18",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Rodal Pla 2017",
+                                "description": "Variedades:   Merlot, Cabernet Sauvignon, Syrah. Con un grado de alcohol de 13%.",
+                                "image": "http://www.vinyesmortitx.com/img_blog/1584632514.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.98",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "L'u negre 2017",
+                                "description": "Variedades:   Merlot, Cabernet Sauvignon, Syrah. Con un grado de alcohol de 14%.",
+                                "image": "http://www.vinyesmortitx.com/img_blog/ART_9u-negre.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "62.90",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Mortitx Blanco 2019",
+                                "description": "Variedades: Malvasia, Muscat, Chardonnay, Giró ros. Con un grado de alcohol de 12,5%.",
+                                "image": "http://www.vinyesmortitx.com/img_blog/1584635505.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "11.20",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "L'u blanc 2016",
+                                "description": "Variedades: Malvasia, Chardonnay. Con un grado de alcohol de 14%.",
+                                "image": "http://www.vinyesmortitx.com/img_blog/ART_8u-blanc.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "32.90",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Mortitx Rosado 2019",
+                                "description": "Variedades: Merlot, Cabernet Sauvignon. Con un grado de alcohol de 13%.",
+                                "image": "http://www.vinyesmortitx.com/img_blog/1584635124.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "11.90",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Flaires 2019",
+                                "description": "Variedades: Monastrell, Cabernet Sauvignon, Merlot. Con un grado de alcohol de 12,5%.",
+                                "image": "http://www.vinyesmortitx.com/img_blog/1584633458.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "12.99",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr 08:00-16:00",
+            "telephone": "971533889",
+            "isAccessibleForFree": false,
+            "email": "info@vinyesmortitx.com",
+            "logo": "http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.86897927148171,
+                "longitude" : 2.9227276061015797
+            },
+            "image": [
+                "http://www.vinyesmortitx.com/img_blog/21_1234231_569643109759057_294746408_n.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_1376994_597700826953285_1533645700_n.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_1383991_597701483619886_1555644589_n.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_10683661.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_20140228_172220.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_20140506_112746.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_CALETA-dARIANT-COVA-DE-LES-BRUIXES.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_nevat-mortitx.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_P1090678.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_P1090717.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_QQ6A0199-1.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_QQ6A0319-1.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_QQ6A0966.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_QQ6A1029.jpg",
+                "http://www.vinyesmortitx.com/img_blog/21_QQ6A9827.jpg",
+                "http://www.vinyesmortitx.com/img_blog/1535461008.png"
+            ],
+            "url": "http://www.vinyesmortitx.com",
+            "event": [
+                {
+                    "@type": "Event",
+                    "name": "Visita de la bodega y cata de vinos",
+                    "description": "Conozca en profundidad el proceso de elaboración de premiados vinos, visitando las bodegas y degustando sus exquisitos caldos. Relativamente nueva, la bodega de Mortitx fue construida en el año 2005 y contiene 30 depósitos de acero inoxidable que se utilizan tanto para la fermentación como para la conservación de los vinos. La bodega también dispone de una gran cámara de frio,  las barricas de roble de origen francés para la crianza de los vinos y de una sala de embotellado y etiquetación."
+                },
+                {
+                    "@type": "Event",
+                    "name": "Excursión Ses Basses de Mortitx",
+                    "description": "Se conoce con el nombre de Ses Basses de Mortitx un altiplano, sostenido por elevada cornisa acantilada sobre el mar, en un recóndito y solitario rincón de la Sierra Norte mallorquina."
+        
+                },
+                {
+                    "@type": "Event",
+                    "name": "Excursión Caleta d'Ariant (Cova de ses bruixes)",
+                    "description": "La ruta de Mortitx a Sa Caleta, ante la espectacular Cueva de las Brujas, en la Costa Brava Norte Mallorquina, entre los formidables sistemas de Puig Roig-Caragoler y el de Ternelles."
+                }
+            ]
+        }
+    ]
+}
