@@ -1,54 +1,235 @@
+var carrusel = null;
+
 window.onload = function () {
-    var aux = document.getElementById("prueba");
-    aux.href = "javascript:initButtons()";
-    crearCarouselPrincipal();
-    filtrado();
-    listadoCard();
+    //crearCarouselPrincipal();
+    //filtrado();
+    //listadoCard();
+    botonesNav();
 }
 
-function initButtons() {
+function filtrado2() {
+    const dad = document.getElementById("seccion");
+    // Crear el elemento contenedor y añadir las clases necesarias
+    const containerMain = document.createElement('div');
+    containerMain.classList.add('container', 'granate', 'aplicar-borde');
 
-    //<li class="nav-item">
-    //<a class="nav-link active" aria-current="page" href="#">Home</a>
-    //</li>
-    var listNav = document.getElementById("listNav");
-    var elem = document.createElement("li");
-    var txt = document.createTextNode("Fotos");
-    elem.className = "nav-item";
-    var child = document.createElement("a");
-    child.className = "nav-link";
-    child.ariaCurrent = "page";
-    child.style.color = "#4D141C";
-    child.appendChild(txt);
-    elem.appendChild(child);
-    listNav.appendChild(elem);
+    const container = document.createElement("div");
+    container.classList.add("container");
 
-    elem = document.createElement("li");
-    txt = document.createTextNode("Videos");
-    elem.className = "nav-item";
-    child = document.createElement("a");
-    child.className = "nav-link";
-    child.style.color = "#4D141C";
-    child.appendChild(txt);
-    elem.appendChild(child);
-    listNav.appendChild(elem);
+    const row = document.createElement("div");
+    row.classList.add("row", "justify-content-center","margen");
 
-    elem = document.createElement("li");
-    txt = document.createTextNode("Información");
-    elem.className = "nav-item";
-    child = document.createElement("a");
-    child.className = "nav-link";
-    child.style.color = "#4D141C";
-    child.appendChild(txt);
-    elem.appendChild(child);
-    listNav.appendChild(elem);
+    const title = document.createElement("h3");
+    title.classList.add("card-title","margen");
+    title.textContent = "Buscar bodega";
+
+    const form = document.createElement("form");
+    form.classList.add("form-inline");
+
+    const locationFormGroup = document.createElement("div");
+    locationFormGroup.classList.add("form-group", "mx-3");
+
+    const locationLabel = document.createElement("label");
+    locationLabel.setAttribute("for", "location-filter");
+    locationLabel.classList.add("sr-only");
+    locationLabel.textContent = "Ubicación:";
+
+    const locationInput = document.createElement("input");
+    locationInput.setAttribute("type", "text");
+    locationInput.setAttribute("id", "location-filter");
+    locationInput.setAttribute("name", "location");
+    locationInput.classList.add("form-control", "mr-3");
+    locationInput.setAttribute("placeholder", "Ingrese una ubicación");
+
+    locationFormGroup.appendChild(locationLabel);
+    locationFormGroup.appendChild(locationInput);
+
+    const ratingFormGroup = document.createElement("div");
+    ratingFormGroup.classList.add("form-group","margen", "mx-3");
+
+    const ratingLabel = document.createElement("label");
+    ratingLabel.setAttribute("for", "rating-filter");
+    ratingLabel.classList.add("sr-only");
+    ratingLabel.textContent = "Valoración:";
+
+    const ratingSelect = document.createElement("select");
+    ratingSelect.setAttribute("id", "rating-filter");
+    ratingSelect.setAttribute("name", "rating");
+    ratingSelect.classList.add("form-select","margen", "mr-3");
+
+    const option0 = document.createElement("option");
+    option0.setAttribute("value", "0");
+    option0.textContent = "Seleccione una valoración";
+
+    const option1 = document.createElement("option");
+    option1.setAttribute("value", "1");
+    option1.textContent = "1 estrella";
+
+    const option2 = document.createElement("option");
+    option2.setAttribute("value", "2");
+    option2.textContent = "2 estrellas";
+
+    const option3 = document.createElement("option");
+    option3.setAttribute("value", "3");
+    option3.textContent = "3 estrellas";
+
+    const option4 = document.createElement("option");
+    option4.setAttribute("value", "4");
+    option4.textContent = "4 estrellas";
+
+    const option5 = document.createElement("option");
+    option5.setAttribute("value", "5");
+    option5.textContent = "5 estrellas";
+
+    ratingSelect.appendChild(option0);
+    ratingSelect.appendChild(option1);
+    ratingSelect.appendChild(option2);
+    ratingSelect.appendChild(option3);
+    ratingSelect.appendChild(option4);
+    ratingSelect.appendChild(option5);
+
+    ratingFormGroup.appendChild(ratingLabel);
+    ratingFormGroup.appendChild(ratingSelect);
+
+    const timeFormGroup = document.createElement("div");
+    timeFormGroup.classList.add("form-group", "margen", "mx-3");
+
+    const timeLabel = document.createElement("label");
+    timeLabel.setAttribute("for", "time-filter");
+    timeLabel.classList.add("sr-only");
+    timeLabel.textContent = "Horario de apertura:";
+
+    const timeInputGroup = document.createElement("div");
+    timeInputGroup.classList.add("input-group");
+
+    const openingTimeInput = document.createElement("input");
+    openingTimeInput.setAttribute("type", "time");
+    openingTimeInput.setAttribute("id", "time-filter");
+    openingTimeInput.setAttribute("name", "opening-time");
+    openingTimeInput.classList.add("form-control", "mr-2");
+
+    const toLabel = document.createElement("span");
+    toLabel.classList.add("input-group-text");
+    toLabel.textContent = "a";
+
+    const closingTimeInput = document.createElement("input");
+    closingTimeInput.setAttribute("type", "time");
+    closingTimeInput.setAttribute("id", "time-filter");
+    closingTimeInput.setAttribute("name", "closing-time");
+    closingTimeInput.classList.add("form-control", "ml-2");
+
+    timeInputGroup.appendChild(openingTimeInput);
+    timeInputGroup.appendChild(toLabel);
+    timeInputGroup.appendChild(closingTimeInput);
+
+    timeFormGroup.appendChild(timeLabel);
+    timeFormGroup.appendChild(timeInputGroup);
+
+    const weekFormGroup = document.createElement("div");
+    weekFormGroup.classList.add("form-group","margen", "mx-3");
+
+    const weekLabel = document.createElement("label");
+    weekLabel.setAttribute("for", "rating-filter");
+    weekLabel.classList.add("sr-only");
+    weekLabel.textContent = "Días de la semana:";
+
+    const weekSelect = document.createElement("select");
+    weekSelect.setAttribute("id", "rating-filter");
+    weekSelect.setAttribute("name", "rating");
+    weekSelect.classList.add("form-select", "mr-3");
+
+    const option0w = document.createElement("option");
+    option0w.setAttribute("value", "0");
+    option0w.textContent = "Seleccione los días";
+
+    const option1w = document.createElement("option");
+    option1w.setAttribute("value", "lunes");
+    option1w.textContent = "Lunes";
+
+    const option2w = document.createElement("option");
+    option2w.setAttribute("value", "martes");
+    option2w.textContent = "Martes";
+
+    const option3w = document.createElement("option");
+    option3w.setAttribute("value", "miercoles");
+    option3w.textContent = "Miercoles";
+
+    const option4w = document.createElement("option");
+    option4w.setAttribute("value", "jueves");
+    option4w.textContent = "Jueves";
+
+    const option5w = document.createElement("option");
+    option5w.setAttribute("value", "viernes");
+    option5w.textContent = "Viernes";
+
+    const option6w = document.createElement("option");
+    option6w.setAttribute("value", "sabado");
+    option6w.textContent = "Sabado";
+
+    const option7w = document.createElement("option");
+    option7w.setAttribute("value", "domingo");
+    option7w.textContent = "Domingo";
+
+    weekSelect.appendChild(option0w);
+    weekSelect.appendChild(option1w);
+    weekSelect.appendChild(option2w);
+    weekSelect.appendChild(option3w);
+    weekSelect.appendChild(option4w);
+    weekSelect.appendChild(option5w);
+    weekSelect.appendChild(option6w);
+    weekSelect.appendChild(option7w);
+
+    weekFormGroup.appendChild(weekLabel);
+    weekFormGroup.appendChild(weekSelect);
+
+    const submit = document.createElement('button');
+    submit.setAttribute('type','submit');
+    submit.className = "btn btn-primary mx-3";
+    submit.textContent = "Buscar";
+
+    form.appendChild(locationFormGroup);
+    form.appendChild(ratingFormGroup);
+    form.appendChild(timeFormGroup);
+    form.appendChild(weekFormGroup);
+    form.appendChild(submit);
+    title.appendChild(form);
+    row.appendChild(title);
+    container.appendChild(row);
+    containerMain.appendChild(container);
+    dad.appendChild(containerMain);
+
+}
+
+function botonesNav() {
+    const b = document.getElementById("busqueda");
+    b.href = "javascript:gestorVisionado(0)";
+
+    const icono = document.getElementById("icono");
+    icono.onclick = function () {
+        paginaPrincipal();
+    };
+
+}
+
+function paginaPrincipal() {
+    const h = document.getElementById("header");
+    var seccion = document.getElementById("seccion");
+    if (carrusel != null) {
+        h.appendChild(carrusel);
+        carrusel = null;
+    }
+
+    if (seccion.hasChildNodes()) {
+        while (seccion.childNodes.length >= 1) {
+            seccion.removeChild(seccion.firstChild);
+        }
+    }
 }
 
 function crearCarouselPrincipal() {
     var divClasses = ["container px-1", "row gx-5 align-items-center justify-content-center",
         "col-lg-8 col-xl-7 col-xxl-6", "my-5 text-center text-xl-start"];
     var dad = document.getElementById("primer");
-    console.log("hola");
     for (var i = 0; i < divClasses.length; i++) {
         var div = document.createElement("div");
         div.className = divClasses[i];
@@ -63,24 +244,9 @@ function crearCarouselPrincipal() {
     var txt = document.createTextNode("A Bootstrap 5 template for modern businesses");
     h1.appendChild(txt);
     dad.appendChild(h1);
-    var p = document.createElement("p");
-    p.className = "lead fw-normal text-white-50 mb-4";
-    txt = document.createTextNode("Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!");
-    p.appendChild(txt);
-    dad.appendChild(p);
     var div = document.createElement("div");
     div.className = "d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start";
     dad.appendChild(div);
-    var a = document.createElement("a");
-    a.className = "btn btn-primary btn-lg px-4 me-sm-3";
-    txt = document.createTextNode("Get Started");
-    a.appendChild(txt);
-    div.appendChild(a);
-    a = document.createElement("a");
-    a.className = "btn btn-outline-light btn-lg px-4";
-    txt = document.createTextNode("Learn More");
-    a.appendChild(txt);
-    div.appendChild(a);
     createCarousel(document.getElementById("pointer"));
 }
 
@@ -249,92 +415,6 @@ function createCarousel(dad) {
 
     carousel.appendChild(prevBtn);
     carousel.appendChild(nextBtn);
-}
-
-function filtrado() {
-    const dad = document.getElementById("seccion");
-    // Crear el elemento contenedor y añadir las clases necesarias
-    const container = document.createElement('div');
-    container.classList.add('container', 'granate', 'aplicar-borde');
-
-    // Crear el formulario
-    const form = document.createElement('form');
-
-    // Crear la fila de columnas
-    const row = document.createElement('div');
-    row.classList.add('row');
-
-    // Crear las columnas
-    for (let i = 0; i < 6; i++) {
-        const col = document.createElement('div');
-        col.classList.add('col-md-4');
-
-        // Crear el grupo de formulario y añadir las clases necesarias
-        const formGroup = document.createElement('div');
-        formGroup.classList.add('form-group', 'has-feedback', 'has-clear');
-
-        // Crear la etiqueta y el campo de entrada
-        const label = document.createElement('label');
-        label.classList.add('letras');
-        label.setAttribute('for', `exampleInput${i + 1}`);
-        label.textContent = 'Name';
-
-        const input = document.createElement('input');
-        input.classList.add('form-control', 'no-rounded');
-        input.setAttribute('type', 'text');
-        input.setAttribute('id', `exampleInput${i + 1}`);
-        input.setAttribute('placeholder', 'Enter text here');
-
-        // Añadir el campo de entrada y la etiqueta al grupo de formulario
-        formGroup.appendChild(label);
-        formGroup.appendChild(input);
-
-        // Crear el icono de borrado y añadir las clases necesarias
-        const clearIcon = document.createElement('span');
-        clearIcon.classList.add('form-control-clear', 'glyphicon', 'glyphicon-remove', 'form-control-feedback', 'hidden');
-
-        // Añadir el icono de borrado al grupo de formulario
-        formGroup.appendChild(clearIcon);
-
-        // Añadir el grupo de formulario a la columna
-        col.appendChild(formGroup);
-
-        // Añadir la columna a la fila
-        row.appendChild(col);
-    }
-
-    // Añadir la fila al formulario
-    form.appendChild(row);
-
-    // Crear la fila de botones
-    const margen = document.createElement('div');
-    margen.classList.add('margen');
-
-    const buttonRow = document.createElement('div');
-    buttonRow.classList.add('row', 'margen');
-
-    const buttonCol = document.createElement('div');
-    buttonCol.classList.add('col-md-12', 'margen');
-
-    const button = document.createElement('button');
-    button.classList.add('btn', 'btn-primary', 'pull-right');
-    button.setAttribute('type', 'submit');
-    button.textContent = 'Aplicar';
-
-    // Añadir el botón a la columna y la columna a la fila de botones
-    buttonCol.appendChild(button);
-    buttonRow.appendChild(buttonCol);
-
-
-    // Añadir la fila de botones al elemento de margen y el elemento de margen al formulario
-    margen.appendChild(buttonRow);
-    form.appendChild(margen);
-
-    // Añadir el formulario al contenedor
-    container.appendChild(form);
-
-    dad.appendChild(container);
-
 }
 
 function listadoCardXL() {
@@ -728,7 +808,7 @@ function listadoCard() {
 function listadoMap() {
     const dad = document.getElementById('seccion');
     const container = document.createElement('div');
-    container.classList.add('container', 'granate', 'aplicar-borde','margen');
+    container.classList.add('container', 'granate', 'aplicar-borde', 'margen');
 
     const row = document.createElement('div');
     row.classList.add('row');
@@ -786,7 +866,7 @@ function listadoMap() {
     carousel.setAttribute('data-bs-ride', 'carousel');
 
     const carouselInner = document.createElement('div');
-    carouselInner.classList.add('carousel-inner','redimension');
+    carouselInner.classList.add('carousel-inner', 'redimension');
 
     const carouselItem1 = document.createElement('div');
     carouselItem1.classList.add('carousel-item', 'active');
@@ -984,15 +1064,34 @@ function listadoMap() {
     dad.appendChild(container);
 }
 
+function hasNode(dad, child) {
+    if (dad.hasChildNodes()) {
+        for (let i = 0; i < dad.childNodes.length; i++) {
+            if (dad.childNodes[i] == child) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 function gestorVisionado(vision) {
     var seccion = document.getElementById("seccion");
+    var h = document.getElementById("header");
+    var car = document.getElementById("carouselPrincipal");
+
+    if (hasNode(h, car)) {
+        carrusel = car;
+        h.removeChild(car);
+    }
+
 
     if (seccion.hasChildNodes()) {
         while (seccion.childNodes.length >= 1) {
             seccion.removeChild(seccion.firstChild);
         }
     }
-    filtrado();
+    filtrado2();
     switch (vision) {
         case 1: listadoCardXL();
             break;
@@ -1028,4 +1127,25 @@ function gestorVisionado(vision) {
     $("#content-5").mCustomScrollbar({
         theme: "dark-thin"
     });
+});
+
+$('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    dots: false,
+    nav: true,
+    mouseDrag: false,
+    autoplay: true,
+    animateOut: 'slideOutUp',
+    responsive: {
+        0: {
+            items: 1
+        },
+        600: {
+            items: 1
+        },
+        1000: {
+            items: 1
+        }
+    }
 });

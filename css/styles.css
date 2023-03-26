@@ -82,11 +82,12 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
+  /*color: var(--bs-body-color);*/
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+ /* background-color: var(--bs-body-bg);*/
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background: url(http://www.vinyesmortitx.com/img_blog/21_20140506_112746.jpg) center center cover no-repeat fixed;
 }
 
 hr {
@@ -11234,6 +11235,135 @@ html {
 }
 
 
+a.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  text-decoration: none;
+  color: orangered;
+  font-family: cursive;
+  font-weight: 700;
+
+}
+
+nav.main-navigation {
+  position: relative;
+}
+
+nav.main-navigation ul.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  text-align: right;
+}
+
+.nav-list li.nav-list-item {
+  display: inline-block;
+  line-height: 40px;
+  margin-left: 30px;
+  margin-top: 15px;
+}
+
+a.nav-link {
+  text-decoration: none;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  color: white;
+}
+
+@keyframes FadeIn {
+  0% {
+      opacity: 0;
+      -webkit-transition-duration: 0.8s;
+      transition-duration: 0.8s;
+      -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+      transform: translateY(-10px);
+  }
+
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+      pointer-events: auto;
+      transition: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.nav-list li {
+  animation: FadeIn 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+.nav-list li:nth-child(1) {
+  animation-delay: .3s;
+}
+
+.nav-list li:nth-child(2) {
+  animation-delay: .6s;
+}
+
+.nav-list li:nth-child(3) {
+  animation-delay: .9s;
+}
+
+.nav-list li:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+.nav-list li:nth-child(5) {
+  animation-delay: 1.5s;
+}
+
+/* Animation */
+
+@keyframes fadeInUp {
+  from {
+      transform: translate3d(0, 40px, 0)
+  }
+
+  to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+      transform: translate3d(0, 40px, 0)
+  }
+
+  to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+  opacity: 0
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
 
 /*****************globals*************/
 body {
@@ -11464,3 +11594,187 @@ img {
             .attribution:hover {
               color: #1fa67a;
             }
+
+            header .item {
+              height: 100vh;
+              position: relative;
+            }
+            header .item img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            header .item .cover {
+              padding: 75px 0;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              background: rgba(0, 0, 0, 0.6);
+              display: flex;
+              align-items: center;
+            }
+            header .item .cover .header-content {
+              position: relative;
+              padding: 56px;
+              overflow: hidden;
+            }
+            header .item .cover .header-content .line {
+              content: "";
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              left: 0;
+              top: 0;
+              position: absolute;
+              border: 9px solid #fff;
+              -webkit-clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
+              clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
+            }
+            header .item .cover .header-content h2 {
+              font-weight: 300;
+              font-size: 35px;
+              color: #fff;
+            }
+            header .item .cover .header-content h1 {
+              font-size: 56px;
+              font-weight: 600;
+              margin: 5px 0 20px;
+              word-spacing: 3px;
+              color: #fff;
+            }
+            header .item .cover .header-content h4 {
+              font-size: 24px;
+              font-weight: 300;
+              line-height: 36px;
+              color: #fff;
+            }
+            header .owl-item.active h1 {
+              -webkit-animation-duration: 1s;
+              animation-duration: 1s;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+              animation-name: fadeInDown;
+              animation-delay: 0.3s;
+            }
+            header .owl-item.active h2 {
+              -webkit-animation-duration: 1s;
+              animation-duration: 1s;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+              animation-name: fadeInDown;
+              animation-delay: 0.3s;
+            }
+            header .owl-item.active h4 {
+              -webkit-animation-duration: 1s;
+              animation-duration: 1s;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+              animation-name: fadeInUp;
+              animation-delay: 0.3s;
+            }
+            header .owl-item.active .line {
+              -webkit-animation-duration: 1s;
+              animation-duration: 1s;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+              animation-name: fadeInLeft;
+              animation-delay: 0.3s;
+            }
+            header .owl-nav .owl-prev {
+              position: absolute;
+              left: 15px;
+              top: 43%;
+              opacity: 0;
+              -webkit-transition: all 0.4s ease-out;
+              transition: all 0.4s ease-out;
+              background: rgba(0, 0, 0, 0.5) !important;
+              width: 40px;
+              cursor: pointer;
+              height: 40px;
+              position: absolute;
+              display: block;
+              z-index: 1000;
+              border-radius: 0;
+            }
+            header .owl-nav .owl-prev span {
+              font-size: 1.6875rem;
+              color: #fff;
+            }
+            header .owl-nav .owl-prev:focus {
+              outline: 0;
+            }
+            header .owl-nav .owl-prev:hover {
+              background: #000 !important;
+            }
+            header .owl-nav .owl-next {
+              position: absolute;
+              right: 15px;
+              top: 43%;
+              opacity: 0;
+              -webkit-transition: all 0.4s ease-out;
+              transition: all 0.4s ease-out;
+              background: rgba(0, 0, 0, 0.5) !important;
+              width: 40px;
+              cursor: pointer;
+              height: 40px;
+              position: absolute;
+              display: block;
+              z-index: 1000;
+              border-radius: 0;
+            }
+            header .owl-nav .owl-next span {
+              font-size: 1.6875rem;
+              color: #fff;
+            }
+            header .owl-nav .owl-next:focus {
+              outline: 0;
+            }
+            header .owl-nav .owl-next:hover {
+              background: #000 !important;
+            }
+            header:hover .owl-prev {
+              left: 0px;
+              opacity: 1;
+            }
+            header:hover .owl-next {
+              right: 0px;
+              opacity: 1;
+            }
+            .b-select-wrap {
+              border: none;
+              color: #1092C9;
+              overflow: hidden;
+              position: relative;
+              border-radius: 3px;
+          }
+          
+          .b-select-wrap::after {
+              content: "⌄";
+              position: absolute;
+              right: 0px;
+              top: -15px;
+              z-index: 1;
+              text-align: center;
+              width: 10%;
+              height: 100%;
+              pointer-events: none;
+              font-size: 35px;
+          }
+          
+          .b-select {
+              padding: 5px 15px;
+              background-color: white;
+              border: 0;
+              outline: none;
+              font-size: 22px;
+              -webkit-appearance: none; /* for webkit browsers */
+              -moz-appearance: none; /* for firefox */
+              appearance: none; /* for modern browsers */
+          }
+          
+          /* remove default caret for ie */
+          .b-select::-ms-expand {
+             display:none;
+          }
