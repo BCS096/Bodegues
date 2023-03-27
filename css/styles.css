@@ -87,7 +87,6 @@ body {
  /* background-color: var(--bs-body-bg);*/
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  background: url(http://www.vinyesmortitx.com/img_blog/21_20140506_112746.jpg) center center cover no-repeat fixed;
 }
 
 hr {
@@ -11146,11 +11145,8 @@ html {
 
 /*Mi código*/
 
-.navcolor {
-  background-color: #6a1a21;
-}
 .fondo {
-    background-image: url("https://heredadaduna.com/wp-content/uploads/2018/02/cuidados-vi%C3%B1as.jpg");
+    background-image: url("http://www.vinyesmortitx.com/img_blog/21_QQ6A0319-1.jpg");
    background-size: cover;
     background-repeat:no-repeat;
     background-position: center center;
@@ -11209,6 +11205,25 @@ html {
 .redimension{
  height: 400px;
 }
+
+.redimension2 {
+  width: 20%;
+  max-height: 460px;
+}
+
+.redimension2{
+height: 400px;
+}
+
+.redi {
+  width: 5000px;
+  height: 5000px;
+}
+
+.centro{
+  align-content: center;
+}
+
 
 .custom-scrollbar-js,
 .custom-scrollbar-css {
