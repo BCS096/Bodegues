@@ -456,217 +456,222 @@ function listadoCardXL() {
 
     dad.appendChild(container1);
 
-    //for
-    
 
-    const container = document.createElement('div');
-    container.classList.add('container','bg-white','aplicar-borde','margen');
+    const col = document.createElement('div');
+    col.className = 'col margen';
 
-    const fila = document.createElement('div');
-    fila.classList.add('row');
+    for (let i = 0; i < 3; i++) {
+        const container = document.createElement('div');
+        container.classList.add('container', 'bg-white', 'aplicar-borde', 'margen');
 
-    const col1 = document.createElement('div');
-    col1.classList.add('col-sm');
-   //meter carousel
-   const carousel = document.createElement('div');
-    carousel.setAttribute('id', 'carouselExamplex');
-    carousel.classList.add('carousel', 'slide', 'margen');
-    carousel.setAttribute('data-bs-ride', 'carousel');
+        const fila = document.createElement('div');
+        fila.classList.add('row');
 
-    const carouselInner = document.createElement('div');
-    carouselInner.classList.add('carousel-inner', 'redimension2');
+        const col1 = document.createElement('div');
+        col1.classList.add('col-sm');
+        //meter carousel
+        const carousel = document.createElement('div');
+        carousel.setAttribute('id', 'carouselExamplex'+i);
+        carousel.classList.add('carousel', 'slide', 'margen');
+        carousel.setAttribute('data-bs-ride', 'carousel');
 
-    const carouselItem1 = document.createElement('div');
-    carouselItem1.classList.add('carousel-item', 'active');
+        const carouselInner = document.createElement('div');
+        carouselInner.classList.add('carousel-inner', 'redimension2');
 
-    const img1 = document.createElement('img');
-    img1.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_QQ6A0199-1.jpg');
-    img1.classList.add('d-block', 'w-100');
-    carouselItem1.appendChild(img1);
+        const carouselItem1 = document.createElement('div');
+        carouselItem1.classList.add('carousel-item', 'active');
 
-    const carouselItem2 = document.createElement('div');
-    carouselItem2.classList.add('carousel-item');
+        const img1 = document.createElement('img');
+        img1.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_QQ6A0199-1.jpg');
+        img1.classList.add('d-block', 'w-100');
+        carouselItem1.appendChild(img1);
 
-    const img2 = document.createElement('img');
-    img2.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_20140228_172220.jpg');
-    img2.classList.add('d-block', 'w-100');
-    carouselItem2.appendChild(img2);
+        const carouselItem2 = document.createElement('div');
+        carouselItem2.classList.add('carousel-item');
 
-    const carouselItem3 = document.createElement('div');
-    carouselItem3.classList.add('carousel-item');
+        const img2 = document.createElement('img');
+        img2.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_20140228_172220.jpg');
+        img2.classList.add('d-block', 'w-100');
+        carouselItem2.appendChild(img2);
 
-    const img3 = document.createElement('img');
-    img3.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_P1090717.jpg');
-    img3.classList.add('d-block', 'w-100');
-    carouselItem3.appendChild(img3);
+        const carouselItem3 = document.createElement('div');
+        carouselItem3.classList.add('carousel-item');
 
-    carouselInner.appendChild(carouselItem1);
-    carouselInner.appendChild(carouselItem2);
-    carouselInner.appendChild(carouselItem3);
+        const img3 = document.createElement('img');
+        img3.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_P1090717.jpg');
+        img3.classList.add('d-block', 'w-100');
+        carouselItem3.appendChild(img3);
 
-    const prevButton = document.createElement('button');
-    prevButton.setAttribute('type', 'button');
-    prevButton.setAttribute('data-bs-target', '#carouselExamplex');
-    prevButton.setAttribute('data-bs-slide', 'prev');
-    prevButton.classList.add('carousel-control-prev');
+        carouselInner.appendChild(carouselItem1);
+        carouselInner.appendChild(carouselItem2);
+        carouselInner.appendChild(carouselItem3);
 
-    const prevIcon = document.createElement('span');
-    prevIcon.classList.add('carousel-control-prev-icon');
-    prevIcon.setAttribute('aria-hidden', 'true');
-    prevButton.appendChild(prevIcon);
+        const prevButton = document.createElement('button');
+        prevButton.setAttribute('type', 'button');
+        prevButton.setAttribute('data-bs-target', '#carouselExamplex'+i);
+        prevButton.setAttribute('data-bs-slide', 'prev');
+        prevButton.classList.add('carousel-control-prev');
 
-    const prevText = document.createElement('span');
-    prevText.classList.add('visually-hidden');
-    prevText.innerText = 'Previous';
-    prevButton.appendChild(prevText);
+        const prevIcon = document.createElement('span');
+        prevIcon.classList.add('carousel-control-prev-icon');
+        prevIcon.setAttribute('aria-hidden', 'true');
+        prevButton.appendChild(prevIcon);
 
-    const nextButton = document.createElement('button');
-    nextButton.setAttribute('type', 'button');
-    nextButton.setAttribute('data-bs-target', '#carouselExamplex');
-    nextButton.setAttribute('data-bs-slide', 'next');
-    nextButton.classList.add('carousel-control-next');
+        const prevText = document.createElement('span');
+        prevText.classList.add('visually-hidden');
+        prevText.innerText = 'Previous';
+        prevButton.appendChild(prevText);
 
-    const nextIcon = document.createElement('span');
-    nextIcon.classList.add('carousel-control-next-icon');
-    nextIcon.setAttribute('aria-hidden', 'true');
-    nextButton.appendChild(nextIcon);
+        const nextButton = document.createElement('button');
+        nextButton.setAttribute('type', 'button');
+        nextButton.setAttribute('data-bs-target', '#carouselExamplex'+i);
+        nextButton.setAttribute('data-bs-slide', 'next');
+        nextButton.classList.add('carousel-control-next');
 
-    const nextText = document.createElement('span');
-    nextText.classList.add('visually-hidden');
-    nextText.innerText = 'Next';
-    nextButton.appendChild(nextText);
+        const nextIcon = document.createElement('span');
+        nextIcon.classList.add('carousel-control-next-icon');
+        nextIcon.setAttribute('aria-hidden', 'true');
+        nextButton.appendChild(nextIcon);
 
-    carousel.appendChild(carouselInner);
-    carousel.appendChild(prevButton);
-    carousel.appendChild(nextButton);
+        const nextText = document.createElement('span');
+        nextText.classList.add('visually-hidden');
+        nextText.innerText = 'Next';
+        nextButton.appendChild(nextText);
 
-    col1.appendChild(carousel);
-   //end carousel
-    const col2 = document.createElement('div');
-    col2.classList.add('col-sm');
-    //desc
-    const row2 = document.createElement('div');
-    row2.classList.add('row');
+        carousel.appendChild(carouselInner);
+        carousel.appendChild(prevButton);
+        carousel.appendChild(nextButton);
 
-    const col4 = document.createElement('div');
-    col4.classList.add('col');
+        col1.appendChild(carousel);
+        //end carousel
+        const col2 = document.createElement('div');
+        col2.classList.add('col-sm');
+        //desc
+        const row2 = document.createElement('div');
+        row2.classList.add('row');
 
-    const logoimg = document.createElement('img');
-    logoimg.classList.add('margen');
-    logoimg.setAttribute('src', 'http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png');
-    logoimg.setAttribute('width', '150');
-    logoimg.setAttribute('height', '65');
+        const col4 = document.createElement('div');
+        col4.classList.add('col');
 
-    const dl = document.createElement('dl');
+        const logoimg = document.createElement('img');
+        logoimg.classList.add('margen');
+        logoimg.setAttribute('src', 'http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png');
+        logoimg.setAttribute('width', '150');
+        logoimg.setAttribute('height', '65');
 
-    const dt1 = document.createElement('dt');
-    dt1.textContent = 'Horario: ';
-    const dd1 = document.createElement('dd');
-    dd1.textContent = 'Mo,Tu,We,Th,Fr 08:00-16:00';
+        const dl = document.createElement('dl');
 
-    const dt2 = document.createElement('dt');
-    dt2.textContent = 'Teléfono: ';
-    const dd2 = document.createElement('dd');
-    dd2.textContent = '971533889';
+        const dt1 = document.createElement('dt');
+        dt1.textContent = 'Horario: ';
+        const dd1 = document.createElement('dd');
+        dd1.textContent = 'Mo,Tu,We,Th,Fr 08:00-16:00';
 
-    const dt3 = document.createElement('dt');
-    dt3.textContent = 'Email: ';
-    const dd3 = document.createElement('dd');
-    const a = document.createElement('a');
-    a.setAttribute('href', '#');
-    a.classList.add('text-navy');
-    a.textContent = 'info@vinyesmortitx.com';
-    dd3.appendChild(a);
+        const dt2 = document.createElement('dt');
+        dt2.textContent = 'Teléfono: ';
+        const dd2 = document.createElement('dd');
+        dd2.textContent = '971533889';
 
-    const dt4 = document.createElement('dt');
-    dt4.textContent = 'Web: ';
-    const dd4 = document.createElement('dd');
-    const a2 = document.createElement('a');
-    a2.setAttribute('href', 'http://www.vinyesmortitx.com');
-    a2.classList.add('text-navy');
-    a2.textContent = 'http://www.vinyesmortitx.com';
-    dd4.appendChild(a2);
+        const dt3 = document.createElement('dt');
+        dt3.textContent = 'Email: ';
+        const dd3 = document.createElement('dd');
+        const a = document.createElement('a');
+        a.setAttribute('href', '#');
+        a.classList.add('text-navy');
+        a.textContent = 'info@vinyesmortitx.com';
+        dd3.appendChild(a);
 
-    const dt5 = document.createElement('dt');
-    dt5.textContent = 'Dirección: ';
-    const br = document.createElement('br');
-    const dd5_1 = document.createElement('dd');
-    dd5_1.textContent = 'Ctra. Pollença - Lluc- Km 10,9';
-    const dd5_2 = document.createElement('dd');
-    dd5_2.textContent = 'Mallorca, Escorca, 07315';
+        const dt4 = document.createElement('dt');
+        dt4.textContent = 'Web: ';
+        const dd4 = document.createElement('dd');
+        const a2 = document.createElement('a');
+        a2.setAttribute('href', 'http://www.vinyesmortitx.com');
+        a2.classList.add('text-navy');
+        a2.textContent = 'http://www.vinyesmortitx.com';
+        dd4.appendChild(a2);
 
-    dl.appendChild(dt1);
-    const iconHorario = document.createElement('i');
-    iconHorario.className = "fa-solid fa-clock";
-    dt1.appendChild(iconHorario);
-    dl.appendChild(dd1);
-    dl.appendChild(dt2);
-    const iconPhone = document.createElement('i');
-    iconPhone.className = "fa-solid fa-phone";
-    dt2.appendChild(iconPhone);
-    dl.appendChild(dd2);
-    dl.appendChild(dt3);
-    const iconEmail = document.createElement('i');
-    iconEmail.className = "fa-solid fa-envelope";
-    dt3.appendChild(iconEmail);
-    dl.appendChild(dd3);
-    dl.appendChild(dt4);
-    const iconWeb = document.createElement('i');
-    iconWeb.className = "fa-solid fa-at";
-    dt4.appendChild(iconWeb);
-    dl.appendChild(dd4);
-    dl.appendChild(dt5);
-    const iconDir = document.createElement('i');
-    iconDir.className = "fa-solid fa-location-dot";
-    dt5.appendChild(iconDir);
-    dl.appendChild(br);
-    dl.appendChild(dd5_1);
-    dl.appendChild(dd5_2);
+        const dt5 = document.createElement('dt');
+        dt5.textContent = 'Dirección: ';
+        const br = document.createElement('br');
+        const dd5_1 = document.createElement('dd');
+        dd5_1.textContent = 'Ctra. Pollença - Lluc- Km 10,9';
+        const dd5_2 = document.createElement('dd');
+        dd5_2.textContent = 'Mallorca, Escorca, 07315';
 
-    const div1 = document.createElement('div');
-    div1.classList.add('col-sm');
-    div1.appendChild(dl);
+        dl.appendChild(dt1);
+        const iconHorario = document.createElement('i');
+        iconHorario.className = "fa-solid fa-clock";
+        dt1.appendChild(iconHorario);
+        dl.appendChild(dd1);
+        dl.appendChild(dt2);
+        const iconPhone = document.createElement('i');
+        iconPhone.className = "fa-solid fa-phone";
+        dt2.appendChild(iconPhone);
+        dl.appendChild(dd2);
+        dl.appendChild(dt3);
+        const iconEmail = document.createElement('i');
+        iconEmail.className = "fa-solid fa-envelope";
+        dt3.appendChild(iconEmail);
+        dl.appendChild(dd3);
+        dl.appendChild(dt4);
+        const iconWeb = document.createElement('i');
+        iconWeb.className = "fa-solid fa-at";
+        dt4.appendChild(iconWeb);
+        dl.appendChild(dd4);
+        dl.appendChild(dt5);
+        const iconDir = document.createElement('i');
+        iconDir.className = "fa-solid fa-location-dot";
+        dt5.appendChild(iconDir);
+        dl.appendChild(br);
+        dl.appendChild(dd5_1);
+        dl.appendChild(dd5_2);
 
-    const div2 = document.createElement('div');
-    div2.classList.add('col-sm');
-    div2.appendChild(div1);
+        const div1 = document.createElement('div');
+        div1.classList.add('col-sm');
+        div1.appendChild(dl);
 
-    col4.appendChild(logoimg);
-    col4.appendChild(div2);
+        const div2 = document.createElement('div');
+        div2.classList.add('col-sm');
+        div2.appendChild(div1);
 
-    const colSmDiv = document.createElement('div');
-    colSmDiv.className = 'col-sm';
+        col4.appendChild(logoimg);
+        col4.appendChild(div2);
 
-    const containerDiv = document.createElement('div');
-    containerDiv.className = 'container margen';
+        const colSmDiv = document.createElement('div');
+        colSmDiv.className = 'col-sm';
 
-    const customScrollbarDiv = document.createElement('div');
-    customScrollbarDiv.className = 'custom-scrollbar-css';
+        const containerDiv = document.createElement('div');
+        containerDiv.className = 'container margen';
 
-    const italicPara = document.createElement('p');
-    italicPara.className = 'font-italic';
-    italicPara.textContent = 'El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.';
+        const customScrollbarDiv = document.createElement('div');
+        customScrollbarDiv.className = 'custom-scrollbar-css';
 
-    customScrollbarDiv.appendChild(italicPara);
-    containerDiv.appendChild(customScrollbarDiv);
-    colSmDiv.appendChild(containerDiv);
+        const italicPara = document.createElement('p');
+        italicPara.className = 'font-italic';
+        italicPara.textContent = 'El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.';
 
-    const moreInfoButton = document.createElement('button');
-    moreInfoButton.className = 'add-to-cart margen';
-    moreInfoButton.textContent = 'Más información';
+        customScrollbarDiv.appendChild(italicPara);
+        containerDiv.appendChild(customScrollbarDiv);
+        colSmDiv.appendChild(containerDiv);
 
-    colSmDiv.appendChild(moreInfoButton);
+        const moreInfoButton = document.createElement('button');
+        moreInfoButton.className = 'add-to-cart margen';
+        moreInfoButton.textContent = 'Más información';
 
-    row2.appendChild(col4);
-    row2.appendChild(colSmDiv);
-    col2.appendChild(row2);
-    //end desc
+        colSmDiv.appendChild(moreInfoButton);
 
-    fila.appendChild(col1);
-    fila.appendChild(col2);
+        row2.appendChild(col4);
+        row2.appendChild(colSmDiv);
+        col2.appendChild(row2);
+        //end desc
 
-    container.appendChild(fila);
-    row.appendChild(container);
+        fila.appendChild(col1);
+        fila.appendChild(col2);
+
+        container.appendChild(fila);
+        col.appendChild(container);
+        //end for
+    }
+    row.appendChild(col);
 
 
 }
