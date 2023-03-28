@@ -1,10 +1,134 @@
 var carrusel = null;
+var opcionActiva = 0; //0 : descripcion  1: Opiniones  2: Videos
 
 window.onload = function () {
     //crearCarouselPrincipal();
     //filtrado();
     //listadoCard();
     botonesNav();
+    activarBotonesPrincipal();
+}
+
+function paginaProducto() {
+    const container = document.createElement("div");
+    container.className = "container margen granate aplicar-borde";
+
+    const col = document.createElement("div");
+    col.className = "col bg-white aplicar-borde margen";
+
+    const productContent = document.createElement("div");
+    productContent.className = "product-content product-wrap clearfix product-deatil";
+
+    const row = document.createElement("div");
+    row.className = "row";
+
+    const imageCol = document.createElement("div");
+    imageCol.className = "col-md-5 col-sm-12 col-xs-12";
+
+    const productImage = document.createElement("div");
+    productImage.className = "product-image";
+
+    const carousel = document.createElement("div");
+    carousel.id = "carouselExampleControls";
+    carousel.className = "carousel slide";
+    carousel.setAttribute("data-bs-ride", "carousel");
+
+    const carouselInner = document.createElement("div");
+    carouselInner.className = "carousel-inner";
+
+    const carouselItem1 = document.createElement("div");
+    carouselItem1.className = "carousel-item active";
+
+    const img1 = document.createElement("img");
+    img1.src = "images.jpg";
+    img1.className = "d-block w-100";
+    img1.alt = "...";
+
+    const carouselItem2 = document.createElement("div");
+    carouselItem2.className = "carousel-item";
+
+    const img2 = document.createElement("img");
+    img2.src = "images.jpg";
+    img2.className = "d-block w-100";
+    img2.alt = "...";
+
+    const carouselItem3 = document.createElement("div");
+    carouselItem3.className = "carousel-item";
+
+    const img3 = document.createElement("img");
+    img3.src = "images.jpg";
+    img3.className = "d-block w-100";
+    img3.alt = "...";
+
+    const carouselPrevBtn = document.createElement("button");
+    carouselPrevBtn.className = "carousel-control-prev";
+    carouselPrevBtn.type = "button";
+    carouselPrevBtn.setAttribute("data-bs-target", "#carouselExampleControls");
+    carouselPrevBtn.setAttribute("data-bs-slide", "prev");
+
+    const carouselPrevIcon = document.createElement("span");
+    carouselPrevIcon.className = "carousel-control-prev-icon";
+    carouselPrevIcon.setAttribute("aria-hidden", "true");
+
+    const carouselPrevSpan = document.createElement("span");
+    carouselPrevSpan.className = "visually-hidden";
+    carouselPrevSpan.innerHTML = "Previous";
+
+    const carouselNextBtn = document.createElement("button");
+    carouselNextBtn.className = "carousel-control-next";
+    carouselNextBtn.type = "button";
+    carouselNextBtn.setAttribute("data-bs-target", "#carouselExampleControls");
+    carouselNextBtn.setAttribute("data-bs-slide", "next");
+
+    const carouselNextIcon = document.createElement("span");
+    carouselNextIcon.className = "carousel-control-next-icon";
+    carouselNextIcon.setAttribute("aria-hidden", "true");
+
+    const carouselNextSpan = document.createElement("span");
+    carouselNextSpan.className = "visually-hidden";
+    carouselNextSpan.innerHTML = "Next";
+
+    const hr1 = document.createElement("hr");
+
+    const img4 = document.createElement("img");
+    img4.src = "img/tiempo.png";
+
+    const hr2 = document.createElement("hr");
+
+    const detailsCol = document.createElement("div");
+    detailsCol.className = "col-md-6 col-md-offset-1 col-sm-12 col-xs-12";
+
+    const name = document.createElement("h2");
+    name.className = "name";
+
+    const brandName = document.createElement("br");
+    brandName.innerHTML = "Mortitx";
+
+    const star1 = document.createElement("i");
+    star1.className = "fa fa-star fa-2x text-primary";
+
+    const star2 = document.createElement("i");
+    star2.className = "fa fa-star fa-2x text-primary";
+
+    const star3 = document.createElement("i");
+    star3.className = "fa fa-star fa-2x text-primary";
+
+    const star4 = document.createElement("i");
+    star4.className = "fa fa-star fa-2x text-muted";
+
+    const span1 = document.createElement('span');
+    span1.className = "fa fa-2x";
+
+    const g = document.createElement('h5');
+    g.innerText = "(109) Votes";
+
+    span1.appendChild(g);
+
+    const ref = document.createElement('a');
+    a.href = "";
+    a.innerText = "109 customer reviews";
+
+    //seguir
 }
 
 function filtrado2() {
@@ -21,7 +145,7 @@ function filtrado2() {
 
     const title = document.createElement("h3");
     title.classList.add("card-title", "margen");
-    title.textContent = "Buscar bodega";
+    //title.textContent = " ";
 
     const form = document.createElement("form");
     form.classList.add("form-inline");
@@ -38,7 +162,7 @@ function filtrado2() {
     locationInput.setAttribute("type", "text");
     locationInput.setAttribute("id", "location-filter");
     locationInput.setAttribute("name", "location");
-    locationInput.classList.add("form-control", "mr-3");
+    locationInput.classList.add("form-control", "mr-3", "margen");
     locationInput.setAttribute("placeholder", "Ingrese una ubicación");
 
     locationFormGroup.appendChild(locationLabel);
@@ -182,22 +306,127 @@ function filtrado2() {
     weekFormGroup.appendChild(weekLabel);
     weekFormGroup.appendChild(weekSelect);
 
+    const f = document.createElement('div');
+    f.className = 'row';
+
+    const f1 = document.createElement('div');
+    f1.className = 'col-sm';
+
     const submit = document.createElement('button');
     submit.setAttribute('type', 'submit');
     submit.className = "btn btn-primary mx-3";
     submit.textContent = "Buscar";
 
+    f1.appendChild(submit);
+    f.appendChild(f1);
+
+    const f2 = document.createElement('div');
+    f2.className = 'col-sm';
+
+    const checkboxDiv = document.createElement('div');
+    checkboxDiv.classList.add('form-check');
+
+    const checkboxInput = document.createElement('input');
+    checkboxInput.classList.add('form-check-input');
+    checkboxInput.type = 'checkbox';
+    checkboxInput.value = '';
+    checkboxInput.id = 'flexCheckChecked';
+    checkboxInput.checked = true;
+
+    const checkboxLabel = document.createElement('label');
+    checkboxLabel.classList.add('form-check-label');
+    checkboxLabel.setAttribute('for', 'flexCheckChecked');
+    checkboxLabel.textContent = 'Favoritos';
+
+    checkboxDiv.appendChild(checkboxInput);
+    checkboxDiv.appendChild(checkboxLabel);
+
+    f2.appendChild(checkboxDiv);
+    f.appendChild(f2);
+
+    const f3 = document.createElement('div');
+    f3.className = 'col-sm';
+
+    const checkboxDiv2 = document.createElement('div');
+    checkboxDiv2.classList.add('form-check');
+
+    const checkboxInput2 = document.createElement('input');
+    checkboxInput2.classList.add('form-check-input');
+    checkboxInput2.type = 'checkbox';
+    checkboxInput2.value = '';
+    checkboxInput2.id = 'flexCheckChecked';
+    checkboxInput2.checked = true;
+
+    const checkboxLabel2 = document.createElement('label');
+    checkboxLabel2.classList.add('form-check-label');
+    checkboxLabel2.setAttribute('for', 'flexCheckChecked');
+    checkboxLabel2.textContent = 'Abierto';
+
+    checkboxDiv2.appendChild(checkboxInput2);
+    checkboxDiv2.appendChild(checkboxLabel2);
+
+    f3.appendChild(checkboxDiv2);
+    f.appendChild(f3);
+
     form.appendChild(locationFormGroup);
     form.appendChild(ratingFormGroup);
     form.appendChild(timeFormGroup);
     form.appendChild(weekFormGroup);
-    form.appendChild(submit);
+    form.appendChild(f);
     title.appendChild(form);
     row.appendChild(title);
     container.appendChild(row);
     containerMain.appendChild(container);
     dad.appendChild(containerMain);
 
+}
+
+function activarBotonesPrincipal() {
+    const desc = document.getElementById('desc-tab');
+    const op = document.getElementById('opinion-tab');
+    const vid = document.getElementById('video-tab');
+
+    desc.href = "javascript:changeOpcionProducto(0)";
+    op.href = "javascript:changeOpcionProducto(1)";
+    vid.href = "javascript:changeOpcionProducto(2)";
+}
+
+function changeOpcionProducto(opcion) {
+    switch (opcionActiva) {
+        case 0:
+            const activo = document.getElementById('desc-tab');
+            activo.className = "nav-link border-0 text-uppercase font-weight-bold";
+            activo.setAttribute('aria-selected', 'false');
+            break;
+        case 1:
+            const activo1 = document.getElementById('opinion-tab');
+            activo1.className = "nav-link border-0 text-uppercase font-weight-bold";
+            activo1.setAttribute('aria-selected', 'false');
+            break;
+        case 2:
+            const activo2 = document.getElementById('video-tab');
+            activo2.className = "nav-link border-0 text-uppercase font-weight-bold";
+            activo2.setAttribute('aria-selected', 'false');
+            break;
+    }
+    switch (opcion) {
+        case 0:
+            const activo = document.getElementById('desc-tab');
+            activo.className = "nav-link border-0 text-uppercase font-weight-bold active";
+            activo.setAttribute('aria-selected', 'true');
+            break;
+        case 1:
+            const activo1 = document.getElementById('opinion-tab');
+            activo1.className = "nav-link border-0 text-uppercase font-weight-bold active";
+            activo1.setAttribute('aria-selected', 'true');
+            break;
+        case 2:
+            const activo2 = document.getElementById('video-tab');
+            activo2.className = "nav-link border-0 text-uppercase font-weight-bold active";
+            activo2.setAttribute('aria-selected', 'true');
+            break;
+    }
+    opcionActiva = opcion;
 }
 
 function botonesNav() {
@@ -471,7 +700,7 @@ function listadoCardXL() {
         col1.classList.add('col-sm');
         //meter carousel
         const carousel = document.createElement('div');
-        carousel.setAttribute('id', 'carouselExamplex'+i);
+        carousel.setAttribute('id', 'carouselExamplex' + i);
         carousel.classList.add('carousel', 'slide', 'margen');
         carousel.setAttribute('data-bs-ride', 'carousel');
 
@@ -508,7 +737,7 @@ function listadoCardXL() {
 
         const prevButton = document.createElement('button');
         prevButton.setAttribute('type', 'button');
-        prevButton.setAttribute('data-bs-target', '#carouselExamplex'+i);
+        prevButton.setAttribute('data-bs-target', '#carouselExamplex' + i);
         prevButton.setAttribute('data-bs-slide', 'prev');
         prevButton.classList.add('carousel-control-prev');
 
@@ -524,7 +753,7 @@ function listadoCardXL() {
 
         const nextButton = document.createElement('button');
         nextButton.setAttribute('type', 'button');
-        nextButton.setAttribute('data-bs-target', '#carouselExamplex'+i);
+        nextButton.setAttribute('data-bs-target', '#carouselExamplex' + i);
         nextButton.setAttribute('data-bs-slide', 'next');
         nextButton.classList.add('carousel-control-next');
 
@@ -657,7 +886,17 @@ function listadoCardXL() {
         moreInfoButton.className = 'add-to-cart margen';
         moreInfoButton.textContent = 'Más información';
 
+        const boton2 = document.createElement('button');
+        boton2.classList.add('like', 'btn', 'btn-default', 'margen');
+        boton2.type = 'button';
+
+        const spanboton = document.createElement('span');
+        spanboton.classList.add('fa', 'fa-heart');
+
+        boton2.appendChild(spanboton);
+
         colSmDiv.appendChild(moreInfoButton);
+        colSmDiv.appendChild(boton2);
 
         row2.appendChild(col4);
         row2.appendChild(colSmDiv);
@@ -733,10 +972,10 @@ function listadoCard() {
 
         const imgCard = document.createElement('img');
         imgCard.className = "img-fluid d-block mx-auto mb-3 redi";
-        imgCard.setAttribute('src', imgs[i]);
+        imgCard.setAttribute('src', imgs[0]);
 
         const h5 = document.createElement('h5');
-        h5.innerText = textIcon[i];
+        h5.innerText = textIcon[0];
 
         const desc = document.createElement('p');
         desc.className = "small text-muted font-italic";
@@ -1026,7 +1265,17 @@ function listadoMap() {
     moreInfoButton.className = 'add-to-cart margen';
     moreInfoButton.textContent = 'Más información';
 
+    const boton2 = document.createElement('button');
+    boton2.classList.add('like', 'btn', 'btn-default', 'margen');
+    boton2.type = 'button';
+
+    const spanboton = document.createElement('span');
+    spanboton.classList.add('fa', 'fa-heart');
+
+    boton2.appendChild(spanboton);
+
     colSmDiv.appendChild(moreInfoButton);
+    colSmDiv.appendChild(boton2);
 
     row2.appendChild(col4);
     row2.appendChild(colSmDiv);
