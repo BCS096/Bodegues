@@ -2,11 +2,7 @@ var carrusel = null;
 var opcionActiva = 0; //0 : descripcion  1: Opiniones  2: Videos
 
 window.onload = function () {
-    //crearCarouselPrincipal();
-    //filtrado();
-    //listadoCard();
     botonesNav();
-    activarBotonesPrincipal();
 }
 
 function descripcionProducto(dad) {
@@ -319,7 +315,7 @@ function paginaProducto() {
     span1.appendChild(g);
 
     const ref = document.createElement('a');
-    ref.href = "";
+    ref.href = "javascript:gestorVisionado(4)";
     ref.innerText = "109 customer reviews";
 
     name.appendChild(brandName);
@@ -382,7 +378,6 @@ function paginaProducto() {
     colu.appendChild(im);
     colu.appendChild(colsm);
 
-    //
     const colsm1 = document.createElement('div');
     colsm1.className = 'col-sm';
 
@@ -449,7 +444,7 @@ function paginaProducto() {
     const hr4 = document.createElement('hr');
 
     const div = document.createElement('div');
-    div.classList.add('p-5', 'bg-white', 'rounded', 'shadow', 'mb-5');
+    div.classList.add('p-5', 'rounded', 'shadow', 'mb-5');
 
     // create tabs
     const ul = document.createElement('ul');
@@ -459,19 +454,19 @@ function paginaProducto() {
 
     // create tab items
     const liDesc = document.createElement('li');
-    liDesc.classList.add('nav-item', 'flex-sm-fill');
+    liDesc.classList.add('nav-item', 'flex-sm-fill','granate');
     const aDesc = document.createElement('a');
     aDesc.id = 'desc-tab';
     aDesc.dataset.toggle = 'tab';
     aDesc.role = 'tab';
     aDesc.setAttribute('aria-controls', 'home');
     aDesc.setAttribute('aria-selected', 'true');
-    aDesc.classList.add('nav-link', 'border-0', 'text-uppercase', 'font-weight-bold', 'active');
+    aDesc.classList.add('nav-link','bg-danger', 'border-0', 'text-uppercase', 'font-weight-bold', 'active');
     aDesc.textContent = 'Descripción';
     liDesc.appendChild(aDesc);
 
     const liOpinion = document.createElement('li');
-    liOpinion.classList.add('nav-item', 'flex-sm-fill');
+    liOpinion.classList.add('nav-item', 'flex-sm-fill','granate');
     const aOpinion = document.createElement('a');
     aOpinion.id = 'opinion-tab';
     aOpinion.dataset.toggle = 'tab';
@@ -483,7 +478,7 @@ function paginaProducto() {
     liOpinion.appendChild(aOpinion);
 
     const liVideo = document.createElement('li');
-    liVideo.classList.add('nav-item', 'flex-sm-fill');
+    liVideo.classList.add('nav-item', 'flex-sm-fill','granate');
     const aVideo = document.createElement('a');
     aVideo.id = 'video-tab';
     aVideo.dataset.toggle = 'tab';
@@ -522,6 +517,8 @@ function paginaProducto() {
     row.appendChild(detailsCol);
 
     productContent.appendChild(row);
+
+    vinoslist(productContent);
 
     col.appendChild(productContent);
     container.appendChild(col);
@@ -815,19 +812,19 @@ function changeOpcionProducto(opcion) {
     switch (opcion) {
         case 0:
             const activo = document.getElementById('desc-tab');
-            activo.className = "nav-link border-0 text-uppercase font-weight-bold active";
+            activo.className = "nav-link bg-danger border-0 text-uppercase font-weight-bold active";
             activo.setAttribute('aria-selected', 'true');
             descripcionProducto(dad);
             break;
         case 1:
             const activo1 = document.getElementById('opinion-tab');
-            activo1.className = "nav-link border-0 text-uppercase font-weight-bold active";
+            activo1.className = "nav-link bg-danger border-0 text-uppercase font-weight-bold active";
             activo1.setAttribute('aria-selected', 'true');
             opinionProducto(dad);
             break;
         case 2:
             const activo2 = document.getElementById('video-tab');
-            activo2.className = "nav-link border-0 text-uppercase font-weight-bold active";
+            activo2.className = "nav-link bg-danger border-0 text-uppercase font-weight-bold active";
             activo2.setAttribute('aria-selected', 'true');
             videoProducto(dad);
             break;
@@ -1739,9 +1736,19 @@ function gestorVisionado(vision) {
             seccion.removeChild(seccion.firstChild);
         }
     }
-    if (vision == 3) {
-        paginaProducto();
-        activarBotonesPrincipal();
+    if (vision >= 3) {
+
+        if (vision == 3) {
+            paginaProducto();
+            activarBotonesPrincipal();
+        }
+        if (vision == 4) {
+            listaComentarios(seccion);
+        }
+        if (vision == 5) {
+            formComentario(seccion);
+        }
+
     } else {
         filtrado2();
         switch (vision) {
@@ -1803,3 +1810,663 @@ $('.owl-carousel').owlCarousel({
         }
     }
 });
+
+function formComentario(dad) {
+    const container = document.createElement('div');
+    container.classList.add('container', 'granate', 'aplicar-borde', 'margen');
+
+    const row = document.createElement('div');
+    row.classList.add('row', 'centro');
+    container.appendChild(row);
+
+    const form = document.createElement('form');
+    form.id = 'Highlighted-form';
+    form.classList.add('col-sm-6', 'col-sm-offset-3');
+    form.setAttribute('novalidate', '');
+    row.appendChild(form);
+
+    const nameGroup = document.createElement('div');
+    nameGroup.classList.add('form-group');
+    form.appendChild(nameGroup);
+
+    const nameLabel = document.createElement('label');
+    nameLabel.classList.add('control-label');
+    nameLabel.setAttribute('for', 'contact-name');
+    nameLabel.textContent = 'Nombre';
+    nameGroup.appendChild(nameLabel);
+
+    const nameControls = document.createElement('div');
+    nameControls.classList.add('controls');
+    nameGroup.appendChild(nameControls);
+
+    const nameInput = document.createElement('input');
+    nameInput.id = 'contact-name';
+    nameInput.name = 'contactName';
+    nameInput.classList.add('form-control', 'requiredField', 'Highlighted-label');
+    nameInput.setAttribute('placeholder', 'Nombre');
+    nameInput.setAttribute('data-new-placeholder', 'Nombre');
+    nameInput.setAttribute('type', 'text');
+    nameInput.setAttribute('data-error-empty', 'Please enter your name');
+    nameControls.appendChild(nameInput);
+
+    const nameIcon = document.createElement('i');
+    nameIcon.classList.add('fa', 'fa-user');
+    nameControls.appendChild(nameIcon);
+
+    const emailGroup = document.createElement('div');
+    emailGroup.classList.add('form-group');
+    form.appendChild(emailGroup);
+
+    const emailLabel = document.createElement('label');
+    emailLabel.classList.add('control-label');
+    emailLabel.setAttribute('for', 'contact-mail');
+    emailLabel.textContent = 'Localidad';
+    emailGroup.appendChild(emailLabel);
+
+    const emailControls = document.createElement('div');
+    emailControls.classList.add('controls');
+    emailGroup.appendChild(emailControls);
+
+    const emailInput = document.createElement('input');
+    emailInput.id = 'contact-mail';
+    emailInput.name = 'localidad';
+    emailInput.classList.add('form-control', 'requiredField', 'Highlighted-label');
+    emailInput.setAttribute('placeholder', 'Localidad');
+    emailInput.setAttribute('data-new-placeholder', 'Localidad');
+    emailInput.setAttribute('type', 'email');
+    emailInput.setAttribute('data-error-empty', 'Please enter your email');
+    emailInput.setAttribute('data-error-invalid', 'Invalid email address');
+    emailControls.appendChild(emailInput);
+
+    const emailIcon = document.createElement('i');
+    emailIcon.classList.add('fa', 'fa-envelope');
+    emailControls.appendChild(emailIcon);
+
+    const messageGroup = document.createElement('div');
+    messageGroup.classList.add('form-group');
+    form.appendChild(messageGroup);
+
+    const messageLabel = document.createElement('label');
+    messageLabel.classList.add('control-label');
+    messageLabel.setAttribute('for', 'contact-message');
+    messageLabel.textContent = 'Opinión';
+    messageGroup.appendChild(messageLabel);
+
+    const messageControls = document.createElement('div');
+    messageControls.classList.add('controls');
+    messageGroup.appendChild(messageControls);
+
+    const messageTextarea = document.createElement('textarea');
+    messageTextarea.id = 'contact-message';
+    messageTextarea.name = 'comments';
+    messageTextarea.classList.add('form-control', 'requiredField', 'Highlighted-label');
+    messageTextarea.setAttribute('placeholder', 'Opinión');
+    messageTextarea.setAttribute('data-new-placeholder', 'Opinión');
+    messageTextarea.setAttribute('rows', '6');
+    messageTextarea.setAttribute('data-error-empty', 'Please enter your message');
+    messageControls.appendChild(messageTextarea);
+
+    const messageIcon = document.createElement('i');
+    messageIcon.classList.add('fa', 'fa-comment');
+    messageControls.appendChild(messageIcon);
+
+    const submitButton = document.createElement('button');
+    submitButton.name = 'submit';
+    submitButton.type = 'submit';
+    submitButton.innerText = 'Enviar';
+    submitButton.className = 'margen';
+    submitButton.classList.add('btn', 'btn-info', 'btn-block');
+    form.appendChild(submitButton);
+    dad.appendChild(container);
+}
+
+function listaComentarios(dad) {
+    const container = document.createElement('div');
+    container.className = 'container granate aplicar-borde margen';
+
+    const reviews = document.createElement('div');
+    reviews.setAttribute('id', 'reviews');
+    reviews.className = ' col review-section bg-white aplicar-borde margen';
+
+    const div = document.createElement('div');
+    div.classList.add('d-flex', 'align-items-center', 'justify-content-between', 'mb-4');
+
+    const h4 = document.createElement('h4');
+    h4.classList.add('m-0');
+    h4.textContent = '37 Reviews';
+    div.appendChild(h4);
+
+    const select = document.createElement('select');
+    select.classList.add('custom-select', 'custom-select-sm', 'border-0', 'shadow-sm', 'ml-2', 'select2-hidden-accessible');
+    select.setAttribute('data-select2-id', '1');
+    select.setAttribute('tabindex', '-1');
+    select.setAttribute('aria-hidden', 'true');
+    div.appendChild(select);
+
+    const option1 = document.createElement('option');
+    option1.setAttribute('data-select2-id', '3');
+    option1.textContent = 'Most Relevant';
+    select.appendChild(option1);
+
+    const option2 = document.createElement('option');
+    option2.textContent = 'Most Recent';
+    select.appendChild(option2);
+
+    const span1 = document.createElement('span');
+    span1.classList.add('select2', 'select2-container', 'select2-container--default');
+    span1.setAttribute('dir', 'ltr');
+    span1.setAttribute('data-select2-id', '2');
+    span1.style.width = '188px';
+    div.appendChild(span1);
+
+    const span2 = document.createElement('span');
+    span2.classList.add('selection');
+    span1.appendChild(span2);
+
+    const span3 = document.createElement('span');
+    span3.classList.add('select2-selection', 'select2-selection--single');
+    span3.setAttribute('role', 'combobox');
+    span3.setAttribute('aria-haspopup', 'true');
+    span3.setAttribute('aria-expanded', 'false');
+    span3.setAttribute('tabindex', '0');
+    span3.setAttribute('aria-labelledby', 'select2-qd66-container');
+    span2.appendChild(span3);
+
+    const span4 = document.createElement('span');
+    span4.classList.add('select2-selection__rendered');
+    span4.setAttribute('id', 'select2-qd66-container');
+    span4.setAttribute('role', 'textbox');
+    span4.setAttribute('aria-readonly', 'true');
+    span4.setAttribute('title', 'Most Relevant');
+    span4.textContent = 'Most Relevant';
+    span3.appendChild(span4);
+
+    const span5 = document.createElement('span');
+    span5.classList.add('select2-selection__arrow');
+    span5.setAttribute('role', 'presentation');
+    span3.appendChild(span5);
+
+    const b = document.createElement('b');
+    b.setAttribute('role', 'presentation');
+    span5.appendChild(b);
+
+    const span6 = document.createElement('span');
+    span6.classList.add('dropdown-wrapper');
+    span6.setAttribute('aria-hidden', 'true');
+    span1.appendChild(span6);
+
+    const divRow = document.createElement("div");
+    divRow.classList.add("row", "aplicar-borde", "margen");
+
+    const divCol = document.createElement("div");
+    divCol.classList.add("col-md-6");
+
+    const table = document.createElement("table");
+    table.classList.add("stars-counters");
+
+    const tbody = document.createElement("tbody");
+
+    const tr1 = document.createElement("tr");
+
+    const td1 = document.createElement("td");
+
+    const span1x = document.createElement("span");
+
+    const button1 = document.createElement("button");
+    button1.classList.add("fit-button", "fit-button-color-blue", "fit-button-fill-ghost", "fit-button-size-medium", "stars-filter");
+    button1.textContent = "5 Stars";
+
+    span1x.appendChild(button1);
+    td1.appendChild(span1x);
+
+    const td2 = document.createElement("td");
+    td2.classList.add("progress-bar-container");
+
+    const div1 = document.createElement("div");
+    div1.classList.add("fit-progressbar", "fit-progressbar-bar", "star-progress-bar");
+
+    const div2 = document.createElement("div");
+    div2.classList.add("fit-progressbar-background");
+
+    const span2x = document.createElement("span");
+    span2x.classList.add("progress-fill");
+    span2x.style.width = "97.2973%";
+
+    div2.appendChild(span2x);
+    div1.appendChild(div2);
+    td2.appendChild(div1);
+
+    const td3 = document.createElement("td");
+    td3.classList.add("star-num");
+    td3.textContent = "(36)";
+
+    tr1.appendChild(td1);
+    tr1.appendChild(td2);
+    tr1.appendChild(td3);
+
+    const tr2 = document.createElement("tr");
+
+    const td4 = document.createElement("td");
+
+    const span3x = document.createElement("span");
+
+    const button2 = document.createElement("button");
+    button2.classList.add("fit-button", "fit-button-color-blue", "fit-button-fill-ghost", "fit-button-size-medium", "stars-filter");
+    button2.textContent = "4 Stars";
+
+    span3x.appendChild(button2);
+    td4.appendChild(span3x);
+
+    const td5 = document.createElement("td");
+    td5.classList.add("progress-bar-container");
+
+    const div3 = document.createElement("div");
+    div3.classList.add("fit-progressbar", "fit-progressbar-bar", "star-progress-bar");
+
+    const div4 = document.createElement("div");
+    div4.classList.add("fit-progressbar-background");
+
+    const span4x = document.createElement("span");
+    span4x.classList.add("progress-fill");
+    span4x.style.width = "2.2973%";
+
+    div4.appendChild(span4x);
+    div3.appendChild(div4);
+    td5.appendChild(div3);
+
+    const td6 = document.createElement("td");
+    td6.classList.add("star-num");
+    td6.textContent = "(2)";
+
+    tr2.appendChild(td4);
+    tr2.appendChild(td5);
+    tr2.appendChild(td6);
+
+    const tr3 = document.createElement("tr");
+
+    const td7 = document.createElement("td");
+
+    const span5x = document.createElement("span");
+
+    const button3 = document.createElement("button");
+    button3.classList.add("fit-button", "fit-button-color-blue", "fit-button-fill-ghost", "fit-button-size-medium", "stars-filter");
+    button3.textContent = "3 Stars";
+
+    span5x.appendChild(button3);
+    td7.appendChild(span5x);
+
+    const td8 = document.createElement("td");
+    td8.classList.add("progress-bar-container");
+
+    const div5 = document.createElement("div");
+    div5.classList.add("fit-progressbar", "fit-progressbar-bar", "star-progress-bar");
+
+    const div6 = document.createElement("div");
+    div6.classList.add("fit-progressbar-background");
+
+    const span6x = document.createElement("span");
+    span6x.classList.add("progress-fill");
+    span6x.style.width = "0";
+
+    div6.appendChild(span6x);
+    div5.appendChild(div6);
+    td8.appendChild(div5);
+
+    const td9 = document.createElement("td");
+    td9.classList.add('star-num');
+    td9.textContent = '(0)';
+
+    tr3.appendChild(td7);
+    tr3.appendChild(td8);
+    tr3.appendChild(td9);
+
+    const tr4 = document.createElement("tr");
+
+    const td10 = document.createElement("td");
+
+    const span7x = document.createElement("span");
+
+    const button4 = document.createElement("button");
+    button4.classList.add("fit-button", "fit-button-color-blue", "fit-button-fill-ghost", "fit-button-size-medium", "stars-filter");
+    button4.textContent = "2 Stars";
+
+    span7x.appendChild(button4);
+    td10.appendChild(span7x);
+
+    const td11 = document.createElement("td");
+    td11.classList.add("progress-bar-container");
+
+    const div7 = document.createElement("div");
+    div7.classList.add("fit-progressbar", "fit-progressbar-bar", "star-progress-bar");
+
+    const div8 = document.createElement("div");
+    div8.classList.add("fit-progressbar-background");
+
+    const span8x = document.createElement("span");
+    span8x.classList.add("progress-fill");
+    span8x.style.width = "0";
+
+    div8.appendChild(span8x);
+    div7.appendChild(div8);
+    td11.appendChild(div7);
+
+    const td12 = document.createElement("td");
+    td12.classList.add('star-num');
+    td12.textContent = '(0)';
+
+    tr4.appendChild(td10);
+    tr4.appendChild(td11);
+    tr4.appendChild(td12);
+
+    const tr5 = document.createElement("tr");
+
+    const td13 = document.createElement("td");
+
+    const span9x = document.createElement("span");
+
+    const button5 = document.createElement("button");
+    button5.classList.add("fit-button", "fit-button-color-blue", "fit-button-fill-ghost", "fit-button-size-medium", "stars-filter");
+    button5.textContent = "1 Stars";
+
+    span9x.appendChild(button5);
+    td13.appendChild(span9x);
+
+    const td14 = document.createElement("td");
+    td14.classList.add("progress-bar-container");
+
+    const div9 = document.createElement("div");
+    div9.classList.add("fit-progressbar", "fit-progressbar-bar", "star-progress-bar");
+
+    const div10 = document.createElement("div");
+    div10.classList.add("fit-progressbar-background");
+
+    const span10x = document.createElement("span");
+    span10x.classList.add("progress-fill");
+    span10x.style.width = "0";
+
+    div10.appendChild(span9x);
+    div9.appendChild(div10);
+    td13.appendChild(div9);
+
+    const td15 = document.createElement("td");
+    td15.classList.add('star-num');
+    td15.textContent = '(0)';
+
+    tr5.appendChild(td13);
+    tr5.appendChild(td14);
+    tr5.appendChild(td15);
+
+    tbody.appendChild(tr1);
+    tbody.appendChild(tr2);
+    tbody.appendChild(tr3);
+    tbody.appendChild(tr4);
+    tbody.appendChild(tr5);
+
+    table.appendChild(tbody);
+    divCol.appendChild(table);
+
+    const colDiv = document.createElement('div');
+    colDiv.classList.add('col-md-6');
+
+    const rankingDiv = document.createElement('div');
+    rankingDiv.classList.add('ranking');
+
+    const heading = document.createElement('h6');
+    heading.classList.add('text-display-7');
+    heading.textContent = 'Rating Breakdown';
+
+    const ul = document.createElement('ul');
+
+    const li1 = document.createElement('li');
+    li1.textContent = 'Seller communication level';
+
+    const span1xx = document.createElement('span');
+    span1xx.textContent = '5';
+
+    const star1 = document.createElement('span');
+    star1.classList.add('review-star', 'rate-10', 'show-one');
+
+    span1xx.appendChild(star1);
+    li1.appendChild(span1xx);
+    ul.appendChild(li1);
+
+    const li2 = document.createElement('li');
+    li2.textContent = 'Recommend to a friend';
+
+    const span2xx = document.createElement('span');
+    span2xx.textContent = '5';
+
+    const star2 = document.createElement('span');
+    star2.classList.add('review-star', 'rate-10', 'show-one');
+
+    span2xx.appendChild(star2);
+    li2.appendChild(span2xx);
+    ul.appendChild(li2);
+
+    const li3 = document.createElement('li');
+    li3.textContent = 'Service as described';
+
+    const span3xx = document.createElement('span');
+    span3xx.textContent = '4.9';
+
+    const star3 = document.createElement('span');
+    star3.classList.add('review-star', 'rate-10', 'show-one');
+
+    span3xx.appendChild(star3);
+    li3.appendChild(span3xx);
+    ul.appendChild(li3);
+
+    rankingDiv.appendChild(heading);
+    rankingDiv.appendChild(ul);
+
+    const opinionBtn = document.createElement('button');
+    opinionBtn.classList.add('btn', 'btn-danger');
+    opinionBtn.textContent = 'Pon tu opinión';
+    opinionBtn.onclick = function () {
+        gestorVisionado(5);
+    }
+
+    colDiv.appendChild(rankingDiv);
+    colDiv.appendChild(opinionBtn);
+
+    divRow.appendChild(divCol);
+    divRow.appendChild(colDiv);
+
+    reviews.appendChild(div);
+    reviews.appendChild(divRow);
+
+
+
+    const reviewList = document.createElement("div");
+    reviewList.classList.add("review-list", "aplicar-borde", "margen", "bg-white");
+
+    const ulx = document.createElement("ul");
+
+    for (let i = 0; i < 4; i++) {
+
+        const li = document.createElement("li");
+
+        const dFlexDiv = document.createElement("div");
+        dFlexDiv.classList.add("d-flex");
+
+        const leftDiv = document.createElement("div");
+        leftDiv.classList.add("left");
+
+        const profilePict = document.createElement("span");
+
+        const profilePictImg = document.createElement("img");
+        profilePictImg.setAttribute("src", "https://bootdey.com/img/Content/avatar/avatar1.png");
+        profilePictImg.classList.add("profile-pict-img", "img-fluid");
+        profilePictImg.setAttribute("alt", "");
+
+        profilePict.appendChild(profilePictImg);
+        leftDiv.appendChild(profilePict);
+
+        const rightDiv = document.createElement("div");
+        rightDiv.classList.add("right");
+
+        const h4x = document.createElement("h4");
+        const gigRating = document.createElement("span");
+        gigRating.classList.add("gig-rating", "text-body-2");
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("viewBox", "0 0 1792 1792");
+        svg.setAttribute("width", "15");
+        svg.setAttribute("height", "15");
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("fill", "currentColor");
+        path.setAttribute("d", "M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z");
+        svg.appendChild(path);
+        gigRating.appendChild(svg);
+        gigRating.appendChild(document.createTextNode("5.0"));
+        h4x.appendChild(document.createTextNode("Askbootstrap"));
+        h4x.appendChild(gigRating);
+
+        const countryDiv = document.createElement("div");
+        countryDiv.classList.add("country", "d-flex", "align-items-center");
+        const countrySpan = document.createElement("span");
+        const countryFlagImg = document.createElement("img");
+        countryFlagImg.setAttribute("src", "https://bootdey.com/img/Content/avatar/avatar6.png");
+        countryFlagImg.classList.add("country-flag", "img-fluid");
+        countrySpan.appendChild(countryFlagImg);
+        const countryNameDiv = document.createElement("div");
+        countryNameDiv.classList.add("country-name", "font-accent");
+        countryNameDiv.appendChild(document.createTextNode("India"));
+        countryDiv.appendChild(countrySpan);
+        countryDiv.appendChild(countryNameDiv);
+
+        const reviewDescription = document.createElement("div");
+        reviewDescription.classList.add("review-description");
+        const p = document.createElement("p");
+        p.appendChild(document.createTextNode("The process was smooth, after providing the required info, Pragyesh sent me an outstanding packet of wireframes. Thank you a lot!"));
+        reviewDescription.appendChild(p);
+
+        const publishSpan = document.createElement("span");
+        publishSpan.classList.add("publish", "py-3", "d-inline-block", "w-100");
+        publishSpan.appendChild(document.createTextNode("Published 4 weeks ago"));
+
+        rightDiv.appendChild(h4x);
+        rightDiv.appendChild(countryDiv);
+        rightDiv.appendChild(reviewDescription);
+        rightDiv.appendChild(publishSpan);
+
+        dFlexDiv.appendChild(leftDiv);
+        dFlexDiv.appendChild(rightDiv);
+
+        li.appendChild(dFlexDiv);
+
+        const hhr = document.createElement('hr');
+
+        ulx.appendChild(li);
+        ulx.appendChild(hhr);
+    }
+
+    reviewList.appendChild(ulx);
+
+    container.appendChild(reviews);
+    container.appendChild(reviewList);
+
+    dad.appendChild(container);
+
+}
+
+function vinoslist(dad) {
+    const div = document.createElement('div');
+    div.classList.add('col-sm', 'p-5', 'bg-white', 'rounded', 'shadow', 'mb-5');
+
+    const ul = document.createElement('ul');
+    ul.setAttribute('id', 'myTab1');
+    ul.setAttribute('role', 'tablist');
+    ul.classList.add('nav', 'nav-tabs', 'nav-pills', 'flex-column', 'flex-sm-row', 'text-center', 'bg-light', 'border-0', 'rounded-nav');
+
+    const li1 = document.createElement('li');
+    li1.classList.add('nav-item', 'flex-sm-fill');
+    const a1 = document.createElement('a');
+    a1.setAttribute('id', 'tinto-tab');
+    a1.setAttribute('data-toggle', 'tab');
+    a1.setAttribute('role', 'tab');
+    a1.setAttribute('aria-controls', 'home');
+    a1.setAttribute('aria-selected', 'true');
+    a1.classList.add('nav-link','bg-danger', 'border-0', 'text-uppercase', 'font-weight-bold', 'active');
+    a1.setAttribute('href', '');
+    a1.innerText = 'Tinto';
+    li1.appendChild(a1);
+
+    const li2 = document.createElement('li');
+    li2.classList.add('nav-item', 'flex-sm-fill');
+    const a2 = document.createElement('a');
+    a2.setAttribute('id', 'blanco-tab');
+    a2.setAttribute('data-toggle', 'tab');
+    a2.setAttribute('role', 'tab');
+    a2.setAttribute('aria-controls', 'profile');
+    a2.setAttribute('aria-selected', 'false');
+    a2.classList.add('nav-link','bg-danger', 'border-0', 'text-uppercase', 'font-weight-bold');
+    a2.setAttribute('href', '');
+    a2.innerText = 'Blanco';
+    li2.appendChild(a2);
+
+    const li3 = document.createElement('li');
+    li3.classList.add('nav-item', 'flex-sm-fill');
+    const a3 = document.createElement('a');
+    a3.setAttribute('id', 'rosado-tab');
+    a3.setAttribute('data-toggle', 'tab');
+    a3.setAttribute('role', 'tab');
+    a3.setAttribute('aria-controls', 'contact');
+    a3.setAttribute('aria-selected', 'false');
+    a3.classList.add('nav-link','bg-danger', 'border-0', 'text-uppercase', 'font-weight-bold');
+    a3.setAttribute('href', '');
+    a3.innerText = 'Rosado';
+    li3.appendChild(a3);
+
+    ul.appendChild(li1);
+    ul.appendChild(li2);
+    ul.appendChild(li3);
+
+    const div1 = document.createElement('div');
+    div1.setAttribute('id', 'myTabContent1');
+    div1.classList.add('container', 'tab-content', 'margen');
+
+    const row = document.createElement('div');
+    row.classList.add('row');
+
+    const fotos = ["http://www.vinyesmortitx.com/img_blog/1584635839.jpg","http://www.vinyesmortitx.com/img_blog/1584632514.jpg","http://www.vinyesmortitx.com/img_blog/ART_9u-negre.png"];
+    const nombre = ["Tinto 2019","Rodal Pla 2017","L'U negre 2017"];
+    const precios = ["12.18 EUR","15.98 EUR","62.90 EUR"]
+
+    for(let i=0;i<3;i++){
+
+    const col = document.createElement('div');
+    col.classList.add('col-lg-3', 'margen', 'productbox');
+
+    const img = document.createElement('img');
+    img.setAttribute('src', fotos[i]);
+    img.classList.add('img-responsive');
+    img.height = 500;
+    img.width = 150;
+
+    const div2 = document.createElement('div');
+    div2.classList.add('producttitle');
+    div2.innerText = nombre[i];
+
+    const div3 = document.createElement('div');
+    div3.classList.add('productprice');
+
+
+    const div5 = document.createElement('div');
+    div5.classList.add('pricetext');
+    div5.innerText = precios[i];
+
+    div3.appendChild(div5);
+
+    col.appendChild(img);
+    col.appendChild(div2);
+    col.appendChild(div3);
+
+    row.appendChild(col);
+    }
+
+    div1.appendChild(row);
+
+    div.appendChild(ul);
+    div.appendChild(div1);
+    dad.appendChild(div);
+}
