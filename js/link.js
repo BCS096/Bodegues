@@ -9,7 +9,169 @@ window.onload = function () {
     activarBotonesPrincipal();
 }
 
+function descripcionProducto(dad) {
+    const div = document.createElement('div');
+    div.className = 'custom-scrollbar-css p-2';
+
+    const p = document.createElement('p');
+    p.className = 'font-italic';
+    p.innerText = 'El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.';
+
+    div.appendChild(p);
+
+    dad.appendChild(div);
+}
+
+function videoProducto(dad) {
+    const img = document.createElement('img');
+    img.src = 'img/video.png';
+    dad.appendChild(img);
+}
+
+function opinionProducto(dad) {
+    const customScrollbar = document.createElement("div");
+    customScrollbar.classList.add("custom-scrollbar-css", "p-2");
+
+    const colContainer = document.createElement("div");
+    colContainer.classList.add("col-sm-12", "col-md-8");
+
+    const reviewBlock = document.createElement("div");
+    reviewBlock.classList.add("review-block");
+
+    for (let i = 0; i < 3; i++) {
+
+        const row = document.createElement("div");
+        row.classList.add("row");
+
+        const colImg = document.createElement("div");
+        colImg.classList.add("col-sm-3");
+
+        const reviewImg = document.createElement("div");
+        reviewImg.classList.add("review-block-img");
+
+        const img = document.createElement("img");
+        img.src = "https://bootdey.com/img/Content/avatar/avatar6.png";
+        img.classList.add("img-rounded");
+        img.alt = "";
+
+        reviewImg.appendChild(img);
+
+        const reviewName = document.createElement("div");
+        reviewName.classList.add("review-block-name");
+
+        const link = document.createElement("a");
+        link.href = "#";
+        link.textContent = "nktailor";
+
+        reviewName.appendChild(link);
+
+        const reviewDate = document.createElement("div");
+        reviewDate.classList.add("review-block-date");
+        reviewDate.innerHTML = "January 29, 2016<br>1 day ago";
+
+        colImg.appendChild(reviewImg);
+        colImg.appendChild(reviewName);
+        colImg.appendChild(reviewDate);
+
+        const colDesc = document.createElement("div");
+        colDesc.classList.add("col-sm-9");
+
+        const reviewRate = document.createElement("div");
+        reviewRate.classList.add("review-block-rate");
+
+        const btnSuccess1 = document.createElement("button");
+        btnSuccess1.type = "button";
+        btnSuccess1.classList.add("btn", "btn-success", "btn-xs");
+        btnSuccess1.setAttribute("aria-label", "Left Align");
+
+        const span1 = document.createElement("span");
+        span1.classList.add("glyphicon", "glyphicon-star");
+        btnSuccess1.appendChild(span1);
+
+        btnSuccess1.appendChild(span1);
+
+        const btnSuccess2 = document.createElement("button");
+        btnSuccess2.type = "button";
+        btnSuccess2.classList.add("btn", "btn-success", "btn-xs");
+        btnSuccess2.setAttribute("aria-label", "Left Align");
+
+        const span2 = document.createElement("span");
+        span2.classList.add("glyphicon", "glyphicon-star");
+        btnSuccess2.appendChild(span2);
+
+        btnSuccess2.appendChild(span2);
+
+        const btnSuccess3 = document.createElement("button");
+        btnSuccess3.type = "button";
+        btnSuccess3.classList.add("btn", "btn-success", "btn-xs");
+        btnSuccess3.setAttribute("aria-label", "Left Align");
+
+        const span3 = document.createElement("span");
+        span3.classList.add("glyphicon", "glyphicon-star");
+        btnSuccess3.appendChild(span3);
+
+        btnSuccess3.appendChild(span3);
+
+        const btnDefault1 = document.createElement("button");
+        btnDefault1.type = "button";
+        btnDefault1.classList.add("btn", "btn-default", "btn-xs");
+        btnDefault1.setAttribute("aria-label", "Left Align");
+
+        const span4 = document.createElement("span");
+        span4.classList.add("glyphicon", "glyphicon-star");
+        btnDefault1.appendChild(span4);
+
+        btnDefault1.appendChild(span4);
+
+        const btnDefault2 = document.createElement("button");
+        btnDefault2.type = "button";
+        btnDefault2.classList.add("btn", "btn-default", "btn-xs");
+        btnDefault2.setAttribute("aria-label", "Left Align");
+
+        const span5 = document.createElement("span");
+        span5.classList.add("glyphicon", "glyphicon-star");
+        btnDefault2.appendChild(span5);
+
+        btnDefault2.appendChild(span5);
+
+        reviewRate.appendChild(btnSuccess1);
+        reviewRate.appendChild(btnSuccess2);
+        reviewRate.appendChild(btnSuccess3);
+        reviewRate.appendChild(btnDefault1);
+        reviewRate.appendChild(btnDefault2);
+
+        const reviewTitle = document.createElement("div");
+        reviewTitle.classList.add("review-block-title");
+        reviewTitle.textContent = "this was nice in buy";
+
+        const reviewDesc = document.createElement("div");
+        reviewDesc.classList.add("review-block-description");
+        reviewDesc.textContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.";
+
+        colDesc.appendChild(reviewRate);
+        colDesc.appendChild(reviewTitle);
+        colDesc.appendChild(reviewDesc);
+
+        row.appendChild(colImg);
+        row.appendChild(colDesc);
+
+
+        const hr = document.createElement("hr");
+
+        reviewBlock.appendChild(row);
+        reviewBlock.appendChild(hr);
+    }
+    colContainer.appendChild(reviewBlock);
+
+    customScrollbar.appendChild(colContainer);
+
+    dad.appendChild(customScrollbar);
+
+}
+
 function paginaProducto() {
+    const dad = document.getElementById('seccion');
+
     const container = document.createElement("div");
     container.className = "container margen granate aplicar-borde";
 
@@ -44,6 +206,8 @@ function paginaProducto() {
     img1.className = "d-block w-100";
     img1.alt = "...";
 
+    carouselItem1.appendChild(img1);
+
     const carouselItem2 = document.createElement("div");
     carouselItem2.className = "carousel-item";
 
@@ -52,6 +216,8 @@ function paginaProducto() {
     img2.className = "d-block w-100";
     img2.alt = "...";
 
+    carouselItem2.appendChild(img2);
+
     const carouselItem3 = document.createElement("div");
     carouselItem3.className = "carousel-item";
 
@@ -59,6 +225,12 @@ function paginaProducto() {
     img3.src = "images.jpg";
     img3.className = "d-block w-100";
     img3.alt = "...";
+
+    carouselItem3.appendChild(img3);
+
+    carouselInner.appendChild(carouselItem1);
+    carouselInner.appendChild(carouselItem2);
+    carouselInner.appendChild(carouselItem3);
 
     const carouselPrevBtn = document.createElement("button");
     carouselPrevBtn.className = "carousel-control-prev";
@@ -74,6 +246,9 @@ function paginaProducto() {
     carouselPrevSpan.className = "visually-hidden";
     carouselPrevSpan.innerHTML = "Previous";
 
+    carouselPrevBtn.appendChild(carouselPrevIcon);
+    carouselPrevBtn.appendChild(carouselPrevSpan);
+
     const carouselNextBtn = document.createElement("button");
     carouselNextBtn.className = "carousel-control-next";
     carouselNextBtn.type = "button";
@@ -88,6 +263,15 @@ function paginaProducto() {
     carouselNextSpan.className = "visually-hidden";
     carouselNextSpan.innerHTML = "Next";
 
+    carouselNextBtn.appendChild(carouselNextIcon);
+    carouselNextBtn.appendChild(carouselPrevSpan);
+
+    carousel.appendChild(carouselInner);
+    carousel.appendChild(carouselPrevBtn);
+    carousel.appendChild(carouselNextBtn);
+
+    productImage.appendChild(carousel);
+
     const hr1 = document.createElement("hr");
 
     const img4 = document.createElement("img");
@@ -95,14 +279,21 @@ function paginaProducto() {
 
     const hr2 = document.createElement("hr");
 
+    imageCol.appendChild(productImage);
+    imageCol.appendChild(hr1);
+    imageCol.appendChild(img4);
+    imageCol.appendChild(hr2);
+
+
     const detailsCol = document.createElement("div");
     detailsCol.className = "col-md-6 col-md-offset-1 col-sm-12 col-xs-12";
 
     const name = document.createElement("h2");
     name.className = "name";
+    name.innerText = "Mortitx";
 
     const brandName = document.createElement("br");
-    brandName.innerHTML = "Mortitx";
+
 
     const star1 = document.createElement("i");
     star1.className = "fa fa-star fa-2x text-primary";
@@ -114,7 +305,10 @@ function paginaProducto() {
     star3.className = "fa fa-star fa-2x text-primary";
 
     const star4 = document.createElement("i");
-    star4.className = "fa fa-star fa-2x text-muted";
+    star4.className = "fa fa-star fa-2x text-primary";
+
+    const star5 = document.createElement("i");
+    star5.className = "fa fa-star fa-2x text-muted";
 
     const span1 = document.createElement('span');
     span1.className = "fa fa-2x";
@@ -125,10 +319,213 @@ function paginaProducto() {
     span1.appendChild(g);
 
     const ref = document.createElement('a');
-    a.href = "";
-    a.innerText = "109 customer reviews";
+    ref.href = "";
+    ref.innerText = "109 customer reviews";
 
-    //seguir
+    name.appendChild(brandName);
+    name.appendChild(star1);
+    name.appendChild(star2);
+    name.appendChild(star3);
+    name.appendChild(star4);
+    name.appendChild(star5);
+    name.appendChild(span1);
+    name.appendChild(ref);
+
+    const hr3 = document.createElement('hr');
+    const fila = document.createElement('div');
+    fila.className = "row";
+
+    const colu = document.createElement('div');
+    colu.className = "col";
+
+    const im = document.createElement('img');
+    im.className = "margen";
+    im.setAttribute('src', 'http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png');
+    im.width = 150;
+    im.width = 65;
+
+    const colsm = document.createElement('div');
+    colsm.className = 'col-sm';
+
+    const dx = document.createElement('dl');
+
+    const dt1 = document.createElement('dt');
+    dt1.innerText = 'Horario: ';
+
+    const icono1 = document.createElement('i');
+    icono1.className = "fa-solid fa-clock";
+
+    dt1.appendChild(icono1);
+
+    const ddx = document.createElement('dd');
+    ddx.innerText = 'Mo,Tu,We,Th,Fr 08:00-16:00';
+
+    const dt2 = document.createElement('dt');
+    dt2.innerText = 'Teléfono: ';
+
+    const icono2 = document.createElement('i');
+    icono2.className = "fa-solid fa-phone";
+
+    dt2.appendChild(icono2);
+
+    const ddx2 = document.createElement('dd');
+    ddx2.innerText = '971533889';
+
+
+    dx.appendChild(dt1);
+    dx.appendChild(ddx);
+    dx.appendChild(dt2);
+    dx.appendChild(ddx2);
+
+    colsm.appendChild(dx);
+
+    colu.appendChild(im);
+    colu.appendChild(colsm);
+
+    //
+    const colsm1 = document.createElement('div');
+    colsm1.className = 'col-sm';
+
+    const dxx = document.createElement('dl');
+
+    const dt1x = document.createElement('dt');
+    dt1x.innerText = 'Email: ';
+
+    const icono1x = document.createElement('i');
+    icono1x.className = "fa-solid fa-envelope";
+
+    dt1x.appendChild(icono1x);
+
+    const ddxx = document.createElement('dd');
+    const ref1x = document.createElement('a');
+    ref1x.href = 'info@vinyesmortitx.com';
+    ref1x.innerText = 'info@vinyesmortitx.com';
+    ref1x.className = 'text-navy';
+
+    ddxx.appendChild(ref1x);
+
+    const dt2x = document.createElement('dt');
+    dt2x.innerText = 'Web: ';
+
+    const icono2x = document.createElement('i');
+    icono2x.className = "fa-solid fa-at";
+
+    dt2x.appendChild(icono2x);
+
+    const ddx2x = document.createElement('dd');
+    const ref2x = document.createElement('a');
+    ref2x.href = 'http://www.vinyesmortitx.com';
+    ref2x.innerText = 'http://www.vinyesmortitx.com';
+    ref2x.className = 'text-navy';
+
+    ddx2x.appendChild(ref2x);
+    const dt3x = document.createElement('dt');
+    dt3x.innerText = 'Dirección: ';
+
+    const icono3x = document.createElement('i');
+    icono3x.className = "fa-solid fa-location-dot";
+
+    dt3x.appendChild(icono3x);
+
+    const ddx3x = document.createElement('dd');
+    ddx3x.innerText = 'Ctra. Pollença - Lluc- Km 10,9';
+
+    const ddx4x = document.createElement('dd');
+    ddx4x.innerText = 'Mallorca, Escorca, 07470';
+
+    dxx.appendChild(dt1x);
+    dxx.appendChild(ddxx);
+    dxx.appendChild(dt2x);
+    dxx.appendChild(ddx2x);
+    dxx.appendChild(dt3x);
+    dxx.appendChild(ddx3x);
+    dxx.appendChild(ddx4x);
+
+    colsm1.appendChild(dxx);
+
+    fila.appendChild(colu);
+    fila.appendChild(colsm1);
+
+    const hr4 = document.createElement('hr');
+
+    const div = document.createElement('div');
+    div.classList.add('p-5', 'bg-white', 'rounded', 'shadow', 'mb-5');
+
+    // create tabs
+    const ul = document.createElement('ul');
+    ul.id = 'myTab';
+    ul.role = 'tablist';
+    ul.classList.add('nav', 'nav-tabs', 'nav-pills', 'flex-column', 'flex-sm-row', 'text-center', 'bg-light', 'border-0', 'rounded-nav');
+
+    // create tab items
+    const liDesc = document.createElement('li');
+    liDesc.classList.add('nav-item', 'flex-sm-fill');
+    const aDesc = document.createElement('a');
+    aDesc.id = 'desc-tab';
+    aDesc.dataset.toggle = 'tab';
+    aDesc.role = 'tab';
+    aDesc.setAttribute('aria-controls', 'home');
+    aDesc.setAttribute('aria-selected', 'true');
+    aDesc.classList.add('nav-link', 'border-0', 'text-uppercase', 'font-weight-bold', 'active');
+    aDesc.textContent = 'Descripción';
+    liDesc.appendChild(aDesc);
+
+    const liOpinion = document.createElement('li');
+    liOpinion.classList.add('nav-item', 'flex-sm-fill');
+    const aOpinion = document.createElement('a');
+    aOpinion.id = 'opinion-tab';
+    aOpinion.dataset.toggle = 'tab';
+    aOpinion.role = 'tab';
+    aOpinion.setAttribute('aria-controls', 'profile');
+    aOpinion.setAttribute('aria-selected', 'false');
+    aOpinion.classList.add('nav-link', 'border-0', 'text-uppercase', 'font-weight-bold');
+    aOpinion.textContent = 'Opiniones';
+    liOpinion.appendChild(aOpinion);
+
+    const liVideo = document.createElement('li');
+    liVideo.classList.add('nav-item', 'flex-sm-fill');
+    const aVideo = document.createElement('a');
+    aVideo.id = 'video-tab';
+    aVideo.dataset.toggle = 'tab';
+    aVideo.role = 'tab';
+    aVideo.setAttribute('aria-controls', 'contact');
+    aVideo.setAttribute('aria-selected', 'false');
+    aVideo.classList.add('nav-link', 'border-0', 'text-uppercase', 'font-weight-bold');
+    aVideo.textContent = 'Videos';
+    liVideo.appendChild(aVideo);
+
+    ul.appendChild(liDesc);
+    ul.appendChild(liOpinion);
+    ul.appendChild(liVideo);
+
+    // create tab content
+    const divTabContent = document.createElement('div');
+    divTabContent.id = 'myTabContent';
+    divTabContent.classList.add('tab-content', 'margen');
+
+    descripcionProducto(divTabContent);
+
+    // append tabs and tab content to the main div
+    div.appendChild(ul);
+    div.appendChild(divTabContent);
+
+    const hr5 = document.createElement('hr');
+
+    detailsCol.appendChild(name);
+    detailsCol.appendChild(hr3);
+    detailsCol.appendChild(fila);
+    detailsCol.appendChild(hr4);
+    detailsCol.appendChild(div);
+    detailsCol.appendChild(hr5);
+
+    row.appendChild(imageCol);
+    row.appendChild(detailsCol);
+
+    productContent.appendChild(row);
+
+    col.appendChild(productContent);
+    container.appendChild(col);
+    dad.appendChild(container);
 }
 
 function filtrado2() {
@@ -392,6 +789,12 @@ function activarBotonesPrincipal() {
 }
 
 function changeOpcionProducto(opcion) {
+    const dad = document.getElementById('myTabContent');
+    if (dad.hasChildNodes()) {
+        while (dad.childNodes.length >= 1) {
+            dad.removeChild(dad.firstChild);
+        }
+    }
     switch (opcionActiva) {
         case 0:
             const activo = document.getElementById('desc-tab');
@@ -414,16 +817,19 @@ function changeOpcionProducto(opcion) {
             const activo = document.getElementById('desc-tab');
             activo.className = "nav-link border-0 text-uppercase font-weight-bold active";
             activo.setAttribute('aria-selected', 'true');
+            descripcionProducto(dad);
             break;
         case 1:
             const activo1 = document.getElementById('opinion-tab');
             activo1.className = "nav-link border-0 text-uppercase font-weight-bold active";
             activo1.setAttribute('aria-selected', 'true');
+            opinionProducto(dad);
             break;
         case 2:
             const activo2 = document.getElementById('video-tab');
             activo2.className = "nav-link border-0 text-uppercase font-weight-bold active";
             activo2.setAttribute('aria-selected', 'true');
+            videoProducto(dad);
             break;
     }
     opcionActiva = opcion;
@@ -885,6 +1291,9 @@ function listadoCardXL() {
         const moreInfoButton = document.createElement('button');
         moreInfoButton.className = 'add-to-cart margen';
         moreInfoButton.textContent = 'Más información';
+        moreInfoButton.onclick = function () {
+            gestorVisionado(3);
+        };
 
         const boton2 = document.createElement('button');
         boton2.classList.add('like', 'btn', 'btn-default', 'margen');
@@ -1005,6 +1414,9 @@ function listadoCard() {
         const button = document.createElement('button');
         button.className = "add-to-cart margen";
         button.innerText = "Más información";
+        button.onclick = function () {
+            gestorVisionado(3);
+        };
 
         cardBody.appendChild(imgCard);
         cardBody.appendChild(h5);
@@ -1264,6 +1676,9 @@ function listadoMap() {
     const moreInfoButton = document.createElement('button');
     moreInfoButton.className = 'add-to-cart margen';
     moreInfoButton.textContent = 'Más información';
+    moreInfoButton.onclick = function () {
+        gestorVisionado(3);
+    };
 
     const boton2 = document.createElement('button');
     boton2.classList.add('like', 'btn', 'btn-default', 'margen');
@@ -1324,15 +1739,21 @@ function gestorVisionado(vision) {
             seccion.removeChild(seccion.firstChild);
         }
     }
-    filtrado2();
-    switch (vision) {
-        case 1: listadoCardXL();
-            break;
-        case 0: listadoCard();
-            break;
-        case 2: listadoMap();
-            break;
+    if (vision == 3) {
+        paginaProducto();
+        activarBotonesPrincipal();
+    } else {
+        filtrado2();
+        switch (vision) {
+            case 1: listadoCardXL();
+                break;
+            case 0: listadoCard();
+                break;
+            case 2: listadoMap();
+                break;
+        }
     }
+
 }
 
 (function () {
