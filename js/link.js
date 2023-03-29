@@ -275,10 +275,24 @@ function paginaProducto() {
 
     const hr2 = document.createElement("hr");
 
+    const img5 = document.createElement("img");
+    img5.src = "img/restaurante.png";
+
+    const hr7 = document.createElement("hr");
+
+    const img6 = document.createElement("img");
+    img6.src = "img/supermercado.png";
+
+    const hr8 = document.createElement("hr");
+
     imageCol.appendChild(productImage);
     imageCol.appendChild(hr1);
     imageCol.appendChild(img4);
     imageCol.appendChild(hr2);
+    imageCol.appendChild(img5);
+    imageCol.appendChild(hr7);
+    imageCol.appendChild(img6);
+    imageCol.appendChild(hr8);
 
 
     const detailsCol = document.createElement("div");
