@@ -198,7 +198,7 @@ function paginaProducto() {
     carouselItem1.className = "carousel-item active";
 
     const img1 = document.createElement("img");
-    img1.src = "images.jpg";
+    img1.src = "img/carousel1.jpg";
     img1.className = "d-block w-100";
     img1.alt = "...";
 
@@ -208,7 +208,7 @@ function paginaProducto() {
     carouselItem2.className = "carousel-item";
 
     const img2 = document.createElement("img");
-    img2.src = "images.jpg";
+    img2.src = "img/carousel.jpg";
     img2.className = "d-block w-100";
     img2.alt = "...";
 
@@ -218,7 +218,7 @@ function paginaProducto() {
     carouselItem3.className = "carousel-item";
 
     const img3 = document.createElement("img");
-    img3.src = "images.jpg";
+    img3.src = "img/carousel0.jpg";
     img3.className = "d-block w-100";
     img3.alt = "...";
 
@@ -1947,7 +1947,7 @@ function listaComentarios(dad) {
 
     const h4 = document.createElement('h4');
     h4.classList.add('m-0');
-    h4.textContent = '37 Reviews';
+    h4.textContent = '37 Valoraciones';
     div.appendChild(h4);
 
     const select = document.createElement('select');
@@ -1959,11 +1959,11 @@ function listaComentarios(dad) {
 
     const option1 = document.createElement('option');
     option1.setAttribute('data-select2-id', '3');
-    option1.textContent = 'Most Relevant';
+    option1.textContent = 'Más relevantes';
     select.appendChild(option1);
 
     const option2 = document.createElement('option');
-    option2.textContent = 'Most Recent';
+    option2.textContent = 'Más recientes';
     select.appendChild(option2);
 
     const span1 = document.createElement('span');
@@ -1991,8 +1991,8 @@ function listaComentarios(dad) {
     span4.setAttribute('id', 'select2-qd66-container');
     span4.setAttribute('role', 'textbox');
     span4.setAttribute('aria-readonly', 'true');
-    span4.setAttribute('title', 'Most Relevant');
-    span4.textContent = 'Most Relevant';
+    span4.setAttribute('title', 'Más relevantes');
+    span4.textContent = 'Más Relevantes';
     span3.appendChild(span4);
 
     const span5 = document.createElement('span');
@@ -2227,12 +2227,12 @@ function listaComentarios(dad) {
 
     const heading = document.createElement('h6');
     heading.classList.add('text-display-7');
-    heading.textContent = 'Rating Breakdown';
+    heading.textContent = 'Ranking';
 
     const ul = document.createElement('ul');
 
     const li1 = document.createElement('li');
-    li1.textContent = 'Seller communication level';
+    li1.textContent = 'Nivel de comunicación del vendedor';
 
     const span1xx = document.createElement('span');
     span1xx.textContent = '5';
@@ -2245,7 +2245,7 @@ function listaComentarios(dad) {
     ul.appendChild(li1);
 
     const li2 = document.createElement('li');
-    li2.textContent = 'Recommend to a friend';
+    li2.textContent = 'Recomiendalo a un amigo';
 
     const span2xx = document.createElement('span');
     span2xx.textContent = '5';
@@ -2258,7 +2258,7 @@ function listaComentarios(dad) {
     ul.appendChild(li2);
 
     const li3 = document.createElement('li');
-    li3.textContent = 'Service as described';
+    li3.textContent = 'Servicie';
 
     const span3xx = document.createElement('span');
     span3xx.textContent = '4.9';
