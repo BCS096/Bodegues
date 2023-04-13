@@ -1,0 +1,710 @@
+<body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+
+    <!-- ======= Header ======= -->
+
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero d-flex align-items-center section-bg">
+        <div class="container granate aplicar-borde margen">
+            <div class="row justify-content-between gy-5">
+                <div
+                    class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start m-auto">
+                    <h2 data-aos="fade-up" class="aos-init aos-animate">Bodegas<br>Mortitx</h2>
+                    <div class="d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+                            class="glightbox btn-watch-video d-flex align-items-center m-auto"><i
+                                class="bi bi-play-circle"></i><span>Ver video</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-5   text-lg-start">
+                    <img src="http://www.vinyesmortitx.com/img_blog/21_QQ6A0199-1.jpg"
+                        class="img-fluid margen2 aos-init aos-animate" alt="" data-aos="zoom-out" data-aos-delay="300">
+                </div>
+            </div>
+        </div>
+    </section><!-- End Hero Section -->
+
+    <main id="main">
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+            <div class="container aos-init aos-animate" data-aos="fade-up">
+
+                <div class="section-header">
+
+                    <p><span>Descripción</span></p>
+                </div>
+
+                <div class="row gy-4 aplicar-borde margen granate">
+                    <div class="col-lg-7 position-relative about-img margen aos-init aos-animate"
+                        style="background-image: url(assets/img/about.jpg) ;" data-aos="fade-up" data-aos-delay="150">
+                        <div class="call-us position-absolute margen aplicar-borde granate">
+                            <h4>Teléfono</h4>
+                            <p>971533889</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 d-flex align-items-end aos-init aos-animate" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <div class="content ps-0 ps-lg-5">
+                            <p class="fst-italic">
+                                El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el
+                                cual se materializó en junio de 2001,
+                                constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de
+                                Mortitx, con un objetivo principal:
+                                la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter
+                                propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53
+                                socios.
+                            </p>
+
+                            <div class="position-relative mt-4 margen">
+                                <img src="assets/img/about-2.jpg" class="img-fluid" alt="">
+                                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Section -->
+
+        <!-- ======= Why Us Section ======= -->
+        <section id="weather" class="why-us section-bg">
+            <div class="container aos-init aos-animate" data-aos="fade-up">
+
+                <div class="row">
+                    <div class="section-header">
+
+                        <p><span>El tiempo</span></p>
+                    </div>
+
+                    <div class="col-lg-11 d-flex align-items-center margen aplicar-borde granate">
+                        <div class="row gy-2 ">
+
+                            <div class="col-xl-3 margen aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                    <h4>Lunes</h4>
+                                    <i class="bi bi-cloud-sun" style="color: #511f1f;"></i>
+                                    <p>17ºC / 14ºC</p>
+                                </div>
+                            </div><!-- End Icon Box -->
+
+                            <div class="col-xl-3 margen aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                    <h4>Martes</h4>
+                                    <i class="bi bi-cloud-sun" style="color: #511f1f;"></i>
+                                    <p>17ºC / 14ºC</p>
+                                </div>
+                            </div><!-- End Icon Box -->
+
+                            <div class="col-xl-3 margen aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                    <h4>Miercoles</h4>
+                                    <i class="bi bi-cloud-sun" style="color: #511f1f;"></i>
+                                    <p>17ºC / 14ºC</p>
+                                </div>
+                            </div><!-- End Icon Box -->
+
+                            <div class="col-xl-3 margen aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                    <h4>Jueves</h4>
+                                    <i class="bi bi-cloud-sun" style="color: #511f1f;"></i>
+                                    <p>17ºC / 14ºC</p>
+                                </div>
+                            </div><!-- End Icon Box -->
+
+                            <div class="col-xl-3 margen aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                    <h4>Viernes</h4>
+                                    <i class="bi bi-cloud-sun" style="color: #511f1f;"></i>
+                                    <p>17ºC / 14ºC</p>
+                                </div>
+                            </div><!-- End Icon Box -->
+                            <div class="col-xl-3 margen aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                    <h4>Sábado</h4>
+                                    <i class="bi bi-cloud-sun" style="color: #511f1f;"></i>
+                                    <p>17ºC / 14ºC</p>
+                                </div>
+                            </div><!-- End Icon Box -->
+                            <div class="col-xl-3 margen aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                    <h4>Domingo</h4>
+                                    <i class="bi bi-cloud-sun" style="color: #511f1f;"></i>
+                                    <p>17ºC / 14ºC</p>
+                                </div>
+                            </div><!-- End Icon Box -->
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Why Us Section -->
+        <!-- ======= Menu Section ======= -->
+        <section id="menu" class="menu">
+            <div class="container aos-init aos-animate" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Vinos</h2>
+                    <p>Consulta <span>tu vino favorito</span></p>
+                </div>
+
+                <ul class="nav nav-tabs d-flex justify-content-center aos-init aos-animate" data-aos="fade-up"
+                    data-aos-delay="200" role="tablist">
+
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters"
+                            aria-selected="true" role="tab">
+                            <h4>Tintos</h4>
+                        </a>
+                    </li><!-- End tab nav item -->
+
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast" aria-selected="false"
+                            tabindex="-1" role="tab">
+                            <h4>Blancos</h4>
+                        </a><!-- End tab nav item -->
+
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch" aria-selected="false"
+                            tabindex="-1" role="tab">
+                            <h4>Rosados</h4>
+                        </a>
+                    </li><!-- End tab nav item -->
+
+                </ul>
+
+                <div class="tab-content aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+
+                    <div class="tab-pane fade active show" id="menu-starters" role="tabpanel">
+
+                        <div class="tab-header text-center">
+                            <h3>Tintos</h3>
+                        </div>
+
+                        <div class="row gy-5">
+
+                            <div class="col-lg-4 menu-item">
+                                <a href="http://www.vinyesmortitx.com/img_blog/1584635839.jpg" class="glightbox"><img
+                                        src="http://www.vinyesmortitx.com/img_blog/1584635839.jpg"
+                                        class="menu-img img-fluid" alt=""></a>
+                                <h4>Mortitx Tinto 2019</h4>
+                                <p class="ingredients">
+                                    Merlot, Mantonegro, Cabernet Sauvignon, Syrah. Con un grado de alcohol de 13%.
+                                </p>
+                                <p class="price">
+                                    12.18EUR
+                                </p>
+                            </div><!-- Menu Item -->
+
+                            <div class="col-lg-4 menu-item">
+                                <a href="http://www.vinyesmortitx.com/img_blog/1584632514.jpg" class="glightbox"><img
+                                        src="http://www.vinyesmortitx.com/img_blog/1584632514.jpg"
+                                        class="menu-img img-fluid" alt=""></a>
+                                <h4>Rodal Pla 2017</h4>
+                                <p class="ingredients">
+                                    Merlot, Cabernet Sauvignon, Syrah. Con un grado de alcohol de 13%.
+                                </p>
+                                <p class="price">
+                                    15.98EUR
+                                </p>
+                            </div><!-- Menu Item -->
+
+                            <div class="col-lg-4 menu-item">
+                                <a href="http://www.vinyesmortitx.com/img_blog/ART_9u-negre.png" class="glightbox"><img
+                                        src="http://www.vinyesmortitx.com/img_blog/ART_9u-negre.png"
+                                        class="menu-img img-fluid" alt=""></a>
+                                <h4>L'u negre 2017</h4>
+                                <p class="ingredients">
+                                    Merlot, Cabernet Sauvignon, Syrah. Con un grado de alcohol de 14%.
+                                </p>
+                                <p class="price">
+                                    62.90EUR
+                                </p>
+                            </div><!-- Menu Item -->
+
+
+                        </div>
+                    </div><!-- End Starter Menu Content -->
+
+                    <div class="tab-pane fade" id="menu-breakfast" role="tabpanel">
+
+                        <div class="tab-header text-center">
+                            <h3>Blancos</h3>
+                        </div>
+
+                        <div class="row gy-5">
+
+                            <div class="col-lg-4 menu-item">
+                                <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img
+                                        src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
+                                <h4>Magnam Tiste</h4>
+                                <p class="ingredients">
+                                    Lorem, deren, trataro, filede, nerada
+                                </p>
+                                <p class="price">
+                                    $5.95
+                                </p>
+                            </div><!-- Menu Item -->
+
+                        </div>
+                    </div><!-- End Breakfast Menu Content -->
+
+                    <div class="tab-pane fade" id="menu-lunch" role="tabpanel">
+
+                        <div class="tab-header text-center">
+
+                            <h3>Rosados</h3>
+                        </div>
+
+                        <div class="row gy-5">
+
+                            <div class="col-lg-4 menu-item">
+                                <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img
+                                        src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
+                                <h4>Magnam Tiste</h4>
+                                <p class="ingredients">
+                                    Lorem, deren, trataro, filede, nerada
+                                </p>
+                                <p class="price">
+                                    $5.95
+                                </p>
+                            </div><!-- Menu Item -->
+
+                        </div>
+                    </div><!-- End Lunch Menu Content -->
+
+                </div>
+
+            </div>
+        </section><!-- End Menu Section -->
+
+        <!-- ======= Testimonials Section ======= -->
+        <section id="testimonials" class="testimonials section-bg">
+            <div class="container aplicar-borde margen granate aos-init aos-animate" data-aos="fade-up">
+                <div class="section-header">
+                    <p><span>Valoraciones</span></p>
+                </div>
+
+                <div class="slides-1 swiper blanco margen swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden aos-init aos-animate"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper" id="swiper-wrapper-4856f01d049f5c8d" aria-live="off"
+                        style="transition-duration: 0ms; transform: translate3d(-2016px, 0px, 0px);">
+                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                            data-swiper-slide-index="0" role="group" aria-label="1 / 2">
+                            <div class="testimonial-item">
+                                <div class="row gy-4 justify-content-center">
+                                    <div class="col-lg-6">
+                                        <div class="testimonial-content">
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum
+                                                suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh
+                                                et. Maecen aliquam, risus at semper.
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                            <h3>Saul Goodman</h3>
+                                            <h4>Ceo &amp; Founder</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                            data-swiper-slide-index="1" role="group" aria-label="2 / 2">
+                            <div class="testimonial-item">
+                                <div class="row gy-4 justify-content-center">
+                                    <div class="col-lg-6">
+                                        <div class="testimonial-content">
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                Export tempor illum tamen malis malis eram quae irure esse labore quem
+                                                cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua
+                                                noster fugiat irure amet legam anim culpa.
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                            <h3>Sara Wilsson</h3>
+                                            <h4>Designer</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide swiper-slide-prev swiper-slide-duplicate-next"
+                            data-swiper-slide-index="0" role="group" aria-label="1 / 2">
+                            <div class="testimonial-item">
+                                <div class="row gy-4 justify-content-center">
+                                    <div class="col-lg-6">
+                                        <div class="testimonial-content">
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum
+                                                suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh
+                                                et. Maecen aliquam, risus at semper.
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                            <h3>Saul Goodman</h3>
+                                            <h4>Ceo &amp; Founder</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" role="group"
+                            aria-label="2 / 2">
+                            <div class="testimonial-item">
+                                <div class="row gy-4 justify-content-center">
+                                    <div class="col-lg-6">
+                                        <div class="testimonial-content">
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                Export tempor illum tamen malis malis eram quae irure esse labore quem
+                                                cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua
+                                                noster fugiat irure amet legam anim culpa.
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                            <h3>Sara Wilsson</h3>
+                                            <h4>Designer</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev"
+                            data-swiper-slide-index="0" role="group" aria-label="1 / 2">
+                            <div class="testimonial-item">
+                                <div class="row gy-4 justify-content-center">
+                                    <div class="col-lg-6">
+                                        <div class="testimonial-content">
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum
+                                                suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh
+                                                et. Maecen aliquam, risus at semper.
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                            <h3>Saul Goodman</h3>
+                                            <h4>Ceo &amp; Founder</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                            data-swiper-slide-index="1" role="group" aria-label="2 / 2">
+                            <div class="testimonial-item">
+                                <div class="row gy-4 justify-content-center">
+                                    <div class="col-lg-6">
+                                        <div class="testimonial-content">
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                Export tempor illum tamen malis malis eram quae irure esse labore quem
+                                                cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua
+                                                noster fugiat irure amet legam anim culpa.
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                            <h3>Sara Wilsson</h3>
+                                            <h4>Designer</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                        <span class="swiper-pagination-bullet" tabindex="0" role="button"
+                            aria-label="Go to slide 1"></span><span
+                            class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
+                            aria-label="Go to slide 2" aria-current="true"></span></div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+
+            </div>
+        </section><!-- End Testimonials Section -->
+
+        <!-- ======= Events Section ======= -->
+        <section id="events" class="events">
+            <div class="container-fluid aos-init aos-animate" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Events</h2>
+                    <p>Share <span>Your Moments</span> In Our Restaurant</p>
+                </div>
+
+                <div class="slides-3 swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden aos-init aos-animate"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper" id="swiper-wrapper-1abf77f553a19349" aria-live="off"
+                        style="transition-duration: 0ms; transform: translate3d(-3924px, 0px, 0px);">
+                        <div class="swiper-slide event-item d-flex flex-column justify-content-end swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev"
+                            style="background-image: url(&quot;assets/img/events-3.jpg&quot;); width: 941px; margin-right: 40px;"
+                            role="group" aria-label="3 / 3" data-swiper-slide-index="2">
+                            <h3>Birthday Parties</h3>
+                            <div class="price align-self-start">$499</div>
+                            <p class="description">
+                                Laborum aperiam atque omnis minus omnis est qui assumenda quos. Quis id sit quibusdam.
+                                Esse quisquam ducimus officia ipsum ut quibusdam maxime. Non enim perspiciatis.
+                            </p>
+                        </div>
+
+                        <div class="swiper-slide event-item d-flex flex-column justify-content-end swiper-slide-duplicate-active"
+                            style="background-image: url(&quot;assets/img/events-1.jpg&quot;); width: 941px; margin-right: 40px;"
+                            role="group" aria-label="1 / 3" data-swiper-slide-index="0">
+                            <h3>Custom Parties</h3>
+                            <div class="price align-self-start">$99</div>
+                            <p class="description">
+                                Quo corporis voluptas ea ad. Consectetur inventore sapiente ipsum voluptas eos omnis
+                                facere. Enim facilis veritatis id est rem repudiandae nulla expedita quas.
+                            </p>
+                        </div><!-- End Event item -->
+
+                        <div class="swiper-slide event-item d-flex flex-column justify-content-end"
+                            style="background-image: url(&quot;assets/img/events-2.jpg&quot;); width: 941px; margin-right: 40px;"
+                            role="group" aria-label="2 / 3" data-swiper-slide-index="1">
+                            <h3>Private Parties</h3>
+                            <div class="price align-self-start">$289</div>
+                            <p class="description">
+                                In delectus sint qui et enim. Et ab repudiandae inventore quaerat doloribus. Facere nemo
+                                vero est ut dolores ea assumenda et. Delectus saepe accusamus aspernatur.
+                            </p>
+                        </div><!-- End Event item -->
+
+                        <div class="swiper-slide event-item d-flex flex-column justify-content-end swiper-slide-prev swiper-slide-duplicate-next"
+                            style="background-image: url(&quot;assets/img/events-3.jpg&quot;); width: 941px; margin-right: 40px;"
+                            role="group" aria-label="3 / 3" data-swiper-slide-index="2">
+                            <h3>Birthday Parties</h3>
+                            <div class="price align-self-start">$499</div>
+                            <p class="description">
+                                Laborum aperiam atque omnis minus omnis est qui assumenda quos. Quis id sit quibusdam.
+                                Esse quisquam ducimus officia ipsum ut quibusdam maxime. Non enim perspiciatis.
+                            </p>
+                        </div><!-- End Event item -->
+
+                        <div class="swiper-slide event-item d-flex flex-column justify-content-end swiper-slide-duplicate swiper-slide-active"
+                            style="background-image: url(&quot;assets/img/events-1.jpg&quot;); width: 941px; margin-right: 40px;"
+                            role="group" aria-label="1 / 3" data-swiper-slide-index="0">
+                            <h3>Custom Parties</h3>
+                            <div class="price align-self-start">$99</div>
+                            <p class="description">
+                                Quo corporis voluptas ea ad. Consectetur inventore sapiente ipsum voluptas eos omnis
+                                facere. Enim facilis veritatis id est rem repudiandae nulla expedita quas.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                        <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0"
+                            role="button" aria-label="Go to slide 1" aria-current="true"></span><span
+                            class="swiper-pagination-bullet" tabindex="0" role="button"
+                            aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0"
+                            role="button" aria-label="Go to slide 3"></span></div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+
+            </div>
+        </section><!-- End Events Section -->
+
+        <!-- ======= Gallery Section ======= -->
+        <section id="gallery" class="gallery section-bg">
+            <div class="container aos-init" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>gallery</h2>
+                    <p>Check <span>Our Gallery</span></p>
+                </div>
+
+                <div class="gallery-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events">
+                    <div class="swiper-wrapper align-items-center" id="swiper-wrapper-497598c36d7810a21" aria-live="off"
+                        style="transition-duration: 0ms; transform: translate3d(-1153.33px, 0px, 0px);">
+                        <div class="swiper-slide swiper-slide-duplicate" role="group" aria-label="6 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="5"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide swiper-slide-duplicate" role="group" aria-label="7 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="6"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide swiper-slide-duplicate" role="group" aria-label="8 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="7"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide" role="group" aria-label="1 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="0"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide" role="group" aria-label="2 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="1"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide swiper-slide-prev" role="group" aria-label="3 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="2"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide swiper-slide-active" role="group" aria-label="4 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="3"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide swiper-slide-next" role="group" aria-label="5 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="4"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide" role="group" aria-label="6 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="5"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide" role="group" aria-label="7 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="6"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide" role="group" aria-label="8 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="7"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide swiper-slide-duplicate" role="group" aria-label="1 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="0"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide swiper-slide-duplicate" role="group" aria-label="2 / 8"
+                            style="width: 210.667px; margin-right: 20px;" data-swiper-slide-index="1"><a
+                                class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" role="group"
+                            aria-label="3 / 8" style="width: 210.667px; margin-right: 20px;"
+                            data-swiper-slide-index="2"><a class="glightbox" data-gallery="images-gallery"
+                                href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg"
+                                    class="img-fluid" alt=""></a></div>
+                    </div>
+                    <div
+                        class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                        <span class="swiper-pagination-bullet" tabindex="0" role="button"
+                            aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0"
+                            role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet"
+                            tabindex="0" role="button" aria-label="Go to slide 3"></span><span
+                            class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
+                            aria-label="Go to slide 4" aria-current="true"></span><span class="swiper-pagination-bullet"
+                            tabindex="0" role="button" aria-label="Go to slide 5"></span><span
+                            class="swiper-pagination-bullet" tabindex="0" role="button"
+                            aria-label="Go to slide 6"></span><span class="swiper-pagination-bullet" tabindex="0"
+                            role="button" aria-label="Go to slide 7"></span><span class="swiper-pagination-bullet"
+                            tabindex="0" role="button" aria-label="Go to slide 8"></span></div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+
+            </div>
+        </section><!-- End Gallery Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container aos-init" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Contact</h2>
+                    <p>Need Help? <span>Contact Us</span></p>
+                </div>
+
+                <div class="mb-3">
+                    <iframe style="border:0; width: 100%; height: 350px;"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                        frameborder="0" allowfullscreen=""></iframe>
+                </div><!-- End Google Maps -->
+
+                <div class="row gy-4">
+
+                    <div class="col-md-6">
+                        <div class="info-item  d-flex align-items-center">
+                            <i class="icon bi bi-map flex-shrink-0"></i>
+                            <div>
+                                <h3>Our Address</h3>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-md-6">
+                        <div class="info-item d-flex align-items-center">
+                            <i class="icon bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h3>Email Us</h3>
+                                <p>contact@example.com</p>
+                            </div>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-md-6">
+                        <div class="info-item  d-flex align-items-center">
+                            <i class="icon bi bi-telephone flex-shrink-0"></i>
+                            <div>
+                                <h3>Call Us</h3>
+                                <p>+1 5589 55488 55</p>
+                            </div>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-md-6">
+                        <div class="info-item  d-flex align-items-center">
+                            <i class="icon bi bi-share flex-shrink-0"></i>
+                            <div>
+                                <h3>Opening Hours</h3>
+                                <div><strong>Mon-Sat:</strong> 11AM - 23PM;
+                                    <strong>Sunday:</strong> Closed
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                </div>
+
+
+            </div>
+        </section>
+    </main><!-- End #main -->
+
+</body>
