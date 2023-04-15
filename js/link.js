@@ -36,7 +36,7 @@ function paginaProducto2() {
     node_3.appendChild(node_4);
 
     var node_5 = document.createElement('DIV');
-    node_5.setAttribute('class', 'col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start m-auto');
+    node_5.setAttribute('class', 'col-sm order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start m-auto');
     node_4.appendChild(node_5);
 
     var node_6 = document.createElement('H2');
@@ -75,7 +75,7 @@ function paginaProducto2() {
     node_13.appendChild(node_14);
 
     var node_15 = document.createElement('DIV');
-    node_15.setAttribute('class', 'col-lg-5   text-lg-start');
+    node_15.setAttribute('class', 'col-sm margen  text-lg-start');
     node_4.appendChild(node_15);
 
     var node_16 = document.createElement('IMG');
@@ -85,6 +85,19 @@ function paginaProducto2() {
     node_16.setAttribute('data-aos', 'zoom-out');
     node_16.setAttribute('data-aos-delay', '300');
     node_15.appendChild(node_16);
+
+    var aux = document.createElement('div');
+    aux.setAttribute('class','col-sm margen   text-lg-start');
+    node_4.appendChild(aux);
+
+    var aux1 = document.createElement('img');
+    aux1.setAttribute('src',"http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png");
+    aux1.setAttribute('class', 'img-fluid margen2 aos-init aos-animate');
+    aux1.setAttribute('data-aos', 'zoom-out');
+    aux1.setAttribute('data-aos-delay', '300');
+    aux.appendChild(aux1);
+
+
 
     var node_17 = document.createElement('MAIN');
     node_17.setAttribute('id', 'main');
@@ -154,7 +167,7 @@ function paginaProducto2() {
     node_33.setAttribute('class', 'fst-italic');
     node_32.appendChild(node_33);
 
-    var node_34 = document.createTextNode((new String("\\n                                El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el\\n                                cual se materializó en junio de 2001,\\n                                constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de\\n                                Mortitx, con un objetivo principal:\\n                                la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter\\n                                propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53\\n                                socios.\\n                            ")));
+    var node_34 = document.createTextNode((new String("\nEl proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.\n ")));
     node_33.appendChild(node_34);
 
     var node_35 = document.createElement('DIV');
@@ -546,7 +559,7 @@ function paginaProducto2() {
     node_129.setAttribute('class', 'price');
     node_123.appendChild(node_129);
 
-    var node_130 = document.createTextNode((new String("\\n                                    12.18EUR\\n                                ")));
+    var node_130 = document.createTextNode((new String("12.18EUR")));
     node_129.appendChild(node_130);
 
     var node_131 = document.createElement('DIV');
@@ -578,7 +591,7 @@ function paginaProducto2() {
     node_137.setAttribute('class', 'price');
     node_131.appendChild(node_137);
 
-    var node_138 = document.createTextNode((new String("\\n                                    15.98EUR\\n                                ")));
+    var node_138 = document.createTextNode((new String("15.98EUR")));
     node_137.appendChild(node_138);
 
     var node_139 = document.createElement('DIV');
@@ -610,7 +623,7 @@ function paginaProducto2() {
     node_145.setAttribute('class', 'price');
     node_139.appendChild(node_145);
 
-    var node_146 = document.createTextNode((new String("\\n                                    62.90EUR\\n                                ")));
+    var node_146 = document.createTextNode((new String("62.90EUR")));
     node_145.appendChild(node_146);
 
     var node_147 = document.createElement('DIV');
@@ -658,14 +671,14 @@ function paginaProducto2() {
     node_157.setAttribute('class', 'ingredients');
     node_152.appendChild(node_157);
 
-    var node_158 = document.createTextNode((new String("\\n                                    Lorem, deren, trataro, filede, nerada\\n                                ")));
+    var node_158 = document.createTextNode((new String("Lorem, deren, trataro, filede, nerada")));
     node_157.appendChild(node_158);
 
     var node_159 = document.createElement('P');
     node_159.setAttribute('class', 'price');
     node_152.appendChild(node_159);
 
-    var node_160 = document.createTextNode((new String("\\n                                    $5.95\\n                                ")));
+    var node_160 = document.createTextNode((new String("$5.95")));
     node_159.appendChild(node_160);
 
     var node_161 = document.createElement('DIV');
@@ -713,14 +726,14 @@ function paginaProducto2() {
     node_171.setAttribute('class', 'ingredients');
     node_166.appendChild(node_171);
 
-    var node_172 = document.createTextNode((new String("\\n                                    Lorem, deren, trataro, filede, nerada\\n                                ")));
+    var node_172 = document.createTextNode((new String("Lorem, deren, trataro, filede, nerada")));
     node_171.appendChild(node_172);
 
     var node_173 = document.createElement('P');
     node_173.setAttribute('class', 'price');
     node_166.appendChild(node_173);
 
-    var node_174 = document.createTextNode((new String("\\n                                    $5.95\\n                                ")));
+    var node_174 = document.createTextNode((new String("$5.95")));
     node_173.appendChild(node_174);
 
     var node_175 = document.createElement('SECTION');
@@ -789,8 +802,7 @@ function paginaProducto2() {
     node_189.setAttribute('class', 'bi bi-quote quote-icon-left');
     node_188.appendChild(node_189);
 
-    var node_190 = document.createTextNode((new String("\\n                                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum\\n                                                suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh\\n                                                et. Maecen aliquam, risus at semper.\\n                                                ")));
-    node_188.appendChild(node_190);
+    var node_190 = document.createTextNode((new String("Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh")));
 
     var node_191 = document.createElement('I');
     node_191.setAttribute('class', 'bi bi-quote quote-icon-right');
@@ -862,7 +874,7 @@ function paginaProducto2() {
     node_208.setAttribute('class', 'bi bi-quote quote-icon-left');
     node_207.appendChild(node_208);
 
-    var node_209 = document.createTextNode((new String("\\n                                                Export tempor illum tamen malis malis eram quae irure esse labore quem\\n                                                cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua\\n                                                noster fugiat irure amet legam anim culpa.\\n                                                ")));
+    var node_209 = document.createTextNode((new String("Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.\n                                                ")));
     node_207.appendChild(node_209);
 
     var node_210 = document.createElement('I');
@@ -935,7 +947,7 @@ function paginaProducto2() {
     node_227.setAttribute('class', 'bi bi-quote quote-icon-left');
     node_226.appendChild(node_227);
 
-    var node_228 = document.createTextNode((new String("\\n                                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum\\n                                                suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh\\n                                                et. Maecen aliquam, risus at semper.\\n                                                ")));
+    var node_228 = document.createTextNode((new String("Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.\n                                                ")));
     node_226.appendChild(node_228);
 
     var node_229 = document.createElement('I');
@@ -1008,7 +1020,7 @@ function paginaProducto2() {
     node_246.setAttribute('class', 'bi bi-quote quote-icon-left');
     node_245.appendChild(node_246);
 
-    var node_247 = document.createTextNode((new String("\\n                                                Export tempor illum tamen malis malis eram quae irure esse labore quem\\n                                                cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua\\n                                                noster fugiat irure amet legam anim culpa.\\n                                                ")));
+    var node_247 = document.createTextNode((new String("Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.\n                                                ")));
     node_245.appendChild(node_247);
 
     var node_248 = document.createElement('I');
@@ -1081,7 +1093,7 @@ function paginaProducto2() {
     node_265.setAttribute('class', 'bi bi-quote quote-icon-left');
     node_264.appendChild(node_265);
 
-    var node_266 = document.createTextNode((new String("\\n                                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum\\n                                                suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh\\n                                                et. Maecen aliquam, risus at semper.\\n                                                ")));
+    var node_266 = document.createTextNode((new String("Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.\n                                                ")));
     node_264.appendChild(node_266);
 
     var node_267 = document.createElement('I');
@@ -1154,7 +1166,7 @@ function paginaProducto2() {
     node_284.setAttribute('class', 'bi bi-quote quote-icon-left');
     node_283.appendChild(node_284);
 
-    var node_285 = document.createTextNode((new String("\\n                                                Export tempor illum tamen malis malis eram quae irure esse labore quem\\n                                                cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua\\n                                                noster fugiat irure amet legam anim culpa.\\n                                                ")));
+    var node_285 = document.createTextNode((new String(" Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.\n                                                ")));
     node_283.appendChild(node_285);
 
     var node_286 = document.createElement('I');
@@ -1317,7 +1329,7 @@ function paginaProducto2() {
     node_323.setAttribute('class', 'description');
     node_318.appendChild(node_323);
 
-    var node_324 = document.createTextNode((new String("\\n                                Quo corporis voluptas ea ad. Consectetur inventore sapiente ipsum voluptas eos omnis\\n                                facere. Enim facilis veritatis id est rem repudiandae nulla expedita quas.\\n                            ")));
+    var node_324 = document.createTextNode((new String("Quo corporis voluptas ea ad. Consectetur inventore sapiente ipsum voluptas eos omnis facere. Enim facilis veritatis id est rem repudiandae nulla expedita quas.                        ")));
     node_323.appendChild(node_324);
 
     var node_325 = document.createElement('DIV');
@@ -1345,7 +1357,7 @@ function paginaProducto2() {
     node_330.setAttribute('class', 'description');
     node_325.appendChild(node_330);
 
-    var node_331 = document.createTextNode((new String("\\n                                In delectus sint qui et enim. Et ab repudiandae inventore quaerat doloribus. Facere nemo\\n                                vero est ut dolores ea assumenda et. Delectus saepe accusamus aspernatur.\\n                            ")));
+    var node_331 = document.createTextNode((new String("In delectus sint qui et enim. Et ab repudiandae inventore quaerat doloribus. Facere nemo vero est ut dolores ea assumenda et. Delectus saepe accusamus aspernatur.\n                            ")));
     node_330.appendChild(node_331);
 
     var node_332 = document.createElement('DIV');
@@ -1398,7 +1410,7 @@ function paginaProducto2() {
     node_343.setAttribute('class', 'description');
     node_338.appendChild(node_343);
 
-    var node_344 = document.createTextNode((new String("\\n                                Quo corporis voluptas ea ad. Consectetur inventore sapiente ipsum voluptas eos omnis\\n                                facere. Enim facilis veritatis id est rem repudiandae nulla expedita quas.\\n                            ")));
+    var node_344 = document.createTextNode((new String("Quo corporis voluptas ea ad. Consectetur inventore sapiente ipsum voluptas eos omnis facere. Enim facilis veritatis id est rem repudiandae nulla expedita quas.\n                            ")));
     node_343.appendChild(node_344);
 
     var node_345 = document.createElement('DIV');
@@ -1531,19 +1543,13 @@ function paginaProducto2() {
     node_414.setAttribute('class', 'section-header');
     node_413.appendChild(node_414);
 
-    var node_415 = document.createElement('H2');
-    node_414.appendChild(node_415);
-
-    var node_416 = document.createTextNode((new String("Contact")));
-    node_415.appendChild(node_416);
-
     var node_417 = document.createElement('P');
     node_414.appendChild(node_417);
 
     var node_418 = document.createElement('SPAN');
     node_417.appendChild(node_418);
 
-    var node_419 = document.createTextNode((new String("Contact Us")));
+    var node_419 = document.createTextNode((new String("Contacto")));
     node_418.appendChild(node_419);
 
     var node_420 = document.createElement('DIV');
@@ -1552,7 +1558,7 @@ function paginaProducto2() {
 
     var node_421 = document.createElement('IFRAME');
     node_421.setAttribute('style', 'border:0; width: 100%; height: 350px;');
-    node_421.setAttribute('src', 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621');
+    node_421.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6124.477589966659!2d2.913765460252749!3d39.86888869177018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297d6a0a43e5afd%3A0x1dccff5305e308a0!2sVinyes%20Mortitx!5e0!3m2!1ses!2ses!4v1681571881672!5m2!1ses!2ses");
     node_421.setAttribute('frameborder', '0');
     node_421.setAttribute('allowfullscreen', '');
     node_420.appendChild(node_421);
@@ -1579,13 +1585,13 @@ function paginaProducto2() {
     var node_427 = document.createElement('H3');
     node_426.appendChild(node_427);
 
-    var node_428 = document.createTextNode((new String("Our Address")));
+    var node_428 = document.createTextNode((new String("Dirección")));
     node_427.appendChild(node_428);
 
     var node_429 = document.createElement('P');
     node_426.appendChild(node_429);
 
-    var node_430 = document.createTextNode((new String("A108 Adam Street, New York, NY 535022")));
+    var node_430 = document.createTextNode((new String("Ctra. Pollença - Lluc- Km 10,9 07315 Escorca, Mallorca")));
     node_429.appendChild(node_430);
 
     var node_431 = document.createElement('DIV');
@@ -1606,13 +1612,13 @@ function paginaProducto2() {
     var node_435 = document.createElement('H3');
     node_434.appendChild(node_435);
 
-    var node_436 = document.createTextNode((new String("Email Us")));
+    var node_436 = document.createTextNode((new String("Email")));
     node_435.appendChild(node_436);
 
     var node_437 = document.createElement('P');
     node_434.appendChild(node_437);
 
-    var node_438 = document.createTextNode((new String("contact@example.com")));
+    var node_438 = document.createTextNode((new String("info@vinyesmortitx.com")));
     node_437.appendChild(node_438);
 
     var node_439 = document.createElement('DIV');
@@ -1633,13 +1639,13 @@ function paginaProducto2() {
     var node_443 = document.createElement('H3');
     node_442.appendChild(node_443);
 
-    var node_444 = document.createTextNode((new String("Call Us")));
+    var node_444 = document.createTextNode((new String("Teléfono")));
     node_443.appendChild(node_444);
 
     var node_445 = document.createElement('P');
     node_442.appendChild(node_445);
 
-    var node_446 = document.createTextNode((new String("+1 5589 55488 55")));
+    var node_446 = document.createTextNode((new String("971533889")));
     node_445.appendChild(node_446);
 
     var node_447 = document.createElement('DIV');
@@ -1660,7 +1666,7 @@ function paginaProducto2() {
     var node_451 = document.createElement('H3');
     node_450.appendChild(node_451);
 
-    var node_452 = document.createTextNode((new String("Opening Hours")));
+    var node_452 = document.createTextNode((new String("Horario")));
     node_451.appendChild(node_452);
 
     var node_453 = document.createElement('DIV');
@@ -1672,8 +1678,42 @@ function paginaProducto2() {
     var node_455 = document.createElement('STRONG');
     node_453.appendChild(node_455);
 
-    var node_456 = document.createTextNode((new String(" Closed\\n                                ")));
+    var node_456 = document.createTextNode((new String("Mo,Tu,We,Th,Fr 08:00-16:00")));
     node_453.appendChild(node_456);
+
+    var node_457 = document.createElement('DIV');
+    node_457.setAttribute('class', 'col-md-6');
+    node_422.appendChild(node_457);
+
+    var node_458 = document.createElement('DIV');
+    node_458.setAttribute('class', 'info-item  d-flex align-items-center');
+    node_457.appendChild(node_458);
+
+    var node_459 = document.createElement('I');
+    node_459.setAttribute('class', 'icon bi bi-globe flex-shrink-0');
+    node_458.appendChild(node_459);
+
+    var node_460 = document.createElement('DIV');
+    node_458.appendChild(node_460);
+
+    var node_461 = document.createElement('H3');
+    node_460.appendChild(node_461);
+
+    var node_462 = document.createTextNode((new String("Página Web")));
+    node_461.appendChild(node_462);
+
+    var node_463 = document.createElement('DIV');
+    node_460.appendChild(node_463);
+
+    var node_464 = document.createElement('STRONG');
+    node_463.appendChild(node_464);
+
+    var node_465 = document.createElement('STRONG');
+    node_463.appendChild(node_465);
+
+    var node_466 = document.createTextNode((new String("http://www.vinyesmortitx.com")));
+    node_463.appendChild(node_466);
+
 
 }
 
