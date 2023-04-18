@@ -567,12 +567,12 @@ function paginaProducto2() {
     node_122.appendChild(node_131);
 
     var node_132 = document.createElement('A');
-    node_132.setAttribute('href', 'http://www.vinyesmortitx.com/img_blog/1584632514.jpg');
+    node_132.setAttribute('href', 'http://www.vinyesmortitx.com/img_blog/1584635839.jpg');
     node_132.setAttribute('class', 'glightbox');
     node_131.appendChild(node_132);
 
     var node_133 = document.createElement('IMG');
-    node_133.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/1584632514.jpg');
+    node_133.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/1584635839.jpg');
     node_133.setAttribute('class', 'menu-img img-fluid');
     node_133.setAttribute('alt', '');
     node_132.appendChild(node_133);
@@ -599,12 +599,12 @@ function paginaProducto2() {
     node_122.appendChild(node_139);
 
     var node_140 = document.createElement('A');
-    node_140.setAttribute('href', 'http://www.vinyesmortitx.com/img_blog/ART_9u-negre.png');
+    node_140.setAttribute('href', 'http://www.vinyesmortitx.com/img_blog/1584635839.jpg');
     node_140.setAttribute('class', 'glightbox');
     node_139.appendChild(node_140);
 
     var node_141 = document.createElement('IMG');
-    node_141.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/ART_9u-negre.png');
+    node_141.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/1584635839.jpg');
     node_141.setAttribute('class', 'menu-img img-fluid');
     node_141.setAttribute('alt', '');
     node_140.appendChild(node_141);
@@ -1681,6 +1681,64 @@ function paginaProducto2() {
     var node_456 = document.createTextNode((new String("Mo,Tu,We,Th,Fr 08:00-16:00")));
     node_453.appendChild(node_456);
 
+    var node_467 = document.createElement('DIV');
+    node_467.setAttribute('class', 'col-md-6');
+    node_422.appendChild(node_467);
+
+    var node_468 = document.createElement('DIV');
+    node_468.setAttribute('class', 'info-item  d-flex align-items-center');
+    node_467.appendChild(node_468);
+
+    var node_469 = document.createElement('I');
+    node_469.setAttribute('class', 'icon <i fa-solid fa-utensils flex-shrink-0');
+    node_468.appendChild(node_469);
+
+    var node_470 = document.createElement('DIV');
+    node_468.appendChild(node_470);
+
+    var node_471 = document.createElement('H3');
+    node_470.appendChild(node_471);
+
+    var node_472 = document.createTextNode((new String("Restaurante cercano")));
+    node_471.appendChild(node_472);
+
+    var node_473 = document.createElement('DIV');
+    node_470.appendChild(node_473);
+
+    var node_474 = document.createElement('img');
+    node_474.src = 'img/restaurante.png';
+    node_474.className = "margen";
+    node_473.appendChild(node_474);
+
+    var node_475 = document.createElement('DIV');
+    node_475.setAttribute('class', 'col-md-6');
+    node_422.appendChild(node_475);
+
+    var node_476 = document.createElement('DIV');
+    node_476.setAttribute('class', 'info-item  d-flex align-items-center');
+    node_475.appendChild(node_476);
+
+    var node_477 = document.createElement('I');
+    node_477.setAttribute('class', 'icon <i fa-solid fa-utensils flex-shrink-0');
+    node_476.appendChild(node_477);
+
+    var node_478 = document.createElement('DIV');
+    node_476.appendChild(node_478);
+
+    var node_479 = document.createElement('H3');
+    node_478.appendChild(node_479);
+
+    var node_480 = document.createTextNode((new String("Supermercado cercano")));
+    node_479.appendChild(node_480);
+
+    var node_481 = document.createElement('DIV');
+    node_478.appendChild(node_481);
+
+    var node_482 = document.createElement('img');
+    node_482.src = 'img/supermercado.png';
+    node_482.className = "margen";
+    node_481.appendChild(node_482);
+
     var node_457 = document.createElement('DIV');
     node_457.setAttribute('class', 'col-md-6');
     node_422.appendChild(node_457);
@@ -1713,6 +1771,7 @@ function paginaProducto2() {
 
     var node_466 = document.createTextNode((new String("http://www.vinyesmortitx.com")));
     node_463.appendChild(node_466);
+
 
 
 }
@@ -2041,13 +2100,6 @@ function botonesNav(navState) {
             var node_15 = document.createTextNode((new String("Events")));
             node_14.appendChild(node_15);
 
-            var node_16 = document.createElement('LI');
-            var node_17 = document.createElement('A');
-            node_17.setAttribute('href', '#chefs');
-            node_16.appendChild(node_17);
-            var node_18 = document.createTextNode((new String("Chefs")));
-            node_17.appendChild(node_18);
-
             var node_19 = document.createElement('LI');
             var node_20 = document.createElement('A');
             node_20.setAttribute('href', '#gallery');
@@ -2067,7 +2119,6 @@ function botonesNav(navState) {
             ul.appendChild(node_7);
             ul.appendChild(node_10);
             ul.appendChild(node_13);
-            ul.appendChild(node_16);
             ul.appendChild(node_19);
             ul.appendChild(node_22);
 
@@ -2859,4 +2910,10 @@ $('.owl-carousel').owlCarousel({
     }
 });
 
+$(window).bind("load resize slid.bs.carousel", function() {
+    var imageHeight = $(".active .holder").height();
+    $(".controllers").height( imageHeight );
+    console.log("Slid");
+  });
 
+  
