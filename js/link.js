@@ -736,503 +736,424 @@ function paginaProducto2() {
     var node_174 = document.createTextNode((new String("$5.95")));
     node_173.appendChild(node_174);
 
-    var node_175 = document.createElement('SECTION');
-    node_175.setAttribute('id', 'testimonials');
-    node_175.setAttribute('class', 'testimonials section-bg');
-    node_17.appendChild(node_175);
+   
+var nodo_1 = document.createElement('SECTION');
+nodo_1.setAttribute('id', 'testimonials');
+nodo_1.setAttribute('class', 'testimonials section-bg client pt-3 pb-5');
+node_17.appendChild(nodo_1);
+
+var nodo_2 = document.createElement('DIV');
+nodo_2.setAttribute('class', 'container');
+nodo_1.appendChild(nodo_2);
+
+var nodo_3 = document.createElement('DIV');
+nodo_3.setAttribute('class', 'row text-center');
+nodo_2.appendChild(nodo_3);
+
+var nodo_4 = document.createElement('DIV');
+nodo_4.setAttribute('class', 'col-12');
+nodo_3.appendChild(nodo_4);
+
+var nodo_5 = document.createElement('H1');
+nodo_5.setAttribute('class', 'display-3 fw-bold text-white');
+nodo_4.appendChild(nodo_5);
+
+var nodo_6 = document.createTextNode((new String("Testimonials")));
+nodo_5.appendChild(nodo_6);
 
-    var node_176 = document.createElement('DIV');
-    node_176.setAttribute('class', 'container aplicar-borde margen granate aos-init aos-animate');
-    node_176.setAttribute('data-aos', 'fade-up');
-    node_175.appendChild(node_176);
-
-    var node_177 = document.createElement('DIV');
-    node_177.setAttribute('class', 'section-header');
-    node_176.appendChild(node_177);
-
-    var node_178 = document.createElement('P');
-    node_177.appendChild(node_178);
-
-    var node_179 = document.createElement('SPAN');
-    node_178.appendChild(node_179);
-
-    var node_180 = document.createTextNode((new String("Valoraciones")));
-    node_179.appendChild(node_180);
-
-    var node_181 = document.createElement('DIV');
-    node_181.setAttribute('class', 'slides-1 swiper blanco margen swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden aos-init aos-animate');
-    node_181.setAttribute('data-aos', 'fade-up');
-    node_181.setAttribute('data-aos-delay', '100');
-    node_176.appendChild(node_181);
-
-    var node_182 = document.createElement('DIV');
-    node_182.setAttribute('class', 'swiper-wrapper');
-    node_182.setAttribute('id', 'swiper-wrapper-4856f01d049f5c8d');
-    node_182.setAttribute('aria-live', 'off');
-    node_182.setAttribute('style', 'transition-duration: 0ms; transform: translate3d(-2016px, 0px, 0px);');
-    node_181.appendChild(node_182);
-
-    var node_183 = document.createElement('DIV');
-    node_183.setAttribute('class', 'swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev');
-    node_183.setAttribute('data-swiper-slide-index', '0');
-    node_183.setAttribute('role', 'group');
-    node_183.setAttribute('aria-label', '1 / 2');
-    node_182.appendChild(node_183);
-
-    var node_184 = document.createElement('DIV');
-    node_184.setAttribute('class', 'testimonial-item');
-    node_183.appendChild(node_184);
-
-    var node_185 = document.createElement('DIV');
-    node_185.setAttribute('class', 'row gy-4 justify-content-center');
-    node_184.appendChild(node_185);
-
-    var node_186 = document.createElement('DIV');
-    node_186.setAttribute('class', 'col-lg-6');
-    node_185.appendChild(node_186);
+var nodo_7 = document.createElement('HR');
+nodo_7.setAttribute('class', 'bg-white mb-4 mt-0 d-inline-block mx-auto');
+nodo_7.setAttribute('style', 'width: 100px; height:3px;');
+nodo_4.appendChild(nodo_7);
+
+var nodo_8 = document.createElement('P');
+nodo_8.setAttribute('class', 'p-text text-white');
+nodo_4.appendChild(nodo_8);
 
-    var node_187 = document.createElement('DIV');
-    node_187.setAttribute('class', 'testimonial-content');
-    node_186.appendChild(node_187);
+var nodo_9 = document.createTextNode((new String("What our clients are saying")));
+nodo_8.appendChild(nodo_9);
 
-    var node_188 = document.createElement('P');
-    node_187.appendChild(node_188);
+var nodo_10 = document.createElement('DIV');
+nodo_10.setAttribute('class', 'row align-items-md-center text-white');
+nodo_2.appendChild(nodo_10);
 
-    var node_189 = document.createElement('I');
-    node_189.setAttribute('class', 'bi bi-quote quote-icon-left');
-    node_188.appendChild(node_189);
+var nodo_11 = document.createElement('DIV');
+nodo_11.setAttribute('class', 'col-lg-12 col-md-12 col-sm-12');
+nodo_10.appendChild(nodo_11);
 
-    var node_190 = document.createTextNode((new String("Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh")));
+var nodo_12 = document.createElement('DIV');
+nodo_12.setAttribute('id', 'carouselExampleCaptions');
+nodo_12.setAttribute('class', 'carousel slide');
+nodo_12.setAttribute('data-bs-ride', 'carousel');
+nodo_11.appendChild(nodo_12);
 
-    var node_191 = document.createElement('I');
-    node_191.setAttribute('class', 'bi bi-quote quote-icon-right');
-    node_188.appendChild(node_191);
+var nodo_13 = document.createElement('DIV');
+nodo_13.setAttribute('class', 'carousel-inner');
+nodo_12.appendChild(nodo_13);
 
-    var node_192 = document.createElement('H3');
-    node_187.appendChild(node_192);
+var nodo_14 = document.createElement('DIV');
+nodo_14.setAttribute('class', 'carousel-item active');
+nodo_13.appendChild(nodo_14);
+
+var nodo_15 = document.createElement('DIV');
+nodo_15.setAttribute('class', 'row p-4');
+nodo_14.appendChild(nodo_15);
 
-    var node_193 = document.createTextNode((new String("Saul Goodman")));
-    node_192.appendChild(node_193);
+var nodo_16 = document.createElement('DIV');
+nodo_16.setAttribute('class', 't-card');
+nodo_15.appendChild(nodo_16);
 
-    var node_194 = document.createElement('H4');
-    node_187.appendChild(node_194);
+var nodo_17 = document.createElement('I');
+nodo_17.setAttribute('class', 'fa fa-quote-left');
+nodo_17.setAttribute('aria-hidden', 'true');
+nodo_16.appendChild(nodo_17);
 
-    var node_195 = document.createTextNode((new String("Ceo & Founder")));
-    node_194.appendChild(node_195);
+var nodo_18 = document.createElement('P');
+nodo_18.setAttribute('class', 'lh-lg');
+nodo_16.appendChild(nodo_18);
 
-    var node_196 = document.createElement('DIV');
-    node_196.setAttribute('class', 'stars');
-    node_187.appendChild(node_196);
-
-    var node_197 = document.createElement('I');
-    node_197.setAttribute('class', 'bi bi-star-fill');
-    node_196.appendChild(node_197);
-
-    var node_198 = document.createElement('I');
-    node_198.setAttribute('class', 'bi bi-star-fill');
-    node_196.appendChild(node_198);
-
-    var node_199 = document.createElement('I');
-    node_199.setAttribute('class', 'bi bi-star-fill');
-    node_196.appendChild(node_199);
-
-    var node_200 = document.createElement('I');
-    node_200.setAttribute('class', 'bi bi-star-fill');
-    node_196.appendChild(node_200);
-
-    var node_201 = document.createElement('I');
-    node_201.setAttribute('class', 'bi bi-star-fill');
-    node_196.appendChild(node_201);
+var nodo_19 = document.createElement('I');
+nodo_19.setAttribute('class', 'fa fa-quote-right');
+nodo_19.setAttribute('aria-hidden', 'true');
+nodo_16.appendChild(nodo_19);
 
-    var node_202 = document.createElement('DIV');
-    node_202.setAttribute('class', 'swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active');
-    node_202.setAttribute('data-swiper-slide-index', '1');
-    node_202.setAttribute('role', 'group');
-    node_202.setAttribute('aria-label', '2 / 2');
-    node_182.appendChild(node_202);
+var nodo_20 = document.createElement('BR');
+nodo_16.appendChild(nodo_20);
 
-    var node_203 = document.createElement('DIV');
-    node_203.setAttribute('class', 'testimonial-item');
-    node_202.appendChild(node_203);
+var nodo_21 = document.createElement('DIV');
+nodo_21.setAttribute('class', 'row');
+nodo_15.appendChild(nodo_21);
 
-    var node_204 = document.createElement('DIV');
-    node_204.setAttribute('class', 'row gy-4 justify-content-center');
-    node_203.appendChild(node_204);
+var nodo_22 = document.createElement('DIV');
+nodo_22.setAttribute('class', 'col-sm-2 pt-3');
+nodo_21.appendChild(nodo_22);
 
-    var node_205 = document.createElement('DIV');
-    node_205.setAttribute('class', 'col-lg-6');
-    node_204.appendChild(node_205);
+var nodo_23 = document.createElement('IMG');
+nodo_23.setAttribute('src', 'https://source.unsplash.com/300x300/?girl');
+nodo_23.setAttribute('class', 'rounded-circle img-responsive img-fluid');
+nodo_22.appendChild(nodo_23);
 
-    var node_206 = document.createElement('DIV');
-    node_206.setAttribute('class', 'testimonial-content');
-    node_205.appendChild(node_206);
+var nodo_24 = document.createElement('DIV');
+nodo_24.setAttribute('class', 'col-sm-10');
+nodo_21.appendChild(nodo_24);
 
-    var node_207 = document.createElement('P');
-    node_206.appendChild(node_207);
+var nodo_25 = document.createElement('DIV');
+nodo_25.setAttribute('class', 'arrow-down d-none d-lg-block');
+nodo_24.appendChild(nodo_25);
 
-    var node_208 = document.createElement('I');
-    node_208.setAttribute('class', 'bi bi-quote quote-icon-left');
-    node_207.appendChild(node_208);
+var nodo_26 = document.createElement('H4');
+nodo_24.appendChild(nodo_26);
 
-    var node_209 = document.createTextNode((new String("Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.\n                                                ")));
-    node_207.appendChild(node_209);
+var nodo_27 = document.createElement('STRONG');
+nodo_26.appendChild(nodo_27);
 
-    var node_210 = document.createElement('I');
-    node_210.setAttribute('class', 'bi bi-quote quote-icon-right');
-    node_207.appendChild(node_210);
+var nodo_28 = document.createTextNode((new String("Sunaina Samuel")));
+nodo_27.appendChild(nodo_28);
 
-    var node_211 = document.createElement('H3');
-    node_206.appendChild(node_211);
+var nodo_29 = document.createElement('P');
+nodo_29.setAttribute('class', 'testimonial_subtitle');
+nodo_24.appendChild(nodo_29);
 
-    var node_212 = document.createTextNode((new String("Sara Wilsson")));
-    node_211.appendChild(node_212);
+var nodo_30 = document.createElement('SPAN');
+nodo_29.appendChild(nodo_30);
 
-    var node_213 = document.createElement('H4');
-    node_206.appendChild(node_213);
+var nodo_31 = document.createTextNode((new String("Associate Software Engineer")));
+nodo_30.appendChild(nodo_31);
 
-    var node_214 = document.createTextNode((new String("Designer")));
-    node_213.appendChild(node_214);
+var nodo_32 = document.createElement('BR');
+nodo_29.appendChild(nodo_32);
 
-    var node_215 = document.createElement('DIV');
-    node_215.setAttribute('class', 'stars');
-    node_206.appendChild(node_215);
+var nodo_33 = document.createElement('SPAN');
+nodo_29.appendChild(nodo_33);
 
-    var node_216 = document.createElement('I');
-    node_216.setAttribute('class', 'bi bi-star-fill');
-    node_215.appendChild(node_216);
+var nodo_34 = document.createTextNode((new String("CodeHim")));
+nodo_33.appendChild(nodo_34);
 
-    var node_217 = document.createElement('I');
-    node_217.setAttribute('class', 'bi bi-star-fill');
-    node_215.appendChild(node_217);
+var nodo_35 = document.createElement('DIV');
+nodo_35.setAttribute('class', 'carousel-item');
+nodo_13.appendChild(nodo_35);
 
-    var node_218 = document.createElement('I');
-    node_218.setAttribute('class', 'bi bi-star-fill');
-    node_215.appendChild(node_218);
+var nodo_36 = document.createElement('DIV');
+nodo_36.setAttribute('class', 'row p-4');
+nodo_35.appendChild(nodo_36);
 
-    var node_219 = document.createElement('I');
-    node_219.setAttribute('class', 'bi bi-star-fill');
-    node_215.appendChild(node_219);
+var nodo_37 = document.createElement('DIV');
+nodo_37.setAttribute('class', 't-card');
+nodo_36.appendChild(nodo_37);
 
-    var node_220 = document.createElement('I');
-    node_220.setAttribute('class', 'bi bi-star-fill');
-    node_215.appendChild(node_220);
+var nodo_38 = document.createElement('I');
+nodo_38.setAttribute('class', 'fa fa-quote-left');
+nodo_38.setAttribute('aria-hidden', 'true');
+nodo_37.appendChild(nodo_38);
 
-    var node_221 = document.createElement('DIV');
-    node_221.setAttribute('class', 'swiper-slide swiper-slide-prev swiper-slide-duplicate-next');
-    node_221.setAttribute('data-swiper-slide-index', '0');
-    node_221.setAttribute('role', 'group');
-    node_221.setAttribute('aria-label', '1 / 2');
-    node_182.appendChild(node_221);
+var nodo_39 = document.createElement('P');
+nodo_39.setAttribute('class', 'lh-lg');
+nodo_37.appendChild(nodo_39);
 
-    var node_222 = document.createElement('DIV');
-    node_222.setAttribute('class', 'testimonial-item');
-    node_221.appendChild(node_222);
+var nodo_40 = document.createElement('I');
+nodo_40.setAttribute('class', 'fa fa-quote-right');
+nodo_40.setAttribute('aria-hidden', 'true');
+nodo_37.appendChild(nodo_40);
 
-    var node_223 = document.createElement('DIV');
-    node_223.setAttribute('class', 'row gy-4 justify-content-center');
-    node_222.appendChild(node_223);
+var nodo_41 = document.createElement('BR');
+nodo_37.appendChild(nodo_41);
 
-    var node_224 = document.createElement('DIV');
-    node_224.setAttribute('class', 'col-lg-6');
-    node_223.appendChild(node_224);
+var nodo_42 = document.createElement('DIV');
+nodo_42.setAttribute('class', 'row');
+nodo_36.appendChild(nodo_42);
 
-    var node_225 = document.createElement('DIV');
-    node_225.setAttribute('class', 'testimonial-content');
-    node_224.appendChild(node_225);
+var nodo_43 = document.createElement('DIV');
+nodo_43.setAttribute('class', 'col-sm-2 pt-4');
+nodo_42.appendChild(nodo_43);
 
-    var node_226 = document.createElement('P');
-    node_225.appendChild(node_226);
+var nodo_44 = document.createElement('IMG');
+nodo_44.setAttribute('src', 'https://source.unsplash.com/300x300/?man');
+nodo_44.setAttribute('class', 'rounded-circle img-responsive img-fluid');
+nodo_43.appendChild(nodo_44);
 
-    var node_227 = document.createElement('I');
-    node_227.setAttribute('class', 'bi bi-quote quote-icon-left');
-    node_226.appendChild(node_227);
+var nodo_45 = document.createElement('DIV');
+nodo_45.setAttribute('class', 'col-sm-10');
+nodo_42.appendChild(nodo_45);
 
-    var node_228 = document.createTextNode((new String("Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.\n                                                ")));
-    node_226.appendChild(node_228);
+var nodo_46 = document.createElement('DIV');
+nodo_46.setAttribute('class', 'arrow-down d-none d-lg-block');
+nodo_45.appendChild(nodo_46);
 
-    var node_229 = document.createElement('I');
-    node_229.setAttribute('class', 'bi bi-quote quote-icon-right');
-    node_226.appendChild(node_229);
+var nodo_47 = document.createElement('H4');
+nodo_45.appendChild(nodo_47);
 
-    var node_230 = document.createElement('H3');
-    node_225.appendChild(node_230);
+var nodo_48 = document.createElement('STRONG');
+nodo_47.appendChild(nodo_48);
 
-    var node_231 = document.createTextNode((new String("Saul Goodman")));
-    node_230.appendChild(node_231);
+var nodo_49 = document.createTextNode((new String("Esther Zawadi")));
+nodo_48.appendChild(nodo_49);
 
-    var node_232 = document.createElement('H4');
-    node_225.appendChild(node_232);
+var nodo_50 = document.createElement('P');
+nodo_50.setAttribute('class', 'testimonial_subtitle');
+nodo_45.appendChild(nodo_50);
 
-    var node_233 = document.createTextNode((new String("Ceo & Founder")));
-    node_232.appendChild(node_233);
+var nodo_51 = document.createElement('SPAN');
+nodo_50.appendChild(nodo_51);
 
-    var node_234 = document.createElement('DIV');
-    node_234.setAttribute('class', 'stars');
-    node_225.appendChild(node_234);
+var nodo_52 = document.createTextNode((new String("\\n                digital strategist")));
+nodo_51.appendChild(nodo_52);
 
-    var node_235 = document.createElement('I');
-    node_235.setAttribute('class', 'bi bi-star-fill');
-    node_234.appendChild(node_235);
+var nodo_53 = document.createElement('BR');
+nodo_50.appendChild(nodo_53);
 
-    var node_236 = document.createElement('I');
-    node_236.setAttribute('class', 'bi bi-star-fill');
-    node_234.appendChild(node_236);
+var nodo_54 = document.createElement('SPAN');
+nodo_50.appendChild(nodo_54);
 
-    var node_237 = document.createElement('I');
-    node_237.setAttribute('class', 'bi bi-star-fill');
-    node_234.appendChild(node_237);
+var nodo_55 = document.createTextNode((new String("Vaxa digital")));
+nodo_54.appendChild(nodo_55);
 
-    var node_238 = document.createElement('I');
-    node_238.setAttribute('class', 'bi bi-star-fill');
-    node_234.appendChild(node_238);
+var nodo_56 = document.createElement('DIV');
+nodo_56.setAttribute('class', 'carousel-item');
+nodo_13.appendChild(nodo_56);
 
-    var node_239 = document.createElement('I');
-    node_239.setAttribute('class', 'bi bi-star-fill');
-    node_234.appendChild(node_239);
+var nodo_57 = document.createElement('DIV');
+nodo_57.setAttribute('class', 'row p-4');
+nodo_56.appendChild(nodo_57);
 
-    var node_240 = document.createElement('DIV');
-    node_240.setAttribute('class', 'swiper-slide swiper-slide-active');
-    node_240.setAttribute('data-swiper-slide-index', '1');
-    node_240.setAttribute('role', 'group');
-    node_240.setAttribute('aria-label', '2 / 2');
-    node_182.appendChild(node_240);
+var nodo_58 = document.createElement('DIV');
+nodo_58.setAttribute('class', 't-card');
+nodo_57.appendChild(nodo_58);
 
-    var node_241 = document.createElement('DIV');
-    node_241.setAttribute('class', 'testimonial-item');
-    node_240.appendChild(node_241);
+var nodo_59 = document.createElement('I');
+nodo_59.setAttribute('class', 'fa fa-quote-left');
+nodo_59.setAttribute('aria-hidden', 'true');
+nodo_58.appendChild(nodo_59);
 
-    var node_242 = document.createElement('DIV');
-    node_242.setAttribute('class', 'row gy-4 justify-content-center');
-    node_241.appendChild(node_242);
+var nodo_60 = document.createElement('P');
+nodo_60.setAttribute('class', 'lh-lg');
+nodo_58.appendChild(nodo_60);
 
-    var node_243 = document.createElement('DIV');
-    node_243.setAttribute('class', 'col-lg-6');
-    node_242.appendChild(node_243);
+var nodo_61 = document.createElement('I');
+nodo_61.setAttribute('class', 'fa fa-quote-right');
+nodo_61.setAttribute('aria-hidden', 'true');
+nodo_58.appendChild(nodo_61);
 
-    var node_244 = document.createElement('DIV');
-    node_244.setAttribute('class', 'testimonial-content');
-    node_243.appendChild(node_244);
+var nodo_62 = document.createElement('BR');
+nodo_58.appendChild(nodo_62);
 
-    var node_245 = document.createElement('P');
-    node_244.appendChild(node_245);
+var nodo_63 = document.createElement('DIV');
+nodo_63.setAttribute('class', 'row text-lg-start');
+nodo_57.appendChild(nodo_63);
 
-    var node_246 = document.createElement('I');
-    node_246.setAttribute('class', 'bi bi-quote quote-icon-left');
-    node_245.appendChild(node_246);
+var nodo_64 = document.createElement('DIV');
+nodo_64.setAttribute('class', 'col-sm-2 pt-4 align-items-center');
+nodo_63.appendChild(nodo_64);
 
-    var node_247 = document.createTextNode((new String("Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.\n                                                ")));
-    node_245.appendChild(node_247);
+var nodo_65 = document.createElement('IMG');
+nodo_65.setAttribute('src', 'https://source.unsplash.com/300x300/?businessman');
+nodo_65.setAttribute('class', 'rounded-circle img-responsive img-fluid');
+nodo_64.appendChild(nodo_65);
 
-    var node_248 = document.createElement('I');
-    node_248.setAttribute('class', 'bi bi-quote quote-icon-right');
-    node_245.appendChild(node_248);
+var nodo_66 = document.createElement('DIV');
+nodo_66.setAttribute('class', 'col-sm-10');
+nodo_63.appendChild(nodo_66);
 
-    var node_249 = document.createElement('H3');
-    node_244.appendChild(node_249);
+var nodo_67 = document.createElement('DIV');
+nodo_67.setAttribute('class', 'arrow-down d-none d-md-block');
+nodo_66.appendChild(nodo_67);
 
-    var node_250 = document.createTextNode((new String("Sara Wilsson")));
-    node_249.appendChild(node_250);
+var nodo_68 = document.createElement('H4');
+nodo_66.appendChild(nodo_68);
 
-    var node_251 = document.createElement('H4');
-    node_244.appendChild(node_251);
+var nodo_69 = document.createElement('STRONG');
+nodo_68.appendChild(nodo_69);
 
-    var node_252 = document.createTextNode((new String("Designer")));
-    node_251.appendChild(node_252);
+var nodo_70 = document.createTextNode((new String("Patrick muriungi")));
+nodo_69.appendChild(nodo_70);
 
-    var node_253 = document.createElement('DIV');
-    node_253.setAttribute('class', 'stars');
-    node_244.appendChild(node_253);
+var nodo_71 = document.createElement('P');
+nodo_71.setAttribute('class', 'testimonial_subtitle');
+nodo_66.appendChild(nodo_71);
 
-    var node_254 = document.createElement('I');
-    node_254.setAttribute('class', 'bi bi-star-fill');
-    node_253.appendChild(node_254);
+var nodo_72 = document.createElement('SPAN');
+nodo_71.appendChild(nodo_72);
 
-    var node_255 = document.createElement('I');
-    node_255.setAttribute('class', 'bi bi-star-fill');
-    node_253.appendChild(node_255);
+var nodo_73 = document.createTextNode((new String("Web Technologist")));
+nodo_72.appendChild(nodo_73);
 
-    var node_256 = document.createElement('I');
-    node_256.setAttribute('class', 'bi bi-star-fill');
-    node_253.appendChild(node_256);
+var nodo_74 = document.createElement('BR');
+nodo_71.appendChild(nodo_74);
 
-    var node_257 = document.createElement('I');
-    node_257.setAttribute('class', 'bi bi-star-fill');
-    node_253.appendChild(node_257);
+var nodo_75 = document.createElement('SPAN');
+nodo_71.appendChild(nodo_75);
 
-    var node_258 = document.createElement('I');
-    node_258.setAttribute('class', 'bi bi-star-fill');
-    node_253.appendChild(node_258);
+var nodo_76 = document.createTextNode((new String("Vaxa digital")));
+nodo_75.appendChild(nodo_76);
 
-    var node_259 = document.createElement('DIV');
-    node_259.setAttribute('class', 'swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev');
-    node_259.setAttribute('data-swiper-slide-index', '0');
-    node_259.setAttribute('role', 'group');
-    node_259.setAttribute('aria-label', '1 / 2');
-    node_182.appendChild(node_259);
+var nodo_77 = document.createElement('DIV');
+nodo_77.setAttribute('class', 'controls push-right');
+nodo_11.appendChild(nodo_77);
 
-    var node_260 = document.createElement('DIV');
-    node_260.setAttribute('class', 'testimonial-item');
-    node_259.appendChild(node_260);
+var nodo_78 = document.createElement('A');
+nodo_78.setAttribute('class', 'left fa fa-chevron-left text-white btn btn btn-outline-light');
+nodo_78.setAttribute('href', '#carouselExampleCaptions');
+nodo_78.setAttribute('data-bs-slide', 'prev');
+nodo_77.appendChild(nodo_78);
 
-    var node_261 = document.createElement('DIV');
-    node_261.setAttribute('class', 'row gy-4 justify-content-center');
-    node_260.appendChild(node_261);
+var nodo_79 = document.createElement('A');
+nodo_79.setAttribute('class', 'right fa fa-chevron-right text-white btn btn btn-outline-light');
+nodo_79.setAttribute('href', '#carouselExampleCaptions');
+nodo_79.setAttribute('data-bs-slide', 'next');
+nodo_77.appendChild(nodo_79);
 
-    var node_262 = document.createElement('DIV');
-    node_262.setAttribute('class', 'col-lg-6');
-    node_261.appendChild(node_262);
 
-    var node_263 = document.createElement('DIV');
-    node_263.setAttribute('class', 'testimonial-content');
-    node_262.appendChild(node_263);
+var form_1 = document.createElement('DIV');
+form_1.setAttribute('class', 'tab-pane');
+form_1.setAttribute('id', 'add-comment');
 
-    var node_264 = document.createElement('P');
-    node_263.appendChild(node_264);
+var form_2 = document.createElement('FORM');
+form_2.setAttribute('action', '#');
+form_2.setAttribute('method', 'post');
+form_2.setAttribute('class', 'form-horizontal');
+form_2.setAttribute('id', 'commentForm');
+form_2.setAttribute('role', 'form');
+form_1.appendChild(form_2);
 
-    var node_265 = document.createElement('I');
-    node_265.setAttribute('class', 'bi bi-quote quote-icon-left');
-    node_264.appendChild(node_265);
+var form_3 = document.createElement('DIV');
+form_3.setAttribute('class', 'form-group');
+form_2.appendChild(form_3);
 
-    var node_266 = document.createTextNode((new String("Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.\n                                                ")));
-    node_264.appendChild(node_266);
+var form_4 = document.createElement('LABEL');
+form_4.setAttribute('for', 'email');
+form_4.setAttribute('class', 'col-sm-2 control-label');
+form_3.appendChild(form_4);
 
-    var node_267 = document.createElement('I');
-    node_267.setAttribute('class', 'bi bi-quote quote-icon-right');
-    node_264.appendChild(node_267);
+var form_5 = document.createTextNode((new String("Name")));
+form_4.appendChild(form_5);
 
-    var node_268 = document.createElement('H3');
-    node_263.appendChild(node_268);
+var form_6 = document.createElement('DIV');
+form_6.setAttribute('class', 'col-sm-10');
+form_3.appendChild(form_6);
 
-    var node_269 = document.createTextNode((new String("Saul Goodman")));
-    node_268.appendChild(node_269);
+var form_7 = document.createElement('TEXTAREA');
+form_7.setAttribute('class', 'form-control');
+form_7.setAttribute('name', 'addComment');
+form_7.setAttribute('id', 'addComment');
+form_7.setAttribute('rows', '5');
+form_6.appendChild(form_7);
 
-    var node_270 = document.createElement('H4');
-    node_263.appendChild(node_270);
+var form_8 = document.createElement('DIV');
+form_8.setAttribute('class', 'form-group');
+form_2.appendChild(form_8);
 
-    var node_271 = document.createTextNode((new String("Ceo & Founder")));
-    node_270.appendChild(node_271);
+var form_9 = document.createElement('LABEL');
+form_9.setAttribute('for', 'email');
+form_9.setAttribute('class', 'col-sm-2 control-label');
+form_8.appendChild(form_9);
 
-    var node_272 = document.createElement('DIV');
-    node_272.setAttribute('class', 'stars');
-    node_263.appendChild(node_272);
+var form_10 = document.createTextNode((new String("Comment")));
+form_9.appendChild(form_10);
 
-    var node_273 = document.createElement('I');
-    node_273.setAttribute('class', 'bi bi-star-fill');
-    node_272.appendChild(node_273);
+var form_11 = document.createElement('DIV');
+form_11.setAttribute('class', 'col-sm-10');
+form_8.appendChild(form_11);
 
-    var node_274 = document.createElement('I');
-    node_274.setAttribute('class', 'bi bi-star-fill');
-    node_272.appendChild(node_274);
+var form_12 = document.createElement('TEXTAREA');
+form_12.setAttribute('class', 'form-control');
+form_12.setAttribute('name', 'addComment');
+form_12.setAttribute('id', 'addComment');
+form_12.setAttribute('rows', '5');
+form_11.appendChild(form_12);
 
-    var node_275 = document.createElement('I');
-    node_275.setAttribute('class', 'bi bi-star-fill');
-    node_272.appendChild(node_275);
+var form_13 = document.createElement('DIV');
+form_13.setAttribute('class', 'form-group');
+form_2.appendChild(form_13);
 
-    var node_276 = document.createElement('I');
-    node_276.setAttribute('class', 'bi bi-star-fill');
-    node_272.appendChild(node_276);
+var form_14 = document.createElement('LABEL');
+form_14.setAttribute('for', 'uploadMedia');
+form_14.setAttribute('class', 'col-sm-2 control-label');
+form_13.appendChild(form_14);
 
-    var node_277 = document.createElement('I');
-    node_277.setAttribute('class', 'bi bi-star-fill');
-    node_272.appendChild(node_277);
+var form_15 = document.createTextNode((new String("Upload media")));
+form_14.appendChild(form_15);
 
-    var node_278 = document.createElement('DIV');
-    node_278.setAttribute('class', 'swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active');
-    node_278.setAttribute('data-swiper-slide-index', '1');
-    node_278.setAttribute('role', 'group');
-    node_278.setAttribute('aria-label', '2 / 2');
-    node_182.appendChild(node_278);
+var form_16 = document.createElement('DIV');
+form_16.setAttribute('class', 'col-sm-10');
+form_13.appendChild(form_16);
 
-    var node_279 = document.createElement('DIV');
-    node_279.setAttribute('class', 'testimonial-item');
-    node_278.appendChild(node_279);
+var form_17 = document.createElement('DIV');
+form_17.setAttribute('class', 'input-group');
+form_16.appendChild(form_17);
 
-    var node_280 = document.createElement('DIV');
-    node_280.setAttribute('class', 'row gy-4 justify-content-center');
-    node_279.appendChild(node_280);
+var form_18 = document.createElement('DIV');
+form_18.setAttribute('class', 'input-group-addon');
+form_17.appendChild(form_18);
 
-    var node_281 = document.createElement('DIV');
-    node_281.setAttribute('class', 'col-lg-6');
-    node_280.appendChild(node_281);
+var form_19 = document.createElement('INPUT');
+form_19.setAttribute('type', 'text');
+form_19.setAttribute('class', 'form-control');
+form_19.setAttribute('name', 'uploadMedia');
+form_19.setAttribute('id', 'uploadMedia');
+form_17.appendChild(form_19);
 
-    var node_282 = document.createElement('DIV');
-    node_282.setAttribute('class', 'testimonial-content');
-    node_281.appendChild(node_282);
+var form_20 = document.createElement('DIV');
+form_20.setAttribute('class', 'form-group');
+form_2.appendChild(form_20);
 
-    var node_283 = document.createElement('P');
-    node_282.appendChild(node_283);
+var form_21 = document.createElement('DIV');
+form_21.setAttribute('class', 'col-sm-offset-2 col-sm-10');
+form_20.appendChild(form_21);
 
-    var node_284 = document.createElement('I');
-    node_284.setAttribute('class', 'bi bi-quote quote-icon-left');
-    node_283.appendChild(node_284);
+var form_22 = document.createElement('BUTTON');
+form_22.setAttribute('class', 'btn btn-success btn-circle text-uppercase');
+form_22.setAttribute('type', 'submit');
+form_22.setAttribute('id', 'submitComment');
+form_21.appendChild(form_22);
 
-    var node_285 = document.createTextNode((new String(" Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.\n                                                ")));
-    node_283.appendChild(node_285);
+var form_23 = document.createElement('SPAN');
+form_23.setAttribute('class', 'glyphicon glyphicon-send');
+form_22.appendChild(form_23);
 
-    var node_286 = document.createElement('I');
-    node_286.setAttribute('class', 'bi bi-quote quote-icon-right');
-    node_283.appendChild(node_286);
+var form_24 = document.createTextNode((new String(" Summit comment")));
+form_22.appendChild(form_24);
 
-    var node_287 = document.createElement('H3');
-    node_282.appendChild(node_287);
+nodo_2.appendChild(form_1);
 
-    var node_288 = document.createTextNode((new String("Sara Wilsson")));
-    node_287.appendChild(node_288);
-
-    var node_289 = document.createElement('H4');
-    node_282.appendChild(node_289);
-
-    var node_290 = document.createTextNode((new String("Designer")));
-    node_289.appendChild(node_290);
-
-    var node_291 = document.createElement('DIV');
-    node_291.setAttribute('class', 'stars');
-    node_282.appendChild(node_291);
-
-    var node_292 = document.createElement('I');
-    node_292.setAttribute('class', 'bi bi-star-fill');
-    node_291.appendChild(node_292);
-
-    var node_293 = document.createElement('I');
-    node_293.setAttribute('class', 'bi bi-star-fill');
-    node_291.appendChild(node_293);
-
-    var node_294 = document.createElement('I');
-    node_294.setAttribute('class', 'bi bi-star-fill');
-    node_291.appendChild(node_294);
-
-    var node_295 = document.createElement('I');
-    node_295.setAttribute('class', 'bi bi-star-fill');
-    node_291.appendChild(node_295);
-
-    var node_296 = document.createElement('I');
-    node_296.setAttribute('class', 'bi bi-star-fill');
-    node_291.appendChild(node_296);
-
-    var node_297 = document.createElement('DIV');
-    node_297.setAttribute('class', 'swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal');
-    node_181.appendChild(node_297);
-
-    var node_298 = document.createElement('SPAN');
-    node_298.setAttribute('class', 'swiper-pagination-bullet');
-    node_298.setAttribute('tabindex', '0');
-    node_298.setAttribute('role', 'button');
-    node_298.setAttribute('aria-label', 'Go to slide 1');
-    node_297.appendChild(node_298);
-
-    var node_299 = document.createElement('SPAN');
-    node_299.setAttribute('class', 'swiper-pagination-bullet swiper-pagination-bullet-active');
-    node_299.setAttribute('tabindex', '0');
-    node_299.setAttribute('role', 'button');
-    node_299.setAttribute('aria-label', 'Go to slide 2');
-    node_299.setAttribute('aria-current', 'true');
-    node_297.appendChild(node_299);
-
-    var node_300 = document.createElement('SPAN');
-    node_300.setAttribute('class', 'swiper-notification');
-    node_300.setAttribute('aria-live', 'assertive');
-    node_300.setAttribute('aria-atomic', 'true');
-    node_181.appendChild(node_300);
 
     var node_301 = document.createElement('SECTION');
     node_301.setAttribute('id', 'events');
@@ -1771,9 +1692,6 @@ function paginaProducto2() {
 
     var node_466 = document.createTextNode((new String("http://www.vinyesmortitx.com")));
     node_463.appendChild(node_466);
-
-
-
 }
 
 function filtrado2() {
