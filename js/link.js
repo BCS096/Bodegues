@@ -1,24 +1,13 @@
 var carrusel = null;
+var json = null;
 
 window.onload = function () {
     botonesNav(0);
-}
-
-function descripcionProducto(dad) {
-    const div = document.createElement('div');
-    div.className = 'custom-scrollbar-css p-2';
-
-    const p = document.createElement('p');
-    p.className = 'font-italic';
-    p.innerText = 'El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.';
-
-    div.appendChild(p);
-
-    dad.appendChild(div);
+    cargarJSON();
 }
 
 
-function paginaProducto2() {
+function paginaProducto2(pos) {
 
     var node_1 = document.getElementById('seccion');
 
@@ -50,7 +39,7 @@ function paginaProducto2() {
     var node_8 = document.createElement('BR');
     node_6.appendChild(node_8);
 
-    var node_9 = document.createTextNode((new String("Mortitx")));
+    var node_9 = document.createTextNode((new String(json.itemListElement[pos].name)));
     node_6.appendChild(node_9);
 
     var node_10 = document.createElement('DIV');
@@ -60,7 +49,7 @@ function paginaProducto2() {
     node_5.appendChild(node_10);
 
     var node_11 = document.createElement('A');
-    node_11.setAttribute('href', 'https://www.youtube.com/watch?v=LXb3EKWsInQ');
+    node_11.setAttribute('href', json.itemListElement[pos].subjectOf.video[0].contentUrl);
     node_11.setAttribute('class', 'glightbox btn-watch-video d-flex align-items-center m-auto');
     node_10.appendChild(node_11);
 
@@ -79,20 +68,21 @@ function paginaProducto2() {
     node_4.appendChild(node_15);
 
     var node_16 = document.createElement('IMG');
-    node_16.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_QQ6A0199-1.jpg');
-    node_16.setAttribute('class', 'img-fluid margen2 aos-init aos-animate');
+
+    node_16.setAttribute('src', json.itemListElement[pos].image[10]);
+    node_16.setAttribute('class', 'im2 margen2 aos-init aos-animate');
     node_16.setAttribute('alt', '');
     node_16.setAttribute('data-aos', 'zoom-out');
     node_16.setAttribute('data-aos-delay', '300');
     node_15.appendChild(node_16);
 
     var aux = document.createElement('div');
-    aux.setAttribute('class','col-sm margen   text-lg-start');
+    aux.setAttribute('class', 'col-sm margen   text-lg-start');
     node_4.appendChild(aux);
 
     var aux1 = document.createElement('img');
-    aux1.setAttribute('src',"http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png");
-    aux1.setAttribute('class', 'img-fluid margen2 aos-init aos-animate');
+    aux1.setAttribute('src', json.itemListElement[pos].logo);
+    aux1.setAttribute('class', ' im margen2 aos-init aos-animate');
     aux1.setAttribute('data-aos', 'zoom-out');
     aux1.setAttribute('data-aos-delay', '300');
     aux.appendChild(aux1);
@@ -132,7 +122,7 @@ function paginaProducto2() {
 
     var node_25 = document.createElement('DIV');
     node_25.setAttribute('class', 'col-lg-7 position-relative about-img margen aos-init aos-animate');
-    node_25.setAttribute('style', 'background-image: url(assets/img/about.jpg) ;');
+    node_25.setAttribute('style', 'background-image: url(' + json.itemListElement[pos].image[3] + ') ;');
     node_25.setAttribute('data-aos', 'fade-up');
     node_25.setAttribute('data-aos-delay', '150');
     node_24.appendChild(node_25);
@@ -150,7 +140,7 @@ function paginaProducto2() {
     var node_29 = document.createElement('P');
     node_26.appendChild(node_29);
 
-    var node_30 = document.createTextNode((new String("971533889")));
+    var node_30 = document.createTextNode(json.itemListElement[pos].telephone);
     node_29.appendChild(node_30);
 
     var node_31 = document.createElement('DIV');
@@ -167,7 +157,7 @@ function paginaProducto2() {
     node_33.setAttribute('class', 'fst-italic');
     node_32.appendChild(node_33);
 
-    var node_34 = document.createTextNode((new String("\nEl proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.\n ")));
+    var node_34 = document.createTextNode(json.itemListElement[pos].description);
     node_33.appendChild(node_34);
 
     var node_35 = document.createElement('DIV');
@@ -175,13 +165,13 @@ function paginaProducto2() {
     node_32.appendChild(node_35);
 
     var node_36 = document.createElement('IMG');
-    node_36.setAttribute('src', 'assets/img/about-2.jpg');
+    node_36.setAttribute('src', json.itemListElement[pos].image[6]);
     node_36.setAttribute('class', 'img-fluid');
     node_36.setAttribute('alt', '');
     node_35.appendChild(node_36);
 
     var node_37 = document.createElement('A');
-    node_37.setAttribute('href', 'https://www.youtube.com/watch?v=LXb3EKWsInQ');
+    node_37.setAttribute('href', json.itemListElement[pos].subjectOf.video[1].contentUrl);
     node_37.setAttribute('class', 'glightbox play-btn');
     node_35.appendChild(node_37);
 
@@ -530,101 +520,42 @@ function paginaProducto2() {
     node_122.setAttribute('class', 'row gy-5');
     node_118.appendChild(node_122);
 
-    var node_123 = document.createElement('DIV');
-    node_123.setAttribute('class', 'col-lg-4 menu-item');
-    node_122.appendChild(node_123);
+    for (let i = 0; i < json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem.length; i++) {
 
-    var node_124 = document.createElement('A');
-    node_124.setAttribute('href', 'http://www.vinyesmortitx.com/img_blog/1584635839.jpg');
-    node_124.setAttribute('class', 'glightbox');
-    node_123.appendChild(node_124);
+        var node_123 = document.createElement('DIV');
+        node_123.setAttribute('class', 'col-lg-4 menu-item');
+        node_122.appendChild(node_123);
 
-    var node_125 = document.createElement('IMG');
-    node_125.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/1584635839.jpg');
-    node_125.setAttribute('class', 'menu-img img-fluid');
-    node_125.setAttribute('alt', '');
-    node_124.appendChild(node_125);
+        var node_124 = document.createElement('A');
+        node_124.setAttribute('href', json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].image);
+        node_124.setAttribute('class', 'glightbox');
+        node_123.appendChild(node_124);
 
-    var node_126 = document.createElement('H4');
-    node_123.appendChild(node_126);
+        var node_125 = document.createElement('IMG');
+        node_125.setAttribute('src', json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].image);
+        node_125.setAttribute('class', 'menu-img img-fluid');
+        node_125.setAttribute('alt', '');
+        node_124.appendChild(node_125);
 
-    var node_127 = document.createTextNode((new String("Mortitx Tinto 2019")));
-    node_126.appendChild(node_127);
+        var node_126 = document.createElement('H4');
+        node_123.appendChild(node_126);
 
-    var node_128 = document.createElement('P');
-    node_128.setAttribute('class', 'ingredients');
-    node_123.appendChild(node_128);
+        var node_127 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].name);
+        node_126.appendChild(node_127);
 
-    var node_129 = document.createElement('P');
-    node_129.setAttribute('class', 'price');
-    node_123.appendChild(node_129);
+        var node_128 = document.createElement('P');
+        node_128.setAttribute('class', 'ingredients');
+        node_128.innerText = json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].description;
+        node_123.appendChild(node_128);
 
-    var node_130 = document.createTextNode((new String("12.18EUR")));
-    node_129.appendChild(node_130);
+        var node_129 = document.createElement('P');
+        node_129.setAttribute('class', 'price');
+        node_123.appendChild(node_129);
 
-    var node_131 = document.createElement('DIV');
-    node_131.setAttribute('class', 'col-lg-4 menu-item');
-    node_122.appendChild(node_131);
+        var node_130 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].offers.price + " " + json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].offers.priceCurrency);
+        node_129.appendChild(node_130);
 
-    var node_132 = document.createElement('A');
-    node_132.setAttribute('href', 'http://www.vinyesmortitx.com/img_blog/1584635839.jpg');
-    node_132.setAttribute('class', 'glightbox');
-    node_131.appendChild(node_132);
-
-    var node_133 = document.createElement('IMG');
-    node_133.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/1584635839.jpg');
-    node_133.setAttribute('class', 'menu-img img-fluid');
-    node_133.setAttribute('alt', '');
-    node_132.appendChild(node_133);
-
-    var node_134 = document.createElement('H4');
-    node_131.appendChild(node_134);
-
-    var node_135 = document.createTextNode((new String("Rodal Pla 2017")));
-    node_134.appendChild(node_135);
-
-    var node_136 = document.createElement('P');
-    node_136.setAttribute('class', 'ingredients');
-    node_131.appendChild(node_136);
-
-    var node_137 = document.createElement('P');
-    node_137.setAttribute('class', 'price');
-    node_131.appendChild(node_137);
-
-    var node_138 = document.createTextNode((new String("15.98EUR")));
-    node_137.appendChild(node_138);
-
-    var node_139 = document.createElement('DIV');
-    node_139.setAttribute('class', 'col-lg-4 menu-item');
-    node_122.appendChild(node_139);
-
-    var node_140 = document.createElement('A');
-    node_140.setAttribute('href', 'http://www.vinyesmortitx.com/img_blog/1584635839.jpg');
-    node_140.setAttribute('class', 'glightbox');
-    node_139.appendChild(node_140);
-
-    var node_141 = document.createElement('IMG');
-    node_141.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/1584635839.jpg');
-    node_141.setAttribute('class', 'menu-img img-fluid');
-    node_141.setAttribute('alt', '');
-    node_140.appendChild(node_141);
-
-    var node_142 = document.createElement('H4');
-    node_139.appendChild(node_142);
-
-    var node_143 = document.createTextNode((new String("L\'u negre 2017")));
-    node_142.appendChild(node_143);
-
-    var node_144 = document.createElement('P');
-    node_144.setAttribute('class', 'ingredients');
-    node_139.appendChild(node_144);
-
-    var node_145 = document.createElement('P');
-    node_145.setAttribute('class', 'price');
-    node_139.appendChild(node_145);
-
-    var node_146 = document.createTextNode((new String("62.90EUR")));
-    node_145.appendChild(node_146);
+    }
 
     var node_147 = document.createElement('DIV');
     node_147.setAttribute('class', 'tab-pane fade');
@@ -646,40 +577,43 @@ function paginaProducto2() {
     node_151.setAttribute('class', 'row gy-5');
     node_147.appendChild(node_151);
 
-    var node_152 = document.createElement('DIV');
-    node_152.setAttribute('class', 'col-lg-4 menu-item');
-    node_151.appendChild(node_152);
+    for (let i = 0; i < json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem.length; i++) {
 
-    var node_153 = document.createElement('A');
-    node_153.setAttribute('href', 'assets/img/menu/menu-item-1.png');
-    node_153.setAttribute('class', 'glightbox');
-    node_152.appendChild(node_153);
+        var node_152 = document.createElement('DIV');
+        node_152.setAttribute('class', 'col-lg-4 menu-item');
+        node_151.appendChild(node_152);
 
-    var node_154 = document.createElement('IMG');
-    node_154.setAttribute('src', 'assets/img/menu/menu-item-1.png');
-    node_154.setAttribute('class', 'menu-img img-fluid');
-    node_154.setAttribute('alt', '');
-    node_153.appendChild(node_154);
+        var node_153 = document.createElement('A');
+        node_153.setAttribute('href', json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].image);
+        node_153.setAttribute('class', 'glightbox');
+        node_152.appendChild(node_153);
 
-    var node_155 = document.createElement('H4');
-    node_152.appendChild(node_155);
+        var node_154 = document.createElement('IMG');
+        node_154.setAttribute('src', json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].image);
+        node_154.setAttribute('class', 'menu-img img-fluid');
+        node_154.setAttribute('alt', '');
+        node_153.appendChild(node_154);
 
-    var node_156 = document.createTextNode((new String("Magnam Tiste")));
-    node_155.appendChild(node_156);
+        var node_155 = document.createElement('H4');
+        node_152.appendChild(node_155);
 
-    var node_157 = document.createElement('P');
-    node_157.setAttribute('class', 'ingredients');
-    node_152.appendChild(node_157);
+        var node_156 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].name);
+        node_155.appendChild(node_156);
 
-    var node_158 = document.createTextNode((new String("Lorem, deren, trataro, filede, nerada")));
-    node_157.appendChild(node_158);
+        var node_157 = document.createElement('P');
+        node_157.setAttribute('class', 'ingredients');
+        node_152.appendChild(node_157);
 
-    var node_159 = document.createElement('P');
-    node_159.setAttribute('class', 'price');
-    node_152.appendChild(node_159);
+        var node_158 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].description);
+        node_157.appendChild(node_158);
 
-    var node_160 = document.createTextNode((new String("$5.95")));
-    node_159.appendChild(node_160);
+        var node_159 = document.createElement('P');
+        node_159.setAttribute('class', 'price');
+        node_152.appendChild(node_159);
+
+        var node_160 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].offers.price + " " + json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].offers.priceCurrency);
+        node_159.appendChild(node_160);
+    }
 
     var node_161 = document.createElement('DIV');
     node_161.setAttribute('class', 'tab-pane fade');
@@ -701,670 +635,460 @@ function paginaProducto2() {
     node_165.setAttribute('class', 'row gy-5');
     node_161.appendChild(node_165);
 
-    var node_166 = document.createElement('DIV');
-    node_166.setAttribute('class', 'col-lg-4 menu-item');
-    node_165.appendChild(node_166);
-
-    var node_167 = document.createElement('A');
-    node_167.setAttribute('href', 'assets/img/menu/menu-item-1.png');
-    node_167.setAttribute('class', 'glightbox');
-    node_166.appendChild(node_167);
-
-    var node_168 = document.createElement('IMG');
-    node_168.setAttribute('src', 'assets/img/menu/menu-item-1.png');
-    node_168.setAttribute('class', 'menu-img img-fluid');
-    node_168.setAttribute('alt', '');
-    node_167.appendChild(node_168);
-
-    var node_169 = document.createElement('H4');
-    node_166.appendChild(node_169);
-
-    var node_170 = document.createTextNode((new String("Magnam Tiste")));
-    node_169.appendChild(node_170);
-
-    var node_171 = document.createElement('P');
-    node_171.setAttribute('class', 'ingredients');
-    node_166.appendChild(node_171);
-
-    var node_172 = document.createTextNode((new String("Lorem, deren, trataro, filede, nerada")));
-    node_171.appendChild(node_172);
-
-    var node_173 = document.createElement('P');
-    node_173.setAttribute('class', 'price');
-    node_166.appendChild(node_173);
-
-    var node_174 = document.createTextNode((new String("$5.95")));
-    node_173.appendChild(node_174);
-
-   
-var nodo_1 = document.createElement('SECTION');
-nodo_1.setAttribute('id', 'testimonials');
-nodo_1.setAttribute('class', 'testimonials section-bg client pt-3 pb-5');
-node_17.appendChild(nodo_1);
-
-var nodo_2 = document.createElement('DIV');
-nodo_2.setAttribute('class', 'container');
-nodo_1.appendChild(nodo_2);
-
-var nodo_3 = document.createElement('DIV');
-nodo_3.setAttribute('class', 'row text-center');
-nodo_2.appendChild(nodo_3);
-
-var nodo_4 = document.createElement('DIV');
-nodo_4.setAttribute('class', 'col-12');
-nodo_3.appendChild(nodo_4);
-
-var nodo_5 = document.createElement('H1');
-nodo_5.setAttribute('class', 'display-3 fw-bold text-white');
-nodo_4.appendChild(nodo_5);
+    for (let i = 0; i < json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem.length; i++) {
+
+        var node_166 = document.createElement('DIV');
+        node_166.setAttribute('class', 'col-lg-4 menu-item');
+        node_165.appendChild(node_166);
+
+        var node_167 = document.createElement('A');
+        node_167.setAttribute('href', json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].image);
+        node_167.setAttribute('class', 'glightbox');
+        node_166.appendChild(node_167);
+
+        var node_168 = document.createElement('IMG');
+        node_168.setAttribute('src', json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].image);
+        node_168.setAttribute('class', 'menu-img img-fluid');
+        node_168.setAttribute('alt', '');
+        node_167.appendChild(node_168);
+
+        var node_169 = document.createElement('H4');
+        node_166.appendChild(node_169);
+
+        var node_170 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].name);
+        node_169.appendChild(node_170);
+
+        var node_171 = document.createElement('P');
+        node_171.setAttribute('class', 'ingredients');
+        node_166.appendChild(node_171);
+
+        var node_172 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].description);
+        node_171.appendChild(node_172);
+
+        var node_173 = document.createElement('P');
+        node_173.setAttribute('class', 'price');
+        node_166.appendChild(node_173);
+
+        var node_174 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].offers.price + " " + json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].offers.priceCurrency);
+        node_173.appendChild(node_174);
+    }
+
+    var nodo_1 = document.createElement('SECTION');
+    nodo_1.setAttribute('id', 'testimonials');
+    nodo_1.setAttribute('class', 'testimonials section-bg client pt-3 pb-5');
+    node_17.appendChild(nodo_1);
+
+    var nodo_2 = document.createElement('DIV');
+    nodo_2.setAttribute('class', 'container');
+    nodo_1.appendChild(nodo_2);
+
+    var nodo_3 = document.createElement('DIV');
+    nodo_3.setAttribute('class', 'row text-center');
+    nodo_2.appendChild(nodo_3);
+
+    var nodo_4 = document.createElement('DIV');
+    nodo_4.setAttribute('class', 'col-12');
+    nodo_3.appendChild(nodo_4);
+
+    var nodo_5 = document.createElement('H1');
+    nodo_5.setAttribute('class', 'display-3 fw-bold text-white');
+    nodo_4.appendChild(nodo_5);
 
-var nodo_6 = document.createTextNode((new String("Testimonials")));
-nodo_5.appendChild(nodo_6);
+    var nodo_6 = document.createTextNode((new String("Testimonials")));
+    nodo_5.appendChild(nodo_6);
 
-var nodo_7 = document.createElement('HR');
-nodo_7.setAttribute('class', 'bg-white mb-4 mt-0 d-inline-block mx-auto');
-nodo_7.setAttribute('style', 'width: 100px; height:3px;');
-nodo_4.appendChild(nodo_7);
+    var nodo_7 = document.createElement('HR');
+    nodo_7.setAttribute('class', 'bg-white mb-4 mt-0 d-inline-block mx-auto');
+    nodo_7.setAttribute('style', 'width: 100px; height:3px;');
+    nodo_4.appendChild(nodo_7);
 
-var nodo_8 = document.createElement('P');
-nodo_8.setAttribute('class', 'p-text text-white');
-nodo_4.appendChild(nodo_8);
+    var nodo_8 = document.createElement('P');
+    nodo_8.setAttribute('class', 'p-text text-white');
+    nodo_4.appendChild(nodo_8);
 
-var nodo_9 = document.createTextNode((new String("What our clients are saying")));
-nodo_8.appendChild(nodo_9);
+    var nodo_9 = document.createTextNode((new String("What our clients are saying")));
+    nodo_8.appendChild(nodo_9);
 
-var nodo_10 = document.createElement('DIV');
-nodo_10.setAttribute('class', 'row align-items-md-center text-white');
-nodo_2.appendChild(nodo_10);
+    var nodo_10 = document.createElement('DIV');
+    nodo_10.setAttribute('class', 'row align-items-md-center text-white');
+    nodo_2.appendChild(nodo_10);
 
-var nodo_11 = document.createElement('DIV');
-nodo_11.setAttribute('class', 'col-lg-12 col-md-12 col-sm-12');
-nodo_10.appendChild(nodo_11);
+    var nodo_11 = document.createElement('DIV');
+    nodo_11.setAttribute('class', 'col-lg-12 col-md-12 col-sm-12');
+    nodo_10.appendChild(nodo_11);
 
-var nodo_12 = document.createElement('DIV');
-nodo_12.setAttribute('id', 'carouselExampleCaptions');
-nodo_12.setAttribute('class', 'carousel slide');
-nodo_12.setAttribute('data-bs-ride', 'carousel');
-nodo_11.appendChild(nodo_12);
+    var nodo_12 = document.createElement('DIV');
+    nodo_12.setAttribute('id', 'carouselExampleCaptions');
+    nodo_12.setAttribute('class', 'carousel slide');
+    nodo_12.setAttribute('data-bs-ride', 'carousel');
+    nodo_11.appendChild(nodo_12);
 
-var nodo_13 = document.createElement('DIV');
-nodo_13.setAttribute('class', 'carousel-inner');
-nodo_12.appendChild(nodo_13);
+    var nodo_13 = document.createElement('DIV');
+    nodo_13.setAttribute('class', 'carousel-inner');
+    nodo_12.appendChild(nodo_13);
 
-var nodo_14 = document.createElement('DIV');
-nodo_14.setAttribute('class', 'carousel-item active');
-nodo_13.appendChild(nodo_14);
-
-var nodo_15 = document.createElement('DIV');
-nodo_15.setAttribute('class', 'row p-4');
-nodo_14.appendChild(nodo_15);
+    var nodo_14 = document.createElement('DIV');
+    nodo_14.setAttribute('class', 'carousel-item active');
+    nodo_13.appendChild(nodo_14);
 
-var nodo_16 = document.createElement('DIV');
-nodo_16.setAttribute('class', 't-card');
-nodo_15.appendChild(nodo_16);
+    var nodo_15 = document.createElement('DIV');
+    nodo_15.setAttribute('class', 'row p-4');
+    nodo_14.appendChild(nodo_15);
 
-var nodo_17 = document.createElement('I');
-nodo_17.setAttribute('class', 'fa fa-quote-left');
-nodo_17.setAttribute('aria-hidden', 'true');
-nodo_16.appendChild(nodo_17);
+    var nodo_16 = document.createElement('DIV');
+    nodo_16.setAttribute('class', 't-card');
+    nodo_15.appendChild(nodo_16);
 
-var nodo_18 = document.createElement('P');
-nodo_18.setAttribute('class', 'lh-lg');
-nodo_16.appendChild(nodo_18);
+    var nodo_17 = document.createElement('I');
+    nodo_17.setAttribute('class', 'fa fa-quote-left');
+    nodo_17.setAttribute('aria-hidden', 'true');
+    nodo_16.appendChild(nodo_17);
 
-var nodo_19 = document.createElement('I');
-nodo_19.setAttribute('class', 'fa fa-quote-right');
-nodo_19.setAttribute('aria-hidden', 'true');
-nodo_16.appendChild(nodo_19);
+    var nodo_18 = document.createElement('P');
+    nodo_18.setAttribute('class', 'lh-lg');
+    nodo_16.appendChild(nodo_18);
 
-var nodo_20 = document.createElement('BR');
-nodo_16.appendChild(nodo_20);
+    var nodo_19 = document.createElement('I');
+    nodo_19.setAttribute('class', 'fa fa-quote-right');
+    nodo_19.setAttribute('aria-hidden', 'true');
+    nodo_16.appendChild(nodo_19);
 
-var nodo_21 = document.createElement('DIV');
-nodo_21.setAttribute('class', 'row');
-nodo_15.appendChild(nodo_21);
+    var nodo_20 = document.createElement('BR');
+    nodo_16.appendChild(nodo_20);
 
-var nodo_22 = document.createElement('DIV');
-nodo_22.setAttribute('class', 'col-sm-2 pt-3');
-nodo_21.appendChild(nodo_22);
+    var nodo_21 = document.createElement('DIV');
+    nodo_21.setAttribute('class', 'row');
+    nodo_15.appendChild(nodo_21);
 
-var nodo_23 = document.createElement('IMG');
-nodo_23.setAttribute('src', 'https://source.unsplash.com/300x300/?girl');
-nodo_23.setAttribute('class', 'rounded-circle img-responsive img-fluid');
-nodo_22.appendChild(nodo_23);
+    var nodo_22 = document.createElement('DIV');
+    nodo_22.setAttribute('class', 'col-sm-2 pt-3');
+    nodo_21.appendChild(nodo_22);
 
-var nodo_24 = document.createElement('DIV');
-nodo_24.setAttribute('class', 'col-sm-10');
-nodo_21.appendChild(nodo_24);
+    var nodo_23 = document.createElement('IMG');
+    nodo_23.setAttribute('src', 'https://source.unsplash.com/300x300/?girl');
+    nodo_23.setAttribute('class', 'rounded-circle img-responsive img-fluid');
+    nodo_22.appendChild(nodo_23);
 
-var nodo_25 = document.createElement('DIV');
-nodo_25.setAttribute('class', 'arrow-down d-none d-lg-block');
-nodo_24.appendChild(nodo_25);
+    var nodo_24 = document.createElement('DIV');
+    nodo_24.setAttribute('class', 'col-sm-10');
+    nodo_21.appendChild(nodo_24);
 
-var nodo_26 = document.createElement('H4');
-nodo_24.appendChild(nodo_26);
+    var nodo_25 = document.createElement('DIV');
+    nodo_25.setAttribute('class', 'arrow-down d-none d-lg-block');
+    nodo_24.appendChild(nodo_25);
 
-var nodo_27 = document.createElement('STRONG');
-nodo_26.appendChild(nodo_27);
+    var nodo_26 = document.createElement('H4');
+    nodo_24.appendChild(nodo_26);
 
-var nodo_28 = document.createTextNode((new String("Sunaina Samuel")));
-nodo_27.appendChild(nodo_28);
+    var nodo_27 = document.createElement('STRONG');
+    nodo_26.appendChild(nodo_27);
 
-var nodo_29 = document.createElement('P');
-nodo_29.setAttribute('class', 'testimonial_subtitle');
-nodo_24.appendChild(nodo_29);
+    var nodo_28 = document.createTextNode((new String("Sunaina Samuel")));
+    nodo_27.appendChild(nodo_28);
 
-var nodo_30 = document.createElement('SPAN');
-nodo_29.appendChild(nodo_30);
+    var nodo_29 = document.createElement('P');
+    nodo_29.setAttribute('class', 'testimonial_subtitle');
+    nodo_24.appendChild(nodo_29);
 
-var nodo_31 = document.createTextNode((new String("Associate Software Engineer")));
-nodo_30.appendChild(nodo_31);
+    var nodo_30 = document.createElement('SPAN');
+    nodo_29.appendChild(nodo_30);
 
-var nodo_32 = document.createElement('BR');
-nodo_29.appendChild(nodo_32);
+    var nodo_31 = document.createTextNode((new String("Associate Software Engineer")));
+    nodo_30.appendChild(nodo_31);
 
-var nodo_33 = document.createElement('SPAN');
-nodo_29.appendChild(nodo_33);
+    var nodo_32 = document.createElement('BR');
+    nodo_29.appendChild(nodo_32);
 
-var nodo_34 = document.createTextNode((new String("CodeHim")));
-nodo_33.appendChild(nodo_34);
+    var nodo_33 = document.createElement('SPAN');
+    nodo_29.appendChild(nodo_33);
 
-var nodo_35 = document.createElement('DIV');
-nodo_35.setAttribute('class', 'carousel-item');
-nodo_13.appendChild(nodo_35);
+    var nodo_34 = document.createTextNode((new String("CodeHim")));
+    nodo_33.appendChild(nodo_34);
 
-var nodo_36 = document.createElement('DIV');
-nodo_36.setAttribute('class', 'row p-4');
-nodo_35.appendChild(nodo_36);
+    var nodo_35 = document.createElement('DIV');
+    nodo_35.setAttribute('class', 'carousel-item');
+    nodo_13.appendChild(nodo_35);
 
-var nodo_37 = document.createElement('DIV');
-nodo_37.setAttribute('class', 't-card');
-nodo_36.appendChild(nodo_37);
+    var nodo_36 = document.createElement('DIV');
+    nodo_36.setAttribute('class', 'row p-4');
+    nodo_35.appendChild(nodo_36);
 
-var nodo_38 = document.createElement('I');
-nodo_38.setAttribute('class', 'fa fa-quote-left');
-nodo_38.setAttribute('aria-hidden', 'true');
-nodo_37.appendChild(nodo_38);
+    var nodo_37 = document.createElement('DIV');
+    nodo_37.setAttribute('class', 't-card');
+    nodo_36.appendChild(nodo_37);
 
-var nodo_39 = document.createElement('P');
-nodo_39.setAttribute('class', 'lh-lg');
-nodo_37.appendChild(nodo_39);
+    var nodo_38 = document.createElement('I');
+    nodo_38.setAttribute('class', 'fa fa-quote-left');
+    nodo_38.setAttribute('aria-hidden', 'true');
+    nodo_37.appendChild(nodo_38);
 
-var nodo_40 = document.createElement('I');
-nodo_40.setAttribute('class', 'fa fa-quote-right');
-nodo_40.setAttribute('aria-hidden', 'true');
-nodo_37.appendChild(nodo_40);
+    var nodo_39 = document.createElement('P');
+    nodo_39.setAttribute('class', 'lh-lg');
+    nodo_37.appendChild(nodo_39);
 
-var nodo_41 = document.createElement('BR');
-nodo_37.appendChild(nodo_41);
+    var nodo_40 = document.createElement('I');
+    nodo_40.setAttribute('class', 'fa fa-quote-right');
+    nodo_40.setAttribute('aria-hidden', 'true');
+    nodo_37.appendChild(nodo_40);
 
-var nodo_42 = document.createElement('DIV');
-nodo_42.setAttribute('class', 'row');
-nodo_36.appendChild(nodo_42);
+    var nodo_41 = document.createElement('BR');
+    nodo_37.appendChild(nodo_41);
 
-var nodo_43 = document.createElement('DIV');
-nodo_43.setAttribute('class', 'col-sm-2 pt-4');
-nodo_42.appendChild(nodo_43);
+    var nodo_42 = document.createElement('DIV');
+    nodo_42.setAttribute('class', 'row');
+    nodo_36.appendChild(nodo_42);
 
-var nodo_44 = document.createElement('IMG');
-nodo_44.setAttribute('src', 'https://source.unsplash.com/300x300/?man');
-nodo_44.setAttribute('class', 'rounded-circle img-responsive img-fluid');
-nodo_43.appendChild(nodo_44);
+    var nodo_43 = document.createElement('DIV');
+    nodo_43.setAttribute('class', 'col-sm-2 pt-4');
+    nodo_42.appendChild(nodo_43);
 
-var nodo_45 = document.createElement('DIV');
-nodo_45.setAttribute('class', 'col-sm-10');
-nodo_42.appendChild(nodo_45);
+    var nodo_44 = document.createElement('IMG');
+    nodo_44.setAttribute('src', 'https://source.unsplash.com/300x300/?man');
+    nodo_44.setAttribute('class', 'rounded-circle img-responsive img-fluid');
+    nodo_43.appendChild(nodo_44);
 
-var nodo_46 = document.createElement('DIV');
-nodo_46.setAttribute('class', 'arrow-down d-none d-lg-block');
-nodo_45.appendChild(nodo_46);
+    var nodo_45 = document.createElement('DIV');
+    nodo_45.setAttribute('class', 'col-sm-10');
+    nodo_42.appendChild(nodo_45);
 
-var nodo_47 = document.createElement('H4');
-nodo_45.appendChild(nodo_47);
+    var nodo_46 = document.createElement('DIV');
+    nodo_46.setAttribute('class', 'arrow-down d-none d-lg-block');
+    nodo_45.appendChild(nodo_46);
 
-var nodo_48 = document.createElement('STRONG');
-nodo_47.appendChild(nodo_48);
+    var nodo_47 = document.createElement('H4');
+    nodo_45.appendChild(nodo_47);
 
-var nodo_49 = document.createTextNode((new String("Esther Zawadi")));
-nodo_48.appendChild(nodo_49);
+    var nodo_48 = document.createElement('STRONG');
+    nodo_47.appendChild(nodo_48);
 
-var nodo_50 = document.createElement('P');
-nodo_50.setAttribute('class', 'testimonial_subtitle');
-nodo_45.appendChild(nodo_50);
+    var nodo_49 = document.createTextNode((new String("Esther Zawadi")));
+    nodo_48.appendChild(nodo_49);
 
-var nodo_51 = document.createElement('SPAN');
-nodo_50.appendChild(nodo_51);
+    var nodo_50 = document.createElement('P');
+    nodo_50.setAttribute('class', 'testimonial_subtitle');
+    nodo_45.appendChild(nodo_50);
 
-var nodo_52 = document.createTextNode((new String("\\n                digital strategist")));
-nodo_51.appendChild(nodo_52);
+    var nodo_51 = document.createElement('SPAN');
+    nodo_50.appendChild(nodo_51);
 
-var nodo_53 = document.createElement('BR');
-nodo_50.appendChild(nodo_53);
+    var nodo_52 = document.createTextNode((new String("\\n                digital strategist")));
+    nodo_51.appendChild(nodo_52);
 
-var nodo_54 = document.createElement('SPAN');
-nodo_50.appendChild(nodo_54);
+    var nodo_53 = document.createElement('BR');
+    nodo_50.appendChild(nodo_53);
 
-var nodo_55 = document.createTextNode((new String("Vaxa digital")));
-nodo_54.appendChild(nodo_55);
+    var nodo_54 = document.createElement('SPAN');
+    nodo_50.appendChild(nodo_54);
 
-var nodo_56 = document.createElement('DIV');
-nodo_56.setAttribute('class', 'carousel-item');
-nodo_13.appendChild(nodo_56);
+    var nodo_55 = document.createTextNode((new String("Vaxa digital")));
+    nodo_54.appendChild(nodo_55);
 
-var nodo_57 = document.createElement('DIV');
-nodo_57.setAttribute('class', 'row p-4');
-nodo_56.appendChild(nodo_57);
+    var nodo_56 = document.createElement('DIV');
+    nodo_56.setAttribute('class', 'carousel-item');
+    nodo_13.appendChild(nodo_56);
 
-var nodo_58 = document.createElement('DIV');
-nodo_58.setAttribute('class', 't-card');
-nodo_57.appendChild(nodo_58);
+    var nodo_57 = document.createElement('DIV');
+    nodo_57.setAttribute('class', 'row p-4');
+    nodo_56.appendChild(nodo_57);
 
-var nodo_59 = document.createElement('I');
-nodo_59.setAttribute('class', 'fa fa-quote-left');
-nodo_59.setAttribute('aria-hidden', 'true');
-nodo_58.appendChild(nodo_59);
+    var nodo_58 = document.createElement('DIV');
+    nodo_58.setAttribute('class', 't-card');
+    nodo_57.appendChild(nodo_58);
 
-var nodo_60 = document.createElement('P');
-nodo_60.setAttribute('class', 'lh-lg');
-nodo_58.appendChild(nodo_60);
+    var nodo_59 = document.createElement('I');
+    nodo_59.setAttribute('class', 'fa fa-quote-left');
+    nodo_59.setAttribute('aria-hidden', 'true');
+    nodo_58.appendChild(nodo_59);
 
-var nodo_61 = document.createElement('I');
-nodo_61.setAttribute('class', 'fa fa-quote-right');
-nodo_61.setAttribute('aria-hidden', 'true');
-nodo_58.appendChild(nodo_61);
+    var nodo_60 = document.createElement('P');
+    nodo_60.setAttribute('class', 'lh-lg');
+    nodo_58.appendChild(nodo_60);
 
-var nodo_62 = document.createElement('BR');
-nodo_58.appendChild(nodo_62);
+    var nodo_61 = document.createElement('I');
+    nodo_61.setAttribute('class', 'fa fa-quote-right');
+    nodo_61.setAttribute('aria-hidden', 'true');
+    nodo_58.appendChild(nodo_61);
 
-var nodo_63 = document.createElement('DIV');
-nodo_63.setAttribute('class', 'row text-lg-start');
-nodo_57.appendChild(nodo_63);
+    var nodo_62 = document.createElement('BR');
+    nodo_58.appendChild(nodo_62);
 
-var nodo_64 = document.createElement('DIV');
-nodo_64.setAttribute('class', 'col-sm-2 pt-4 align-items-center');
-nodo_63.appendChild(nodo_64);
+    var nodo_63 = document.createElement('DIV');
+    nodo_63.setAttribute('class', 'row text-lg-start');
+    nodo_57.appendChild(nodo_63);
 
-var nodo_65 = document.createElement('IMG');
-nodo_65.setAttribute('src', 'https://source.unsplash.com/300x300/?businessman');
-nodo_65.setAttribute('class', 'rounded-circle img-responsive img-fluid');
-nodo_64.appendChild(nodo_65);
+    var nodo_64 = document.createElement('DIV');
+    nodo_64.setAttribute('class', 'col-sm-2 pt-4 align-items-center');
+    nodo_63.appendChild(nodo_64);
 
-var nodo_66 = document.createElement('DIV');
-nodo_66.setAttribute('class', 'col-sm-10');
-nodo_63.appendChild(nodo_66);
+    var nodo_65 = document.createElement('IMG');
+    nodo_65.setAttribute('src', 'https://source.unsplash.com/300x300/?businessman');
+    nodo_65.setAttribute('class', 'rounded-circle img-responsive img-fluid');
+    nodo_64.appendChild(nodo_65);
 
-var nodo_67 = document.createElement('DIV');
-nodo_67.setAttribute('class', 'arrow-down d-none d-md-block');
-nodo_66.appendChild(nodo_67);
+    var nodo_66 = document.createElement('DIV');
+    nodo_66.setAttribute('class', 'col-sm-10');
+    nodo_63.appendChild(nodo_66);
 
-var nodo_68 = document.createElement('H4');
-nodo_66.appendChild(nodo_68);
+    var nodo_67 = document.createElement('DIV');
+    nodo_67.setAttribute('class', 'arrow-down d-none d-md-block');
+    nodo_66.appendChild(nodo_67);
 
-var nodo_69 = document.createElement('STRONG');
-nodo_68.appendChild(nodo_69);
+    var nodo_68 = document.createElement('H4');
+    nodo_66.appendChild(nodo_68);
 
-var nodo_70 = document.createTextNode((new String("Patrick muriungi")));
-nodo_69.appendChild(nodo_70);
+    var nodo_69 = document.createElement('STRONG');
+    nodo_68.appendChild(nodo_69);
 
-var nodo_71 = document.createElement('P');
-nodo_71.setAttribute('class', 'testimonial_subtitle');
-nodo_66.appendChild(nodo_71);
+    var nodo_70 = document.createTextNode((new String("Patrick muriungi")));
+    nodo_69.appendChild(nodo_70);
 
-var nodo_72 = document.createElement('SPAN');
-nodo_71.appendChild(nodo_72);
+    var nodo_71 = document.createElement('P');
+    nodo_71.setAttribute('class', 'testimonial_subtitle');
+    nodo_66.appendChild(nodo_71);
 
-var nodo_73 = document.createTextNode((new String("Web Technologist")));
-nodo_72.appendChild(nodo_73);
+    var nodo_72 = document.createElement('SPAN');
+    nodo_71.appendChild(nodo_72);
 
-var nodo_74 = document.createElement('BR');
-nodo_71.appendChild(nodo_74);
+    var nodo_73 = document.createTextNode((new String("Web Technologist")));
+    nodo_72.appendChild(nodo_73);
 
-var nodo_75 = document.createElement('SPAN');
-nodo_71.appendChild(nodo_75);
+    var nodo_74 = document.createElement('BR');
+    nodo_71.appendChild(nodo_74);
 
-var nodo_76 = document.createTextNode((new String("Vaxa digital")));
-nodo_75.appendChild(nodo_76);
+    var nodo_75 = document.createElement('SPAN');
+    nodo_71.appendChild(nodo_75);
 
-var nodo_77 = document.createElement('DIV');
-nodo_77.setAttribute('class', 'controls push-right');
-nodo_11.appendChild(nodo_77);
+    var nodo_76 = document.createTextNode((new String("Vaxa digital")));
+    nodo_75.appendChild(nodo_76);
 
-var nodo_78 = document.createElement('A');
-nodo_78.setAttribute('class', 'left fa fa-chevron-left text-white btn btn btn-outline-light');
-nodo_78.setAttribute('href', '#carouselExampleCaptions');
-nodo_78.setAttribute('data-bs-slide', 'prev');
-nodo_77.appendChild(nodo_78);
+    var nodo_77 = document.createElement('DIV');
+    nodo_77.setAttribute('class', 'controls push-right');
+    nodo_11.appendChild(nodo_77);
 
-var nodo_79 = document.createElement('A');
-nodo_79.setAttribute('class', 'right fa fa-chevron-right text-white btn btn btn-outline-light');
-nodo_79.setAttribute('href', '#carouselExampleCaptions');
-nodo_79.setAttribute('data-bs-slide', 'next');
-nodo_77.appendChild(nodo_79);
+    var nodo_78 = document.createElement('A');
+    nodo_78.setAttribute('class', 'left fa fa-chevron-left text-white btn btn btn-outline-light');
+    nodo_78.setAttribute('href', '#carouselExampleCaptions');
+    nodo_78.setAttribute('data-bs-slide', 'prev');
+    nodo_77.appendChild(nodo_78);
 
+    var nodo_79 = document.createElement('A');
+    nodo_79.setAttribute('class', 'right fa fa-chevron-right text-white btn btn btn-outline-light');
+    nodo_79.setAttribute('href', '#carouselExampleCaptions');
+    nodo_79.setAttribute('data-bs-slide', 'next');
+    nodo_77.appendChild(nodo_79);
 
-var form_1 = document.createElement('DIV');
-form_1.setAttribute('class', 'tab-pane');
-form_1.setAttribute('id', 'add-comment');
 
-var form_2 = document.createElement('FORM');
-form_2.setAttribute('action', '#');
-form_2.setAttribute('method', 'post');
-form_2.setAttribute('class', 'form-horizontal');
-form_2.setAttribute('id', 'commentForm');
-form_2.setAttribute('role', 'form');
-form_1.appendChild(form_2);
+    var form_1 = document.createElement('DIV');
+    form_1.setAttribute('class', 'tab-pane');
+    form_1.setAttribute('id', 'add-comment');
 
-var form_3 = document.createElement('DIV');
-form_3.setAttribute('class', 'form-group');
-form_2.appendChild(form_3);
+    var form_2 = document.createElement('FORM');
+    form_2.setAttribute('action', '#');
+    form_2.setAttribute('method', 'post');
+    form_2.setAttribute('class', 'form-horizontal');
+    form_2.setAttribute('id', 'commentForm');
+    form_2.setAttribute('role', 'form');
+    form_1.appendChild(form_2);
 
-var form_4 = document.createElement('LABEL');
-form_4.setAttribute('for', 'email');
-form_4.setAttribute('class', 'col-sm-2 control-label');
-form_3.appendChild(form_4);
+    var form_3 = document.createElement('DIV');
+    form_3.setAttribute('class', 'form-group');
+    form_2.appendChild(form_3);
 
-var form_5 = document.createTextNode((new String("Name")));
-form_4.appendChild(form_5);
+    var form_4 = document.createElement('LABEL');
+    form_4.setAttribute('for', 'email');
+    form_4.setAttribute('class', 'col-sm-2 control-label');
+    form_3.appendChild(form_4);
 
-var form_6 = document.createElement('DIV');
-form_6.setAttribute('class', 'col-sm-10');
-form_3.appendChild(form_6);
+    var form_5 = document.createTextNode((new String("Name")));
+    form_4.appendChild(form_5);
 
-var form_7 = document.createElement('TEXTAREA');
-form_7.setAttribute('class', 'form-control');
-form_7.setAttribute('name', 'addComment');
-form_7.setAttribute('id', 'addComment');
-form_7.setAttribute('rows', '5');
-form_6.appendChild(form_7);
+    var form_6 = document.createElement('DIV');
+    form_6.setAttribute('class', 'col-sm-10');
+    form_3.appendChild(form_6);
 
-var form_8 = document.createElement('DIV');
-form_8.setAttribute('class', 'form-group');
-form_2.appendChild(form_8);
+    var form_7 = document.createElement('TEXTAREA');
+    form_7.setAttribute('class', 'form-control');
+    form_7.setAttribute('name', 'addComment');
+    form_7.setAttribute('id', 'addComment');
+    form_7.setAttribute('rows', '5');
+    form_6.appendChild(form_7);
 
-var form_9 = document.createElement('LABEL');
-form_9.setAttribute('for', 'email');
-form_9.setAttribute('class', 'col-sm-2 control-label');
-form_8.appendChild(form_9);
+    var form_8 = document.createElement('DIV');
+    form_8.setAttribute('class', 'form-group');
+    form_2.appendChild(form_8);
 
-var form_10 = document.createTextNode((new String("Comment")));
-form_9.appendChild(form_10);
+    var form_9 = document.createElement('LABEL');
+    form_9.setAttribute('for', 'email');
+    form_9.setAttribute('class', 'col-sm-2 control-label');
+    form_8.appendChild(form_9);
 
-var form_11 = document.createElement('DIV');
-form_11.setAttribute('class', 'col-sm-10');
-form_8.appendChild(form_11);
+    var form_10 = document.createTextNode((new String("Comment")));
+    form_9.appendChild(form_10);
 
-var form_12 = document.createElement('TEXTAREA');
-form_12.setAttribute('class', 'form-control');
-form_12.setAttribute('name', 'addComment');
-form_12.setAttribute('id', 'addComment');
-form_12.setAttribute('rows', '5');
-form_11.appendChild(form_12);
+    var form_11 = document.createElement('DIV');
+    form_11.setAttribute('class', 'col-sm-10');
+    form_8.appendChild(form_11);
 
-var form_13 = document.createElement('DIV');
-form_13.setAttribute('class', 'form-group');
-form_2.appendChild(form_13);
+    var form_12 = document.createElement('TEXTAREA');
+    form_12.setAttribute('class', 'form-control');
+    form_12.setAttribute('name', 'addComment');
+    form_12.setAttribute('id', 'addComment');
+    form_12.setAttribute('rows', '5');
+    form_11.appendChild(form_12);
 
-var form_14 = document.createElement('LABEL');
-form_14.setAttribute('for', 'uploadMedia');
-form_14.setAttribute('class', 'col-sm-2 control-label');
-form_13.appendChild(form_14);
+    var form_13 = document.createElement('DIV');
+    form_13.setAttribute('class', 'form-group');
+    form_2.appendChild(form_13);
 
-var form_15 = document.createTextNode((new String("Upload media")));
-form_14.appendChild(form_15);
+    var form_14 = document.createElement('LABEL');
+    form_14.setAttribute('for', 'uploadMedia');
+    form_14.setAttribute('class', 'col-sm-2 control-label');
+    form_13.appendChild(form_14);
 
-var form_16 = document.createElement('DIV');
-form_16.setAttribute('class', 'col-sm-10');
-form_13.appendChild(form_16);
+    var form_15 = document.createTextNode((new String("Upload media")));
+    form_14.appendChild(form_15);
 
-var form_17 = document.createElement('DIV');
-form_17.setAttribute('class', 'input-group');
-form_16.appendChild(form_17);
+    var form_16 = document.createElement('DIV');
+    form_16.setAttribute('class', 'col-sm-10');
+    form_13.appendChild(form_16);
 
-var form_18 = document.createElement('DIV');
-form_18.setAttribute('class', 'input-group-addon');
-form_17.appendChild(form_18);
+    var form_17 = document.createElement('DIV');
+    form_17.setAttribute('class', 'input-group');
+    form_16.appendChild(form_17);
 
-var form_19 = document.createElement('INPUT');
-form_19.setAttribute('type', 'text');
-form_19.setAttribute('class', 'form-control');
-form_19.setAttribute('name', 'uploadMedia');
-form_19.setAttribute('id', 'uploadMedia');
-form_17.appendChild(form_19);
+    var form_18 = document.createElement('DIV');
+    form_18.setAttribute('class', 'input-group-addon');
+    form_17.appendChild(form_18);
 
-var form_20 = document.createElement('DIV');
-form_20.setAttribute('class', 'form-group');
-form_2.appendChild(form_20);
+    var form_19 = document.createElement('INPUT');
+    form_19.setAttribute('type', 'text');
+    form_19.setAttribute('class', 'form-control');
+    form_19.setAttribute('name', 'uploadMedia');
+    form_19.setAttribute('id', 'uploadMedia');
+    form_17.appendChild(form_19);
 
-var form_21 = document.createElement('DIV');
-form_21.setAttribute('class', 'col-sm-offset-2 col-sm-10');
-form_20.appendChild(form_21);
+    var form_20 = document.createElement('DIV');
+    form_20.setAttribute('class', 'form-group');
+    form_2.appendChild(form_20);
 
-var form_22 = document.createElement('BUTTON');
-form_22.setAttribute('class', 'btn btn-success btn-circle text-uppercase');
-form_22.setAttribute('type', 'submit');
-form_22.setAttribute('id', 'submitComment');
-form_21.appendChild(form_22);
+    var form_21 = document.createElement('DIV');
+    form_21.setAttribute('class', 'col-sm-offset-2 col-sm-10');
+    form_20.appendChild(form_21);
 
-var form_23 = document.createElement('SPAN');
-form_23.setAttribute('class', 'glyphicon glyphicon-send');
-form_22.appendChild(form_23);
+    var form_22 = document.createElement('BUTTON');
+    form_22.setAttribute('class', 'btn btn-success btn-circle text-uppercase');
+    form_22.setAttribute('type', 'submit');
+    form_22.setAttribute('id', 'submitComment');
+    form_21.appendChild(form_22);
 
-var form_24 = document.createTextNode((new String(" Summit comment")));
-form_22.appendChild(form_24);
+    var form_23 = document.createElement('SPAN');
+    form_23.setAttribute('class', 'glyphicon glyphicon-send');
+    form_22.appendChild(form_23);
 
-nodo_2.appendChild(form_1);
+    var form_24 = document.createTextNode((new String(" Summit comment")));
+    form_22.appendChild(form_24);
 
-
-    var node_301 = document.createElement('SECTION');
-    node_301.setAttribute('id', 'events');
-    node_301.setAttribute('class', 'events');
-    node_17.appendChild(node_301);
-
-    var node_302 = document.createElement('DIV');
-    node_302.setAttribute('class', 'container-fluid aos-init aos-animate');
-    node_302.setAttribute('data-aos', 'fade-up');
-    node_301.appendChild(node_302);
-
-    var node_303 = document.createElement('DIV');
-    node_303.setAttribute('class', 'section-header');
-    node_302.appendChild(node_303);
-
-    var node_304 = document.createElement('H2');
-    node_303.appendChild(node_304);
-
-    var node_305 = document.createTextNode((new String("Events")));
-    node_304.appendChild(node_305);
-
-    var node_306 = document.createElement('P');
-    node_303.appendChild(node_306);
-
-    var node_307 = document.createElement('SPAN');
-    node_306.appendChild(node_307);
-
-    var node_308 = document.createTextNode((new String("Your Moments")));
-    node_307.appendChild(node_308);
-
-    var node_309 = document.createTextNode((new String(" In Our Restaurant")));
-    node_306.appendChild(node_309);
-
-    var node_310 = document.createElement('DIV');
-    node_310.setAttribute('class', 'slides-3 swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden aos-init aos-animate');
-    node_310.setAttribute('data-aos', 'fade-up');
-    node_310.setAttribute('data-aos-delay', '100');
-    node_302.appendChild(node_310);
-
-    var node_311 = document.createElement('DIV');
-    node_311.setAttribute('class', 'swiper-wrapper');
-    node_311.setAttribute('id', 'swiper-wrapper-1abf77f553a19349');
-    node_311.setAttribute('aria-live', 'off');
-    node_311.setAttribute('style', 'transition-duration: 0ms; transform: translate3d(-3924px, 0px, 0px);');
-    node_310.appendChild(node_311);
-
-    var node_312 = document.createElement('DIV');
-    node_312.setAttribute('class', 'swiper-slide event-item d-flex flex-column justify-content-end swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev');
-    node_312.setAttribute('style', 'background-image: url(\"assets/img/events-3.jpg\"); width: 941px; margin-right: 40px;');
-    node_312.setAttribute('role', 'group');
-    node_312.setAttribute('aria-label', '3 / 3');
-    node_312.setAttribute('data-swiper-slide-index', '2');
-    node_311.appendChild(node_312);
-
-    var node_313 = document.createElement('H3');
-    node_312.appendChild(node_313);
-
-    var node_314 = document.createTextNode((new String("Birthday Parties")));
-    node_313.appendChild(node_314);
-
-    var node_315 = document.createElement('DIV');
-    node_315.setAttribute('class', 'price align-self-start');
-    node_312.appendChild(node_315);
-
-    var node_316 = document.createTextNode((new String("$499")));
-    node_315.appendChild(node_316);
-
-    var node_317 = document.createElement('P');
-    node_317.setAttribute('class', 'description');
-    node_312.appendChild(node_317);
-
-    var node_318 = document.createElement('DIV');
-    node_318.setAttribute('class', 'swiper-slide event-item d-flex flex-column justify-content-end swiper-slide-duplicate-active');
-    node_318.setAttribute('style', 'background-image: url(\"assets/img/events-1.jpg\"); width: 941px; margin-right: 40px;');
-    node_318.setAttribute('role', 'group');
-    node_318.setAttribute('aria-label', '1 / 3');
-    node_318.setAttribute('data-swiper-slide-index', '0');
-    node_311.appendChild(node_318);
-
-    var node_319 = document.createElement('H3');
-    node_318.appendChild(node_319);
-
-    var node_320 = document.createTextNode((new String("Custom Parties")));
-    node_319.appendChild(node_320);
-
-    var node_321 = document.createElement('DIV');
-    node_321.setAttribute('class', 'price align-self-start');
-    node_318.appendChild(node_321);
-
-    var node_322 = document.createTextNode((new String("$99")));
-    node_321.appendChild(node_322);
-
-    var node_323 = document.createElement('P');
-    node_323.setAttribute('class', 'description');
-    node_318.appendChild(node_323);
-
-    var node_324 = document.createTextNode((new String("Quo corporis voluptas ea ad. Consectetur inventore sapiente ipsum voluptas eos omnis facere. Enim facilis veritatis id est rem repudiandae nulla expedita quas.                        ")));
-    node_323.appendChild(node_324);
-
-    var node_325 = document.createElement('DIV');
-    node_325.setAttribute('class', 'swiper-slide event-item d-flex flex-column justify-content-end');
-    node_325.setAttribute('style', 'background-image: url(\"assets/img/events-2.jpg\"); width: 941px; margin-right: 40px;');
-    node_325.setAttribute('role', 'group');
-    node_325.setAttribute('aria-label', '2 / 3');
-    node_325.setAttribute('data-swiper-slide-index', '1');
-    node_311.appendChild(node_325);
-
-    var node_326 = document.createElement('H3');
-    node_325.appendChild(node_326);
-
-    var node_327 = document.createTextNode((new String("Private Parties")));
-    node_326.appendChild(node_327);
-
-    var node_328 = document.createElement('DIV');
-    node_328.setAttribute('class', 'price align-self-start');
-    node_325.appendChild(node_328);
-
-    var node_329 = document.createTextNode((new String("$289")));
-    node_328.appendChild(node_329);
-
-    var node_330 = document.createElement('P');
-    node_330.setAttribute('class', 'description');
-    node_325.appendChild(node_330);
-
-    var node_331 = document.createTextNode((new String("In delectus sint qui et enim. Et ab repudiandae inventore quaerat doloribus. Facere nemo vero est ut dolores ea assumenda et. Delectus saepe accusamus aspernatur.\n                            ")));
-    node_330.appendChild(node_331);
-
-    var node_332 = document.createElement('DIV');
-    node_332.setAttribute('class', 'swiper-slide event-item d-flex flex-column justify-content-end swiper-slide-prev swiper-slide-duplicate-next');
-    node_332.setAttribute('style', 'background-image: url(\"assets/img/events-3.jpg\"); width: 941px; margin-right: 40px;');
-    node_332.setAttribute('role', 'group');
-    node_332.setAttribute('aria-label', '3 / 3');
-    node_332.setAttribute('data-swiper-slide-index', '2');
-    node_311.appendChild(node_332);
-
-    var node_333 = document.createElement('H3');
-    node_332.appendChild(node_333);
-
-    var node_334 = document.createTextNode((new String("Birthday Parties")));
-    node_333.appendChild(node_334);
-
-    var node_335 = document.createElement('DIV');
-    node_335.setAttribute('class', 'price align-self-start');
-    node_332.appendChild(node_335);
-
-    var node_336 = document.createTextNode((new String("$499")));
-    node_335.appendChild(node_336);
-
-    var node_337 = document.createElement('P');
-    node_337.setAttribute('class', 'description');
-    node_332.appendChild(node_337);
-
-    var node_338 = document.createElement('DIV');
-    node_338.setAttribute('class', 'swiper-slide event-item d-flex flex-column justify-content-end swiper-slide-duplicate swiper-slide-active');
-    node_338.setAttribute('style', 'background-image: url(\"assets/img/events-1.jpg\"); width: 941px; margin-right: 40px;');
-    node_338.setAttribute('role', 'group');
-    node_338.setAttribute('aria-label', '1 / 3');
-    node_338.setAttribute('data-swiper-slide-index', '0');
-    node_311.appendChild(node_338);
-
-    var node_339 = document.createElement('H3');
-    node_338.appendChild(node_339);
-
-    var node_340 = document.createTextNode((new String("Custom Parties")));
-    node_339.appendChild(node_340);
-
-    var node_341 = document.createElement('DIV');
-    node_341.setAttribute('class', 'price align-self-start');
-    node_338.appendChild(node_341);
-
-    var node_342 = document.createTextNode((new String("$99")));
-    node_341.appendChild(node_342);
-
-    var node_343 = document.createElement('P');
-    node_343.setAttribute('class', 'description');
-    node_338.appendChild(node_343);
-
-    var node_344 = document.createTextNode((new String("Quo corporis voluptas ea ad. Consectetur inventore sapiente ipsum voluptas eos omnis facere. Enim facilis veritatis id est rem repudiandae nulla expedita quas.\n                            ")));
-    node_343.appendChild(node_344);
-
-    var node_345 = document.createElement('DIV');
-    node_345.setAttribute('class', 'swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal');
-    node_310.appendChild(node_345);
-
-    var node_346 = document.createElement('SPAN');
-    node_346.setAttribute('class', 'swiper-pagination-bullet swiper-pagination-bullet-active');
-    node_346.setAttribute('tabindex', '0');
-    node_346.setAttribute('role', 'button');
-    node_346.setAttribute('aria-label', 'Go to slide 1');
-    node_346.setAttribute('aria-current', 'true');
-    node_345.appendChild(node_346);
-
-    var node_347 = document.createElement('SPAN');
-    node_347.setAttribute('class', 'swiper-pagination-bullet');
-    node_347.setAttribute('tabindex', '0');
-    node_347.setAttribute('role', 'button');
-    node_347.setAttribute('aria-label', 'Go to slide 2');
-    node_345.appendChild(node_347);
-
-    var node_348 = document.createElement('SPAN');
-    node_348.setAttribute('class', 'swiper-pagination-bullet');
-    node_348.setAttribute('tabindex', '0');
-    node_348.setAttribute('role', 'button');
-    node_348.setAttribute('aria-label', 'Go to slide 3');
-    node_345.appendChild(node_348);
-
-    var node_349 = document.createElement('SPAN');
-    node_349.setAttribute('class', 'swiper-notification');
-    node_349.setAttribute('aria-live', 'assertive');
-    node_349.setAttribute('aria-atomic', 'true');
-    node_310.appendChild(node_349);
+    nodo_2.appendChild(form_1);
 
     var node_350 = document.createElement('SECTION');
     node_350.setAttribute('id', 'gallery');
@@ -1406,7 +1130,7 @@ nodo_2.appendChild(form_1);
     var nd_3 = document.createElement('IMG');
     nd_3.setAttribute('class', 'img-fluid');
     nd_3.setAttribute('alt', 'Pop Up Gallety');
-    nd_3.setAttribute('src', 'http://www.prepbootstrap.com/Content/images/template/design/design1.jpg');
+    nd_3.setAttribute('src', json.itemListElement[pos].image[0]);
     nd_2.appendChild(nd_3);
 
     var nd_4 = document.createElement('DIV');
@@ -1416,7 +1140,7 @@ nodo_2.appendChild(form_1);
     var nd_5 = document.createElement('IMG');
     nd_5.setAttribute('class', 'img-fluid');
     nd_5.setAttribute('alt', 'Pop Up Gallety');
-    nd_5.setAttribute('src', 'http://www.prepbootstrap.com/Content/images/template/design/design2.jpg');
+    nd_5.setAttribute('src', json.itemListElement[pos].image[1]);
     nd_4.appendChild(nd_5);
 
     var nd_6 = document.createElement('DIV');
@@ -1426,7 +1150,7 @@ nodo_2.appendChild(form_1);
     var nd_7 = document.createElement('IMG');
     nd_7.setAttribute('class', 'img-fluid');
     nd_7.setAttribute('alt', 'Pop Up Gallety');
-    nd_7.setAttribute('src', 'http://www.prepbootstrap.com/Content/images/template/design/design3.jpg');
+    nd_7.setAttribute('src', json.itemListElement[pos].image[2]);
     nd_6.appendChild(nd_7);
 
     var nd_8 = document.createElement('DIV');
@@ -1436,7 +1160,7 @@ nodo_2.appendChild(form_1);
     var nd_9 = document.createElement('IMG');
     nd_9.setAttribute('class', 'img-fluid');
     nd_9.setAttribute('alt', 'Pop Up Gallety');
-    nd_9.setAttribute('src', 'http://www.prepbootstrap.com/Content/images/template/design/design4.jpg');
+    nd_9.setAttribute('src', json.itemListElement[pos].image[3]);
     nd_8.appendChild(nd_9);
 
     var nd_10 = document.createElement('DIV');
@@ -1446,7 +1170,7 @@ nodo_2.appendChild(form_1);
     var nd_11 = document.createElement('IMG');
     nd_11.setAttribute('class', 'img-fluid');
     nd_11.setAttribute('alt', 'Pop Up Gallety');
-    nd_11.setAttribute('src', 'http://www.prepbootstrap.com/Content/images/template/design/design5.jpg');
+    nd_11.setAttribute('src', json.itemListElement[pos].image[4]);
     nd_10.appendChild(nd_11);
     node_351.appendChild(nd_1);
 
@@ -1476,6 +1200,8 @@ nodo_2.appendChild(form_1);
     var node_420 = document.createElement('DIV');
     node_420.setAttribute('class', 'mb-3');
     node_413.appendChild(node_420);
+
+    //funcionamiento de la API de mapa
 
     var node_421 = document.createElement('IFRAME');
     node_421.setAttribute('style', 'border:0; width: 100%; height: 350px;');
@@ -1512,7 +1238,7 @@ nodo_2.appendChild(form_1);
     var node_429 = document.createElement('P');
     node_426.appendChild(node_429);
 
-    var node_430 = document.createTextNode((new String("Ctra. Pollença - Lluc- Km 10,9 07315 Escorca, Mallorca")));
+    var node_430 = document.createTextNode((new String(json.itemListElement[pos].address.streetAddress + " " +json.itemListElement[pos].address.postalCode + " " +json.itemListElement[pos].address.addressRegion + ", " + json.itemListElement[pos].address.addressLocality)));
     node_429.appendChild(node_430);
 
     var node_431 = document.createElement('DIV');
@@ -1539,7 +1265,7 @@ nodo_2.appendChild(form_1);
     var node_437 = document.createElement('P');
     node_434.appendChild(node_437);
 
-    var node_438 = document.createTextNode((new String("info@vinyesmortitx.com")));
+    var node_438 = document.createTextNode(json.itemListElement[pos].email);
     node_437.appendChild(node_438);
 
     var node_439 = document.createElement('DIV');
@@ -1566,7 +1292,7 @@ nodo_2.appendChild(form_1);
     var node_445 = document.createElement('P');
     node_442.appendChild(node_445);
 
-    var node_446 = document.createTextNode((new String("971533889")));
+    var node_446 = document.createTextNode(json.itemListElement[pos].telephone);
     node_445.appendChild(node_446);
 
     var node_447 = document.createElement('DIV');
@@ -1599,7 +1325,7 @@ nodo_2.appendChild(form_1);
     var node_455 = document.createElement('STRONG');
     node_453.appendChild(node_455);
 
-    var node_456 = document.createTextNode((new String("Mo,Tu,We,Th,Fr 08:00-16:00")));
+    var node_456 = document.createTextNode(json.itemListElement[pos].openingHours);
     node_453.appendChild(node_456);
 
     var node_467 = document.createElement('DIV');
@@ -1681,17 +1407,10 @@ nodo_2.appendChild(form_1);
     var node_462 = document.createTextNode((new String("Página Web")));
     node_461.appendChild(node_462);
 
-    var node_463 = document.createElement('DIV');
+    var node_463 = document.createElement('a');
     node_460.appendChild(node_463);
-
-    var node_464 = document.createElement('STRONG');
-    node_463.appendChild(node_464);
-
-    var node_465 = document.createElement('STRONG');
-    node_463.appendChild(node_465);
-
-    var node_466 = document.createTextNode((new String("http://www.vinyesmortitx.com")));
-    node_463.appendChild(node_466);
+    node_463.innerText = json.itemListElement[pos].url;
+    node_463.setAttribute('href',json.itemListElement[pos].url);
 }
 
 function filtrado2() {
@@ -1953,7 +1672,7 @@ function botonesNav(navState) {
     }
 
     var ul = document.createElement('ul');
-    ul.setAttribute('id','ul-nav');
+    ul.setAttribute('id', 'ul-nav');
     switch (navState) {
         case 0:
             var busqueda = document.createElement('li');
@@ -2069,10 +1788,6 @@ function paginaPrincipal() {
     }
 }
 
-
-
-
-
 function listadoCardXL() {
     const dad = document.getElementById("seccion");
     const container1 = document.createElement("div");
@@ -2116,7 +1831,7 @@ function listadoCardXL() {
     const col = document.createElement('div');
     col.className = 'col margen';
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < json.itemListElement.length; i++) {
         const container = document.createElement('div');
         container.classList.add('container', 'bg-white', 'aplicar-borde', 'margen');
 
@@ -2138,7 +1853,7 @@ function listadoCardXL() {
         carouselItem1.classList.add('carousel-item', 'active');
 
         const img1 = document.createElement('img');
-        img1.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_QQ6A0199-1.jpg');
+        img1.setAttribute('src', json.itemListElement[i].image[0]);
         img1.classList.add('d-block', 'w-100');
         carouselItem1.appendChild(img1);
 
@@ -2146,7 +1861,7 @@ function listadoCardXL() {
         carouselItem2.classList.add('carousel-item');
 
         const img2 = document.createElement('img');
-        img2.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_20140228_172220.jpg');
+        img2.setAttribute('src', json.itemListElement[i].image[1]);
         img2.classList.add('d-block', 'w-100');
         carouselItem2.appendChild(img2);
 
@@ -2154,7 +1869,7 @@ function listadoCardXL() {
         carouselItem3.classList.add('carousel-item');
 
         const img3 = document.createElement('img');
-        img3.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_P1090717.jpg');
+        img3.setAttribute('src',json.itemListElement[i].image[2]);
         img3.classList.add('d-block', 'w-100');
         carouselItem3.appendChild(img3);
 
@@ -2211,7 +1926,7 @@ function listadoCardXL() {
 
         const logoimg = document.createElement('img');
         logoimg.classList.add('margen');
-        logoimg.setAttribute('src', 'http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png');
+        logoimg.setAttribute('src', json.itemListElement[i].logo);
         logoimg.setAttribute('width', '150');
         logoimg.setAttribute('height', '65');
 
@@ -2220,12 +1935,12 @@ function listadoCardXL() {
         const dt1 = document.createElement('dt');
         dt1.textContent = 'Horario: ';
         const dd1 = document.createElement('dd');
-        dd1.textContent = 'Mo,Tu,We,Th,Fr 08:00-16:00';
+        dd1.textContent = json.itemListElement[i].openingHours;
 
         const dt2 = document.createElement('dt');
         dt2.textContent = 'Teléfono: ';
         const dd2 = document.createElement('dd');
-        dd2.textContent = '971533889';
+        dd2.textContent = json.itemListElement[i].telephone;
 
         const dt3 = document.createElement('dt');
         dt3.textContent = 'Email: ';
@@ -2233,25 +1948,26 @@ function listadoCardXL() {
         const a = document.createElement('a');
         a.setAttribute('href', '#');
         a.classList.add('text-navy');
-        a.textContent = 'info@vinyesmortitx.com';
+        a.textContent =json.itemListElement[i].email;
         dd3.appendChild(a);
 
         const dt4 = document.createElement('dt');
         dt4.textContent = 'Web: ';
         const dd4 = document.createElement('dd');
         const a2 = document.createElement('a');
-        a2.setAttribute('href', 'http://www.vinyesmortitx.com');
+        a2.setAttribute('href', json.itemListElement[i].url);
         a2.classList.add('text-navy');
-        a2.textContent = 'http://www.vinyesmortitx.com';
+        a2.textContent =json.itemListElement[i].url;
         dd4.appendChild(a2);
 
         const dt5 = document.createElement('dt');
         dt5.textContent = 'Dirección: ';
         const br = document.createElement('br');
         const dd5_1 = document.createElement('dd');
-        dd5_1.textContent = 'Ctra. Pollença - Lluc- Km 10,9';
+        dd5_1.textContent = json.itemListElement[i].address.streetAddress;
         const dd5_2 = document.createElement('dd');
-        dd5_2.textContent = 'Mallorca, Escorca, 07315';
+        dd5_2.textContent = json.itemListElement[i].address.addressLocality + " " + json.itemListElement[i].address.addressRegion + " " + json.itemListElement[i].address.postalCode;
+       
 
         dl.appendChild(dt1);
         const iconHorario = document.createElement('i');
@@ -2303,7 +2019,7 @@ function listadoCardXL() {
 
         const italicPara = document.createElement('p');
         italicPara.className = 'font-italic';
-        italicPara.textContent = 'El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.';
+        italicPara.textContent = json.itemListElement[i].description
 
         customScrollbarDiv.appendChild(italicPara);
         containerDiv.appendChild(customScrollbarDiv);
@@ -2313,7 +2029,7 @@ function listadoCardXL() {
         moreInfoButton.className = 'add-to-cart margen';
         moreInfoButton.textContent = 'Más información';
         moreInfoButton.onclick = function () {
-            gestorVisionado(3);
+            gestorVisionado(3, i);
         };
 
         const boton2 = document.createElement('button');
@@ -2383,12 +2099,8 @@ function listadoCard() {
     const rowCard = document.createElement('div');
     rowCard.className = "row ";
 
-    const imgs = ["http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png", "img/virei.png", "https://bodegaribas.com/wp-content/uploads/2021/07/logofooter.png",
-        "https://www.canvidalet.com/wp-content/uploads/2018/05/logo-cv-04-300x150.png", "https://www.sonprim.com/wp-content/uploads/2022/03/logo_navegador_completo-removebg-preview.png"];
 
-    const textIcon = ["Mortitx", "Virei", "Ribas", "Ca'n Vidalet", "Son Prim"];
-
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < json.itemListElement.length; i++) {
 
 
         const colCard = document.createElement('div');
@@ -2402,15 +2114,17 @@ function listadoCard() {
 
         const imgCard = document.createElement('img');
         imgCard.className = "img-fluid d-block mx-auto mb-3 redi";
-        imgCard.setAttribute('src', imgs[0]);
+        imgCard.setAttribute('src',json.itemListElement[i].logo);
 
         const h5 = document.createElement('h5');
-        h5.innerText = textIcon[0];
+        h5.innerText = json.itemListElement[i].name
 
         const desc = document.createElement('p');
         desc.className = "small text-muted font-italic";
-        desc.innerText = "Ctra. Pollença - Lluc- Km 10,9, Mallorca, Escorca, 07315";
+        desc.innerText = json.itemListElement[i].address.streetAddress + " " +json.itemListElement[i].address.postalCode + " " +json.itemListElement[i].address.addressRegion + ", " + json.itemListElement[i].address.addressLocality;
 
+
+        //calcularlo
         const open = document.createElement('p');
         open.className = "small text-muted font-italic";
         open.innerText = "Abierto ahora";
@@ -2436,7 +2150,7 @@ function listadoCard() {
         button.className = "add-to-cart margen";
         button.innerText = "Más información";
         button.onclick = function () {
-            gestorVisionado(3);
+            gestorVisionado(3, i);
         };
 
         cardBody.appendChild(imgCard);
@@ -2461,6 +2175,7 @@ function listadoCard() {
     dad.appendChild(container1);
 }
 
+//funcion buscar a través del mapa
 function listadoMap() {
     const dad = document.getElementById('seccion');
     const container = document.createElement('div');
@@ -2744,7 +2459,7 @@ function hasNode(dad, child) {
     return false;
 }
 
-function gestorVisionado(vision) {
+function gestorVisionado(vision, producto) {
     var seccion = document.getElementById("seccion");
     var car = document.getElementById("carouselPrincipal");
 
@@ -2763,7 +2478,7 @@ function gestorVisionado(vision) {
 
         if (vision == 3) {
             botonesNav(1);
-            paginaProducto2();
+            paginaProducto2(0, producto);
         }
     } else {
         botonesNav(0);
@@ -2828,10 +2543,22 @@ $('.owl-carousel').owlCarousel({
     }
 });
 
-$(window).bind("load resize slid.bs.carousel", function() {
+$(window).bind("load resize slid.bs.carousel", function () {
     var imageHeight = $(".active .holder").height();
-    $(".controllers").height( imageHeight );
+    $(".controllers").height(imageHeight);
     console.log("Slid");
-  });
+});
 
-  
+function cargarJSON() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "json/Bodegas.json", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            json = JSON.parse(this.responseText);
+            console.log(json);
+        }
+    };
+    xmlhttp.send();
+}
+

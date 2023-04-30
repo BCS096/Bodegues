@@ -4,7 +4,7 @@
     "itemListElement":[
         {
             "@type": "Winery",
-            "name": "Bodegas Mortitx",
+            "name": "Mortitx",
             "description": "El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.",
             "address": {
                 "@type": "PostalAddress",
@@ -170,25 +170,7 @@
                 "http://www.vinyesmortitx.com/img_blog/21_QQ6A9827.jpg",
                 "http://www.vinyesmortitx.com/img_blog/1535461008.png"
             ],
-            "url": "http://www.vinyesmortitx.com",
-            "event": [
-                {
-                    "@type": "Event",
-                    "name": "Visita de la bodega y cata de vinos",
-                    "description": "Conozca en profundidad el proceso de elaboración de premiados vinos, visitando las bodegas y degustando sus exquisitos caldos. Relativamente nueva, la bodega de Mortitx fue construida en el año 2005 y contiene 30 depósitos de acero inoxidable que se utilizan tanto para la fermentación como para la conservación de los vinos. La bodega también dispone de una gran cámara de frio,  las barricas de roble de origen francés para la crianza de los vinos y de una sala de embotellado y etiquetación."
-                },
-                {
-                    "@type": "Event",
-                    "name": "Excursión Ses Basses de Mortitx",
-                    "description": "Se conoce con el nombre de Ses Basses de Mortitx un altiplano, sostenido por elevada cornisa acantilada sobre el mar, en un recóndito y solitario rincón de la Sierra Norte mallorquina."
-        
-                },
-                {
-                    "@type": "Event",
-                    "name": "Excursión Caleta d'Ariant (Cova de ses bruixes)",
-                    "description": "La ruta de Mortitx a Sa Caleta, ante la espectacular Cueva de las Brujas, en la Costa Brava Norte Mallorquina, entre los formidables sistemas de Puig Roig-Caragoler y el de Ternelles."
-                }
-            ]
+            "url": "http://www.vinyesmortitx.com"
         }
     ]
 }

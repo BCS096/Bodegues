@@ -1829,8 +1829,6 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: rgba(255, 255, 255, 0.9);
-    overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
   }
@@ -1884,7 +1882,7 @@ section {
   }
 
   .mobile-nav-show {
-    color: var(--color-secondary);
+    color: gray;
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -3120,4 +3118,21 @@ section {
   border-left: 1.5625rem solid transparent;
   border-right: 1.5625rem solid transparent;
   border-top: 1.25rem solid rgba(0, 0, 0, 0.5);
+}
+
+.im{
+  display: block;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25%;
+  margin-bottom: 25%;
+}
+.im2{
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
