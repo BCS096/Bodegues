@@ -1,542 +1,1387 @@
 var carrusel = null;
-var opcionActiva = 0; //0 : descripcion  1: Opiniones  2: Videos
+var json = null;
 
 window.onload = function () {
-    botonesNav();
+    botonesNav(0);
+    cargarJSON();
 }
 
-function descripcionProducto(dad) {
-    const div = document.createElement('div');
-    div.className = 'custom-scrollbar-css p-2';
 
-    const p = document.createElement('p');
-    p.className = 'font-italic';
-    p.innerText = 'El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.';
+function paginaProducto2(pos) {
 
-    div.appendChild(p);
+    var node_1 = document.getElementById('seccion');
 
-    dad.appendChild(div);
-}
+    var node_2 = document.createElement('SECTION');
+    node_2.setAttribute('id', 'hero');
+    node_2.setAttribute('class', 'hero d-flex align-items-center section-bg');
+    node_1.appendChild(node_2);
 
-function videoProducto(dad) {
-    const img = document.createElement('img');
-    img.src = 'img/video.png';
-    dad.appendChild(img);
-}
+    var node_3 = document.createElement('DIV');
+    node_3.setAttribute('class', 'container granate aplicar-borde margen');
+    node_2.appendChild(node_3);
 
-function opinionProducto(dad) {
-    const customScrollbar = document.createElement("div");
-    customScrollbar.classList.add("custom-scrollbar-css", "p-2");
+    var node_4 = document.createElement('DIV');
+    node_4.setAttribute('class', 'row justify-content-between gy-5');
+    node_3.appendChild(node_4);
 
-    const colContainer = document.createElement("div");
-    colContainer.classList.add("col-sm-12", "col-md-8");
+    var node_5 = document.createElement('DIV');
+    node_5.setAttribute('class', 'col-sm order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start m-auto');
+    node_4.appendChild(node_5);
 
-    const reviewBlock = document.createElement("div");
-    reviewBlock.classList.add("review-block");
+    var node_6 = document.createElement('H2');
+    node_6.setAttribute('data-aos', 'fade-up');
+    node_6.setAttribute('class', 'aos-init aos-animate');
+    node_5.appendChild(node_6);
 
-    for (let i = 0; i < 3; i++) {
+    var node_7 = document.createTextNode((new String("Bodegas")));
+    node_6.appendChild(node_7);
 
-        const row = document.createElement("div");
-        row.classList.add("row");
+    var node_8 = document.createElement('BR');
+    node_6.appendChild(node_8);
 
-        const colImg = document.createElement("div");
-        colImg.classList.add("col-sm-3");
+    var node_9 = document.createTextNode((new String(json.itemListElement[pos].name)));
+    node_6.appendChild(node_9);
 
-        const reviewImg = document.createElement("div");
-        reviewImg.classList.add("review-block-img");
+    var node_10 = document.createElement('DIV');
+    node_10.setAttribute('class', 'd-flex aos-init aos-animate');
+    node_10.setAttribute('data-aos', 'fade-up');
+    node_10.setAttribute('data-aos-delay', '200');
+    node_5.appendChild(node_10);
 
-        const img = document.createElement("img");
-        img.src = "https://bootdey.com/img/Content/avatar/avatar6.png";
-        img.classList.add("img-rounded");
-        img.alt = "";
+    var node_11 = document.createElement('A');
+    node_11.setAttribute('href', json.itemListElement[pos].subjectOf.video[0].contentUrl);
+    node_11.setAttribute('class', 'glightbox btn-watch-video d-flex align-items-center m-auto');
+    node_10.appendChild(node_11);
 
-        reviewImg.appendChild(img);
+    var node_12 = document.createElement('I');
+    node_12.setAttribute('class', 'bi bi-play-circle');
+    node_11.appendChild(node_12);
 
-        const reviewName = document.createElement("div");
-        reviewName.classList.add("review-block-name");
+    var node_13 = document.createElement('SPAN');
+    node_11.appendChild(node_13);
 
-        const link = document.createElement("a");
-        link.href = "#";
-        link.textContent = "nktailor";
+    var node_14 = document.createTextNode((new String("Ver video")));
+    node_13.appendChild(node_14);
 
-        reviewName.appendChild(link);
+    var node_15 = document.createElement('DIV');
+    node_15.setAttribute('class', 'col-sm margen  text-lg-start');
+    node_4.appendChild(node_15);
 
-        const reviewDate = document.createElement("div");
-        reviewDate.classList.add("review-block-date");
-        reviewDate.innerHTML = "January 29, 2016<br>1 day ago";
+    var node_16 = document.createElement('IMG');
 
-        colImg.appendChild(reviewImg);
-        colImg.appendChild(reviewName);
-        colImg.appendChild(reviewDate);
+    node_16.setAttribute('src', json.itemListElement[pos].image[10]);
+    node_16.setAttribute('class', 'im2 margen2 aos-init aos-animate');
+    node_16.setAttribute('alt', '');
+    node_16.setAttribute('data-aos', 'zoom-out');
+    node_16.setAttribute('data-aos-delay', '300');
+    node_15.appendChild(node_16);
 
-        const colDesc = document.createElement("div");
-        colDesc.classList.add("col-sm-9");
+    var aux = document.createElement('div');
+    aux.setAttribute('class', 'col-sm margen   text-lg-start');
+    node_4.appendChild(aux);
 
-        const reviewRate = document.createElement("div");
-        reviewRate.classList.add("review-block-rate");
-
-        const btnSuccess1 = document.createElement("button");
-        btnSuccess1.type = "button";
-        btnSuccess1.classList.add("btn", "btn-success", "btn-xs");
-        btnSuccess1.setAttribute("aria-label", "Left Align");
-
-        const span1 = document.createElement("span");
-        span1.classList.add("glyphicon", "glyphicon-star");
-        btnSuccess1.appendChild(span1);
-
-        btnSuccess1.appendChild(span1);
-
-        const btnSuccess2 = document.createElement("button");
-        btnSuccess2.type = "button";
-        btnSuccess2.classList.add("btn", "btn-success", "btn-xs");
-        btnSuccess2.setAttribute("aria-label", "Left Align");
-
-        const span2 = document.createElement("span");
-        span2.classList.add("glyphicon", "glyphicon-star");
-        btnSuccess2.appendChild(span2);
-
-        btnSuccess2.appendChild(span2);
-
-        const btnSuccess3 = document.createElement("button");
-        btnSuccess3.type = "button";
-        btnSuccess3.classList.add("btn", "btn-success", "btn-xs");
-        btnSuccess3.setAttribute("aria-label", "Left Align");
-
-        const span3 = document.createElement("span");
-        span3.classList.add("glyphicon", "glyphicon-star");
-        btnSuccess3.appendChild(span3);
-
-        btnSuccess3.appendChild(span3);
-
-        const btnDefault1 = document.createElement("button");
-        btnDefault1.type = "button";
-        btnDefault1.classList.add("btn", "btn-default", "btn-xs");
-        btnDefault1.setAttribute("aria-label", "Left Align");
-
-        const span4 = document.createElement("span");
-        span4.classList.add("glyphicon", "glyphicon-star");
-        btnDefault1.appendChild(span4);
-
-        btnDefault1.appendChild(span4);
-
-        const btnDefault2 = document.createElement("button");
-        btnDefault2.type = "button";
-        btnDefault2.classList.add("btn", "btn-default", "btn-xs");
-        btnDefault2.setAttribute("aria-label", "Left Align");
-
-        const span5 = document.createElement("span");
-        span5.classList.add("glyphicon", "glyphicon-star");
-        btnDefault2.appendChild(span5);
-
-        btnDefault2.appendChild(span5);
-
-        reviewRate.appendChild(btnSuccess1);
-        reviewRate.appendChild(btnSuccess2);
-        reviewRate.appendChild(btnSuccess3);
-        reviewRate.appendChild(btnDefault1);
-        reviewRate.appendChild(btnDefault2);
-
-        const reviewTitle = document.createElement("div");
-        reviewTitle.classList.add("review-block-title");
-        reviewTitle.textContent = "this was nice in buy";
-
-        const reviewDesc = document.createElement("div");
-        reviewDesc.classList.add("review-block-description");
-        reviewDesc.textContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.";
-
-        colDesc.appendChild(reviewRate);
-        colDesc.appendChild(reviewTitle);
-        colDesc.appendChild(reviewDesc);
-
-        row.appendChild(colImg);
-        row.appendChild(colDesc);
+    var aux1 = document.createElement('img');
+    aux1.setAttribute('src', json.itemListElement[pos].logo);
+    aux1.setAttribute('class', ' im margen2 aos-init aos-animate');
+    aux1.setAttribute('data-aos', 'zoom-out');
+    aux1.setAttribute('data-aos-delay', '300');
+    aux.appendChild(aux1);
 
 
-        const hr = document.createElement("hr");
 
-        reviewBlock.appendChild(row);
-        reviewBlock.appendChild(hr);
+    var node_17 = document.createElement('MAIN');
+    node_17.setAttribute('id', 'main');
+    node_1.appendChild(node_17);
+
+    var node_18 = document.createElement('SECTION');
+    node_18.setAttribute('id', 'about');
+    node_18.setAttribute('class', 'about');
+    node_17.appendChild(node_18);
+
+    var node_19 = document.createElement('DIV');
+    node_19.setAttribute('class', 'container aos-init aos-animate');
+    node_19.setAttribute('data-aos', 'fade-up');
+    node_18.appendChild(node_19);
+
+    var node_20 = document.createElement('DIV');
+    node_20.setAttribute('class', 'section-header');
+    node_19.appendChild(node_20);
+
+    var node_21 = document.createElement('P');
+    node_20.appendChild(node_21);
+
+    var node_22 = document.createElement('SPAN');
+    node_21.appendChild(node_22);
+
+    var node_23 = document.createTextNode((new String("Descripción")));
+    node_22.appendChild(node_23);
+
+    var node_24 = document.createElement('DIV');
+    node_24.setAttribute('class', 'row gy-4 aplicar-borde margen granate');
+    node_19.appendChild(node_24);
+
+    var node_25 = document.createElement('DIV');
+    node_25.setAttribute('class', 'col-lg-7 position-relative about-img margen aos-init aos-animate');
+    node_25.setAttribute('style', 'background-image: url(' + json.itemListElement[pos].image[3] + ') ;');
+    node_25.setAttribute('data-aos', 'fade-up');
+    node_25.setAttribute('data-aos-delay', '150');
+    node_24.appendChild(node_25);
+
+    var node_26 = document.createElement('DIV');
+    node_26.setAttribute('class', 'call-us position-absolute margen aplicar-borde granate');
+    node_25.appendChild(node_26);
+
+    var node_27 = document.createElement('H4');
+    node_26.appendChild(node_27);
+
+    var node_28 = document.createTextNode((new String("Teléfono")));
+    node_27.appendChild(node_28);
+
+    var node_29 = document.createElement('P');
+    node_26.appendChild(node_29);
+
+    var node_30 = document.createTextNode(json.itemListElement[pos].telephone);
+    node_29.appendChild(node_30);
+
+    var node_31 = document.createElement('DIV');
+    node_31.setAttribute('class', 'col-lg-5 d-flex align-items-end aos-init aos-animate');
+    node_31.setAttribute('data-aos', 'fade-up');
+    node_31.setAttribute('data-aos-delay', '300');
+    node_24.appendChild(node_31);
+
+    var node_32 = document.createElement('DIV');
+    node_32.setAttribute('class', 'content ps-0 ps-lg-5');
+    node_31.appendChild(node_32);
+
+    var node_33 = document.createElement('P');
+    node_33.setAttribute('class', 'fst-italic');
+    node_32.appendChild(node_33);
+
+    var node_34 = document.createTextNode(json.itemListElement[pos].description);
+    node_33.appendChild(node_34);
+
+    var node_35 = document.createElement('DIV');
+    node_35.setAttribute('class', 'position-relative mt-4 margen');
+    node_32.appendChild(node_35);
+
+    var node_36 = document.createElement('IMG');
+    node_36.setAttribute('src', json.itemListElement[pos].image[6]);
+    node_36.setAttribute('class', 'img-fluid');
+    node_36.setAttribute('alt', '');
+    node_35.appendChild(node_36);
+
+    var node_37 = document.createElement('A');
+    node_37.setAttribute('href', json.itemListElement[pos].subjectOf.video[1].contentUrl);
+    node_37.setAttribute('class', 'glightbox play-btn');
+    node_35.appendChild(node_37);
+
+    var node_38 = document.createElement('SECTION');
+    node_38.setAttribute('id', 'weather');
+    node_38.setAttribute('class', 'why-us section-bg');
+    node_17.appendChild(node_38);
+
+    var node_39 = document.createElement('DIV');
+    node_39.setAttribute('class', 'container aos-init aos-animate');
+    node_39.setAttribute('data-aos', 'fade-up');
+    node_38.appendChild(node_39);
+
+    var node_40 = document.createElement('DIV');
+    node_40.setAttribute('class', 'row');
+    node_39.appendChild(node_40);
+
+    var node_41 = document.createElement('DIV');
+    node_41.setAttribute('class', 'section-header');
+    node_40.appendChild(node_41);
+
+    var node_42 = document.createElement('P');
+    node_41.appendChild(node_42);
+
+    var node_43 = document.createElement('SPAN');
+    node_42.appendChild(node_43);
+
+    var node_44 = document.createTextNode((new String("El tiempo")));
+    node_43.appendChild(node_44);
+
+    var node_45 = document.createElement('DIV');
+    node_45.setAttribute('class', 'col-lg-11 d-flex align-items-center margen aplicar-borde granate');
+    node_40.appendChild(node_45);
+
+    var node_46 = document.createElement('DIV');
+    node_46.setAttribute('class', 'row gy-2 ');
+    node_45.appendChild(node_46);
+
+    var node_47 = document.createElement('DIV');
+    node_47.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
+    node_47.setAttribute('data-aos', 'fade-up');
+    node_47.setAttribute('data-aos-delay', '200');
+    node_46.appendChild(node_47);
+
+    var node_48 = document.createElement('DIV');
+    node_48.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
+    node_47.appendChild(node_48);
+
+    var node_49 = document.createElement('H4');
+    node_48.appendChild(node_49);
+
+    var node_50 = document.createTextNode((new String("Lunes")));
+    node_49.appendChild(node_50);
+
+    var node_51 = document.createElement('I');
+    node_51.setAttribute('class', 'bi bi-cloud-sun');
+    node_51.setAttribute('style', 'color: #511f1f;');
+    node_48.appendChild(node_51);
+
+    var node_52 = document.createElement('P');
+    node_48.appendChild(node_52);
+
+    var node_53 = document.createTextNode((new String("17ºC / 14ºC")));
+    node_52.appendChild(node_53);
+
+    var node_54 = document.createElement('DIV');
+    node_54.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
+    node_54.setAttribute('data-aos', 'fade-up');
+    node_54.setAttribute('data-aos-delay', '200');
+    node_46.appendChild(node_54);
+
+    var node_55 = document.createElement('DIV');
+    node_55.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
+    node_54.appendChild(node_55);
+
+    var node_56 = document.createElement('H4');
+    node_55.appendChild(node_56);
+
+    var node_57 = document.createTextNode((new String("Martes")));
+    node_56.appendChild(node_57);
+
+    var node_58 = document.createElement('I');
+    node_58.setAttribute('class', 'bi bi-cloud-sun');
+    node_58.setAttribute('style', 'color: #511f1f;');
+    node_55.appendChild(node_58);
+
+    var node_59 = document.createElement('P');
+    node_55.appendChild(node_59);
+
+    var node_60 = document.createTextNode((new String("17ºC / 14ºC")));
+    node_59.appendChild(node_60);
+
+    var node_61 = document.createElement('DIV');
+    node_61.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
+    node_61.setAttribute('data-aos', 'fade-up');
+    node_61.setAttribute('data-aos-delay', '200');
+    node_46.appendChild(node_61);
+
+    var node_62 = document.createElement('DIV');
+    node_62.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
+    node_61.appendChild(node_62);
+
+    var node_63 = document.createElement('H4');
+    node_62.appendChild(node_63);
+
+    var node_64 = document.createTextNode((new String("Miercoles")));
+    node_63.appendChild(node_64);
+
+    var node_65 = document.createElement('I');
+    node_65.setAttribute('class', 'bi bi-cloud-sun');
+    node_65.setAttribute('style', 'color: #511f1f;');
+    node_62.appendChild(node_65);
+
+    var node_66 = document.createElement('P');
+    node_62.appendChild(node_66);
+
+    var node_67 = document.createTextNode((new String("17ºC / 14ºC")));
+    node_66.appendChild(node_67);
+
+    var node_68 = document.createElement('DIV');
+    node_68.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
+    node_68.setAttribute('data-aos', 'fade-up');
+    node_68.setAttribute('data-aos-delay', '200');
+    node_46.appendChild(node_68);
+
+    var node_69 = document.createElement('DIV');
+    node_69.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
+    node_68.appendChild(node_69);
+
+    var node_70 = document.createElement('H4');
+    node_69.appendChild(node_70);
+
+    var node_71 = document.createTextNode((new String("Jueves")));
+    node_70.appendChild(node_71);
+
+    var node_72 = document.createElement('I');
+    node_72.setAttribute('class', 'bi bi-cloud-sun');
+    node_72.setAttribute('style', 'color: #511f1f;');
+    node_69.appendChild(node_72);
+
+    var node_73 = document.createElement('P');
+    node_69.appendChild(node_73);
+
+    var node_74 = document.createTextNode((new String("17ºC / 14ºC")));
+    node_73.appendChild(node_74);
+
+    var node_75 = document.createElement('DIV');
+    node_75.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
+    node_75.setAttribute('data-aos', 'fade-up');
+    node_75.setAttribute('data-aos-delay', '200');
+    node_46.appendChild(node_75);
+
+    var node_76 = document.createElement('DIV');
+    node_76.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
+    node_75.appendChild(node_76);
+
+    var node_77 = document.createElement('H4');
+    node_76.appendChild(node_77);
+
+    var node_78 = document.createTextNode((new String("Viernes")));
+    node_77.appendChild(node_78);
+
+    var node_79 = document.createElement('I');
+    node_79.setAttribute('class', 'bi bi-cloud-sun');
+    node_79.setAttribute('style', 'color: #511f1f;');
+    node_76.appendChild(node_79);
+
+    var node_80 = document.createElement('P');
+    node_76.appendChild(node_80);
+
+    var node_81 = document.createTextNode((new String("17ºC / 14ºC")));
+    node_80.appendChild(node_81);
+
+    var node_82 = document.createElement('DIV');
+    node_82.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
+    node_82.setAttribute('data-aos', 'fade-up');
+    node_82.setAttribute('data-aos-delay', '200');
+    node_46.appendChild(node_82);
+
+    var node_83 = document.createElement('DIV');
+    node_83.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
+    node_82.appendChild(node_83);
+
+    var node_84 = document.createElement('H4');
+    node_83.appendChild(node_84);
+
+    var node_85 = document.createTextNode((new String("Sábado")));
+    node_84.appendChild(node_85);
+
+    var node_86 = document.createElement('I');
+    node_86.setAttribute('class', 'bi bi-cloud-sun');
+    node_86.setAttribute('style', 'color: #511f1f;');
+    node_83.appendChild(node_86);
+
+    var node_87 = document.createElement('P');
+    node_83.appendChild(node_87);
+
+    var node_88 = document.createTextNode((new String("17ºC / 14ºC")));
+    node_87.appendChild(node_88);
+
+    var node_89 = document.createElement('DIV');
+    node_89.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
+    node_89.setAttribute('data-aos', 'fade-up');
+    node_89.setAttribute('data-aos-delay', '200');
+    node_46.appendChild(node_89);
+
+    var node_90 = document.createElement('DIV');
+    node_90.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
+    node_89.appendChild(node_90);
+
+    var node_91 = document.createElement('H4');
+    node_90.appendChild(node_91);
+
+    var node_92 = document.createTextNode((new String("Domingo")));
+    node_91.appendChild(node_92);
+
+    var node_93 = document.createElement('I');
+    node_93.setAttribute('class', 'bi bi-cloud-sun');
+    node_93.setAttribute('style', 'color: #511f1f;');
+    node_90.appendChild(node_93);
+
+    var node_94 = document.createElement('P');
+    node_90.appendChild(node_94);
+
+    var node_95 = document.createTextNode((new String("17ºC / 14ºC")));
+    node_94.appendChild(node_95);
+
+    var node_96 = document.createElement('SECTION');
+    node_96.setAttribute('id', 'menu');
+    node_96.setAttribute('class', 'menu');
+    node_17.appendChild(node_96);
+
+    var node_97 = document.createElement('DIV');
+    node_97.setAttribute('class', 'container aos-init aos-animate');
+    node_97.setAttribute('data-aos', 'fade-up');
+    node_96.appendChild(node_97);
+
+    var node_98 = document.createElement('DIV');
+    node_98.setAttribute('class', 'section-header');
+    node_97.appendChild(node_98);
+
+    var node_99 = document.createElement('H2');
+    node_98.appendChild(node_99);
+
+    var node_100 = document.createTextNode((new String("Vinos")));
+    node_99.appendChild(node_100);
+
+    var node_101 = document.createElement('P');
+    node_98.appendChild(node_101);
+
+    var node_102 = document.createElement('SPAN');
+    node_101.appendChild(node_102);
+
+    var node_103 = document.createTextNode((new String("tu vino favorito")));
+    node_102.appendChild(node_103);
+
+    var node_104 = document.createElement('UL');
+    node_104.setAttribute('class', 'nav nav-tabs d-flex justify-content-center aos-init aos-animate');
+    node_104.setAttribute('data-aos', 'fade-up');
+    node_104.setAttribute('data-aos-delay', '200');
+    node_104.setAttribute('role', 'tablist');
+    node_97.appendChild(node_104);
+
+    var node_105 = document.createElement('LI');
+    node_105.setAttribute('class', 'nav-item');
+    node_105.setAttribute('role', 'presentation');
+    node_104.appendChild(node_105);
+
+    var node_106 = document.createElement('A');
+    node_106.setAttribute('class', 'nav-link active show');
+    node_106.setAttribute('data-bs-toggle', 'tab');
+    node_106.setAttribute('data-bs-target', '#menu-starters');
+    node_106.setAttribute('aria-selected', 'true');
+    node_106.setAttribute('role', 'tab');
+    node_105.appendChild(node_106);
+
+    var node_107 = document.createElement('H4');
+    node_106.appendChild(node_107);
+
+    var node_108 = document.createTextNode((new String("Tintos")));
+    node_107.appendChild(node_108);
+
+    var node_109 = document.createElement('LI');
+    node_109.setAttribute('class', 'nav-item');
+    node_109.setAttribute('role', 'presentation');
+    node_104.appendChild(node_109);
+
+    var node_110 = document.createElement('A');
+    node_110.setAttribute('class', 'nav-link');
+    node_110.setAttribute('data-bs-toggle', 'tab');
+    node_110.setAttribute('data-bs-target', '#menu-breakfast');
+    node_110.setAttribute('aria-selected', 'false');
+    node_110.setAttribute('tabindex', '-1');
+    node_110.setAttribute('role', 'tab');
+    node_109.appendChild(node_110);
+
+    var node_111 = document.createElement('H4');
+    node_110.appendChild(node_111);
+
+    var node_112 = document.createTextNode((new String("Blancos")));
+    node_111.appendChild(node_112);
+
+    var node_113 = document.createElement('LI');
+    node_113.setAttribute('class', 'nav-item');
+    node_113.setAttribute('role', 'presentation');
+    node_104.appendChild(node_113);
+
+    var node_114 = document.createElement('A');
+    node_114.setAttribute('class', 'nav-link');
+    node_114.setAttribute('data-bs-toggle', 'tab');
+    node_114.setAttribute('data-bs-target', '#menu-lunch');
+    node_114.setAttribute('aria-selected', 'false');
+    node_114.setAttribute('tabindex', '-1');
+    node_114.setAttribute('role', 'tab');
+    node_113.appendChild(node_114);
+
+    var node_115 = document.createElement('H4');
+    node_114.appendChild(node_115);
+
+    var node_116 = document.createTextNode((new String("Rosados")));
+    node_115.appendChild(node_116);
+
+    var node_117 = document.createElement('DIV');
+    node_117.setAttribute('class', 'tab-content aos-init aos-animate');
+    node_117.setAttribute('data-aos', 'fade-up');
+    node_117.setAttribute('data-aos-delay', '300');
+    node_97.appendChild(node_117);
+
+    var node_118 = document.createElement('DIV');
+    node_118.setAttribute('class', 'tab-pane fade active show');
+    node_118.setAttribute('id', 'menu-starters');
+    node_118.setAttribute('role', 'tabpanel');
+    node_117.appendChild(node_118);
+
+    var node_119 = document.createElement('DIV');
+    node_119.setAttribute('class', 'tab-header text-center');
+    node_118.appendChild(node_119);
+
+    var node_120 = document.createElement('H3');
+    node_119.appendChild(node_120);
+
+    var node_121 = document.createTextNode((new String("Tintos")));
+    node_120.appendChild(node_121);
+
+    var node_122 = document.createElement('DIV');
+    node_122.setAttribute('class', 'row gy-5');
+    node_118.appendChild(node_122);
+
+    for (let i = 0; i < json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem.length; i++) {
+
+        var node_123 = document.createElement('DIV');
+        node_123.setAttribute('class', 'col-lg-4 menu-item');
+        node_122.appendChild(node_123);
+
+        var node_124 = document.createElement('A');
+        node_124.setAttribute('href', json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].image);
+        node_124.setAttribute('class', 'glightbox');
+        node_123.appendChild(node_124);
+
+        var node_125 = document.createElement('IMG');
+        node_125.setAttribute('src', json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].image);
+        node_125.setAttribute('class', 'menu-img img-fluid');
+        node_125.setAttribute('alt', '');
+        node_124.appendChild(node_125);
+
+        var node_126 = document.createElement('H4');
+        node_123.appendChild(node_126);
+
+        var node_127 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].name);
+        node_126.appendChild(node_127);
+
+        var node_128 = document.createElement('P');
+        node_128.setAttribute('class', 'ingredients');
+        node_128.innerText = json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].description;
+        node_123.appendChild(node_128);
+
+        var node_129 = document.createElement('P');
+        node_129.setAttribute('class', 'price');
+        node_123.appendChild(node_129);
+
+        var node_130 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].offers.price + " " + json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].offers.priceCurrency);
+        node_129.appendChild(node_130);
+
     }
-    colContainer.appendChild(reviewBlock);
 
-    customScrollbar.appendChild(colContainer);
+    var node_147 = document.createElement('DIV');
+    node_147.setAttribute('class', 'tab-pane fade');
+    node_147.setAttribute('id', 'menu-breakfast');
+    node_147.setAttribute('role', 'tabpanel');
+    node_117.appendChild(node_147);
 
-    dad.appendChild(customScrollbar);
+    var node_148 = document.createElement('DIV');
+    node_148.setAttribute('class', 'tab-header text-center');
+    node_147.appendChild(node_148);
 
-}
+    var node_149 = document.createElement('H3');
+    node_148.appendChild(node_149);
 
-function paginaProducto() {
-    const dad = document.getElementById('seccion');
+    var node_150 = document.createTextNode((new String("Blancos")));
+    node_149.appendChild(node_150);
 
-    const container = document.createElement("div");
-    container.className = "container margen granate aplicar-borde";
+    var node_151 = document.createElement('DIV');
+    node_151.setAttribute('class', 'row gy-5');
+    node_147.appendChild(node_151);
 
-    const col = document.createElement("div");
-    col.className = "col bg-white aplicar-borde margen";
+    for (let i = 0; i < json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem.length; i++) {
 
-    const productContent = document.createElement("div");
-    productContent.className = "product-content product-wrap clearfix product-deatil";
+        var node_152 = document.createElement('DIV');
+        node_152.setAttribute('class', 'col-lg-4 menu-item');
+        node_151.appendChild(node_152);
 
-    const row = document.createElement("div");
-    row.className = "row";
+        var node_153 = document.createElement('A');
+        node_153.setAttribute('href', json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].image);
+        node_153.setAttribute('class', 'glightbox');
+        node_152.appendChild(node_153);
 
-    const imageCol = document.createElement("div");
-    imageCol.className = "col-md-5 col-sm-12 col-xs-12";
+        var node_154 = document.createElement('IMG');
+        node_154.setAttribute('src', json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].image);
+        node_154.setAttribute('class', 'menu-img img-fluid');
+        node_154.setAttribute('alt', '');
+        node_153.appendChild(node_154);
 
-    const productImage = document.createElement("div");
-    productImage.className = "product-image";
+        var node_155 = document.createElement('H4');
+        node_152.appendChild(node_155);
 
-    const carousel = document.createElement("div");
-    carousel.id = "carouselExampleControls";
-    carousel.className = "carousel slide";
-    carousel.setAttribute("data-bs-ride", "carousel");
+        var node_156 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].name);
+        node_155.appendChild(node_156);
 
-    const carouselInner = document.createElement("div");
-    carouselInner.className = "carousel-inner";
+        var node_157 = document.createElement('P');
+        node_157.setAttribute('class', 'ingredients');
+        node_152.appendChild(node_157);
 
-    const carouselItem1 = document.createElement("div");
-    carouselItem1.className = "carousel-item active";
+        var node_158 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].description);
+        node_157.appendChild(node_158);
 
-    const img1 = document.createElement("img");
-    img1.src = "img/carousel1.jpg";
-    img1.className = "d-block w-100";
-    img1.alt = "...";
+        var node_159 = document.createElement('P');
+        node_159.setAttribute('class', 'price');
+        node_152.appendChild(node_159);
 
-    carouselItem1.appendChild(img1);
+        var node_160 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].offers.price + " " + json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].offers.priceCurrency);
+        node_159.appendChild(node_160);
+    }
 
-    const carouselItem2 = document.createElement("div");
-    carouselItem2.className = "carousel-item";
+    var node_161 = document.createElement('DIV');
+    node_161.setAttribute('class', 'tab-pane fade');
+    node_161.setAttribute('id', 'menu-lunch');
+    node_161.setAttribute('role', 'tabpanel');
+    node_117.appendChild(node_161);
 
-    const img2 = document.createElement("img");
-    img2.src = "img/carousel.jpg";
-    img2.className = "d-block w-100";
-    img2.alt = "...";
+    var node_162 = document.createElement('DIV');
+    node_162.setAttribute('class', 'tab-header text-center');
+    node_161.appendChild(node_162);
 
-    carouselItem2.appendChild(img2);
+    var node_163 = document.createElement('H3');
+    node_162.appendChild(node_163);
 
-    const carouselItem3 = document.createElement("div");
-    carouselItem3.className = "carousel-item";
+    var node_164 = document.createTextNode((new String("Rosados")));
+    node_163.appendChild(node_164);
 
-    const img3 = document.createElement("img");
-    img3.src = "img/carousel0.jpg";
-    img3.className = "d-block w-100";
-    img3.alt = "...";
+    var node_165 = document.createElement('DIV');
+    node_165.setAttribute('class', 'row gy-5');
+    node_161.appendChild(node_165);
 
-    carouselItem3.appendChild(img3);
+    for (let i = 0; i < json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem.length; i++) {
 
-    carouselInner.appendChild(carouselItem1);
-    carouselInner.appendChild(carouselItem2);
-    carouselInner.appendChild(carouselItem3);
+        var node_166 = document.createElement('DIV');
+        node_166.setAttribute('class', 'col-lg-4 menu-item');
+        node_165.appendChild(node_166);
 
-    const carouselPrevBtn = document.createElement("button");
-    carouselPrevBtn.className = "carousel-control-prev";
-    carouselPrevBtn.type = "button";
-    carouselPrevBtn.setAttribute("data-bs-target", "#carouselExampleControls");
-    carouselPrevBtn.setAttribute("data-bs-slide", "prev");
+        var node_167 = document.createElement('A');
+        node_167.setAttribute('href', json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].image);
+        node_167.setAttribute('class', 'glightbox');
+        node_166.appendChild(node_167);
 
-    const carouselPrevIcon = document.createElement("span");
-    carouselPrevIcon.className = "carousel-control-prev-icon";
-    carouselPrevIcon.setAttribute("aria-hidden", "true");
+        var node_168 = document.createElement('IMG');
+        node_168.setAttribute('src', json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].image);
+        node_168.setAttribute('class', 'menu-img img-fluid');
+        node_168.setAttribute('alt', '');
+        node_167.appendChild(node_168);
 
-    const carouselPrevSpan = document.createElement("span");
-    carouselPrevSpan.className = "visually-hidden";
-    carouselPrevSpan.innerHTML = "Previous";
+        var node_169 = document.createElement('H4');
+        node_166.appendChild(node_169);
 
-    carouselPrevBtn.appendChild(carouselPrevIcon);
-    carouselPrevBtn.appendChild(carouselPrevSpan);
+        var node_170 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].name);
+        node_169.appendChild(node_170);
+
+        var node_171 = document.createElement('P');
+        node_171.setAttribute('class', 'ingredients');
+        node_166.appendChild(node_171);
+
+        var node_172 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].description);
+        node_171.appendChild(node_172);
 
-    const carouselNextBtn = document.createElement("button");
-    carouselNextBtn.className = "carousel-control-next";
-    carouselNextBtn.type = "button";
-    carouselNextBtn.setAttribute("data-bs-target", "#carouselExampleControls");
-    carouselNextBtn.setAttribute("data-bs-slide", "next");
+        var node_173 = document.createElement('P');
+        node_173.setAttribute('class', 'price');
+        node_166.appendChild(node_173);
+
+        var node_174 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].offers.price + " " + json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].offers.priceCurrency);
+        node_173.appendChild(node_174);
+    }
+
+    var nodo_1 = document.createElement('SECTION');
+    nodo_1.setAttribute('id', 'testimonials');
+    nodo_1.setAttribute('class', 'testimonials section-bg');
+    node_17.appendChild(nodo_1);
+
+    var nodo_2 = document.createElement('DIV');
+    nodo_2.setAttribute('class', 'container granate aplicar-borde margen');
+    nodo_1.appendChild(nodo_2);
+
+    var nodo_3 = document.createElement('DIV');
+    nodo_3.setAttribute('class', 'row text-center');
+    nodo_2.appendChild(nodo_3);
+
+    var nodo_4 = document.createElement('DIV');
+    nodo_4.setAttribute('class', 'col-12');
+    nodo_3.appendChild(nodo_4);
+
+    var nodo_5 = document.createElement('H1');
+    nodo_5.setAttribute('class', 'display-3 fw-bold text-white');
+    nodo_4.appendChild(nodo_5);
 
-    const carouselNextIcon = document.createElement("span");
-    carouselNextIcon.className = "carousel-control-next-icon";
-    carouselNextIcon.setAttribute("aria-hidden", "true");
+    var nodo_6 = document.createTextNode((new String("Testimonials")));
+    nodo_5.appendChild(nodo_6);
 
-    const carouselNextSpan = document.createElement("span");
-    carouselNextSpan.className = "visually-hidden";
-    carouselNextSpan.innerHTML = "Next";
+    var nodo_7 = document.createElement('HR');
+    nodo_7.setAttribute('class', 'bg-white mb-4 mt-0 d-inline-block mx-auto');
+    nodo_7.setAttribute('style', 'width: 100px; height:3px;');
+    nodo_4.appendChild(nodo_7);
 
-    carouselNextBtn.appendChild(carouselNextIcon);
-    carouselNextBtn.appendChild(carouselPrevSpan);
+    var nodo_8 = document.createElement('P');
+    nodo_8.setAttribute('class', 'p-text text-white');
+    nodo_4.appendChild(nodo_8);
 
-    carousel.appendChild(carouselInner);
-    carousel.appendChild(carouselPrevBtn);
-    carousel.appendChild(carouselNextBtn);
+    var nodo_9 = document.createTextNode((new String("What our clients are saying")));
+    nodo_8.appendChild(nodo_9);
 
-    productImage.appendChild(carousel);
+    var nodo_10 = document.createElement('DIV');
+    nodo_10.setAttribute('class', 'row align-items-md-center text-white');
+    nodo_2.appendChild(nodo_10);
 
-    const hr1 = document.createElement("hr");
+    var nodo_11 = document.createElement('DIV');
+    nodo_11.setAttribute('class', 'col-lg-12 col-md-12 col-sm-12');
+    nodo_10.appendChild(nodo_11);
 
-    const img4 = document.createElement("img");
-    img4.src = "img/tiempo.png";
+    var nodo_12 = document.createElement('DIV');
+    nodo_12.setAttribute('id', 'carouselExampleCaptions');
+    nodo_12.setAttribute('class', 'carousel slide');
+    nodo_12.setAttribute('data-bs-ride', 'carousel');
+    nodo_11.appendChild(nodo_12);
 
-    const hr2 = document.createElement("hr");
+    var nodo_13 = document.createElement('DIV');
+    nodo_13.setAttribute('class', 'carousel-inner');
+    nodo_12.appendChild(nodo_13);
 
-    const img5 = document.createElement("img");
-    img5.src = "img/restaurante.png";
+    var nodo_14 = document.createElement('DIV');
+    nodo_14.setAttribute('class', 'carousel-item active');
+    nodo_13.appendChild(nodo_14);
 
-    const hr7 = document.createElement("hr");
+    var nodo_15 = document.createElement('DIV');
+    nodo_15.setAttribute('class', 'row p-4');
+    nodo_14.appendChild(nodo_15);
 
-    const img6 = document.createElement("img");
-    img6.src = "img/supermercado.png";
+    var nodo_16 = document.createElement('DIV');
+    nodo_16.setAttribute('class', 't-card');
+    nodo_15.appendChild(nodo_16);
 
-    const hr8 = document.createElement("hr");
+    var nodo_17 = document.createElement('I');
+    nodo_17.setAttribute('class', 'fa fa-quote-left');
+    nodo_17.setAttribute('aria-hidden', 'true');
+    nodo_16.appendChild(nodo_17);
 
-    imageCol.appendChild(productImage);
-    imageCol.appendChild(hr1);
-    imageCol.appendChild(img4);
-    imageCol.appendChild(hr2);
-    imageCol.appendChild(img5);
-    imageCol.appendChild(hr7);
-    imageCol.appendChild(img6);
-    imageCol.appendChild(hr8);
+    var nodo_18 = document.createElement('P');
+    nodo_18.setAttribute('class', 'lh-lg');
+    nodo_16.appendChild(nodo_18);
 
+    var nodo_19 = document.createElement('I');
+    nodo_19.setAttribute('class', 'fa fa-quote-right');
+    nodo_19.setAttribute('aria-hidden', 'true');
+    nodo_16.appendChild(nodo_19);
 
-    const detailsCol = document.createElement("div");
-    detailsCol.className = "col-md-6 col-md-offset-1 col-sm-12 col-xs-12";
+    var nodo_20 = document.createElement('BR');
+    nodo_16.appendChild(nodo_20);
 
-    const name = document.createElement("h2");
-    name.className = "name";
-    name.innerText = "Mortitx";
+    var nodo_21 = document.createElement('DIV');
+    nodo_21.setAttribute('class', 'row');
+    nodo_15.appendChild(nodo_21);
 
-    const brandName = document.createElement("br");
+    var nodo_22 = document.createElement('DIV');
+    nodo_22.setAttribute('class', 'col-sm-2 pt-3');
+    nodo_21.appendChild(nodo_22);
 
+    var nodo_23 = document.createElement('IMG');
+    nodo_23.setAttribute('src', 'https://source.unsplash.com/300x300/?girl');
+    nodo_23.setAttribute('class', 'rounded-circle img-responsive img-fluid');
+    nodo_22.appendChild(nodo_23);
 
-    const star1 = document.createElement("i");
-    star1.className = "fa fa-star fa-2x text-primary";
+    var nodo_24 = document.createElement('DIV');
+    nodo_24.setAttribute('class', 'col-sm-10');
+    nodo_21.appendChild(nodo_24);
 
-    const star2 = document.createElement("i");
-    star2.className = "fa fa-star fa-2x text-primary";
+    var nodo_25 = document.createElement('DIV');
+    nodo_25.setAttribute('class', 'arrow-down d-none d-lg-block');
+    nodo_24.appendChild(nodo_25);
 
-    const star3 = document.createElement("i");
-    star3.className = "fa fa-star fa-2x text-primary";
+    var nodo_26 = document.createElement('H4');
+    nodo_24.appendChild(nodo_26);
 
-    const star4 = document.createElement("i");
-    star4.className = "fa fa-star fa-2x text-primary";
+    var nodo_27 = document.createElement('STRONG');
+    nodo_26.appendChild(nodo_27);
 
-    const star5 = document.createElement("i");
-    star5.className = "fa fa-star fa-2x text-muted";
+    var nodo_28 = document.createTextNode((new String("Sunaina Samuel")));
+    nodo_27.appendChild(nodo_28);
 
-    const span1 = document.createElement('span');
-    span1.className = "fa fa-2x";
+    var nodo_29 = document.createElement('P');
+    nodo_29.setAttribute('class', 'testimonial_subtitle');
+    nodo_24.appendChild(nodo_29);
 
-    const g = document.createElement('h5');
-    g.innerText = "(109) Votes";
+    var nodo_30 = document.createElement('SPAN');
+    nodo_29.appendChild(nodo_30);
 
-    span1.appendChild(g);
+    var nodo_31 = document.createTextNode((new String("Associate Software Engineer")));
+    nodo_30.appendChild(nodo_31);
 
-    const ref = document.createElement('a');
-    ref.href = "javascript:gestorVisionado(4)";
-    ref.innerText = "109 customer reviews";
+    var nodo_32 = document.createElement('BR');
+    nodo_29.appendChild(nodo_32);
 
-    name.appendChild(brandName);
-    name.appendChild(star1);
-    name.appendChild(star2);
-    name.appendChild(star3);
-    name.appendChild(star4);
-    name.appendChild(star5);
-    name.appendChild(span1);
-    name.appendChild(ref);
+    var nodo_33 = document.createElement('SPAN');
+    nodo_29.appendChild(nodo_33);
 
-    const hr3 = document.createElement('hr');
-    const fila = document.createElement('div');
-    fila.className = "row";
+    var nodo_34 = document.createTextNode((new String("CodeHim")));
+    nodo_33.appendChild(nodo_34);
 
-    const colu = document.createElement('div');
-    colu.className = "col";
+    var nodo_35 = document.createElement('DIV');
+    nodo_35.setAttribute('class', 'carousel-item');
+    nodo_13.appendChild(nodo_35);
 
-    const im = document.createElement('img');
-    im.className = "margen";
-    im.setAttribute('src', 'http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png');
-    im.width = 150;
-    im.width = 65;
+    var nodo_36 = document.createElement('DIV');
+    nodo_36.setAttribute('class', 'row p-4');
+    nodo_35.appendChild(nodo_36);
 
-    const colsm = document.createElement('div');
-    colsm.className = 'col-sm';
+    var nodo_37 = document.createElement('DIV');
+    nodo_37.setAttribute('class', 't-card');
+    nodo_36.appendChild(nodo_37);
 
-    const dx = document.createElement('dl');
+    var nodo_38 = document.createElement('I');
+    nodo_38.setAttribute('class', 'fa fa-quote-left');
+    nodo_38.setAttribute('aria-hidden', 'true');
+    nodo_37.appendChild(nodo_38);
 
-    const dt1 = document.createElement('dt');
-    dt1.innerText = 'Horario: ';
+    var nodo_39 = document.createElement('P');
+    nodo_39.setAttribute('class', 'lh-lg');
+    nodo_37.appendChild(nodo_39);
 
-    const icono1 = document.createElement('i');
-    icono1.className = "fa-solid fa-clock";
+    var nodo_40 = document.createElement('I');
+    nodo_40.setAttribute('class', 'fa fa-quote-right');
+    nodo_40.setAttribute('aria-hidden', 'true');
+    nodo_37.appendChild(nodo_40);
 
-    dt1.appendChild(icono1);
+    var nodo_41 = document.createElement('BR');
+    nodo_37.appendChild(nodo_41);
 
-    const ddx = document.createElement('dd');
-    ddx.innerText = 'Mo,Tu,We,Th,Fr 08:00-16:00';
+    var nodo_42 = document.createElement('DIV');
+    nodo_42.setAttribute('class', 'row');
+    nodo_36.appendChild(nodo_42);
 
-    const dt2 = document.createElement('dt');
-    dt2.innerText = 'Teléfono: ';
+    var nodo_43 = document.createElement('DIV');
+    nodo_43.setAttribute('class', 'col-sm-2 pt-4');
+    nodo_42.appendChild(nodo_43);
 
-    const icono2 = document.createElement('i');
-    icono2.className = "fa-solid fa-phone";
+    var nodo_44 = document.createElement('IMG');
+    nodo_44.setAttribute('src', 'https://source.unsplash.com/300x300/?man');
+    nodo_44.setAttribute('class', 'rounded-circle img-responsive img-fluid');
+    nodo_43.appendChild(nodo_44);
 
-    dt2.appendChild(icono2);
+    var nodo_45 = document.createElement('DIV');
+    nodo_45.setAttribute('class', 'col-sm-10');
+    nodo_42.appendChild(nodo_45);
 
-    const ddx2 = document.createElement('dd');
-    ddx2.innerText = '971533889';
+    var nodo_46 = document.createElement('DIV');
+    nodo_46.setAttribute('class', 'arrow-down d-none d-lg-block');
+    nodo_45.appendChild(nodo_46);
 
+    var nodo_47 = document.createElement('H4');
+    nodo_45.appendChild(nodo_47);
 
-    dx.appendChild(dt1);
-    dx.appendChild(ddx);
-    dx.appendChild(dt2);
-    dx.appendChild(ddx2);
+    var nodo_48 = document.createElement('STRONG');
+    nodo_47.appendChild(nodo_48);
 
-    colsm.appendChild(dx);
+    var nodo_49 = document.createTextNode((new String("Esther Zawadi")));
+    nodo_48.appendChild(nodo_49);
 
-    colu.appendChild(im);
-    colu.appendChild(colsm);
+    var nodo_50 = document.createElement('P');
+    nodo_50.setAttribute('class', 'testimonial_subtitle');
+    nodo_45.appendChild(nodo_50);
 
-    const colsm1 = document.createElement('div');
-    colsm1.className = 'col-sm';
+    var nodo_51 = document.createElement('SPAN');
+    nodo_50.appendChild(nodo_51);
 
-    const dxx = document.createElement('dl');
+    var nodo_52 = document.createTextNode((new String("\\n                digital strategist")));
+    nodo_51.appendChild(nodo_52);
 
-    const dt1x = document.createElement('dt');
-    dt1x.innerText = 'Email: ';
+    var nodo_53 = document.createElement('BR');
+    nodo_50.appendChild(nodo_53);
 
-    const icono1x = document.createElement('i');
-    icono1x.className = "fa-solid fa-envelope";
+    var nodo_54 = document.createElement('SPAN');
+    nodo_50.appendChild(nodo_54);
 
-    dt1x.appendChild(icono1x);
+    var nodo_55 = document.createTextNode((new String("Vaxa digital")));
+    nodo_54.appendChild(nodo_55);
 
-    const ddxx = document.createElement('dd');
-    const ref1x = document.createElement('a');
-    ref1x.href = 'info@vinyesmortitx.com';
-    ref1x.innerText = 'info@vinyesmortitx.com';
-    ref1x.className = 'text-navy';
+    var nodo_56 = document.createElement('DIV');
+    nodo_56.setAttribute('class', 'carousel-item');
+    nodo_13.appendChild(nodo_56);
 
-    ddxx.appendChild(ref1x);
+    var nodo_57 = document.createElement('DIV');
+    nodo_57.setAttribute('class', 'row p-4');
+    nodo_56.appendChild(nodo_57);
 
-    const dt2x = document.createElement('dt');
-    dt2x.innerText = 'Web: ';
+    var nodo_58 = document.createElement('DIV');
+    nodo_58.setAttribute('class', 't-card');
+    nodo_57.appendChild(nodo_58);
 
-    const icono2x = document.createElement('i');
-    icono2x.className = "fa-solid fa-at";
+    var nodo_59 = document.createElement('I');
+    nodo_59.setAttribute('class', 'fa fa-quote-left');
+    nodo_59.setAttribute('aria-hidden', 'true');
+    nodo_58.appendChild(nodo_59);
 
-    dt2x.appendChild(icono2x);
+    var nodo_60 = document.createElement('P');
+    nodo_60.setAttribute('class', 'lh-lg');
+    nodo_58.appendChild(nodo_60);
 
-    const ddx2x = document.createElement('dd');
-    const ref2x = document.createElement('a');
-    ref2x.href = 'http://www.vinyesmortitx.com';
-    ref2x.innerText = 'http://www.vinyesmortitx.com';
-    ref2x.className = 'text-navy';
+    var nodo_61 = document.createElement('I');
+    nodo_61.setAttribute('class', 'fa fa-quote-right');
+    nodo_61.setAttribute('aria-hidden', 'true');
+    nodo_58.appendChild(nodo_61);
 
-    ddx2x.appendChild(ref2x);
-    const dt3x = document.createElement('dt');
-    dt3x.innerText = 'Dirección: ';
+    var nodo_62 = document.createElement('BR');
+    nodo_58.appendChild(nodo_62);
 
-    const icono3x = document.createElement('i');
-    icono3x.className = "fa-solid fa-location-dot";
+    var nodo_63 = document.createElement('DIV');
+    nodo_63.setAttribute('class', 'row text-lg-start');
+    nodo_57.appendChild(nodo_63);
 
-    dt3x.appendChild(icono3x);
+    var nodo_64 = document.createElement('DIV');
+    nodo_64.setAttribute('class', 'col-sm-2 pt-4 align-items-center');
+    nodo_63.appendChild(nodo_64);
 
-    const ddx3x = document.createElement('dd');
-    ddx3x.innerText = 'Ctra. Pollença - Lluc- Km 10,9';
+    var nodo_65 = document.createElement('IMG');
+    nodo_65.setAttribute('src', 'https://source.unsplash.com/300x300/?businessman');
+    nodo_65.setAttribute('class', 'rounded-circle img-responsive img-fluid');
+    nodo_64.appendChild(nodo_65);
 
-    const ddx4x = document.createElement('dd');
-    ddx4x.innerText = 'Mallorca, Escorca, 07470';
+    var nodo_66 = document.createElement('DIV');
+    nodo_66.setAttribute('class', 'col-sm-10');
+    nodo_63.appendChild(nodo_66);
 
-    dxx.appendChild(dt1x);
-    dxx.appendChild(ddxx);
-    dxx.appendChild(dt2x);
-    dxx.appendChild(ddx2x);
-    dxx.appendChild(dt3x);
-    dxx.appendChild(ddx3x);
-    dxx.appendChild(ddx4x);
+    var nodo_67 = document.createElement('DIV');
+    nodo_67.setAttribute('class', 'arrow-down d-none d-md-block');
+    nodo_66.appendChild(nodo_67);
 
-    colsm1.appendChild(dxx);
+    var nodo_68 = document.createElement('H4');
+    nodo_66.appendChild(nodo_68);
 
-    fila.appendChild(colu);
-    fila.appendChild(colsm1);
+    var nodo_69 = document.createElement('STRONG');
+    nodo_68.appendChild(nodo_69);
 
-    const hr4 = document.createElement('hr');
+    var nodo_70 = document.createTextNode((new String("Patrick muriungi")));
+    nodo_69.appendChild(nodo_70);
 
-    const div = document.createElement('div');
-    div.classList.add('p-5', 'rounded', 'shadow', 'mb-5');
+    var nodo_71 = document.createElement('P');
+    nodo_71.setAttribute('class', 'testimonial_subtitle');
+    nodo_66.appendChild(nodo_71);
 
-    // create tabs
-    const ul = document.createElement('ul');
-    ul.id = 'myTab';
-    ul.role = 'tablist';
-    ul.classList.add('nav', 'nav-tabs', 'nav-pills', 'flex-column', 'flex-sm-row', 'text-center', 'bg-light', 'border-0', 'rounded-nav');
+    var nodo_72 = document.createElement('SPAN');
+    nodo_71.appendChild(nodo_72);
 
-    // create tab items
-    const liDesc = document.createElement('li');
-    liDesc.classList.add('nav-item', 'flex-sm-fill','granate');
-    const aDesc = document.createElement('a');
-    aDesc.id = 'desc-tab';
-    aDesc.dataset.toggle = 'tab';
-    aDesc.role = 'tab';
-    aDesc.setAttribute('aria-controls', 'home');
-    aDesc.setAttribute('aria-selected', 'true');
-    aDesc.classList.add('nav-link','bg-danger', 'border-0', 'text-uppercase', 'font-weight-bold', 'active');
-    aDesc.textContent = 'Descripción';
-    liDesc.appendChild(aDesc);
+    var nodo_73 = document.createTextNode((new String("Web Technologist")));
+    nodo_72.appendChild(nodo_73);
 
-    const liOpinion = document.createElement('li');
-    liOpinion.classList.add('nav-item', 'flex-sm-fill','granate');
-    const aOpinion = document.createElement('a');
-    aOpinion.id = 'opinion-tab';
-    aOpinion.dataset.toggle = 'tab';
-    aOpinion.role = 'tab';
-    aOpinion.setAttribute('aria-controls', 'profile');
-    aOpinion.setAttribute('aria-selected', 'false');
-    aOpinion.classList.add('nav-link', 'border-0', 'text-uppercase', 'font-weight-bold');
-    aOpinion.textContent = 'Opiniones';
-    liOpinion.appendChild(aOpinion);
+    var nodo_74 = document.createElement('BR');
+    nodo_71.appendChild(nodo_74);
 
-    const liVideo = document.createElement('li');
-    liVideo.classList.add('nav-item', 'flex-sm-fill','granate');
-    const aVideo = document.createElement('a');
-    aVideo.id = 'video-tab';
-    aVideo.dataset.toggle = 'tab';
-    aVideo.role = 'tab';
-    aVideo.setAttribute('aria-controls', 'contact');
-    aVideo.setAttribute('aria-selected', 'false');
-    aVideo.classList.add('nav-link', 'border-0', 'text-uppercase', 'font-weight-bold');
-    aVideo.textContent = 'Videos';
-    liVideo.appendChild(aVideo);
+    var nodo_75 = document.createElement('SPAN');
+    nodo_71.appendChild(nodo_75);
 
-    ul.appendChild(liDesc);
-    ul.appendChild(liOpinion);
-    ul.appendChild(liVideo);
+    var nodo_76 = document.createTextNode((new String("Vaxa digital")));
+    nodo_75.appendChild(nodo_76);
 
-    // create tab content
-    const divTabContent = document.createElement('div');
-    divTabContent.id = 'myTabContent';
-    divTabContent.classList.add('tab-content', 'margen');
+    var nodo_77 = document.createElement('DIV');
+    nodo_77.setAttribute('class', 'controls push-right');
+    nodo_11.appendChild(nodo_77);
 
-    descripcionProducto(divTabContent);
+    var nodo_78 = document.createElement('A');
+    nodo_78.setAttribute('class', 'left fa fa-chevron-left text-white btn btn btn-outline-light');
+    nodo_78.setAttribute('href', '#carouselExampleCaptions');
+    nodo_78.setAttribute('data-bs-slide', 'prev');
+    nodo_77.appendChild(nodo_78);
 
-    // append tabs and tab content to the main div
-    div.appendChild(ul);
-    div.appendChild(divTabContent);
+    var nodo_79 = document.createElement('A');
+    nodo_79.setAttribute('class', 'right fa fa-chevron-right text-white btn btn btn-outline-light');
+    nodo_79.setAttribute('href', '#carouselExampleCaptions');
+    nodo_79.setAttribute('data-bs-slide', 'next');
+    nodo_77.appendChild(nodo_79);
 
-    const hr5 = document.createElement('hr');
 
-    detailsCol.appendChild(name);
-    detailsCol.appendChild(hr3);
-    detailsCol.appendChild(fila);
-    detailsCol.appendChild(hr4);
-    detailsCol.appendChild(div);
-    detailsCol.appendChild(hr5);
+    var form_1 = document.createElement('DIV');
+    form_1.setAttribute('class', 'tab-pane');
+    form_1.setAttribute('id', 'add-comment');
 
-    row.appendChild(imageCol);
-    row.appendChild(detailsCol);
+    var form_2 = document.createElement('FORM');
+    form_2.setAttribute('action', '#');
+    form_2.setAttribute('method', 'post');
+    form_2.setAttribute('class', 'form-horizontal');
+    form_2.setAttribute('id', 'commentForm');
+    form_2.setAttribute('role', 'form');
+    form_1.appendChild(form_2);
 
-    productContent.appendChild(row);
+    var form_3 = document.createElement('DIV');
+    form_3.setAttribute('class', 'form-group');
+    form_2.appendChild(form_3);
 
-    vinoslist(productContent);
+    var form_4 = document.createElement('LABEL');
+    form_4.setAttribute('for', 'email');
+    form_4.setAttribute('class', 'col-sm-2 control-label text-white');
+    form_3.appendChild(form_4);
 
-    col.appendChild(productContent);
-    container.appendChild(col);
-    dad.appendChild(container);
+    var form_5 = document.createTextNode((new String("Name")));
+    form_4.appendChild(form_5);
+
+    var form_6 = document.createElement('DIV');
+    form_6.setAttribute('class', 'col-sm-10');
+    form_3.appendChild(form_6);
+
+    var form_7 = document.createElement('TEXTAREA');
+    form_7.setAttribute('class', 'form-control');
+    form_7.setAttribute('name', 'addComment');
+    form_7.setAttribute('id', 'addComment');
+    form_7.setAttribute('rows', '5');
+    form_6.appendChild(form_7);
+
+    var form_8 = document.createElement('DIV');
+    form_8.setAttribute('class', 'form-group');
+    form_2.appendChild(form_8);
+
+    var form_9 = document.createElement('LABEL');
+    form_9.setAttribute('for', 'email');
+    form_9.setAttribute('class', 'col-sm-2 control-label text-white');
+    form_8.appendChild(form_9);
+
+    var form_10 = document.createTextNode((new String("Comment")));
+    form_9.appendChild(form_10);
+
+    var form_11 = document.createElement('DIV');
+    form_11.setAttribute('class', 'col-sm-10');
+    form_8.appendChild(form_11);
+
+    var form_12 = document.createElement('TEXTAREA');
+    form_12.setAttribute('class', 'form-control');
+    form_12.setAttribute('name', 'addComment');
+    form_12.setAttribute('id', 'addComment');
+    form_12.setAttribute('rows', '5');
+    form_11.appendChild(form_12);
+
+    var form_13 = document.createElement('DIV');
+    form_13.setAttribute('class', 'form-group');
+    form_2.appendChild(form_13);
+
+    var form_14 = document.createElement('LABEL');
+    form_14.setAttribute('for', 'uploadMedia');
+    form_14.setAttribute('class', 'col-sm-2 control-label text-white');
+    form_13.appendChild(form_14);
+
+    var form_15 = document.createTextNode((new String("Upload media")));
+    form_14.appendChild(form_15);
+
+    var form_16 = document.createElement('DIV');
+    form_16.setAttribute('class', 'col-sm-10');
+    form_13.appendChild(form_16);
+
+    var form_17 = document.createElement('DIV');
+    form_17.setAttribute('class', 'input-group');
+    form_16.appendChild(form_17);
+
+    var form_18 = document.createElement('DIV');
+    form_18.setAttribute('class', 'input-group-addon');
+    form_17.appendChild(form_18);
+
+    var form_19 = document.createElement('INPUT');
+    form_19.setAttribute('type', 'text');
+    form_19.setAttribute('class', 'form-control');
+    form_19.setAttribute('name', 'uploadMedia');
+    form_19.setAttribute('id', 'uploadMedia');
+    form_17.appendChild(form_19);
+
+    var form_20 = document.createElement('DIV');
+    form_20.setAttribute('class', 'form-group');
+    form_2.appendChild(form_20);
+
+    var form_21 = document.createElement('DIV');
+    form_21.setAttribute('class', 'col-sm-offset-2 col-sm-10');
+    form_20.appendChild(form_21);
+
+    var form_22 = document.createElement('BUTTON');
+    form_22.setAttribute('class', 'btn btn-danger btn-circle text-uppercase margen ');
+    form_22.setAttribute('type', 'submit');
+    form_22.setAttribute('id', 'submitComment');
+    form_21.appendChild(form_22);
+
+    var form_23 = document.createElement('SPAN');
+    form_23.setAttribute('class', 'glyphicon glyphicon-send');
+    form_22.appendChild(form_23);
+
+    var form_24 = document.createTextNode((new String(" Summit comment")));
+    form_22.appendChild(form_24);
+
+    nodo_2.appendChild(form_1);
+
+    var node_350 = document.createElement('SECTION');
+    node_350.setAttribute('id', 'gallery');
+    node_350.setAttribute('class', 'gallery section-bg');
+    node_17.appendChild(node_350);
+
+    var node_351 = document.createElement('DIV');
+    node_351.setAttribute('class', 'container aos-init');
+    node_351.setAttribute('data-aos', 'fade-up');
+    node_350.appendChild(node_351);
+
+    var node_352 = document.createElement('DIV');
+    node_352.setAttribute('class', 'section-header');
+    node_351.appendChild(node_352);
+
+    var node_353 = document.createElement('H2');
+    node_352.appendChild(node_353);
+
+    var node_354 = document.createTextNode((new String("gallery")));
+    node_353.appendChild(node_354);
+
+    var node_355 = document.createElement('P');
+    node_352.appendChild(node_355);
+
+    var node_356 = document.createElement('SPAN');
+    node_355.appendChild(node_356);
+
+    var node_357 = document.createTextNode((new String("Our Gallery")));
+    node_356.appendChild(node_357);
+
+
+
+    var gallery_1 = document.createElement('DIV');
+    gallery_1.setAttribute('class', 'row text-center text-lg-start');
+
+    for (let i = 0; i < json.itemListElement[pos].image.length; i++) {
+
+        var gallery_2 = document.createElement('DIV');
+        gallery_2.setAttribute('class', 'col-lg-3 col-md-4 col-6');
+        gallery_1.appendChild(gallery_2);
+
+        var gallery_3 = document.createElement('A');
+        gallery_3.setAttribute('class', 'd-block mb-4 h-100');
+        gallery_2.appendChild(gallery_3);
+
+        var gallery_4 = document.createElement('IMG');
+        gallery_4.setAttribute('class', 'img-fluid img-thumbnail');
+        gallery_4.setAttribute('src', json.itemListElement[pos].image[i]);
+        gallery_4.setAttribute('alt', '');
+        gallery_3.appendChild(gallery_4);
+
+    }
+
+    node_351.appendChild(gallery_1);
+    //
+
+    var node_412 = document.createElement('SECTION');
+    node_412.setAttribute('id', 'contact');
+    node_412.setAttribute('class', 'contact');
+    node_17.appendChild(node_412);
+
+    var node_413 = document.createElement('DIV');
+    node_413.setAttribute('class', 'container aos-init');
+    node_413.setAttribute('data-aos', 'fade-up');
+    node_412.appendChild(node_413);
+
+    var node_414 = document.createElement('DIV');
+    node_414.setAttribute('class', 'section-header');
+    node_413.appendChild(node_414);
+
+    var node_417 = document.createElement('P');
+    node_414.appendChild(node_417);
+
+    var node_418 = document.createElement('SPAN');
+    node_417.appendChild(node_418);
+
+    var node_419 = document.createTextNode((new String("Contacto")));
+    node_418.appendChild(node_419);
+
+    var node_420 = document.createElement('DIV');
+    node_420.setAttribute('class', 'mb-3');
+    node_413.appendChild(node_420);
+
+    //funcionamiento de la API de mapa
+
+    var node_421 = document.createElement('IFRAME');
+    node_421.setAttribute('style', 'border:0; width: 100%; height: 350px;');
+    node_421.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6124.477589966659!2d2.913765460252749!3d39.86888869177018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297d6a0a43e5afd%3A0x1dccff5305e308a0!2sVinyes%20Mortitx!5e0!3m2!1ses!2ses!4v1681571881672!5m2!1ses!2ses");
+    node_421.setAttribute('frameborder', '0');
+    node_421.setAttribute('allowfullscreen', '');
+    node_420.appendChild(node_421);
+
+    var node_422 = document.createElement('DIV');
+    node_422.setAttribute('class', 'row gy-4');
+    node_413.appendChild(node_422);
+
+    var node_423 = document.createElement('DIV');
+    node_423.setAttribute('class', 'col-md-6');
+    node_422.appendChild(node_423);
+
+    var node_424 = document.createElement('DIV');
+    node_424.setAttribute('class', 'info-item  d-flex align-items-center');
+    node_423.appendChild(node_424);
+
+    var node_425 = document.createElement('I');
+    node_425.setAttribute('class', 'icon bi bi-map flex-shrink-0');
+    node_424.appendChild(node_425);
+
+    var node_426 = document.createElement('DIV');
+    node_424.appendChild(node_426);
+
+    var node_427 = document.createElement('H3');
+    node_426.appendChild(node_427);
+
+    var node_428 = document.createTextNode((new String("Dirección")));
+    node_427.appendChild(node_428);
+
+    var node_429 = document.createElement('P');
+    node_426.appendChild(node_429);
+
+    var node_430 = document.createTextNode((new String(json.itemListElement[pos].address.streetAddress + " " + json.itemListElement[pos].address.postalCode + " " + json.itemListElement[pos].address.addressRegion + ", " + json.itemListElement[pos].address.addressLocality)));
+    node_429.appendChild(node_430);
+
+    var node_431 = document.createElement('DIV');
+    node_431.setAttribute('class', 'col-md-6');
+    node_422.appendChild(node_431);
+
+    var node_432 = document.createElement('DIV');
+    node_432.setAttribute('class', 'info-item d-flex align-items-center');
+    node_431.appendChild(node_432);
+
+    var node_433 = document.createElement('I');
+    node_433.setAttribute('class', 'icon bi bi-envelope flex-shrink-0');
+    node_432.appendChild(node_433);
+
+    var node_434 = document.createElement('DIV');
+    node_432.appendChild(node_434);
+
+    var node_435 = document.createElement('H3');
+    node_434.appendChild(node_435);
+
+    var node_436 = document.createTextNode((new String("Email")));
+    node_435.appendChild(node_436);
+
+    var node_437 = document.createElement('P');
+    node_434.appendChild(node_437);
+
+    var node_438 = document.createTextNode(json.itemListElement[pos].email);
+    node_437.appendChild(node_438);
+
+    var node_439 = document.createElement('DIV');
+    node_439.setAttribute('class', 'col-md-6');
+    node_422.appendChild(node_439);
+
+    var node_440 = document.createElement('DIV');
+    node_440.setAttribute('class', 'info-item  d-flex align-items-center');
+    node_439.appendChild(node_440);
+
+    var node_441 = document.createElement('I');
+    node_441.setAttribute('class', 'icon bi bi-telephone flex-shrink-0');
+    node_440.appendChild(node_441);
+
+    var node_442 = document.createElement('DIV');
+    node_440.appendChild(node_442);
+
+    var node_443 = document.createElement('H3');
+    node_442.appendChild(node_443);
+
+    var node_444 = document.createTextNode((new String("Teléfono")));
+    node_443.appendChild(node_444);
+
+    var node_445 = document.createElement('P');
+    node_442.appendChild(node_445);
+
+    var node_446 = document.createTextNode(json.itemListElement[pos].telephone);
+    node_445.appendChild(node_446);
+
+    var node_447 = document.createElement('DIV');
+    node_447.setAttribute('class', 'col-md-6');
+    node_422.appendChild(node_447);
+
+    var node_448 = document.createElement('DIV');
+    node_448.setAttribute('class', 'info-item  d-flex align-items-center');
+    node_447.appendChild(node_448);
+
+    var node_449 = document.createElement('I');
+    node_449.setAttribute('class', 'icon bi bi-share flex-shrink-0');
+    node_448.appendChild(node_449);
+
+    var node_450 = document.createElement('DIV');
+    node_448.appendChild(node_450);
+
+    var node_451 = document.createElement('H3');
+    node_450.appendChild(node_451);
+
+    var node_452 = document.createTextNode((new String("Horario")));
+    node_451.appendChild(node_452);
+
+    var node_453 = document.createElement('DIV');
+    node_450.appendChild(node_453);
+
+    var node_454 = document.createElement('STRONG');
+    node_453.appendChild(node_454);
+
+    var node_455 = document.createElement('STRONG');
+    node_453.appendChild(node_455);
+
+    var node_456 = document.createTextNode(json.itemListElement[pos].openingHours);
+    node_453.appendChild(node_456);
+
+    var node_467 = document.createElement('DIV');
+    node_467.setAttribute('class', 'col-md-6');
+    node_422.appendChild(node_467);
+
+    var node_468 = document.createElement('DIV');
+    node_468.setAttribute('class', 'info-item  d-flex align-items-center');
+    node_467.appendChild(node_468);
+
+    var node_469 = document.createElement('I');
+    node_469.setAttribute('class', 'icon <i fa-solid fa-utensils flex-shrink-0');
+    node_468.appendChild(node_469);
+
+    var node_470 = document.createElement('DIV');
+    node_468.appendChild(node_470);
+
+    var node_471 = document.createElement('H3');
+    node_470.appendChild(node_471);
+
+    var node_472 = document.createTextNode((new String("Restaurante cercano")));
+    node_471.appendChild(node_472);
+
+    var node_473 = document.createElement('DIV');
+    node_470.appendChild(node_473);
+
+    var node_474 = document.createElement('img');
+    node_474.src = 'img/restaurante.png';
+    node_474.className = "margen";
+    node_473.appendChild(node_474);
+
+    var node_475 = document.createElement('DIV');
+    node_475.setAttribute('class', 'col-md-6');
+    node_422.appendChild(node_475);
+
+    var node_476 = document.createElement('DIV');
+    node_476.setAttribute('class', 'info-item  d-flex align-items-center');
+    node_475.appendChild(node_476);
+
+    var node_477 = document.createElement('I');
+    node_477.setAttribute('class', 'icon <i fa-solid fa-utensils flex-shrink-0');
+    node_476.appendChild(node_477);
+
+    var node_478 = document.createElement('DIV');
+    node_476.appendChild(node_478);
+
+    var node_479 = document.createElement('H3');
+    node_478.appendChild(node_479);
+
+    var node_480 = document.createTextNode((new String("Supermercado cercano")));
+    node_479.appendChild(node_480);
+
+    var node_481 = document.createElement('DIV');
+    node_478.appendChild(node_481);
+
+    var node_482 = document.createElement('img');
+    node_482.src = 'img/supermercado.png';
+    node_482.className = "margen";
+    node_481.appendChild(node_482);
+
+    var node_457 = document.createElement('DIV');
+    node_457.setAttribute('class', 'col-md-6');
+    node_422.appendChild(node_457);
+
+    var node_458 = document.createElement('DIV');
+    node_458.setAttribute('class', 'info-item  d-flex align-items-center');
+    node_457.appendChild(node_458);
+
+    var node_459 = document.createElement('I');
+    node_459.setAttribute('class', 'icon bi bi-globe flex-shrink-0');
+    node_458.appendChild(node_459);
+
+    var node_460 = document.createElement('DIV');
+    node_458.appendChild(node_460);
+
+    var node_461 = document.createElement('H3');
+    node_460.appendChild(node_461);
+
+    var node_462 = document.createTextNode((new String("Página Web")));
+    node_461.appendChild(node_462);
+
+    var node_463 = document.createElement('a');
+    node_460.appendChild(node_463);
+    node_463.innerText = json.itemListElement[pos].url;
+    node_463.setAttribute('href', json.itemListElement[pos].url);
 }
 
 function filtrado2() {
@@ -789,66 +1634,105 @@ function filtrado2() {
 
 }
 
-function activarBotonesPrincipal() {
-    const desc = document.getElementById('desc-tab');
-    const op = document.getElementById('opinion-tab');
-    const vid = document.getElementById('video-tab');
 
-    desc.href = "javascript:changeOpcionProducto(0)";
-    op.href = "javascript:changeOpcionProducto(1)";
-    vid.href = "javascript:changeOpcionProducto(2)";
-}
 
-function changeOpcionProducto(opcion) {
-    const dad = document.getElementById('myTabContent');
-    if (dad.hasChildNodes()) {
-        while (dad.childNodes.length >= 1) {
-            dad.removeChild(dad.firstChild);
-        }
+function botonesNav(navState) {
+    var navAux = document.getElementById('ul-nav');
+    if (document.getElementById('navbar').hasChildNodes()) {
+        document.getElementById('navbar').removeChild(navAux); // borramos los botones
     }
-    switch (opcionActiva) {
+
+    var ul = document.createElement('ul');
+    ul.setAttribute('id', 'ul-nav');
+    switch (navState) {
         case 0:
-            const activo = document.getElementById('desc-tab');
-            activo.className = "nav-link border-0 text-uppercase font-weight-bold";
-            activo.setAttribute('aria-selected', 'false');
+            var busqueda = document.createElement('li');
+            var refb = document.createElement('a');
+            refb.setAttribute('id', 'busqueda');
+            refb.setAttribute('href', 'javascript:gestorVisionado(0)');
+            refb.innerText = 'Búsqueda';
+            busqueda.appendChild(refb);
+
+            var ruta = document.createElement('li');
+            var refr = document.createElement('a');
+            refr.setAttribute('id', 'ruta');
+            refr.setAttribute('href', '');
+            refr.innerText = 'Hazme una ruta';
+            ruta.appendChild(refr);
+
+            var contacto = document.createElement('li');
+            var refc = document.createElement('a');
+            refc.setAttribute('id', 'contacto');
+            refc.setAttribute('href', '');
+            refc.innerText = 'Contacto';
+            contacto.appendChild(refc);
+
+            ul.appendChild(busqueda);
+            ul.appendChild(ruta);
+            ul.appendChild(contacto);
             break;
         case 1:
-            const activo1 = document.getElementById('opinion-tab');
-            activo1.className = "nav-link border-0 text-uppercase font-weight-bold";
-            activo1.setAttribute('aria-selected', 'false');
-            break;
-        case 2:
-            const activo2 = document.getElementById('video-tab');
-            activo2.className = "nav-link border-0 text-uppercase font-weight-bold";
-            activo2.setAttribute('aria-selected', 'false');
-            break;
-    }
-    switch (opcion) {
-        case 0:
-            const activo = document.getElementById('desc-tab');
-            activo.className = "nav-link bg-danger border-0 text-uppercase font-weight-bold active";
-            activo.setAttribute('aria-selected', 'true');
-            descripcionProducto(dad);
-            break;
-        case 1:
-            const activo1 = document.getElementById('opinion-tab');
-            activo1.className = "nav-link bg-danger border-0 text-uppercase font-weight-bold active";
-            activo1.setAttribute('aria-selected', 'true');
-            opinionProducto(dad);
-            break;
-        case 2:
-            const activo2 = document.getElementById('video-tab');
-            activo2.className = "nav-link bg-danger border-0 text-uppercase font-weight-bold active";
-            activo2.setAttribute('aria-selected', 'true');
-            videoProducto(dad);
-            break;
-    }
-    opcionActiva = opcion;
-}
 
-function botonesNav() {
-    const b = document.getElementById("busqueda");
-    b.href = "javascript:gestorVisionado(0)";
+            var node_1 = document.createElement('LI');
+            var node_2 = document.createElement('A');
+            node_2.setAttribute('href', '#hero');
+            node_1.appendChild(node_2);
+            var node_3 = document.createTextNode((new String("Inicio")));
+            node_2.appendChild(node_3);
+
+            var node_4 = document.createElement('LI');
+            var node_5 = document.createElement('A');
+            node_5.setAttribute('href', '#about');
+            node_4.appendChild(node_5);
+            var node_6 = document.createTextNode((new String("Descripción")));
+            node_5.appendChild(node_6);
+
+            var node_7 = document.createElement('LI');
+            var node_8 = document.createElement('A');
+            node_8.setAttribute('href', '#weather');
+            node_7.appendChild(node_8);
+            var node_9 = document.createTextNode((new String("Tiempo")));
+            node_8.appendChild(node_9);
+
+            var node_10 = document.createElement('LI');
+            var node_11 = document.createElement('A');
+            node_11.setAttribute('href', '#menu');
+            node_10.appendChild(node_11);
+            var node_12 = document.createTextNode((new String("Vinos")));
+            node_11.appendChild(node_12);
+
+            var node_13 = document.createElement('LI');
+            var node_14 = document.createElement('A');
+            node_14.setAttribute('href', '#events');
+            node_13.appendChild(node_14);
+            var node_15 = document.createTextNode((new String("Events")));
+            node_14.appendChild(node_15);
+
+            var node_19 = document.createElement('LI');
+            var node_20 = document.createElement('A');
+            node_20.setAttribute('href', '#gallery');
+            node_19.appendChild(node_20);
+            var node_21 = document.createTextNode((new String("Fotos")));
+            node_20.appendChild(node_21);
+
+            var node_22 = document.createElement('LI');
+            var node_23 = document.createElement('A');
+            node_23.setAttribute('href', '#contact');
+            node_22.appendChild(node_23);
+            var node_24 = document.createTextNode((new String("Contacto")));
+            node_23.appendChild(node_24);
+
+            ul.appendChild(node_1);
+            ul.appendChild(node_4);
+            ul.appendChild(node_7);
+            ul.appendChild(node_10);
+            ul.appendChild(node_13);
+            ul.appendChild(node_19);
+            ul.appendChild(node_22);
+
+            break;
+    }
+    document.getElementById('navbar').appendChild(ul);
 
     const icono = document.getElementById("icono");
     icono.onclick = function () {
@@ -857,210 +1741,22 @@ function botonesNav() {
 
 }
 
+
 function paginaPrincipal() {
     const h = document.getElementById("header");
     var seccion = document.getElementById("seccion");
-    if (carrusel != null) {
-        h.appendChild(carrusel);
-        carrusel = null;
-    }
+    botonesNav(0);
 
     if (seccion.hasChildNodes()) {
         while (seccion.childNodes.length >= 1) {
             seccion.removeChild(seccion.firstChild);
         }
     }
-}
 
-function crearCarouselPrincipal() {
-    var divClasses = ["container px-1", "row gx-5 align-items-center justify-content-center",
-        "col-lg-8 col-xl-7 col-xxl-6", "my-5 text-center text-xl-start"];
-    var dad = document.getElementById("primer");
-    for (var i = 0; i < divClasses.length; i++) {
-        var div = document.createElement("div");
-        div.className = divClasses[i];
-        if (i == 1) {
-            div.setAttribute("id", "pointer");
-        }
-        dad.appendChild(div);
-        dad = div;
+    if (carrusel != null) {
+        seccion.appendChild(carrusel);
+        carrusel = null;
     }
-    var h1 = document.createElement("h1");
-    h1.className = "display-5 fw-bolder text-white mb-2";
-    var txt = document.createTextNode("A Bootstrap 5 template for modern businesses");
-    h1.appendChild(txt);
-    dad.appendChild(h1);
-    var div = document.createElement("div");
-    div.className = "d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start";
-    dad.appendChild(div);
-    createCarousel(document.getElementById("pointer"));
-}
-
-function createCarousel(dad) {
-
-    const carousel = document.createElement('div');
-    carousel.setAttribute('id', 'carouselExampleDark');
-    carousel.setAttribute('class', 'carousel carousel-dark slide');
-    dad.appendChild(carousel);
-    const indicators = document.createElement('div');
-    indicators.setAttribute('class', 'carousel-indicators');
-
-    const indicator1 = document.createElement('button');
-    indicator1.setAttribute('type', 'button');
-    indicator1.setAttribute('data-bs-target', '#carouselExampleDark');
-    indicator1.setAttribute('data-bs-slide-to', '0');
-    indicator1.setAttribute('class', 'active');
-    indicator1.setAttribute('aria-current', 'true');
-    indicator1.setAttribute('aria-label', 'Slide 1');
-
-    const indicator2 = document.createElement('button');
-    indicator2.setAttribute('type', 'button');
-    indicator2.setAttribute('data-bs-target', '#carouselExampleDark');
-    indicator2.setAttribute('data-bs-slide-to', '1');
-    indicator2.setAttribute('aria-label', 'Slide 2');
-
-    const indicator3 = document.createElement('button');
-    indicator3.setAttribute('type', 'button');
-    indicator3.setAttribute('data-bs-target', '#carouselExampleDark');
-    indicator3.setAttribute('data-bs-slide-to', '2');
-    indicator3.setAttribute('aria-label', 'Slide 3');
-
-    indicators.appendChild(indicator1);
-    indicators.appendChild(indicator2);
-    indicators.appendChild(indicator3);
-
-    carousel.appendChild(indicators);
-
-    const inner = document.createElement('div');
-    inner.setAttribute('class', 'carousel-inner');
-
-    const item1 = document.createElement('div');
-    item1.setAttribute('class', 'carousel-item active');
-    item1.setAttribute('data-bs-interval', '10000');
-
-    const ratio1 = document.createElement('div');
-    ratio1.setAttribute('class', 'ratio ratio-21x9');
-
-    const img1 = document.createElement('img');
-    img1.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_1234231_569643109759057_294746408_n.jpg');
-    img1.setAttribute('class', 'd-block w-100');
-    img1.setAttribute('alt', '...');
-
-    const caption1 = document.createElement('div');
-    caption1.setAttribute('class', 'carousel-caption d-none d-md-block');
-
-    const caption1Title = document.createElement('h5');
-    caption1Title.innerHTML = 'First slide label';
-
-    const caption1Text = document.createElement('p');
-    caption1Text.innerHTML = 'Some representative placeholder content for the first slide.';
-
-    caption1.appendChild(caption1Title);
-    caption1.appendChild(caption1Text);
-
-    ratio1.appendChild(img1);
-
-    item1.appendChild(ratio1);
-    item1.appendChild(caption1);
-
-    const item2 = document.createElement('div');
-    item2.setAttribute('class', 'carousel-item');
-    item2.setAttribute('data-bs-interval', '2000');
-
-    const ratio2 = document.createElement('div');
-    ratio2.setAttribute('class', 'ratio ratio-21x9');
-
-    const img2 = document.createElement('img');
-    img2.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_1376994_597700826953285_1533645700_n.jpg');
-    img2.setAttribute('class', 'd-block w-100');
-    img2.setAttribute('alt', '...');
-
-    const caption2 = document.createElement('div');
-    caption2.setAttribute('class', 'carousel-caption d-none d-md-block');
-
-    const caption2Title = document.createElement('h5');
-    caption2Title.innerHTML = 'Second slide label';
-
-    const caption2Text = document.createElement('p');
-    caption2Text.innerHTML = 'Some representative placeholder content for the second slide.';
-
-    caption2.appendChild(caption2Title);
-    caption2.appendChild(caption2Text);
-
-    ratio2.appendChild(img2);
-
-    item2.appendChild(ratio2);
-    item2.appendChild(caption2);
-
-    const item3 = document.createElement('div');
-    item3.setAttribute('class', 'carousel-item');
-    item3.setAttribute('data-bs-interval', '2000');
-
-    const ratio3 = document.createElement('div');
-    ratio3.setAttribute('class', 'ratio ratio-21x9');
-
-    const img3 = document.createElement('img');
-    img3.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_1383991_597701483619886_1555644589_n.jpg');
-    img3.setAttribute('class', 'd-block w-100');
-    img3.setAttribute('alt', '...');
-
-    const caption3 = document.createElement('div');
-    caption3.setAttribute('class', 'carousel-caption d-none d-md-block');
-
-    const caption3Title = document.createElement('h5');
-    caption3Title.innerHTML = 'Third slide label';
-
-    const caption3Text = document.createElement('p');
-    caption3Text.innerHTML = 'Some representative placeholder content for the third slide.';
-
-    caption3.appendChild(caption3Title);
-    caption3.appendChild(caption3Text);
-
-    ratio3.appendChild(img3);
-
-    item3.appendChild(ratio3);
-    item3.appendChild(caption3);
-
-    inner.appendChild(item1);
-    inner.appendChild(item2);
-    inner.appendChild(item3);
-
-    carousel.appendChild(inner);
-
-    const prevBtn = document.createElement("button");
-    prevBtn.classList.add("carousel-control-prev");
-    prevBtn.setAttribute("type", "button");
-    prevBtn.setAttribute("data-bs-target", "#carouselExampleDark");
-    prevBtn.setAttribute("data-bs-slide", "prev");
-
-    const prevIcon = document.createElement("span");
-    prevIcon.classList.add("carousel-control-prev-icon");
-    prevIcon.setAttribute("aria-hidden", "true");
-    prevBtn.appendChild(prevIcon);
-
-    const prevText = document.createElement("span");
-    prevText.classList.add("visually-hidden");
-    prevText.innerText = "Previous";
-    prevBtn.appendChild(prevText);
-
-    const nextBtn = document.createElement("button");
-    nextBtn.classList.add("carousel-control-next");
-    nextBtn.setAttribute("type", "button");
-    nextBtn.setAttribute("data-bs-target", "#carouselExampleDark");
-    nextBtn.setAttribute("data-bs-slide", "next");
-
-    const nextIcon = document.createElement("span");
-    nextIcon.classList.add("carousel-control-next-icon");
-    nextIcon.setAttribute("aria-hidden", "true");
-    nextBtn.appendChild(nextIcon);
-
-    const nextText = document.createElement("span");
-    nextText.classList.add("visually-hidden");
-    nextText.innerText = "Next";
-    nextBtn.appendChild(nextText);
-
-    carousel.appendChild(prevBtn);
-    carousel.appendChild(nextBtn);
 }
 
 function listadoCardXL() {
@@ -1106,7 +1802,7 @@ function listadoCardXL() {
     const col = document.createElement('div');
     col.className = 'col margen';
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < json.itemListElement.length; i++) {
         const container = document.createElement('div');
         container.classList.add('container', 'bg-white', 'aplicar-borde', 'margen');
 
@@ -1128,7 +1824,7 @@ function listadoCardXL() {
         carouselItem1.classList.add('carousel-item', 'active');
 
         const img1 = document.createElement('img');
-        img1.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_QQ6A0199-1.jpg');
+        img1.setAttribute('src', json.itemListElement[i].image[0]);
         img1.classList.add('d-block', 'w-100');
         carouselItem1.appendChild(img1);
 
@@ -1136,7 +1832,7 @@ function listadoCardXL() {
         carouselItem2.classList.add('carousel-item');
 
         const img2 = document.createElement('img');
-        img2.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_20140228_172220.jpg');
+        img2.setAttribute('src', json.itemListElement[i].image[1]);
         img2.classList.add('d-block', 'w-100');
         carouselItem2.appendChild(img2);
 
@@ -1144,7 +1840,7 @@ function listadoCardXL() {
         carouselItem3.classList.add('carousel-item');
 
         const img3 = document.createElement('img');
-        img3.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_P1090717.jpg');
+        img3.setAttribute('src', json.itemListElement[i].image[2]);
         img3.classList.add('d-block', 'w-100');
         carouselItem3.appendChild(img3);
 
@@ -1201,7 +1897,7 @@ function listadoCardXL() {
 
         const logoimg = document.createElement('img');
         logoimg.classList.add('margen');
-        logoimg.setAttribute('src', 'http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png');
+        logoimg.setAttribute('src', json.itemListElement[i].logo);
         logoimg.setAttribute('width', '150');
         logoimg.setAttribute('height', '65');
 
@@ -1210,12 +1906,12 @@ function listadoCardXL() {
         const dt1 = document.createElement('dt');
         dt1.textContent = 'Horario: ';
         const dd1 = document.createElement('dd');
-        dd1.textContent = 'Mo,Tu,We,Th,Fr 08:00-16:00';
+        dd1.textContent = json.itemListElement[i].openingHours;
 
         const dt2 = document.createElement('dt');
         dt2.textContent = 'Teléfono: ';
         const dd2 = document.createElement('dd');
-        dd2.textContent = '971533889';
+        dd2.textContent = json.itemListElement[i].telephone;
 
         const dt3 = document.createElement('dt');
         dt3.textContent = 'Email: ';
@@ -1223,25 +1919,26 @@ function listadoCardXL() {
         const a = document.createElement('a');
         a.setAttribute('href', '#');
         a.classList.add('text-navy');
-        a.textContent = 'info@vinyesmortitx.com';
+        a.textContent = json.itemListElement[i].email;
         dd3.appendChild(a);
 
         const dt4 = document.createElement('dt');
         dt4.textContent = 'Web: ';
         const dd4 = document.createElement('dd');
         const a2 = document.createElement('a');
-        a2.setAttribute('href', 'http://www.vinyesmortitx.com');
+        a2.setAttribute('href', json.itemListElement[i].url);
         a2.classList.add('text-navy');
-        a2.textContent = 'http://www.vinyesmortitx.com';
+        a2.textContent = json.itemListElement[i].url;
         dd4.appendChild(a2);
 
         const dt5 = document.createElement('dt');
         dt5.textContent = 'Dirección: ';
         const br = document.createElement('br');
         const dd5_1 = document.createElement('dd');
-        dd5_1.textContent = 'Ctra. Pollença - Lluc- Km 10,9';
+        dd5_1.textContent = json.itemListElement[i].address.streetAddress;
         const dd5_2 = document.createElement('dd');
-        dd5_2.textContent = 'Mallorca, Escorca, 07315';
+        dd5_2.textContent = json.itemListElement[i].address.addressLocality + " " + json.itemListElement[i].address.addressRegion + " " + json.itemListElement[i].address.postalCode;
+
 
         dl.appendChild(dt1);
         const iconHorario = document.createElement('i');
@@ -1293,7 +1990,7 @@ function listadoCardXL() {
 
         const italicPara = document.createElement('p');
         italicPara.className = 'font-italic';
-        italicPara.textContent = 'El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.';
+        italicPara.textContent = json.itemListElement[i].description
 
         customScrollbarDiv.appendChild(italicPara);
         containerDiv.appendChild(customScrollbarDiv);
@@ -1303,7 +2000,7 @@ function listadoCardXL() {
         moreInfoButton.className = 'add-to-cart margen';
         moreInfoButton.textContent = 'Más información';
         moreInfoButton.onclick = function () {
-            gestorVisionado(3);
+            gestorVisionado(3, i);
         };
 
         const boton2 = document.createElement('button');
@@ -1373,12 +2070,8 @@ function listadoCard() {
     const rowCard = document.createElement('div');
     rowCard.className = "row ";
 
-    const imgs = ["http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png", "img/virei.png", "https://bodegaribas.com/wp-content/uploads/2021/07/logofooter.png",
-        "https://www.canvidalet.com/wp-content/uploads/2018/05/logo-cv-04-300x150.png", "https://www.sonprim.com/wp-content/uploads/2022/03/logo_navegador_completo-removebg-preview.png"];
 
-    const textIcon = ["Mortitx", "Virei", "Ribas", "Ca'n Vidalet", "Son Prim"];
-
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < json.itemListElement.length; i++) {
 
 
         const colCard = document.createElement('div');
@@ -1392,15 +2085,17 @@ function listadoCard() {
 
         const imgCard = document.createElement('img');
         imgCard.className = "img-fluid d-block mx-auto mb-3 redi";
-        imgCard.setAttribute('src', imgs[0]);
+        imgCard.setAttribute('src', json.itemListElement[i].logo);
 
         const h5 = document.createElement('h5');
-        h5.innerText = textIcon[0];
+        h5.innerText = json.itemListElement[i].name
 
         const desc = document.createElement('p');
         desc.className = "small text-muted font-italic";
-        desc.innerText = "Ctra. Pollença - Lluc- Km 10,9, Mallorca, Escorca, 07315";
+        desc.innerText = json.itemListElement[i].address.streetAddress + " " + json.itemListElement[i].address.postalCode + " " + json.itemListElement[i].address.addressRegion + ", " + json.itemListElement[i].address.addressLocality;
 
+
+        //calcularlo
         const open = document.createElement('p');
         open.className = "small text-muted font-italic";
         open.innerText = "Abierto ahora";
@@ -1426,7 +2121,7 @@ function listadoCard() {
         button.className = "add-to-cart margen";
         button.innerText = "Más información";
         button.onclick = function () {
-            gestorVisionado(3);
+            gestorVisionado(3, i);
         };
 
         cardBody.appendChild(imgCard);
@@ -1451,6 +2146,7 @@ function listadoCard() {
     dad.appendChild(container1);
 }
 
+//funcion buscar a través del mapa
 function listadoMap() {
     const dad = document.getElementById('seccion');
     const container = document.createElement('div');
@@ -1734,14 +2430,13 @@ function hasNode(dad, child) {
     return false;
 }
 
-function gestorVisionado(vision) {
+function gestorVisionado(vision, producto) {
     var seccion = document.getElementById("seccion");
-    var h = document.getElementById("header");
     var car = document.getElementById("carouselPrincipal");
 
-    if (hasNode(h, car)) {
+    if (hasNode(seccion, car)) {
         carrusel = car;
-        h.removeChild(car);
+        seccion.removeChild(car);
     }
 
 
@@ -1753,17 +2448,11 @@ function gestorVisionado(vision) {
     if (vision >= 3) {
 
         if (vision == 3) {
-            paginaProducto();
-            activarBotonesPrincipal();
+            botonesNav(1);
+            paginaProducto2(0, producto);
         }
-        if (vision == 4) {
-            listaComentarios(seccion);
-        }
-        if (vision == 5) {
-            formComentario(seccion);
-        }
-
     } else {
+        botonesNav(0);
         filtrado2();
         switch (vision) {
             case 1: listadoCardXL();
@@ -1825,662 +2514,22 @@ $('.owl-carousel').owlCarousel({
     }
 });
 
-function formComentario(dad) {
-    const container = document.createElement('div');
-    container.classList.add('container', 'granate', 'aplicar-borde', 'margen');
+$(window).bind("load resize slid.bs.carousel", function () {
+    var imageHeight = $(".active .holder").height();
+    $(".controllers").height(imageHeight);
+    console.log("Slid");
+});
 
-    const row = document.createElement('div');
-    row.classList.add('row', 'centro');
-    container.appendChild(row);
-
-    const form = document.createElement('form');
-    form.id = 'Highlighted-form';
-    form.classList.add('col-sm-6', 'col-sm-offset-3');
-    form.setAttribute('novalidate', '');
-    row.appendChild(form);
-
-    const nameGroup = document.createElement('div');
-    nameGroup.classList.add('form-group');
-    form.appendChild(nameGroup);
-
-    const nameLabel = document.createElement('label');
-    nameLabel.classList.add('control-label');
-    nameLabel.setAttribute('for', 'contact-name');
-    nameLabel.textContent = 'Nombre';
-    nameGroup.appendChild(nameLabel);
-
-    const nameControls = document.createElement('div');
-    nameControls.classList.add('controls');
-    nameGroup.appendChild(nameControls);
-
-    const nameInput = document.createElement('input');
-    nameInput.id = 'contact-name';
-    nameInput.name = 'contactName';
-    nameInput.classList.add('form-control', 'requiredField', 'Highlighted-label');
-    nameInput.setAttribute('placeholder', 'Nombre');
-    nameInput.setAttribute('data-new-placeholder', 'Nombre');
-    nameInput.setAttribute('type', 'text');
-    nameInput.setAttribute('data-error-empty', 'Please enter your name');
-    nameControls.appendChild(nameInput);
-
-    const nameIcon = document.createElement('i');
-    nameIcon.classList.add('fa', 'fa-user');
-    nameControls.appendChild(nameIcon);
-
-    const emailGroup = document.createElement('div');
-    emailGroup.classList.add('form-group');
-    form.appendChild(emailGroup);
-
-    const emailLabel = document.createElement('label');
-    emailLabel.classList.add('control-label');
-    emailLabel.setAttribute('for', 'contact-mail');
-    emailLabel.textContent = 'Localidad';
-    emailGroup.appendChild(emailLabel);
-
-    const emailControls = document.createElement('div');
-    emailControls.classList.add('controls');
-    emailGroup.appendChild(emailControls);
-
-    const emailInput = document.createElement('input');
-    emailInput.id = 'contact-mail';
-    emailInput.name = 'localidad';
-    emailInput.classList.add('form-control', 'requiredField', 'Highlighted-label');
-    emailInput.setAttribute('placeholder', 'Localidad');
-    emailInput.setAttribute('data-new-placeholder', 'Localidad');
-    emailInput.setAttribute('type', 'email');
-    emailInput.setAttribute('data-error-empty', 'Please enter your email');
-    emailInput.setAttribute('data-error-invalid', 'Invalid email address');
-    emailControls.appendChild(emailInput);
-
-    const emailIcon = document.createElement('i');
-    emailIcon.classList.add('fa', 'fa-envelope');
-    emailControls.appendChild(emailIcon);
-
-    const messageGroup = document.createElement('div');
-    messageGroup.classList.add('form-group');
-    form.appendChild(messageGroup);
-
-    const messageLabel = document.createElement('label');
-    messageLabel.classList.add('control-label');
-    messageLabel.setAttribute('for', 'contact-message');
-    messageLabel.textContent = 'Opinión';
-    messageGroup.appendChild(messageLabel);
-
-    const messageControls = document.createElement('div');
-    messageControls.classList.add('controls');
-    messageGroup.appendChild(messageControls);
-
-    const messageTextarea = document.createElement('textarea');
-    messageTextarea.id = 'contact-message';
-    messageTextarea.name = 'comments';
-    messageTextarea.classList.add('form-control', 'requiredField', 'Highlighted-label');
-    messageTextarea.setAttribute('placeholder', 'Opinión');
-    messageTextarea.setAttribute('data-new-placeholder', 'Opinión');
-    messageTextarea.setAttribute('rows', '6');
-    messageTextarea.setAttribute('data-error-empty', 'Please enter your message');
-    messageControls.appendChild(messageTextarea);
-
-    const messageIcon = document.createElement('i');
-    messageIcon.classList.add('fa', 'fa-comment');
-    messageControls.appendChild(messageIcon);
-
-    const submitButton = document.createElement('button');
-    submitButton.name = 'submit';
-    submitButton.type = 'submit';
-    submitButton.innerText = 'Enviar';
-    submitButton.className = 'margen';
-    submitButton.classList.add('btn', 'btn-info', 'btn-block');
-    form.appendChild(submitButton);
-    dad.appendChild(container);
+function cargarJSON() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "json/Bodegas.json", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            json = JSON.parse(this.responseText);
+            console.log(json);
+        }
+    };
+    xmlhttp.send();
 }
 
-function listaComentarios(dad) {
-    const container = document.createElement('div');
-    container.className = 'container granate aplicar-borde margen';
-
-    const reviews = document.createElement('div');
-    reviews.setAttribute('id', 'reviews');
-    reviews.className = ' col review-section bg-white aplicar-borde margen';
-
-    const div = document.createElement('div');
-    div.classList.add('d-flex', 'align-items-center', 'justify-content-between', 'mb-4');
-
-    const h4 = document.createElement('h4');
-    h4.classList.add('m-0');
-    h4.textContent = '37 Valoraciones';
-    div.appendChild(h4);
-
-    const select = document.createElement('select');
-    select.classList.add('custom-select', 'custom-select-sm', 'border-0', 'shadow-sm', 'ml-2', 'select2-hidden-accessible');
-    select.setAttribute('data-select2-id', '1');
-    select.setAttribute('tabindex', '-1');
-    select.setAttribute('aria-hidden', 'true');
-    div.appendChild(select);
-
-    const option1 = document.createElement('option');
-    option1.setAttribute('data-select2-id', '3');
-    option1.textContent = 'Más relevantes';
-    select.appendChild(option1);
-
-    const option2 = document.createElement('option');
-    option2.textContent = 'Más recientes';
-    select.appendChild(option2);
-
-    const span1 = document.createElement('span');
-    span1.classList.add('select2', 'select2-container', 'select2-container--default');
-    span1.setAttribute('dir', 'ltr');
-    span1.setAttribute('data-select2-id', '2');
-    span1.style.width = '188px';
-    div.appendChild(span1);
-
-    const span2 = document.createElement('span');
-    span2.classList.add('selection');
-    span1.appendChild(span2);
-
-    const span3 = document.createElement('span');
-    span3.classList.add('select2-selection', 'select2-selection--single');
-    span3.setAttribute('role', 'combobox');
-    span3.setAttribute('aria-haspopup', 'true');
-    span3.setAttribute('aria-expanded', 'false');
-    span3.setAttribute('tabindex', '0');
-    span3.setAttribute('aria-labelledby', 'select2-qd66-container');
-    span2.appendChild(span3);
-
-    const span4 = document.createElement('span');
-    span4.classList.add('select2-selection__rendered');
-    span4.setAttribute('id', 'select2-qd66-container');
-    span4.setAttribute('role', 'textbox');
-    span4.setAttribute('aria-readonly', 'true');
-    span4.setAttribute('title', 'Más relevantes');
-    span4.textContent = 'Más Relevantes';
-    span3.appendChild(span4);
-
-    const span5 = document.createElement('span');
-    span5.classList.add('select2-selection__arrow');
-    span5.setAttribute('role', 'presentation');
-    span3.appendChild(span5);
-
-    const b = document.createElement('b');
-    b.setAttribute('role', 'presentation');
-    span5.appendChild(b);
-
-    const span6 = document.createElement('span');
-    span6.classList.add('dropdown-wrapper');
-    span6.setAttribute('aria-hidden', 'true');
-    span1.appendChild(span6);
-
-    const divRow = document.createElement("div");
-    divRow.classList.add("row", "aplicar-borde", "margen");
-
-    const divCol = document.createElement("div");
-    divCol.classList.add("col-md-6");
-
-    const table = document.createElement("table");
-    table.classList.add("stars-counters");
-
-    const tbody = document.createElement("tbody");
-
-    const tr1 = document.createElement("tr");
-
-    const td1 = document.createElement("td");
-
-    const span1x = document.createElement("span");
-
-    const button1 = document.createElement("button");
-    button1.classList.add("fit-button", "fit-button-color-blue", "fit-button-fill-ghost", "fit-button-size-medium", "stars-filter");
-    button1.textContent = "5 Stars";
-
-    span1x.appendChild(button1);
-    td1.appendChild(span1x);
-
-    const td2 = document.createElement("td");
-    td2.classList.add("progress-bar-container");
-
-    const div1 = document.createElement("div");
-    div1.classList.add("fit-progressbar", "fit-progressbar-bar", "star-progress-bar");
-
-    const div2 = document.createElement("div");
-    div2.classList.add("fit-progressbar-background");
-
-    const span2x = document.createElement("span");
-    span2x.classList.add("progress-fill");
-    span2x.style.width = "97.2973%";
-
-    div2.appendChild(span2x);
-    div1.appendChild(div2);
-    td2.appendChild(div1);
-
-    const td3 = document.createElement("td");
-    td3.classList.add("star-num");
-    td3.textContent = "(36)";
-
-    tr1.appendChild(td1);
-    tr1.appendChild(td2);
-    tr1.appendChild(td3);
-
-    const tr2 = document.createElement("tr");
-
-    const td4 = document.createElement("td");
-
-    const span3x = document.createElement("span");
-
-    const button2 = document.createElement("button");
-    button2.classList.add("fit-button", "fit-button-color-blue", "fit-button-fill-ghost", "fit-button-size-medium", "stars-filter");
-    button2.textContent = "4 Stars";
-
-    span3x.appendChild(button2);
-    td4.appendChild(span3x);
-
-    const td5 = document.createElement("td");
-    td5.classList.add("progress-bar-container");
-
-    const div3 = document.createElement("div");
-    div3.classList.add("fit-progressbar", "fit-progressbar-bar", "star-progress-bar");
-
-    const div4 = document.createElement("div");
-    div4.classList.add("fit-progressbar-background");
-
-    const span4x = document.createElement("span");
-    span4x.classList.add("progress-fill");
-    span4x.style.width = "2.2973%";
-
-    div4.appendChild(span4x);
-    div3.appendChild(div4);
-    td5.appendChild(div3);
-
-    const td6 = document.createElement("td");
-    td6.classList.add("star-num");
-    td6.textContent = "(2)";
-
-    tr2.appendChild(td4);
-    tr2.appendChild(td5);
-    tr2.appendChild(td6);
-
-    const tr3 = document.createElement("tr");
-
-    const td7 = document.createElement("td");
-
-    const span5x = document.createElement("span");
-
-    const button3 = document.createElement("button");
-    button3.classList.add("fit-button", "fit-button-color-blue", "fit-button-fill-ghost", "fit-button-size-medium", "stars-filter");
-    button3.textContent = "3 Stars";
-
-    span5x.appendChild(button3);
-    td7.appendChild(span5x);
-
-    const td8 = document.createElement("td");
-    td8.classList.add("progress-bar-container");
-
-    const div5 = document.createElement("div");
-    div5.classList.add("fit-progressbar", "fit-progressbar-bar", "star-progress-bar");
-
-    const div6 = document.createElement("div");
-    div6.classList.add("fit-progressbar-background");
-
-    const span6x = document.createElement("span");
-    span6x.classList.add("progress-fill");
-    span6x.style.width = "0";
-
-    div6.appendChild(span6x);
-    div5.appendChild(div6);
-    td8.appendChild(div5);
-
-    const td9 = document.createElement("td");
-    td9.classList.add('star-num');
-    td9.textContent = '(0)';
-
-    tr3.appendChild(td7);
-    tr3.appendChild(td8);
-    tr3.appendChild(td9);
-
-    const tr4 = document.createElement("tr");
-
-    const td10 = document.createElement("td");
-
-    const span7x = document.createElement("span");
-
-    const button4 = document.createElement("button");
-    button4.classList.add("fit-button", "fit-button-color-blue", "fit-button-fill-ghost", "fit-button-size-medium", "stars-filter");
-    button4.textContent = "2 Stars";
-
-    span7x.appendChild(button4);
-    td10.appendChild(span7x);
-
-    const td11 = document.createElement("td");
-    td11.classList.add("progress-bar-container");
-
-    const div7 = document.createElement("div");
-    div7.classList.add("fit-progressbar", "fit-progressbar-bar", "star-progress-bar");
-
-    const div8 = document.createElement("div");
-    div8.classList.add("fit-progressbar-background");
-
-    const span8x = document.createElement("span");
-    span8x.classList.add("progress-fill");
-    span8x.style.width = "0";
-
-    div8.appendChild(span8x);
-    div7.appendChild(div8);
-    td11.appendChild(div7);
-
-    const td12 = document.createElement("td");
-    td12.classList.add('star-num');
-    td12.textContent = '(0)';
-
-    tr4.appendChild(td10);
-    tr4.appendChild(td11);
-    tr4.appendChild(td12);
-
-    const tr5 = document.createElement("tr");
-
-    const td13 = document.createElement("td");
-
-    const span9x = document.createElement("span");
-
-    const button5 = document.createElement("button");
-    button5.classList.add("fit-button", "fit-button-color-blue", "fit-button-fill-ghost", "fit-button-size-medium", "stars-filter");
-    button5.textContent = "1 Stars";
-
-    span9x.appendChild(button5);
-    td13.appendChild(span9x);
-
-    const td14 = document.createElement("td");
-    td14.classList.add("progress-bar-container");
-
-    const div9 = document.createElement("div");
-    div9.classList.add("fit-progressbar", "fit-progressbar-bar", "star-progress-bar");
-
-    const div10 = document.createElement("div");
-    div10.classList.add("fit-progressbar-background");
-
-    const span10x = document.createElement("span");
-    span10x.classList.add("progress-fill");
-    span10x.style.width = "0";
-
-    div10.appendChild(span9x);
-    div9.appendChild(div10);
-    td13.appendChild(div9);
-
-    const td15 = document.createElement("td");
-    td15.classList.add('star-num');
-    td15.textContent = '(0)';
-
-    tr5.appendChild(td13);
-    tr5.appendChild(td14);
-    tr5.appendChild(td15);
-
-    tbody.appendChild(tr1);
-    tbody.appendChild(tr2);
-    tbody.appendChild(tr3);
-    tbody.appendChild(tr4);
-    tbody.appendChild(tr5);
-
-    table.appendChild(tbody);
-    divCol.appendChild(table);
-
-    const colDiv = document.createElement('div');
-    colDiv.classList.add('col-md-6');
-
-    const rankingDiv = document.createElement('div');
-    rankingDiv.classList.add('ranking');
-
-    const heading = document.createElement('h6');
-    heading.classList.add('text-display-7');
-    heading.textContent = 'Ranking';
-
-    const ul = document.createElement('ul');
-
-    const li1 = document.createElement('li');
-    li1.textContent = 'Nivel de comunicación del vendedor';
-
-    const span1xx = document.createElement('span');
-    span1xx.textContent = '5';
-
-    const star1 = document.createElement('span');
-    star1.classList.add('review-star', 'rate-10', 'show-one');
-
-    span1xx.appendChild(star1);
-    li1.appendChild(span1xx);
-    ul.appendChild(li1);
-
-    const li2 = document.createElement('li');
-    li2.textContent = 'Recomiendalo a un amigo';
-
-    const span2xx = document.createElement('span');
-    span2xx.textContent = '5';
-
-    const star2 = document.createElement('span');
-    star2.classList.add('review-star', 'rate-10', 'show-one');
-
-    span2xx.appendChild(star2);
-    li2.appendChild(span2xx);
-    ul.appendChild(li2);
-
-    const li3 = document.createElement('li');
-    li3.textContent = 'Servicie';
-
-    const span3xx = document.createElement('span');
-    span3xx.textContent = '4.9';
-
-    const star3 = document.createElement('span');
-    star3.classList.add('review-star', 'rate-10', 'show-one');
-
-    span3xx.appendChild(star3);
-    li3.appendChild(span3xx);
-    ul.appendChild(li3);
-
-    rankingDiv.appendChild(heading);
-    rankingDiv.appendChild(ul);
-
-    const opinionBtn = document.createElement('button');
-    opinionBtn.classList.add('btn', 'btn-danger');
-    opinionBtn.textContent = 'Pon tu opinión';
-    opinionBtn.onclick = function () {
-        gestorVisionado(5);
-    }
-
-    colDiv.appendChild(rankingDiv);
-    colDiv.appendChild(opinionBtn);
-
-    divRow.appendChild(divCol);
-    divRow.appendChild(colDiv);
-
-    reviews.appendChild(div);
-    reviews.appendChild(divRow);
-
-
-
-    const reviewList = document.createElement("div");
-    reviewList.classList.add("review-list", "aplicar-borde", "margen", "bg-white");
-
-    const ulx = document.createElement("ul");
-
-    for (let i = 0; i < 4; i++) {
-
-        const li = document.createElement("li");
-
-        const dFlexDiv = document.createElement("div");
-        dFlexDiv.classList.add("d-flex");
-
-        const leftDiv = document.createElement("div");
-        leftDiv.classList.add("left");
-
-        const profilePict = document.createElement("span");
-
-        const profilePictImg = document.createElement("img");
-        profilePictImg.setAttribute("src", "https://bootdey.com/img/Content/avatar/avatar1.png");
-        profilePictImg.classList.add("profile-pict-img", "img-fluid");
-        profilePictImg.setAttribute("alt", "");
-
-        profilePict.appendChild(profilePictImg);
-        leftDiv.appendChild(profilePict);
-
-        const rightDiv = document.createElement("div");
-        rightDiv.classList.add("right");
-
-        const h4x = document.createElement("h4");
-        const gigRating = document.createElement("span");
-        gigRating.classList.add("gig-rating", "text-body-2");
-        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.setAttribute("viewBox", "0 0 1792 1792");
-        svg.setAttribute("width", "15");
-        svg.setAttribute("height", "15");
-        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        path.setAttribute("fill", "currentColor");
-        path.setAttribute("d", "M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z");
-        svg.appendChild(path);
-        gigRating.appendChild(svg);
-        gigRating.appendChild(document.createTextNode("5.0"));
-        h4x.appendChild(document.createTextNode("Askbootstrap"));
-        h4x.appendChild(gigRating);
-
-        const countryDiv = document.createElement("div");
-        countryDiv.classList.add("country", "d-flex", "align-items-center");
-        const countrySpan = document.createElement("span");
-        const countryFlagImg = document.createElement("img");
-        countryFlagImg.setAttribute("src", "https://bootdey.com/img/Content/avatar/avatar6.png");
-        countryFlagImg.classList.add("country-flag", "img-fluid");
-        countrySpan.appendChild(countryFlagImg);
-        const countryNameDiv = document.createElement("div");
-        countryNameDiv.classList.add("country-name", "font-accent");
-        countryNameDiv.appendChild(document.createTextNode("India"));
-        countryDiv.appendChild(countrySpan);
-        countryDiv.appendChild(countryNameDiv);
-
-        const reviewDescription = document.createElement("div");
-        reviewDescription.classList.add("review-description");
-        const p = document.createElement("p");
-        p.appendChild(document.createTextNode("The process was smooth, after providing the required info, Pragyesh sent me an outstanding packet of wireframes. Thank you a lot!"));
-        reviewDescription.appendChild(p);
-
-        const publishSpan = document.createElement("span");
-        publishSpan.classList.add("publish", "py-3", "d-inline-block", "w-100");
-        publishSpan.appendChild(document.createTextNode("Published 4 weeks ago"));
-
-        rightDiv.appendChild(h4x);
-        rightDiv.appendChild(countryDiv);
-        rightDiv.appendChild(reviewDescription);
-        rightDiv.appendChild(publishSpan);
-
-        dFlexDiv.appendChild(leftDiv);
-        dFlexDiv.appendChild(rightDiv);
-
-        li.appendChild(dFlexDiv);
-
-        const hhr = document.createElement('hr');
-
-        ulx.appendChild(li);
-        ulx.appendChild(hhr);
-    }
-
-    reviewList.appendChild(ulx);
-
-    container.appendChild(reviews);
-    container.appendChild(reviewList);
-
-    dad.appendChild(container);
-
-}
-
-function vinoslist(dad) {
-    const div = document.createElement('div');
-    div.classList.add('col-sm', 'p-5', 'bg-white', 'rounded', 'shadow', 'mb-5');
-
-    const ul = document.createElement('ul');
-    ul.setAttribute('id', 'myTab1');
-    ul.setAttribute('role', 'tablist');
-    ul.classList.add('nav', 'nav-tabs', 'nav-pills', 'flex-column', 'flex-sm-row', 'text-center', 'bg-light', 'border-0', 'rounded-nav');
-
-    const li1 = document.createElement('li');
-    li1.classList.add('nav-item', 'flex-sm-fill');
-    const a1 = document.createElement('a');
-    a1.setAttribute('id', 'tinto-tab');
-    a1.setAttribute('data-toggle', 'tab');
-    a1.setAttribute('role', 'tab');
-    a1.setAttribute('aria-controls', 'home');
-    a1.setAttribute('aria-selected', 'true');
-    a1.classList.add('nav-link','bg-danger', 'border-0', 'text-uppercase', 'font-weight-bold', 'active');
-    a1.setAttribute('href', '');
-    a1.innerText = 'Tinto';
-    li1.appendChild(a1);
-
-    const li2 = document.createElement('li');
-    li2.classList.add('nav-item', 'flex-sm-fill');
-    const a2 = document.createElement('a');
-    a2.setAttribute('id', 'blanco-tab');
-    a2.setAttribute('data-toggle', 'tab');
-    a2.setAttribute('role', 'tab');
-    a2.setAttribute('aria-controls', 'profile');
-    a2.setAttribute('aria-selected', 'false');
-    a2.classList.add('nav-link','bg-danger', 'border-0', 'text-uppercase', 'font-weight-bold');
-    a2.setAttribute('href', '');
-    a2.innerText = 'Blanco';
-    li2.appendChild(a2);
-
-    const li3 = document.createElement('li');
-    li3.classList.add('nav-item', 'flex-sm-fill');
-    const a3 = document.createElement('a');
-    a3.setAttribute('id', 'rosado-tab');
-    a3.setAttribute('data-toggle', 'tab');
-    a3.setAttribute('role', 'tab');
-    a3.setAttribute('aria-controls', 'contact');
-    a3.setAttribute('aria-selected', 'false');
-    a3.classList.add('nav-link','bg-danger', 'border-0', 'text-uppercase', 'font-weight-bold');
-    a3.setAttribute('href', '');
-    a3.innerText = 'Rosado';
-    li3.appendChild(a3);
-
-    ul.appendChild(li1);
-    ul.appendChild(li2);
-    ul.appendChild(li3);
-
-    const div1 = document.createElement('div');
-    div1.setAttribute('id', 'myTabContent1');
-    div1.classList.add('container', 'tab-content', 'margen');
-
-    const row = document.createElement('div');
-    row.classList.add('row');
-
-    const fotos = ["http://www.vinyesmortitx.com/img_blog/1584635839.jpg","http://www.vinyesmortitx.com/img_blog/1584632514.jpg","http://www.vinyesmortitx.com/img_blog/ART_9u-negre.png"];
-    const nombre = ["Tinto 2019","Rodal Pla 2017","L'U negre 2017"];
-    const precios = ["12.18 EUR","15.98 EUR","62.90 EUR"]
-
-    for(let i=0;i<3;i++){
-
-    const col = document.createElement('div');
-    col.classList.add('col-lg-3', 'margen', 'productbox');
-
-    const img = document.createElement('img');
-    img.setAttribute('src', fotos[i]);
-    img.classList.add('img-responsive');
-    img.height = 500;
-    img.width = 150;
-
-    const div2 = document.createElement('div');
-    div2.classList.add('producttitle');
-    div2.innerText = nombre[i];
-
-    const div3 = document.createElement('div');
-    div3.classList.add('productprice');
-
-
-    const div5 = document.createElement('div');
-    div5.classList.add('pricetext');
-    div5.innerText = precios[i];
-
-    div3.appendChild(div5);
-
-    col.appendChild(img);
-    col.appendChild(div2);
-    col.appendChild(div3);
-
-    row.appendChild(col);
-    }
-
-    div1.appendChild(row);
-
-    div.appendChild(ul);
-    div.appendChild(div1);
-    dad.appendChild(div);
-}
