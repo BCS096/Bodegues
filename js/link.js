@@ -69,7 +69,7 @@ function paginaProducto2(pos) {
 
     var node_16 = document.createElement('IMG');
 
-    node_16.setAttribute('src', json.itemListElement[pos].image[10]);
+    node_16.setAttribute('src', json.itemListElement[pos].image[json.itemListElement[pos].image.length - 1]);
     node_16.setAttribute('class', 'im2 margen2 aos-init aos-animate');
     node_16.setAttribute('alt', '');
     node_16.setAttribute('data-aos', 'zoom-out');
@@ -2449,7 +2449,7 @@ function gestorVisionado(vision, producto) {
 
         if (vision == 3) {
             botonesNav(1);
-            paginaProducto2(0, producto);
+            paginaProducto2(producto);
         }
     } else {
         botonesNav(0);

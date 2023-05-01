@@ -1,7 +1,7 @@
 {
     "@context": "https://schema.org",
     "@type": "itemList",
-    "itemListElement":[
+    "itemListElement": [
         {
             "@type": "Winery",
             "name": "Mortitx",
@@ -20,7 +20,7 @@
                     {
                         "@type": "VideoObject",
                         "name": "Bodegues Mortitx - finca-privat.de",
-                        "contentUrl":"https://www.youtube.com/embed/eBpI0tEdTtM"
+                        "contentUrl": "https://www.youtube.com/embed/eBpI0tEdTtM"
                     },
                     {
                         "@type": "VideoObject",
@@ -54,7 +54,7 @@
                                 "name": "Mortitx Tinto 2019",
                                 "description": "Variedades:   Merlot, Mantonegro, Cabernet Sauvignon, Syrah. Con un grado de alcohol de 13%.",
                                 "image": "http://www.vinyesmortitx.com/img_blog/1584635839.jpg",
-                                "offers":{
+                                "offers": {
                                     "@type": "Offer",
                                     "price": "12.18",
                                     "priceCurrency": "EUR"
@@ -65,7 +65,7 @@
                                 "name": "Rodal Pla 2017",
                                 "description": "Variedades:   Merlot, Cabernet Sauvignon, Syrah. Con un grado de alcohol de 13%.",
                                 "image": "http://www.vinyesmortitx.com/img_blog/1584632514.jpg",
-                                "offers":{
+                                "offers": {
                                     "@type": "Offer",
                                     "price": "15.98",
                                     "priceCurrency": "EUR"
@@ -76,7 +76,7 @@
                                 "name": "L'u negre 2017",
                                 "description": "Variedades:   Merlot, Cabernet Sauvignon, Syrah. Con un grado de alcohol de 14%.",
                                 "image": "http://www.vinyesmortitx.com/img_blog/ART_9u-negre.png",
-                                "offers":{
+                                "offers": {
                                     "@type": "Offer",
                                     "price": "62.90",
                                     "priceCurrency": "EUR"
@@ -93,7 +93,7 @@
                                 "name": "Mortitx Blanco 2019",
                                 "description": "Variedades: Malvasia, Muscat, Chardonnay, Giró ros. Con un grado de alcohol de 12,5%.",
                                 "image": "http://www.vinyesmortitx.com/img_blog/1584635505.jpg",
-                                "offers":{
+                                "offers": {
                                     "@type": "Offer",
                                     "price": "11.20",
                                     "priceCurrency": "EUR"
@@ -104,7 +104,7 @@
                                 "name": "L'u blanc 2016",
                                 "description": "Variedades: Malvasia, Chardonnay. Con un grado de alcohol de 14%.",
                                 "image": "http://www.vinyesmortitx.com/img_blog/ART_8u-blanc.png",
-                                "offers":{
+                                "offers": {
                                     "@type": "Offer",
                                     "price": "32.90",
                                     "priceCurrency": "EUR"
@@ -121,7 +121,7 @@
                                 "name": "Mortitx Rosado 2019",
                                 "description": "Variedades: Merlot, Cabernet Sauvignon. Con un grado de alcohol de 13%.",
                                 "image": "http://www.vinyesmortitx.com/img_blog/1584635124.jpg",
-                                "offers":{
+                                "offers": {
                                     "@type": "Offer",
                                     "price": "11.90",
                                     "priceCurrency": "EUR"
@@ -132,7 +132,7 @@
                                 "name": "Flaires 2019",
                                 "description": "Variedades: Monastrell, Cabernet Sauvignon, Merlot. Con un grado de alcohol de 12,5%.",
                                 "image": "http://www.vinyesmortitx.com/img_blog/1584633458.jpg",
-                                "offers":{
+                                "offers": {
                                     "@type": "Offer",
                                     "price": "12.99",
                                     "priceCurrency": "EUR"
@@ -150,7 +150,7 @@
             "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": 39.86897927148171,
-                "longitude" : 2.9227276061015797
+                "longitude": 2.9227276061015797
             },
             "image": [
                 "http://www.vinyesmortitx.com/img_blog/21_1234231_569643109759057_294746408_n.jpg",
@@ -171,6 +171,202 @@
                 "http://www.vinyesmortitx.com/img_blog/1535461008.png"
             ],
             "url": "http://www.vinyesmortitx.com"
+        },
+        {
+            "@type": "Winery",
+            "name": "Macià Batle",
+            "description": "Nuestras bodegas, situadas en Santa María del Camí (Mallorca) y dotadas de las más modernas instalaciones, maquinaria y alta tecnología, cultivan 70 Has de viñedo con el objetivo de elaborar excelentes caldos que muestren las peculiaridades de la tierra y de las variedades autóctonas de la isla (Mantonegro y Prensal), disponiendo para ello de un equipo de enólogos y viticultores altamente cualificado que hace de Macià Batle las bodegas mallorquinas de referencia.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Santa María",
+                "postalCode": "07320",
+                "streetAddress": "Camí de Coanegra s/n"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "1856 Macià Batle. Nuestro origen",
+                        "contentUrl": "https://www.youtube.com/watch?v=tJoQrxBUaKc"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "MACIÀ BATLE. 1856",
+                        "contentUrl": "https://www.youtube.com/watch?v=mngLvPr2HoI"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Col·lecció Privada 2018",
+                                "description": "Variedades:   Mantonegro, Cabernet, Sauvignon, Merlot y Syrah",
+                                "image": "https://www.maciabatle.com/wp-content/uploads/2022/06/COLLECCIO-PRIVADA-2017.png",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "20.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Col·lecció Privada 2017",
+                                "description": "Variedades:   Mantonegro, Cabernet, Sauvignon, Merlot y Syrah",
+                                "image": "https://www.maciabatle.com/wp-content/uploads/2022/06/COLLECCIO-PRIVADA-2017.png",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "20.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Col·lecció Privada 2016",
+                                "description": "Variedades:   Mantonegro, Cabernet, Sauvignon, Merlot y Syrah",
+                                "image": "https://www.maciabatle.com/wp-content/uploads/2022/06/COLLECCIO-PRIVADA-2017.png",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "20.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Margalida Llompart Negre 2014",
+                                "description": "Variedades:   Mantonegro, Cabernet, Sauvignon, Merlot y Syrah",
+                                "image": "https://www.maciabatle.com/wp-content/uploads/2017/07/Margalida-Llompart-Negre-2014.jpg",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Negre Dolç 2018",
+                                "description": "Variedades: Monovarietal Mantonegro",
+                                "image": "https://www.maciabatle.com/wp-content/uploads/2022/06/VI-DOLC-NEGRE-2018.png",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "14.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Xeremia 2018",
+                                "description": "",
+                                "image": "https://www.maciabatle.com/wp-content/uploads/2022/06/XEREMIA-2018.png",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "11.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "1856 Vi de la Terra 2016",
+                                "description": "Variedades:  35% Mantonegro, 25% Cabernet Sauvignon, 25% Merlot y 15% Syrah",
+                                "image": "https://www.maciabatle.com/wp-content/uploads/2019/05/1856-Vi.jpg",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "11.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sauvignon Blanc 2021",
+                                "description": "Variedades: Monovarietal, 100% Sauvignon Blanc",
+                                "image": "https://www.maciabatle.com/wp-content/uploads/2022/06/SAUVIGNON-BLANC-2021.png",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "14.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Blanc de Blanc Dolç 2019",
+                                "description": "Variedades: Monovarietal Prensal Blanc",
+                                "image": "https://www.maciabatle.com/wp-content/uploads/2022/06/VI-DOLC-BLANC-DE-BLANCS-2019.png",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "12.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Xeremia Blanc 2021",
+                                "description": "",
+                                "image": "https://www.maciabatle.com/wp-content/uploads/2022/06/Xeremia-Blanc-2021.png",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "11.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": []
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr,Sa 09:00-18:30",
+            "telephone": "971140014",
+            "isAccessibleForFree": false,
+            "email": "info@maciabatle.com",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/0d/a9/3b/d1/nuevo-vino-macia-batle.jpg",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 0,
+                "longitude": 0
+            },
+            "image": [
+                "https://media-cdn.tripadvisor.com/media/photo-f/07/0f/b0/ae/bodegues-macia-batle.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-f/07/b6/78/34/bodegues-macia-batle.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-s/07/3f/39/33/bodegues-macia-batle.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-s/07/3f/38/b1/bodegues-macia-batle.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-s/07/3f/38/9c/bodegues-macia-batle.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-f/07/3f/38/80/bodegues-macia-batle.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-f/07/0f/b0/f2/bodegues-macia-batle.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-f/07/0f/b0/ec/bodegues-macia-batle.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-f/07/0f/b0/e2/bodegues-macia-batle.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-f/07/0f/b0/c6/bodegues-macia-batle.jpg"
+            ],
+            "url": "https://www.maciabatle.com"
         }
     ]
 }

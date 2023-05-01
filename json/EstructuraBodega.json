@@ -1,0 +1,156 @@
+{
+    "@type": "Winery",
+    "name": "",
+    "description": "",
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ES",
+        "addressLocality": "Mallorca",
+        "addressRegion": "",
+        "postalCode": "",
+        "streetAddress": ""
+    },
+    "subjectOf": {
+        "@type": "CreativeWork",
+        "video": [
+            {
+                "@type": "VideoObject",
+                "name": "",
+                "contentUrl":""
+            },
+            {
+                "@type": "VideoObject",
+                "name": "",
+                "contentUrl": ""
+            }
+        ],
+        "audio": [
+            {
+                "@type": "AudioObject",
+                "name": "Audio 1",
+                "contentUrl": "url"
+            },
+            {
+                "@type": "AudioObject",
+                "name": "Audio2",
+                "contentUrl": "url"
+            }
+        ]
+    },
+    "acceptsReservations": true,
+    "hasMenu": {
+        "@type": "Menu",
+        "hasMenuSection": [
+            {
+                "@type": "MenuSection",
+                "name": "Vino Tinto",
+                "hasMenuItem": [
+                    {
+                        "@type": "MenuItem",
+                        "name": "",
+                        "description": "",
+                        "image": "",
+                        "offers":{
+                            "@type": "Offer",
+                            "price": "",
+                            "priceCurrency": "EUR"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "",
+                        "description": "",
+                        "image": "",
+                        "offers":{
+                            "@type": "Offer",
+                            "price": "",
+                            "priceCurrency": "EUR"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "",
+                        "description": "",
+                        "image": "",
+                        "offers":{
+                            "@type": "Offer",
+                            "price": "",
+                            "priceCurrency": "EUR"
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Vino Blanco",
+                "hasMenuItem": [
+                    {
+                        "@type": "MenuItem",
+                        "name": "",
+                        "description": "",
+                        "image": "",
+                        "offers":{
+                            "@type": "Offer",
+                            "price": "",
+                            "priceCurrency": "EUR"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "",
+                        "description": "",
+                        "image": "",
+                        "offers":{
+                            "@type": "Offer",
+                            "price": "",
+                            "priceCurrency": "EUR"
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Vino Rosado",
+                "hasMenuItem": [
+                    {
+                        "@type": "MenuItem",
+                        "name": "",
+                        "description": "",
+                        "image": "",
+                        "offers":{
+                            "@type": "Offer",
+                            "price": "",
+                            "priceCurrency": "EUR"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "",
+                        "description": "",
+                        "image": "",
+                        "offers":{
+                            "@type": "Offer",
+                            "price": "",
+                            "priceCurrency": "EUR"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "openingHours": "",
+    "telephone": "",
+    "isAccessibleForFree": false,
+    "email": "",
+    "logo": "",
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 0,
+        "longitude" : 0
+    },
+    "image": [
+        "",
+        ""
+    ],
+    "url": ""
+}
