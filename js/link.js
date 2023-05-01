@@ -675,11 +675,11 @@ function paginaProducto2(pos) {
 
     var nodo_1 = document.createElement('SECTION');
     nodo_1.setAttribute('id', 'testimonials');
-    nodo_1.setAttribute('class', 'testimonials section-bg client pt-3 pb-5');
+    nodo_1.setAttribute('class', 'testimonials section-bg');
     node_17.appendChild(nodo_1);
 
     var nodo_2 = document.createElement('DIV');
-    nodo_2.setAttribute('class', 'container');
+    nodo_2.setAttribute('class', 'container granate aplicar-borde margen');
     nodo_1.appendChild(nodo_2);
 
     var nodo_3 = document.createElement('DIV');
@@ -996,7 +996,7 @@ function paginaProducto2(pos) {
 
     var form_4 = document.createElement('LABEL');
     form_4.setAttribute('for', 'email');
-    form_4.setAttribute('class', 'col-sm-2 control-label');
+    form_4.setAttribute('class', 'col-sm-2 control-label text-white');
     form_3.appendChild(form_4);
 
     var form_5 = document.createTextNode((new String("Name")));
@@ -1019,7 +1019,7 @@ function paginaProducto2(pos) {
 
     var form_9 = document.createElement('LABEL');
     form_9.setAttribute('for', 'email');
-    form_9.setAttribute('class', 'col-sm-2 control-label');
+    form_9.setAttribute('class', 'col-sm-2 control-label text-white');
     form_8.appendChild(form_9);
 
     var form_10 = document.createTextNode((new String("Comment")));
@@ -1042,7 +1042,7 @@ function paginaProducto2(pos) {
 
     var form_14 = document.createElement('LABEL');
     form_14.setAttribute('for', 'uploadMedia');
-    form_14.setAttribute('class', 'col-sm-2 control-label');
+    form_14.setAttribute('class', 'col-sm-2 control-label text-white');
     form_13.appendChild(form_14);
 
     var form_15 = document.createTextNode((new String("Upload media")));
@@ -1076,7 +1076,7 @@ function paginaProducto2(pos) {
     form_20.appendChild(form_21);
 
     var form_22 = document.createElement('BUTTON');
-    form_22.setAttribute('class', 'btn btn-success btn-circle text-uppercase');
+    form_22.setAttribute('class', 'btn btn-danger btn-circle text-uppercase margen ');
     form_22.setAttribute('type', 'submit');
     form_22.setAttribute('id', 'submitComment');
     form_21.appendChild(form_22);
@@ -1120,59 +1120,30 @@ function paginaProducto2(pos) {
     node_356.appendChild(node_357);
 
 
-    var nd_1 = document.createElement('DIV');
-    nd_1.setAttribute('class', 'container-gallery');
 
-    var nd_2 = document.createElement('DIV');
-    nd_2.setAttribute('class', 'popup popup-1');
-    nd_1.appendChild(nd_2);
+    var gallery_1 = document.createElement('DIV');
+    gallery_1.setAttribute('class', 'row text-center text-lg-start');
 
-    var nd_3 = document.createElement('IMG');
-    nd_3.setAttribute('class', 'img-fluid');
-    nd_3.setAttribute('alt', 'Pop Up Gallety');
-    nd_3.setAttribute('src', json.itemListElement[pos].image[0]);
-    nd_2.appendChild(nd_3);
+    for (let i = 0; i < json.itemListElement[pos].image.length; i++) {
 
-    var nd_4 = document.createElement('DIV');
-    nd_4.setAttribute('class', 'popup popup-2');
-    nd_1.appendChild(nd_4);
+        var gallery_2 = document.createElement('DIV');
+        gallery_2.setAttribute('class', 'col-lg-3 col-md-4 col-6');
+        gallery_1.appendChild(gallery_2);
 
-    var nd_5 = document.createElement('IMG');
-    nd_5.setAttribute('class', 'img-fluid');
-    nd_5.setAttribute('alt', 'Pop Up Gallety');
-    nd_5.setAttribute('src', json.itemListElement[pos].image[1]);
-    nd_4.appendChild(nd_5);
+        var gallery_3 = document.createElement('A');
+        gallery_3.setAttribute('class', 'd-block mb-4 h-100');
+        gallery_2.appendChild(gallery_3);
 
-    var nd_6 = document.createElement('DIV');
-    nd_6.setAttribute('class', 'popup popup-3');
-    nd_1.appendChild(nd_6);
+        var gallery_4 = document.createElement('IMG');
+        gallery_4.setAttribute('class', 'img-fluid img-thumbnail');
+        gallery_4.setAttribute('src', json.itemListElement[pos].image[i]);
+        gallery_4.setAttribute('alt', '');
+        gallery_3.appendChild(gallery_4);
 
-    var nd_7 = document.createElement('IMG');
-    nd_7.setAttribute('class', 'img-fluid');
-    nd_7.setAttribute('alt', 'Pop Up Gallety');
-    nd_7.setAttribute('src', json.itemListElement[pos].image[2]);
-    nd_6.appendChild(nd_7);
+    }
 
-    var nd_8 = document.createElement('DIV');
-    nd_8.setAttribute('class', 'popup popup-4');
-    nd_1.appendChild(nd_8);
-
-    var nd_9 = document.createElement('IMG');
-    nd_9.setAttribute('class', 'img-fluid');
-    nd_9.setAttribute('alt', 'Pop Up Gallety');
-    nd_9.setAttribute('src', json.itemListElement[pos].image[3]);
-    nd_8.appendChild(nd_9);
-
-    var nd_10 = document.createElement('DIV');
-    nd_10.setAttribute('class', 'popup popup-5');
-    nd_1.appendChild(nd_10);
-
-    var nd_11 = document.createElement('IMG');
-    nd_11.setAttribute('class', 'img-fluid');
-    nd_11.setAttribute('alt', 'Pop Up Gallety');
-    nd_11.setAttribute('src', json.itemListElement[pos].image[4]);
-    nd_10.appendChild(nd_11);
-    node_351.appendChild(nd_1);
+    node_351.appendChild(gallery_1);
+    //
 
     var node_412 = document.createElement('SECTION');
     node_412.setAttribute('id', 'contact');
@@ -1238,7 +1209,7 @@ function paginaProducto2(pos) {
     var node_429 = document.createElement('P');
     node_426.appendChild(node_429);
 
-    var node_430 = document.createTextNode((new String(json.itemListElement[pos].address.streetAddress + " " +json.itemListElement[pos].address.postalCode + " " +json.itemListElement[pos].address.addressRegion + ", " + json.itemListElement[pos].address.addressLocality)));
+    var node_430 = document.createTextNode((new String(json.itemListElement[pos].address.streetAddress + " " + json.itemListElement[pos].address.postalCode + " " + json.itemListElement[pos].address.addressRegion + ", " + json.itemListElement[pos].address.addressLocality)));
     node_429.appendChild(node_430);
 
     var node_431 = document.createElement('DIV');
@@ -1410,7 +1381,7 @@ function paginaProducto2(pos) {
     var node_463 = document.createElement('a');
     node_460.appendChild(node_463);
     node_463.innerText = json.itemListElement[pos].url;
-    node_463.setAttribute('href',json.itemListElement[pos].url);
+    node_463.setAttribute('href', json.itemListElement[pos].url);
 }
 
 function filtrado2() {
@@ -1869,7 +1840,7 @@ function listadoCardXL() {
         carouselItem3.classList.add('carousel-item');
 
         const img3 = document.createElement('img');
-        img3.setAttribute('src',json.itemListElement[i].image[2]);
+        img3.setAttribute('src', json.itemListElement[i].image[2]);
         img3.classList.add('d-block', 'w-100');
         carouselItem3.appendChild(img3);
 
@@ -1948,7 +1919,7 @@ function listadoCardXL() {
         const a = document.createElement('a');
         a.setAttribute('href', '#');
         a.classList.add('text-navy');
-        a.textContent =json.itemListElement[i].email;
+        a.textContent = json.itemListElement[i].email;
         dd3.appendChild(a);
 
         const dt4 = document.createElement('dt');
@@ -1957,7 +1928,7 @@ function listadoCardXL() {
         const a2 = document.createElement('a');
         a2.setAttribute('href', json.itemListElement[i].url);
         a2.classList.add('text-navy');
-        a2.textContent =json.itemListElement[i].url;
+        a2.textContent = json.itemListElement[i].url;
         dd4.appendChild(a2);
 
         const dt5 = document.createElement('dt');
@@ -1967,7 +1938,7 @@ function listadoCardXL() {
         dd5_1.textContent = json.itemListElement[i].address.streetAddress;
         const dd5_2 = document.createElement('dd');
         dd5_2.textContent = json.itemListElement[i].address.addressLocality + " " + json.itemListElement[i].address.addressRegion + " " + json.itemListElement[i].address.postalCode;
-       
+
 
         dl.appendChild(dt1);
         const iconHorario = document.createElement('i');
@@ -2114,14 +2085,14 @@ function listadoCard() {
 
         const imgCard = document.createElement('img');
         imgCard.className = "img-fluid d-block mx-auto mb-3 redi";
-        imgCard.setAttribute('src',json.itemListElement[i].logo);
+        imgCard.setAttribute('src', json.itemListElement[i].logo);
 
         const h5 = document.createElement('h5');
         h5.innerText = json.itemListElement[i].name
 
         const desc = document.createElement('p');
         desc.className = "small text-muted font-italic";
-        desc.innerText = json.itemListElement[i].address.streetAddress + " " +json.itemListElement[i].address.postalCode + " " +json.itemListElement[i].address.addressRegion + ", " + json.itemListElement[i].address.addressLocality;
+        desc.innerText = json.itemListElement[i].address.streetAddress + " " + json.itemListElement[i].address.postalCode + " " + json.itemListElement[i].address.addressRegion + ", " + json.itemListElement[i].address.addressLocality;
 
 
         //calcularlo
