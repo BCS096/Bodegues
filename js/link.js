@@ -6,7 +6,6 @@ window.onload = function () {
     cargarJSON();
 }
 
-
 function paginaProducto2(pos) {
 
     var node_1 = document.getElementById('seccion');
@@ -25,11 +24,14 @@ function paginaProducto2(pos) {
     node_3.appendChild(node_4);
 
     var node_5 = document.createElement('DIV');
-    node_5.setAttribute('class', 'col-sm order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start m-auto');
+    //node_5.setAttribute('class', 'col-sm order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start m-auto');
+    node_5.setAttribute('class','col-sm');
+    node_5.setAttribute('style',"align-self: center");
     node_4.appendChild(node_5);
 
     var node_6 = document.createElement('H2');
     node_6.setAttribute('data-aos', 'fade-up');
+    node_6.setAttribute('style','text-align-last: center');
     node_6.setAttribute('class', 'aos-init aos-animate');
     node_5.appendChild(node_6);
 
@@ -67,25 +69,43 @@ function paginaProducto2(pos) {
     node_15.setAttribute('class', 'col-sm margen  text-lg-start');
     node_4.appendChild(node_15);
 
+    const contImg = document.createElement('div');
+    contImg.className = "caja margen";
+
+    const contImg1 = document.createElement('div');
+    contImg1.className = "box1 tamañoImgProductoMain";
+
     var node_16 = document.createElement('IMG');
 
     node_16.setAttribute('src', json.itemListElement[pos].image[json.itemListElement[pos].image.length - 1]);
-    node_16.setAttribute('class', 'im2 margen2 aos-init aos-animate');
+    //node_16.setAttribute('class', 'im2 margen2 aos-init aos-animate');  
     node_16.setAttribute('alt', '');
     node_16.setAttribute('data-aos', 'zoom-out');
     node_16.setAttribute('data-aos-delay', '300');
-    node_15.appendChild(node_16);
+    contImg1.appendChild(node_16);
+    contImg.appendChild(contImg1);
+    node_15.appendChild(contImg);
 
     var aux = document.createElement('div');
     aux.setAttribute('class', 'col-sm margen   text-lg-start');
     node_4.appendChild(aux);
 
+    const contImg2 = document.createElement('div');
+    contImg2.className = "caja margen";
+    aux.appendChild(contImg2);
+
+    const contImg3 = document.createElement('div');
+    contImg3.className = "box1 tamañoImgProductoMain";
+    contImg2.appendChild(contImg3);
+
+
     var aux1 = document.createElement('img');
     aux1.setAttribute('src', json.itemListElement[pos].logo);
-    aux1.setAttribute('class', ' im margen2 aos-init aos-animate');
+    aux1.setAttribute('class', 'im aos-init aos-animate');
     aux1.setAttribute('data-aos', 'zoom-out');
     aux1.setAttribute('data-aos-delay', '300');
-    aux.appendChild(aux1);
+    aux1.setAttribute('style','height: auto');
+    contImg3.appendChild(aux1);
 
 
 
@@ -96,6 +116,7 @@ function paginaProducto2(pos) {
     var node_18 = document.createElement('SECTION');
     node_18.setAttribute('id', 'about');
     node_18.setAttribute('class', 'about');
+    node_17.setAttribute('style', 'background-image: url("http://www.vinyesmortitx.com/img_blog/21_QQ6A9827.jpg") ;)');
     node_17.appendChild(node_18);
 
     var node_19 = document.createElement('DIV');
@@ -164,11 +185,19 @@ function paginaProducto2(pos) {
     node_35.setAttribute('class', 'position-relative mt-4 margen');
     node_32.appendChild(node_35);
 
+    const contImg2x = document.createElement('div');
+    contImg2x.className = "caja margen";
+
+    const contImg3x = document.createElement('div');
+    contImg3x.className = "box1 tamañoImgProductoDescripcion";
+
     var node_36 = document.createElement('IMG');
     node_36.setAttribute('src', json.itemListElement[pos].image[6]);
     node_36.setAttribute('class', 'img-fluid');
     node_36.setAttribute('alt', '');
-    node_35.appendChild(node_36);
+    contImg3x.appendChild(node_36);
+    contImg2x.appendChild(contImg3x);
+    node_35.appendChild(contImg2x);
 
     var node_37 = document.createElement('A');
     node_37.setAttribute('href', json.itemListElement[pos].subjectOf.video[1].contentUrl);
@@ -531,11 +560,19 @@ function paginaProducto2(pos) {
         node_124.setAttribute('class', 'glightbox');
         node_123.appendChild(node_124);
 
+        const contImg = document.createElement('div');
+        contImg.className = "caja margen";
+
+        const contImg1 = document.createElement('div');
+        contImg1.className = "box1 tamañoImgProductoVinos";
+
         var node_125 = document.createElement('IMG');
         node_125.setAttribute('src', json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].image);
         node_125.setAttribute('class', 'menu-img img-fluid');
         node_125.setAttribute('alt', '');
-        node_124.appendChild(node_125);
+        contImg1.appendChild(node_125);
+        contImg.appendChild(contImg1);
+        node_124.appendChild(contImg);
 
         var node_126 = document.createElement('H4');
         node_123.appendChild(node_126);
@@ -588,11 +625,19 @@ function paginaProducto2(pos) {
         node_153.setAttribute('class', 'glightbox');
         node_152.appendChild(node_153);
 
+        const contImg = document.createElement('div');
+        contImg.className = "caja margen";
+
+        const contImg1 = document.createElement('div');
+        contImg1.className = "box1 tamañoImgProductoVinos";
+
         var node_154 = document.createElement('IMG');
         node_154.setAttribute('src', json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].image);
         node_154.setAttribute('class', 'menu-img img-fluid');
         node_154.setAttribute('alt', '');
-        node_153.appendChild(node_154);
+        contImg1.appendChild(node_154);
+        contImg.appendChild(contImg1);
+        node_153.appendChild(contImg);
 
         var node_155 = document.createElement('H4');
         node_152.appendChild(node_155);
@@ -646,11 +691,19 @@ function paginaProducto2(pos) {
         node_167.setAttribute('class', 'glightbox');
         node_166.appendChild(node_167);
 
+        const contImg = document.createElement('div');
+        contImg.className = "caja margen";
+
+        const contImg1 = document.createElement('div');
+        contImg1.className = "box1 tamañoImgProductoVinos";
+
         var node_168 = document.createElement('IMG');
         node_168.setAttribute('src', json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].image);
         node_168.setAttribute('class', 'menu-img img-fluid');
         node_168.setAttribute('alt', '');
-        node_167.appendChild(node_168);
+        contImg1.appendChild(node_168);
+        contImg.appendChild(contImg1);
+        node_167.appendChild(contImg);
 
         var node_169 = document.createElement('H4');
         node_166.appendChild(node_169);
@@ -1122,7 +1175,7 @@ function paginaProducto2(pos) {
 
 
     var gallery_1 = document.createElement('DIV');
-    gallery_1.setAttribute('class', 'row text-center text-lg-start');
+    gallery_1.setAttribute('class', 'row text-center text-lg-start granate aplicar-borde margen');
 
     for (let i = 0; i < json.itemListElement[pos].image.length; i++) {
 
@@ -1134,16 +1187,23 @@ function paginaProducto2(pos) {
         gallery_3.setAttribute('class', 'd-block mb-4 h-100');
         gallery_2.appendChild(gallery_3);
 
+        const contImgx = document.createElement('div');
+        contImgx.className = "caja margen";
+    
+        const contImg1x = document.createElement('div');
+        contImg1x.className = "box1 tamañoImgProductoMenu";
+
         var gallery_4 = document.createElement('IMG');
-        gallery_4.setAttribute('class', 'img-fluid img-thumbnail');
+        //gallery_4.setAttribute('class', 'img-fluid img-thumbnail');
         gallery_4.setAttribute('src', json.itemListElement[pos].image[i]);
         gallery_4.setAttribute('alt', '');
-        gallery_3.appendChild(gallery_4);
+        contImg1x.appendChild(gallery_4);
+        contImgx.appendChild(contImg1x);
+        gallery_3.appendChild(contImgx);
 
     }
 
     node_351.appendChild(gallery_1);
-    //
 
     var node_412 = document.createElement('SECTION');
     node_412.setAttribute('id', 'contact');
@@ -1634,8 +1694,6 @@ function filtrado2() {
 
 }
 
-
-
 function botonesNav(navState) {
     var navAux = document.getElementById('ul-nav');
     if (document.getElementById('navbar').hasChildNodes()) {
@@ -1740,7 +1798,6 @@ function botonesNav(navState) {
     };
 
 }
-
 
 function paginaPrincipal() {
     const h = document.getElementById("header");
@@ -1895,11 +1952,14 @@ function listadoCardXL() {
         const col4 = document.createElement('div');
         col4.classList.add('col');
 
+        const contImg = document.createElement('div');
+        contImg.className = 'caja margen';
+
+        const contImg1 = document.createElement('div');
+        contImg1.className = 'box1 tamañoImgCard';
+
         const logoimg = document.createElement('img');
-        logoimg.classList.add('margen');
         logoimg.setAttribute('src', json.itemListElement[i].logo);
-        logoimg.setAttribute('width', '150');
-        logoimg.setAttribute('height', '65');
 
         const dl = document.createElement('dl');
 
@@ -1976,7 +2036,10 @@ function listadoCardXL() {
         div2.classList.add('col-sm');
         div2.appendChild(div1);
 
-        col4.appendChild(logoimg);
+
+        contImg1.appendChild(logoimg);
+        contImg.appendChild(contImg1);
+        col4.appendChild(contImg);
         col4.appendChild(div2);
 
         const colSmDiv = document.createElement('div');
@@ -2083,8 +2146,14 @@ function listadoCard() {
         const cardBody = document.createElement('div');
         cardBody.className = "card-body p-0";
 
+        const contImg = document.createElement('div');
+        contImg.className = "caja margen";
+
+        const contImg1 = document.createElement('div');
+        contImg1.className = "box1 tamañoImgCard";
+
         const imgCard = document.createElement('img');
-        imgCard.className = "img-fluid d-block mx-auto mb-3 redi";
+        imgCard.className = "";
         imgCard.setAttribute('src', json.itemListElement[i].logo);
 
         const h5 = document.createElement('h5');
@@ -2124,7 +2193,9 @@ function listadoCard() {
             gestorVisionado(3, i);
         };
 
-        cardBody.appendChild(imgCard);
+        contImg1.appendChild(imgCard);
+        contImg.appendChild(contImg1);
+        cardBody.appendChild(contImg);
         cardBody.appendChild(h5);
         cardBody.appendChild(desc);
         cardBody.appendChild(open);
@@ -2280,11 +2351,14 @@ function listadoMap() {
     const col4 = document.createElement('div');
     col4.classList.add('col');
 
+    const contImg = document.createElement('div');
+    contImg.className = "caja margen";
+
+    const contImg1 = document.createElement('div');
+    contImg1.className = "box1 tamañoImgCard";
+
     const logoimg = document.createElement('img');
-    logoimg.classList.add('margen');
     logoimg.setAttribute('src', 'http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png');
-    logoimg.setAttribute('width', '150');
-    logoimg.setAttribute('height', '65');
 
     const dl = document.createElement('dl');
 
@@ -2360,7 +2434,10 @@ function listadoMap() {
     div2.classList.add('col-sm');
     div2.appendChild(div1);
 
-    col4.appendChild(logoimg);
+
+    contImg1.appendChild(logoimg);
+    contImg.appendChild(contImg1);
+    col4.appendChild(contImg);
     col4.appendChild(div2);
 
     const colSmDiv = document.createElement('div');
@@ -2384,7 +2461,7 @@ function listadoMap() {
     moreInfoButton.className = 'add-to-cart margen';
     moreInfoButton.textContent = 'Más información';
     moreInfoButton.onclick = function () {
-        gestorVisionado(3);
+        gestorVisionado(3,0);
     };
 
     const boton2 = document.createElement('button');

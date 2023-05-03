@@ -4,6 +4,54 @@
 
 /*Mi código*/
 
+.caja{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background: white
+}
+.box1{
+  background: white;
+  overflow: hidden;
+}
+
+.box1 img{
+  width: 100%;
+  height: auto;
+}
+@supports(object-fit: cover){
+    .box1 img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
+.tamañoImgCard{
+  width: 200px;
+  height: 100px;
+}
+
+.tamañoImgProductoMain{
+  width: 420px;
+  height: 420px;
+}
+
+.tamañoImgProductoMenu{
+  width: 300px;
+  height: 300px;
+}
+
+.tamañoImgProductoVinos{
+  width: 350px;
+  height: 400px ;
+}
+
+.tamañoImgProductoDescripcion {
+  height: 250px;
+  width: 350px;
+}
+
 .fondo {
   background-image: url("http://www.vinyesmortitx.com/img_blog/21_1234231_569643109759057_294746408_n.jpg");
   background-size: cover;
@@ -120,9 +168,7 @@ body {
   overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-}
+
 
 .preview {
   display: -webkit-box;
