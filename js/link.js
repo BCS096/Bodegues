@@ -16,7 +16,7 @@ function paginaProducto2(pos) {
 
     //cargar el tiempo
     var tiempo = weather(json.itemListElement[pos].geo.latitude, json.itemListElement[pos].geo.longitude);
-
+    console.log(tiempo);
     var node_1 = document.getElementById('seccion');
 
     var node_2 = document.createElement('SECTION');
@@ -248,8 +248,9 @@ function paginaProducto2(pos) {
     node_46.setAttribute('class', 'row gy-2 ');
     node_46.setAttribute('style','margin-top: auto');
     node_45.appendChild(node_46);
-
+    var posTiempo = 0;
     for(let i = 0;i < 5; i++){
+        
         var node_47 = document.createElement('DIV');
         if(i != 0){
             node_47.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
@@ -257,6 +258,7 @@ function paginaProducto2(pos) {
             node_47.setAttribute('class', 'margen aos-init aos-animate');
         }
         
+
         node_47.setAttribute('data-aos', 'fade-up');
         node_47.setAttribute('data-aos-delay', '200');
         node_46.appendChild(node_47);
@@ -265,23 +267,59 @@ function paginaProducto2(pos) {
         node_48.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
         node_47.appendChild(node_48);
     
-        var node_49 = document.createElement('H4');
+        var node_49 = document.createElement('H3');
         node_48.appendChild(node_49);
 
     
         var node_50 = document.createTextNode(new String(diasSemana[(fechaActual.getDay() + i) % diasSemana.length]));
         node_49.appendChild(node_50);
-    
+
+        var dia = document.createElement('h4');
+        var aux = fechaActual;
+        aux.setDate(fechaActual.getDate() + 1);
+        dia.innerText = aux.getDate()+" / "+(aux.getMonth() + 1)+" / "+aux.getFullYear();
+        node_48.appendChild(dia);
+
+        var icon;
+        if(i == 0){
+            icon = tiempo.list[0].weather[0].icon;
+            var month;
+            var day;
+            if(fechaActual.getMonth()+1 < 10){
+                month = "0"+(fechaActual.getMonth()+1);
+            }else{
+                month = (fechaActual.getMonth()+1);
+            }
+            if(fechaActual.getDate() < 10){
+                day = "0"+fechaActual.getDate();
+            }else{
+                day = fechaActual.getDate();
+            }
+
+            var hoy = fechaActual.getFullYear()+"-"+month+"-"+day;
+            
+        }else{
+            while(!h12h(tiempo.list[posTiempo].dt_txt)){
+                posTiempo++;
+            }
+            icon = tiempo.list[posTiempo].weather[0].icon;
+        }
+
         var node_51 = document.createElement('I');
-        node_51.setAttribute('class', 'bi bi-cloud-sun');
+        node_51.setAttribute('class', iconoTiempo(icon));
         node_51.setAttribute('style', 'color: #511f1f;');
         node_48.appendChild(node_51);
-    
         var node_52 = document.createElement('P');
         node_48.appendChild(node_52);
-    
-        var node_53 = document.createTextNode((new String("17ºC / 14ºC")));
+        var node_53 = document.createTextNode(Math.round(tiempo.list[posTiempo].main.temp_max)+" °C / "+Math.round(tiempo.list[posTiempo].main.temp_min)+" °C");
         node_52.appendChild(node_53);
+        if(i == 0){
+            while(tiempo.list[posTiempo].dt_txt.includes(hoy)){
+                posTiempo++;
+            }
+        }else{
+            posTiempo++;
+        }
     }
     var node_96 = document.createElement('SECTION');
     node_96.setAttribute('id', 'menu');
@@ -2481,6 +2519,10 @@ function weather(latitud, longitud) {
     } else {
         console.error(`Error ${request.status}: ${request.statusText}`);
     }
+}
+
+function h12h(cadena){
+    return cadena.includes("12:00:00");
 }
 
 function iconoTiempo(id){
