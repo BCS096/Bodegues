@@ -1,12 +1,21 @@
 var carrusel = null;
 var json = null;
 
+
 window.onload = function () {
     botonesNav(0);
     cargarJSON();
 }
 
 function paginaProducto2(pos) {
+    //dias de la semana
+    const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+    const fechaActual = new Date();
+    const diaActual = diasSemana[fechaActual.getDay()];
+
+
+    //cargar el tiempo
+    var tiempo = weather(json.itemListElement[pos].geo.latitude, json.itemListElement[pos].geo.longitude);
 
     var node_1 = document.getElementById('seccion');
 
@@ -25,13 +34,13 @@ function paginaProducto2(pos) {
 
     var node_5 = document.createElement('DIV');
     //node_5.setAttribute('class', 'col-sm order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start m-auto');
-    node_5.setAttribute('class','col-sm');
-    node_5.setAttribute('style',"align-self: center");
+    node_5.setAttribute('class', 'col-sm');
+    node_5.setAttribute('style', "align-self: center");
     node_4.appendChild(node_5);
 
     var node_6 = document.createElement('H2');
     node_6.setAttribute('data-aos', 'fade-up');
-    node_6.setAttribute('style','text-align-last: center');
+    node_6.setAttribute('style', 'text-align-last: center');
     node_6.setAttribute('class', 'aos-init aos-animate');
     node_5.appendChild(node_6);
 
@@ -104,7 +113,7 @@ function paginaProducto2(pos) {
     aux1.setAttribute('class', 'im aos-init aos-animate');
     aux1.setAttribute('data-aos', 'zoom-out');
     aux1.setAttribute('data-aos-delay', '300');
-    aux1.setAttribute('style','height: auto');
+    aux1.setAttribute('style', 'height: auto');
     contImg3.appendChild(aux1);
 
 
@@ -232,202 +241,48 @@ function paginaProducto2(pos) {
     node_43.appendChild(node_44);
 
     var node_45 = document.createElement('DIV');
-    node_45.setAttribute('class', 'col-lg-11 d-flex align-items-center margen aplicar-borde granate');
+    node_45.setAttribute('class', 'align-items-center margen aplicar-borde granate');
     node_40.appendChild(node_45);
 
     var node_46 = document.createElement('DIV');
     node_46.setAttribute('class', 'row gy-2 ');
+    node_46.setAttribute('style','margin-top: auto');
     node_45.appendChild(node_46);
 
-    var node_47 = document.createElement('DIV');
-    node_47.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
-    node_47.setAttribute('data-aos', 'fade-up');
-    node_47.setAttribute('data-aos-delay', '200');
-    node_46.appendChild(node_47);
+    for(let i = 0;i < 5; i++){
+        var node_47 = document.createElement('DIV');
+        if(i != 0){
+            node_47.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
+        }else{
+            node_47.setAttribute('class', 'margen aos-init aos-animate');
+        }
+        
+        node_47.setAttribute('data-aos', 'fade-up');
+        node_47.setAttribute('data-aos-delay', '200');
+        node_46.appendChild(node_47);
+    
+        var node_48 = document.createElement('DIV');
+        node_48.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
+        node_47.appendChild(node_48);
+    
+        var node_49 = document.createElement('H4');
+        node_48.appendChild(node_49);
 
-    var node_48 = document.createElement('DIV');
-    node_48.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
-    node_47.appendChild(node_48);
-
-    var node_49 = document.createElement('H4');
-    node_48.appendChild(node_49);
-
-    var node_50 = document.createTextNode((new String("Lunes")));
-    node_49.appendChild(node_50);
-
-    var node_51 = document.createElement('I');
-    node_51.setAttribute('class', 'bi bi-cloud-sun');
-    node_51.setAttribute('style', 'color: #511f1f;');
-    node_48.appendChild(node_51);
-
-    var node_52 = document.createElement('P');
-    node_48.appendChild(node_52);
-
-    var node_53 = document.createTextNode((new String("17ºC / 14ºC")));
-    node_52.appendChild(node_53);
-
-    var node_54 = document.createElement('DIV');
-    node_54.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
-    node_54.setAttribute('data-aos', 'fade-up');
-    node_54.setAttribute('data-aos-delay', '200');
-    node_46.appendChild(node_54);
-
-    var node_55 = document.createElement('DIV');
-    node_55.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
-    node_54.appendChild(node_55);
-
-    var node_56 = document.createElement('H4');
-    node_55.appendChild(node_56);
-
-    var node_57 = document.createTextNode((new String("Martes")));
-    node_56.appendChild(node_57);
-
-    var node_58 = document.createElement('I');
-    node_58.setAttribute('class', 'bi bi-cloud-sun');
-    node_58.setAttribute('style', 'color: #511f1f;');
-    node_55.appendChild(node_58);
-
-    var node_59 = document.createElement('P');
-    node_55.appendChild(node_59);
-
-    var node_60 = document.createTextNode((new String("17ºC / 14ºC")));
-    node_59.appendChild(node_60);
-
-    var node_61 = document.createElement('DIV');
-    node_61.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
-    node_61.setAttribute('data-aos', 'fade-up');
-    node_61.setAttribute('data-aos-delay', '200');
-    node_46.appendChild(node_61);
-
-    var node_62 = document.createElement('DIV');
-    node_62.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
-    node_61.appendChild(node_62);
-
-    var node_63 = document.createElement('H4');
-    node_62.appendChild(node_63);
-
-    var node_64 = document.createTextNode((new String("Miercoles")));
-    node_63.appendChild(node_64);
-
-    var node_65 = document.createElement('I');
-    node_65.setAttribute('class', 'bi bi-cloud-sun');
-    node_65.setAttribute('style', 'color: #511f1f;');
-    node_62.appendChild(node_65);
-
-    var node_66 = document.createElement('P');
-    node_62.appendChild(node_66);
-
-    var node_67 = document.createTextNode((new String("17ºC / 14ºC")));
-    node_66.appendChild(node_67);
-
-    var node_68 = document.createElement('DIV');
-    node_68.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
-    node_68.setAttribute('data-aos', 'fade-up');
-    node_68.setAttribute('data-aos-delay', '200');
-    node_46.appendChild(node_68);
-
-    var node_69 = document.createElement('DIV');
-    node_69.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
-    node_68.appendChild(node_69);
-
-    var node_70 = document.createElement('H4');
-    node_69.appendChild(node_70);
-
-    var node_71 = document.createTextNode((new String("Jueves")));
-    node_70.appendChild(node_71);
-
-    var node_72 = document.createElement('I');
-    node_72.setAttribute('class', 'bi bi-cloud-sun');
-    node_72.setAttribute('style', 'color: #511f1f;');
-    node_69.appendChild(node_72);
-
-    var node_73 = document.createElement('P');
-    node_69.appendChild(node_73);
-
-    var node_74 = document.createTextNode((new String("17ºC / 14ºC")));
-    node_73.appendChild(node_74);
-
-    var node_75 = document.createElement('DIV');
-    node_75.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
-    node_75.setAttribute('data-aos', 'fade-up');
-    node_75.setAttribute('data-aos-delay', '200');
-    node_46.appendChild(node_75);
-
-    var node_76 = document.createElement('DIV');
-    node_76.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
-    node_75.appendChild(node_76);
-
-    var node_77 = document.createElement('H4');
-    node_76.appendChild(node_77);
-
-    var node_78 = document.createTextNode((new String("Viernes")));
-    node_77.appendChild(node_78);
-
-    var node_79 = document.createElement('I');
-    node_79.setAttribute('class', 'bi bi-cloud-sun');
-    node_79.setAttribute('style', 'color: #511f1f;');
-    node_76.appendChild(node_79);
-
-    var node_80 = document.createElement('P');
-    node_76.appendChild(node_80);
-
-    var node_81 = document.createTextNode((new String("17ºC / 14ºC")));
-    node_80.appendChild(node_81);
-
-    var node_82 = document.createElement('DIV');
-    node_82.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
-    node_82.setAttribute('data-aos', 'fade-up');
-    node_82.setAttribute('data-aos-delay', '200');
-    node_46.appendChild(node_82);
-
-    var node_83 = document.createElement('DIV');
-    node_83.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
-    node_82.appendChild(node_83);
-
-    var node_84 = document.createElement('H4');
-    node_83.appendChild(node_84);
-
-    var node_85 = document.createTextNode((new String("Sábado")));
-    node_84.appendChild(node_85);
-
-    var node_86 = document.createElement('I');
-    node_86.setAttribute('class', 'bi bi-cloud-sun');
-    node_86.setAttribute('style', 'color: #511f1f;');
-    node_83.appendChild(node_86);
-
-    var node_87 = document.createElement('P');
-    node_83.appendChild(node_87);
-
-    var node_88 = document.createTextNode((new String("17ºC / 14ºC")));
-    node_87.appendChild(node_88);
-
-    var node_89 = document.createElement('DIV');
-    node_89.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
-    node_89.setAttribute('data-aos', 'fade-up');
-    node_89.setAttribute('data-aos-delay', '200');
-    node_46.appendChild(node_89);
-
-    var node_90 = document.createElement('DIV');
-    node_90.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
-    node_89.appendChild(node_90);
-
-    var node_91 = document.createElement('H4');
-    node_90.appendChild(node_91);
-
-    var node_92 = document.createTextNode((new String("Domingo")));
-    node_91.appendChild(node_92);
-
-    var node_93 = document.createElement('I');
-    node_93.setAttribute('class', 'bi bi-cloud-sun');
-    node_93.setAttribute('style', 'color: #511f1f;');
-    node_90.appendChild(node_93);
-
-    var node_94 = document.createElement('P');
-    node_90.appendChild(node_94);
-
-    var node_95 = document.createTextNode((new String("17ºC / 14ºC")));
-    node_94.appendChild(node_95);
-
+    
+        var node_50 = document.createTextNode(new String(diasSemana[(fechaActual.getDay() + i) % diasSemana.length]));
+        node_49.appendChild(node_50);
+    
+        var node_51 = document.createElement('I');
+        node_51.setAttribute('class', 'bi bi-cloud-sun');
+        node_51.setAttribute('style', 'color: #511f1f;');
+        node_48.appendChild(node_51);
+    
+        var node_52 = document.createElement('P');
+        node_48.appendChild(node_52);
+    
+        var node_53 = document.createTextNode((new String("17ºC / 14ºC")));
+        node_52.appendChild(node_53);
+    }
     var node_96 = document.createElement('SECTION');
     node_96.setAttribute('id', 'menu');
     node_96.setAttribute('class', 'menu');
@@ -1189,7 +1044,7 @@ function paginaProducto2(pos) {
 
         const contImgx = document.createElement('div');
         contImgx.className = "caja margen";
-    
+
         const contImg1x = document.createElement('div');
         contImg1x.className = "box1 tamañoImgProductoMenu";
 
@@ -2461,7 +2316,7 @@ function listadoMap() {
     moreInfoButton.className = 'add-to-cart margen';
     moreInfoButton.textContent = 'Más información';
     moreInfoButton.onclick = function () {
-        gestorVisionado(3,0);
+        gestorVisionado(3, 0);
     };
 
     const boton2 = document.createElement('button');
@@ -2597,6 +2452,8 @@ $(window).bind("load resize slid.bs.carousel", function () {
     console.log("Slid");
 });
 
+//Funcionalidades
+
 function cargarJSON() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", "json/Bodegas.json", false);
@@ -2610,3 +2467,51 @@ function cargarJSON() {
     xmlhttp.send();
 }
 
+
+function weather(latitud, longitud) {
+    const apiKey = "598a45ea6dd5cf5f91f03b503538d27e";
+    const url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitud + "&lon=" + longitud + "&appid=" + apiKey+"&units=metric&lang=es";
+    const request = new XMLHttpRequest();
+    request.open('GET', url, false);
+    request.send();
+    if (request.status === 200) {
+        const data = JSON.parse(request.responseText);
+        console.log(data);
+        return data;
+    } else {
+        console.error(`Error ${request.status}: ${request.statusText}`);
+    }
+}
+
+function iconoTiempo(id){
+    switch(id){
+        case "01d":
+        case "01n":
+            return "bi bi-brightness-high-fill";
+        case "02d":
+        case "02n":
+            return " bi bi-cloud-sun";
+        case "03d":
+        case "03n":
+            return "bi bi-cloud";
+        case "04d":
+        case "04n":
+            return "bi bi-clouds-fill";
+        case "09d":
+        case "09n":
+            return "bi bi-cloud-drizzle-fill";
+        case "10d":
+        case "10n":
+            return "fa-solid fa-cloud-sun-rain";
+        case "11d":
+        case "11n":
+            return "bi bi-cloud-lightning-rain-fill";
+        case "13d":
+        case "13n":
+            return "bi bi-snow";
+        case "50d":
+        case "50n":
+            return "bi bi-wind";
+
+    }
+}
