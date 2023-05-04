@@ -249,6 +249,7 @@ function paginaProducto2(pos) {
     node_46.setAttribute('style','margin-top: auto');
     node_45.appendChild(node_46);
     var posTiempo = 0;
+    var diaa = fechaActual.getDay();
     for(let i = 0;i < 5; i++){
         
         var node_47 = document.createElement('DIV');
@@ -270,8 +271,9 @@ function paginaProducto2(pos) {
         var node_49 = document.createElement('H3');
         node_48.appendChild(node_49);
 
-    
-        var node_50 = document.createTextNode(new String(diasSemana[(fechaActual.getDay() + i) % diasSemana.length]));
+
+        console.log((diaa + i)% 7);
+        var node_50 = document.createTextNode(new String(diasSemana[(diaa + i) % 7]));
         node_49.appendChild(node_50);
 
         var dia = document.createElement('h4');
@@ -535,14 +537,14 @@ function paginaProducto2(pos) {
         var node_155 = document.createElement('H4');
         node_152.appendChild(node_155);
 
-        var node_156 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].name);
+        var node_156 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].name);
         node_155.appendChild(node_156);
 
         var node_157 = document.createElement('P');
         node_157.setAttribute('class', 'ingredients');
         node_152.appendChild(node_157);
 
-        var node_158 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].description);
+        var node_158 = document.createTextNode(json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].description);
         node_157.appendChild(node_158);
 
         var node_159 = document.createElement('P');
