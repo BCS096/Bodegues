@@ -246,62 +246,62 @@ function paginaProducto2(pos) {
 
     var node_46 = document.createElement('DIV');
     node_46.setAttribute('class', 'row gy-2 ');
-    node_46.setAttribute('style','margin-top: auto');
+    node_46.setAttribute('style', 'margin-top: auto');
     node_45.appendChild(node_46);
     var posTiempo = 0;
     var diaa = fechaActual.getDay();
-    for(let i = 0;i < 5; i++){
-        
+    for (let i = 0; i < 5; i++) {
+
         var node_47 = document.createElement('DIV');
-        if(i != 0){
+        if (i != 0) {
             node_47.setAttribute('class', 'col-xl-3 margen aos-init aos-animate');
-        }else{
+        } else {
             node_47.setAttribute('class', 'margen aos-init aos-animate');
         }
-        
+
 
         node_47.setAttribute('data-aos', 'fade-up');
         node_47.setAttribute('data-aos-delay', '200');
         node_46.appendChild(node_47);
-    
+
         var node_48 = document.createElement('DIV');
         node_48.setAttribute('class', 'icon-box d-flex flex-column justify-content-center align-items-center');
         node_47.appendChild(node_48);
-    
+
         var node_49 = document.createElement('H3');
         node_48.appendChild(node_49);
 
 
-        console.log((diaa + i)% 7);
+        console.log((diaa + i) % 7);
         var node_50 = document.createTextNode(new String(diasSemana[(diaa + i) % 7]));
         node_49.appendChild(node_50);
 
         var dia = document.createElement('h4');
         var aux = fechaActual;
-        aux.setDate(fechaActual.getDate() + 1);
-        dia.innerText = aux.getDate()+" / "+(aux.getMonth() + 1)+" / "+aux.getFullYear();
+        if (i != 0) { aux.setDate(fechaActual.getDate() + 1); }
+        dia.innerText = aux.getDate() + " / " + (aux.getMonth() + 1) + " / " + aux.getFullYear();
         node_48.appendChild(dia);
 
         var icon;
-        if(i == 0){
+        if (i == 0) {
             icon = tiempo.list[0].weather[0].icon;
             var month;
             var day;
-            if(fechaActual.getMonth()+1 < 10){
-                month = "0"+(fechaActual.getMonth()+1);
-            }else{
-                month = (fechaActual.getMonth()+1);
+            if (fechaActual.getMonth() + 1 < 10) {
+                month = "0" + (fechaActual.getMonth() + 1);
+            } else {
+                month = (fechaActual.getMonth() + 1);
             }
-            if(fechaActual.getDate() < 10){
-                day = "0"+fechaActual.getDate();
-            }else{
+            if (fechaActual.getDate() < 10) {
+                day = "0" + fechaActual.getDate();
+            } else {
                 day = fechaActual.getDate();
             }
 
-            var hoy = fechaActual.getFullYear()+"-"+month+"-"+day;
-            
-        }else{
-            while(!h12h(tiempo.list[posTiempo].dt_txt)){
+            var hoy = fechaActual.getFullYear() + "-" + month + "-" + day;
+
+        } else {
+            while (!h12h(tiempo.list[posTiempo].dt_txt)) {
                 posTiempo++;
             }
             icon = tiempo.list[posTiempo].weather[0].icon;
@@ -313,13 +313,13 @@ function paginaProducto2(pos) {
         node_48.appendChild(node_51);
         var node_52 = document.createElement('P');
         node_48.appendChild(node_52);
-        var node_53 = document.createTextNode(Math.round(tiempo.list[posTiempo].main.temp_max)+" °C / "+Math.round(tiempo.list[posTiempo].main.temp_min)+" °C");
+        var node_53 = document.createTextNode(Math.round(tiempo.list[posTiempo].main.temp_max) + " °C / " + Math.round(tiempo.list[posTiempo].main.temp_min) + " °C");
         node_52.appendChild(node_53);
-        if(i == 0){
-            while(tiempo.list[posTiempo].dt_txt.includes(hoy)){
+        if (i == 0) {
+            while (tiempo.list[posTiempo].dt_txt.includes(hoy)) {
                 posTiempo++;
             }
-        }else{
+        } else {
             posTiempo++;
         }
     }
@@ -419,7 +419,7 @@ function paginaProducto2(pos) {
     node_115.appendChild(node_116);
 
     var node_117 = document.createElement('DIV');
-    node_117.setAttribute('class', 'tab-content aos-init aos-animate');
+    node_117.setAttribute('class', 'tab-content aos-init aos-animate granate aplicar-borde margen');
     node_117.setAttribute('data-aos', 'fade-up');
     node_117.setAttribute('data-aos-delay', '300');
     node_97.appendChild(node_117);
@@ -441,7 +441,7 @@ function paginaProducto2(pos) {
     node_120.appendChild(node_121);
 
     var node_122 = document.createElement('DIV');
-    node_122.setAttribute('class', 'row gy-5');
+    node_122.setAttribute('class', 'row gy-5 margen');
     node_118.appendChild(node_122);
 
     for (let i = 0; i < json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem.length; i++) {
@@ -457,6 +457,7 @@ function paginaProducto2(pos) {
 
         const contImg = document.createElement('div');
         contImg.className = "caja margen";
+        contImg.setAttribute('style', 'margin : 25px');
 
         const contImg1 = document.createElement('div');
         contImg1.className = "box1 tamañoImgProductoVinos";
@@ -522,6 +523,7 @@ function paginaProducto2(pos) {
 
         const contImg = document.createElement('div');
         contImg.className = "caja margen";
+        contImg.setAttribute('style', 'margin : 25px');
 
         const contImg1 = document.createElement('div');
         contImg1.className = "box1 tamañoImgProductoVinos";
@@ -588,6 +590,7 @@ function paginaProducto2(pos) {
 
         const contImg = document.createElement('div');
         contImg.className = "caja margen";
+        contImg.setAttribute('style', 'margin : 25px');
 
         const contImg1 = document.createElement('div');
         contImg1.className = "box1 tamañoImgProductoVinos";
@@ -1711,6 +1714,251 @@ function paginaPrincipal() {
     }
 }
 
+function aboutUs() {
+
+    var node_1 = document.createElement('SECTION');
+    node_1.setAttribute('class', 'section about-section gray-bg');
+    node_1.setAttribute('id', 'about');
+
+    var node_2 = document.createElement('DIV');
+    node_2.setAttribute('class', 'container granate aplicar-borde margen');
+    node_1.appendChild(node_2);
+
+    var node_3 = document.createElement('DIV');
+    node_3.setAttribute('class', 'container');
+    node_2.appendChild(node_3);
+
+    var node_4 = document.createElement('DIV');
+    node_4.setAttribute('class', 'row align-items-center flex-row-reverse');
+    node_3.appendChild(node_4);
+
+    var node_5 = document.createElement('DIV');
+    node_5.setAttribute('class', 'col-lg-6');
+    node_4.appendChild(node_5);
+
+    var node_6 = document.createElement('DIV');
+    node_6.setAttribute('class', 'about-text go-to margen bg-white aplicar-borde');
+    node_5.appendChild(node_6);
+
+    var node_7 = document.createElement('DIV');
+    node_7.setAttribute('style', 'text-align: center;');
+    node_6.appendChild(node_7);
+
+    var node_8 = document.createElement('H3');
+    node_7.appendChild(node_8);
+
+    var node_9 = document.createElement('H6');
+    node_9.setAttribute('class', 'lead');
+    node_7.appendChild(node_9);
+
+    var node_10 = document.createTextNode((new String("Equipo")));
+    node_9.appendChild(node_10);
+
+    var node_11 = document.createElement('P');
+    node_7.appendChild(node_11);
+
+    var node_12 = document.createTextNode((new String("Esta webApp pertenece a la elaboración de la práctica de Tecnología Multimedia de la\\n                                Universidad de las Islas Baleares.\\n                                Este equipo está formado por un solo integrante que ha llevado a cabo toda la\\n                                implementación de la webApp en honor a\\n                                todas las bodegas de alta cualidad que habitan en la isla de Mallorca. ")));
+    node_11.appendChild(node_12);
+
+    var node_13 = document.createElement('DIV');
+    node_13.setAttribute('class', 'row about-list');
+    node_7.appendChild(node_13);
+
+    var node_14 = document.createElement('DIV');
+    node_14.setAttribute('class', 'col-md-6');
+    node_13.appendChild(node_14);
+
+    var node_15 = document.createElement('DIV');
+    node_15.setAttribute('class', 'media');
+    node_14.appendChild(node_15);
+
+    var node_16 = document.createElement('LABEL');
+    node_15.appendChild(node_16);
+
+    var node_17 = document.createTextNode((new String("Age")));
+    node_16.appendChild(node_17);
+
+    var node_18 = document.createElement('P');
+    node_15.appendChild(node_18);
+
+    var node_19 = document.createTextNode((new String("23 años")));
+    node_18.appendChild(node_19);
+
+    var node_20 = document.createElement('DIV');
+    node_20.setAttribute('class', 'media');
+    node_14.appendChild(node_20);
+
+    var node_21 = document.createElement('LABEL');
+    node_20.appendChild(node_21);
+
+    var node_22 = document.createTextNode((new String("Residencia")));
+    node_21.appendChild(node_22);
+
+    var node_23 = document.createElement('P');
+    node_20.appendChild(node_23);
+
+    var node_24 = document.createTextNode((new String("Mallorca")));
+    node_23.appendChild(node_24);
+
+    var node_25 = document.createElement('DIV');
+    node_25.setAttribute('class', 'media');
+    node_14.appendChild(node_25);
+
+    var node_26 = document.createElement('LABEL');
+    node_25.appendChild(node_26);
+
+    var node_27 = document.createTextNode((new String("Dirección")));
+    node_26.appendChild(node_27);
+
+    var node_28 = document.createElement('P');
+    node_25.appendChild(node_28);
+
+    var node_29 = document.createTextNode((new String("Pollensa, ES")));
+    node_28.appendChild(node_29);
+
+    var node_30 = document.createElement('DIV');
+    node_30.setAttribute('class', 'col-md-6');
+    node_13.appendChild(node_30);
+
+    var node_31 = document.createElement('DIV');
+    node_31.setAttribute('class', 'media');
+    node_30.appendChild(node_31);
+
+    var node_32 = document.createElement('LABEL');
+    node_31.appendChild(node_32);
+
+    var node_33 = document.createTextNode((new String("E-mail")));
+    node_32.appendChild(node_33);
+
+    var node_34 = document.createElement('P');
+    node_31.appendChild(node_34);
+
+    var node_35 = document.createTextNode((new String("bartomeu.capo2@estudiant.uib.cat")));
+    node_34.appendChild(node_35);
+
+    var node_36 = document.createElement('DIV');
+    node_36.setAttribute('class', 'media');
+    node_30.appendChild(node_36);
+
+    var node_37 = document.createElement('LABEL');
+    node_36.appendChild(node_37);
+
+    var node_38 = document.createTextNode((new String("Telefono")));
+    node_37.appendChild(node_38);
+
+    var node_39 = document.createElement('P');
+    node_36.appendChild(node_39);
+
+    var node_40 = document.createTextNode((new String("638 346 523")));
+    node_39.appendChild(node_40);
+
+    var node_41 = document.createElement('DIV');
+    node_41.setAttribute('class', 'col-lg-4 col-sm-6 col-xs-12 wow fadeInUp');
+    node_41.setAttribute('data-wow-duration', '1s');
+    node_41.setAttribute('data-wow-delay', '0.2s');
+    node_41.setAttribute('data-wow-offset', '0');
+    node_41.setAttribute('style', ' margin-right: 100px; visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;');
+    node_4.appendChild(node_41);
+
+    var node_42 = document.createElement('DIV');
+    node_42.setAttribute('class', 'our-team');
+    node_41.appendChild(node_42);
+
+    var node_43 = document.createElement('IMG');
+    node_43.setAttribute('src', 'img/profile.jpg');
+    node_43.setAttribute('alt', 'Bartomeu Capó Salas');
+    node_42.appendChild(node_43);
+
+    var node_44 = document.createElement('DIV');
+    node_44.setAttribute('class', 'team-content');
+    node_42.appendChild(node_44);
+
+    var node_45 = document.createElement('H3');
+    node_45.setAttribute('class', 'title');
+    node_44.appendChild(node_45);
+
+    var node_46 = document.createTextNode((new String("Bartomeu Capó Salas")));
+    node_45.appendChild(node_46);
+
+    var node_47 = document.createElement('SPAN');
+    node_47.setAttribute('class', 'post');
+    node_44.appendChild(node_47);
+
+    var node_48 = document.createTextNode((new String("Developer")));
+    node_47.appendChild(node_48);
+
+    var node_49 = document.createElement('BR');
+    node_3.appendChild(node_49);
+
+    var node_50 = document.createElement('DIV');
+    node_50.setAttribute('class', 'row');
+    node_2.appendChild(node_50);
+
+    var node_51 = document.createElement('DIV');
+    node_51.setAttribute('class', 'col container');
+    node_50.appendChild(node_51);
+
+    var node_52 = document.createElement('DIV');
+    node_52.setAttribute('class', 'col');
+    node_52.setAttribute('style', 'text-align: right');
+    node_51.appendChild(node_52);
+
+    var node_53 = document.createElement('DIV');
+    node_53.setAttribute('class', 'ibox float-e-margins');
+    node_52.appendChild(node_53);
+
+    var node_54 = document.createElement('DIV');
+    node_54.setAttribute('class', 'ibox-title margen');
+    node_53.appendChild(node_54);
+
+    var node_55 = document.createElement('DIV');
+    node_55.setAttribute('class', 'ibox-content');
+    node_53.appendChild(node_55);
+
+    var node_56 = document.createElement('FIGURE');
+    node_55.appendChild(node_56);
+
+    var node_57 = document.createElement('IFRAME');
+    node_57.setAttribute('src', 'https://www.youtube.com/embed/ESXgJ9-H-2U');
+    node_57.setAttribute('frameborder', '0');
+    node_57.setAttribute('allowfullscreen', '');
+    node_57.setAttribute('data-aspectratio', '0.8211764705882353');
+    node_57.setAttribute('style', 'width: 523px; height: 429.475px;');
+    node_56.appendChild(node_57);
+
+    var node_58 = document.createElement('DIV');
+    node_58.setAttribute('class', 'col container');
+    node_50.appendChild(node_58);
+
+    var node_59 = document.createElement('DIV');
+    node_59.setAttribute('class', 'col');
+    node_58.appendChild(node_59);
+
+    var node_60 = document.createElement('DIV');
+    node_60.setAttribute('class', 'ibox float-e-margins');
+    node_59.appendChild(node_60);
+
+    var node_61 = document.createElement('DIV');
+    node_61.setAttribute('class', 'ibox-title margen');
+    node_60.appendChild(node_61);
+
+    var node_62 = document.createElement('DIV');
+    node_62.setAttribute('class', 'ibox-content');
+    node_60.appendChild(node_62);
+
+    var node_63 = document.createElement('FIGURE');
+    node_62.appendChild(node_63);
+
+    var node_64 = document.createElement('IFRAME');
+    node_64.setAttribute('src', 'https://www.youtube.com/embed/ESXgJ9-H-2U');
+    node_64.setAttribute('frameborder', '0');
+    node_64.setAttribute('allowfullscreen', '');
+    node_64.setAttribute('data-aspectratio', '0.8211764705882353');
+    node_64.setAttribute('style', 'width: 523px; height: 429.475px;');
+    node_63.appendChild(node_64);
+
+}
+
 function listadoCardXL() {
     const dad = document.getElementById("seccion");
     const container1 = document.createElement("div");
@@ -2510,7 +2758,7 @@ function cargarJSON() {
 
 function weather(latitud, longitud) {
     const apiKey = "598a45ea6dd5cf5f91f03b503538d27e";
-    const url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitud + "&lon=" + longitud + "&appid=" + apiKey+"&units=metric&lang=es";
+    const url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitud + "&lon=" + longitud + "&appid=" + apiKey + "&units=metric&lang=es";
     const request = new XMLHttpRequest();
     request.open('GET', url, false);
     request.send();
@@ -2523,12 +2771,12 @@ function weather(latitud, longitud) {
     }
 }
 
-function h12h(cadena){
+function h12h(cadena) {
     return cadena.includes("12:00:00");
 }
 
-function iconoTiempo(id){
-    switch(id){
+function iconoTiempo(id) {
+    switch (id) {
         case "01d":
         case "01n":
             return "bi bi-brightness-high-fill";
