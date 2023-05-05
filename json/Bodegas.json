@@ -367,6 +367,257 @@
                 "https://media-cdn.tripadvisor.com/media/photo-f/07/0f/b0/c6/bodegues-macia-batle.jpg"
             ],
             "url": "https://www.maciabatle.com"
+        },
+        {
+            "@type": "Winery",
+            "name": "Vi Rei",
+            "description": "La bodega fue fundada en el año 2014 por el conocido arquitecto mallorquín Rafael Munar quien aposta por la integración de la arquitectura en el paisaje mediterráneo. La bodega fue fundada con un claro objetivo: la producción de vinos de alta calidad, introduciendo la última tecnología aplicada a la vinificación.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Llucmajor",
+                "postalCode": "07620",
+                "streetAddress": "Ctra. Cap Blanc, km 25"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "Bodegas Vi Rei",
+                        "contentUrl":"https://www.youtube.com/watch?v=h0_D4nzV4JU"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "Vendimia Vi Rei",
+                        "contentUrl": "https://www.youtube.com/watch?v=QwCjUchQtUE"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sa Marineta",
+                                "description": "Variadades: Manto Negro, Callet y Merlot. Con 14% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2022/11/SA_MARINETA_RED.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "5.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Caçador Mallorquí",
+                                "description": "Variedades: Callet y Manto Negro. Con 13,5% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2022/04/casadorMallorqui.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Crianza",
+                                "description": "Variedades: Merlot. Con 14% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2021/12/Vi-Rei-Crianza-2019.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Mollusca",
+                                "description": "Variedades: Cabernet Sauvignon, Callet, Manto Negro, Merlot, Syrah. Con 13.5% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2019/10/Virei-moluscaTinto.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "5.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Merlot",
+                                "description": "Variedades: Merlot. Con 14% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2019/10/Virei-merlot2017.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "8.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Es Pop",
+                                "description": "Variadades: Manto Negro, Callet. Con 13% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2023/03/esBlue.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sa Marineta",
+                                "description": "Variedades: Giro Ros, Malvasía, Sauvignon Blanc. Con 13% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2022/11/SA_MARINETA_B.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "5.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Malvasia Fermentado en Barrica",
+                                "description": "Variedades: Malvasía. Con 12% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2022/04/VI_REI_MALVASIA_FERMENTADO_EN_BARRICA.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "25.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Pescador Mallorquí",
+                                "description": "Variedades: Prensal Blanc y Giro Ros. Con 13,5% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2022/04/PescadorBordelesa.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Malvasía Dolç",
+                                "description": "Variedades: Malvasía. Con 12% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2019/10/MalvasiaDolc.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sauvignon Blanc Fermentado en Barrica",
+                                "description": "Variedades: Sauvignon Blanc. Con 13.5% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2020/05/Sauvignon-Fermentado-en-Barrica-2.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Mollusca",
+                                "description": "Variedades: Chardonnay, Giro Ros, Malvasía, Sauvignon Blanc. Con 13.5% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2019/10/molusc_blanc-1.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "5.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sa Marineta",
+                                "description": "Variedades: Giro Ros, Callet, Malvasía, Manto Negro, Merlot, Sauvignon Blanc, Syrah. Con 13% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2022/11/SA_MARINETA_ROSA.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "5.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Mollusca",
+                                "description": "Variedades: Manto Negro, Cabernet Sauvignon, Callet, Merlot y Syrah. Con 13,5% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2019/10/molusc_rosa-1.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "5.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Syrah Rose",
+                                "description": "Variedades: Syrah. Con 13% de alcohol.",
+                                "image": "https://bodegasvirei.com/wp-content/uploads/2019/10/SyrahRose.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 01:00-18:00",
+            "telephone": "971007460",
+            "isAccessibleForFree": false,
+            "email": "info@bodegasvirei.com",
+            "logo": "https://bodegasvirei.com/wp-content/uploads/2019/10/BVR_SELLO.svg",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.394645942720516,
+                "longitude" : 2.841668999984946
+            },
+            "image": [
+                "https://bodegasvirei.com/wp-content/uploads/elementor/thumbs/ViRei_Catas-q0a8r0uymgxk9vb7ya2niu247owk750yvx0cgcrsm8.jpg",
+                "https://bodegasvirei.com/wp-content/uploads/elementor/thumbs/Trenecito_visita_guiada_y_cata_de_vinos-q0a8r1sstayulh9ussha3btkt2rxeu4p81ntxmqeg0.jpg",
+                "https://bodegasvirei.com/wp-content/uploads/2022/11/61abcc6f8320ee8ebfb2e553fbe62a3b-xxlarge-1.jpg",
+                "https://bodegasvirei.com/wp-content/uploads/elementor/thumbs/Paamboli-q0a8r0uymgxk9vb7ya2niu247owk750yvx0cgcrsm8.jpg",
+                "https://bodegasvirei.com/wp-content/uploads/2023/03/O7A8774.jpg",
+                "https://bodegasvirei.com/wp-content/uploads/elementor/thumbs/Picnic-q0a8r0uymgxk9vb7ya2niu247owk750yvx0cgcrsm8.jpg",
+                "https://bodegasvirei.com/wp-content/uploads/elementor/thumbs/vinedo_virei-q0a8r0uymgxk9vb7ya2niu247owk750yvx0cgcrsm8.jpg",
+                "https://bodegasvirei.com/wp-content/uploads/elementor/thumbs/Bodas-q0a8r1sstayulh9ussha3btkt2rxeu4p81ntxmqeg0.jpg"
+
+            ],
+            "url": "https://bodegasvirei.com/"
         }
     ]
 }
