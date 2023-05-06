@@ -57,22 +57,71 @@ function paginaProducto2(pos) {
     node_10.setAttribute('class', 'd-flex aos-init aos-animate');
     node_10.setAttribute('data-aos', 'fade-up');
     node_10.setAttribute('data-aos-delay', '200');
+    node_10.setAttribute('style','justify-content: center');
     node_5.appendChild(node_10);
 
-    var node_11 = document.createElement('A');
-    node_11.setAttribute('href', json.itemListElement[pos].subjectOf.video[0].contentUrl);
-    node_11.setAttribute('class', 'glightbox btn-watch-video d-flex align-items-center m-auto');
-    node_10.appendChild(node_11);
+    //modal
 
-    var node_12 = document.createElement('I');
-    node_12.setAttribute('class', 'bi bi-play-circle');
-    node_11.appendChild(node_12);
+    var button_1 = document.createElement('BUTTON');
+    button_1.setAttribute('id', 'abrirModal');
+    button_1.setAttribute('class', 'btn btn-danger');
 
-    var node_13 = document.createElement('SPAN');
-    node_11.appendChild(node_13);
+    var button_2 = document.createTextNode((new String("Ver Video")));
+    button_1.appendChild(button_2);
 
-    var node_14 = document.createTextNode((new String("Ver video")));
-    node_13.appendChild(node_14);
+    var button_3 = document.createElement('DIV');
+    button_3.setAttribute('id', 'ventanaModal');
+    button_3.setAttribute('class', 'modal');
+
+    var button_4 = document.createElement('DIV');
+    button_4.setAttribute('class', 'contenido-modal aplicar-borde margen');
+    button_4.setAttribute('style','text-align-last: center; background-color: #6a1a21');
+    button_3.appendChild(button_4);
+
+    var button_5 = document.createElement('SPAN');
+    button_5.setAttribute('class', 'cerrar');
+    button_4.appendChild(button_5);
+
+    var button_6 = document.createElement('IFRAME');
+    button_6.setAttribute('width', '800');
+    button_6.setAttribute('height', '500');
+    button_6.setAttribute('src', json.itemListElement[pos].subjectOf.video[0].contentUrl);
+    button_6.setAttribute('title', 'YouTube video player');
+    button_6.setAttribute('frameborder', '0');
+    button_6.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    button_6.setAttribute('allowfullscreen', '');
+    button_4.appendChild(button_6);
+
+    node_10.appendChild(button_1);
+
+    document.getElementById('cuerpo').appendChild(button_3);
+
+
+    // Ventana modal
+    var modal = document.getElementById("ventanaModal");
+
+    // Botón que abre el modal
+    var boton = document.getElementById("abrirModal");
+
+    // Hace referencia al elemento <span> que tiene la X que cierra la ventana
+    var span = document.getElementsByClassName("cerrar")[0];
+
+    // Cuando el usuario hace click en el botón, se abre la ventana
+    boton.addEventListener("click", function () {
+        modal.style.display = "block";
+    });
+
+    // Si el usuario hace click en la x, la ventana se cierra
+    span.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    // Si el usuario hace click fuera de la ventana, se cierra.
+    window.addEventListener("click", function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    });
 
     var node_15 = document.createElement('DIV');
     node_15.setAttribute('class', 'col-sm margen  text-lg-start');
@@ -194,24 +243,16 @@ function paginaProducto2(pos) {
     node_35.setAttribute('class', 'position-relative mt-4 margen');
     node_32.appendChild(node_35);
 
-    const contImg2x = document.createElement('div');
-    contImg2x.className = "caja margen";
-
-    const contImg3x = document.createElement('div');
-    contImg3x.className = "box1 tamañoImgProductoDescripcion";
-
-    var node_36 = document.createElement('IMG');
-    node_36.setAttribute('src', json.itemListElement[pos].image[6]);
-    node_36.setAttribute('class', 'img-fluid');
-    node_36.setAttribute('alt', '');
-    contImg3x.appendChild(node_36);
-    contImg2x.appendChild(contImg3x);
-    node_35.appendChild(contImg2x);
-
-    var node_37 = document.createElement('A');
-    node_37.setAttribute('href', json.itemListElement[pos].subjectOf.video[1].contentUrl);
-    node_37.setAttribute('class', 'glightbox play-btn');
-    node_35.appendChild(node_37);
+    var video_1 = document.createElement('IFRAME');
+    video_1.setAttribute('width', '450');
+    video_1.setAttribute('height', '350');
+    video_1.setAttribute('src', json.itemListElement[pos].subjectOf.video[1].contentUrl);
+    video_1.setAttribute('title', 'YouTube video player');
+    video_1.setAttribute('frameborder', '1');
+    video_1.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    video_1.setAttribute('allowfullscreen', '');
+    video_1.setAttribute('controls', '2');
+    node_35.appendChild(video_1);
 
     var node_38 = document.createElement('SECTION');
     node_38.setAttribute('id', 'weather');
@@ -1602,7 +1643,7 @@ function botonesNav(navState) {
 
     var ul = document.createElement('ul');
     ul.setAttribute('id', 'ul-nav');
-    ul.setAttribute('style','margin-right: 100px');
+    ul.setAttribute('style', 'margin-right: 100px');
     switch (navState) {
         case 0:
             var busqueda = document.createElement('li');
@@ -1649,7 +1690,7 @@ function botonesNav(navState) {
             var node_1 = document.createElement('LI');
             var node_2 = document.createElement('A');
             node_2.setAttribute('href', '#hero');
-            node_2.setAttribute('style','color:white');
+            node_2.setAttribute('style', 'color:white');
             node_1.appendChild(node_2);
             var node_3 = document.createTextNode((new String("Inicio")));
             node_2.appendChild(node_3);
@@ -1657,7 +1698,7 @@ function botonesNav(navState) {
             var node_4 = document.createElement('LI');
             var node_5 = document.createElement('A');
             node_5.setAttribute('href', '#about');
-            node_5.setAttribute('style','color:white');
+            node_5.setAttribute('style', 'color:white');
             node_4.appendChild(node_5);
             var node_6 = document.createTextNode((new String("Descripción")));
             node_5.appendChild(node_6);
@@ -1665,7 +1706,7 @@ function botonesNav(navState) {
             var node_7 = document.createElement('LI');
             var node_8 = document.createElement('A');
             node_8.setAttribute('href', '#weather');
-            node_8.setAttribute('style','color:white');
+            node_8.setAttribute('style', 'color:white');
             node_7.appendChild(node_8);
             var node_9 = document.createTextNode((new String("Tiempo")));
             node_8.appendChild(node_9);
@@ -1673,7 +1714,7 @@ function botonesNav(navState) {
             var node_10 = document.createElement('LI');
             var node_11 = document.createElement('A');
             node_11.setAttribute('href', '#menu');
-            node_11.setAttribute('style','color:white');
+            node_11.setAttribute('style', 'color:white');
             node_10.appendChild(node_11);
             var node_12 = document.createTextNode((new String("Vinos")));
             node_11.appendChild(node_12);
@@ -1681,7 +1722,7 @@ function botonesNav(navState) {
             var node_19 = document.createElement('LI');
             var node_20 = document.createElement('A');
             node_20.setAttribute('href', '#gallery');
-            node_20.setAttribute('style','color:white');
+            node_20.setAttribute('style', 'color:white');
             node_19.appendChild(node_20);
             var node_21 = document.createTextNode((new String("Fotos")));
             node_20.appendChild(node_21);
@@ -1689,8 +1730,8 @@ function botonesNav(navState) {
             var node_22 = document.createElement('LI');
             var node_23 = document.createElement('A');
             node_23.setAttribute('href', '#contact');
-            node_23.setAttribute('style','color:white');
-            node_22.setAttribute('style','margin-right: 25px');
+            node_23.setAttribute('style', 'color:white');
+            node_22.setAttribute('style', 'margin-right: 25px');
             node_22.appendChild(node_23);
             var node_24 = document.createTextNode((new String("Contacto")));
             node_23.appendChild(node_24);
@@ -1706,9 +1747,6 @@ function botonesNav(navState) {
             document.getElementById('navbar').appendChild(ul1);
             break;
     }
-    
-    
-
     const icono = document.getElementById("icono");
     icono.onclick = function () {
         paginaPrincipal();
@@ -2216,6 +2254,20 @@ function listadoCardXL() {
         containerDiv.appendChild(customScrollbarDiv);
         colSmDiv.appendChild(containerDiv);
 
+        var openDiv = document.createElement('div');
+        colSmDiv.appendChild(openDiv);
+
+        var open = document.createElement('p');
+        if (estaAbierto(json.itemListElement[i].openingHours)) {
+            open.innerText = 'Abierto ahora';
+            open.setAttribute('style', 'color: #37eb05');
+        } else {
+            open.innerText = 'Cerrado ahora';
+            open.setAttribute('style', 'color: #da1616');
+        }
+
+        openDiv.appendChild(open);
+
         const moreInfoButton = document.createElement('button');
         moreInfoButton.className = 'add-to-cart margen';
         moreInfoButton.textContent = 'Más información';
@@ -2320,11 +2372,15 @@ function listadoCard() {
         desc.className = "small text-muted font-italic";
         desc.innerText = json.itemListElement[i].address.streetAddress + " " + json.itemListElement[i].address.postalCode + " " + json.itemListElement[i].address.addressRegion + ", " + json.itemListElement[i].address.addressLocality;
 
-
-        //calcularlo
         const open = document.createElement('p');
-        open.className = "small text-muted font-italic";
-        open.innerText = "Abierto ahora";
+        open.className = "small  font-italic";
+        if (estaAbierto(json.itemListElement[i].openingHours)) {
+            open.innerText = 'Abierto ahora';
+            open.setAttribute('style', 'color: #37eb05');
+        } else {
+            open.innerText = 'Cerrado ahora';
+            open.setAttribute('style', 'color: #da1616');
+        }
 
         const starsOut = document.createElement('div');
         starsOut.className = "stars-outer";
@@ -2375,6 +2431,7 @@ function listadoCard() {
 }
 
 //funcion buscar a través del mapa
+//pensar que no está conectado al JSON
 function listadoMap() {
     const dad = document.getElementById('seccion');
     const container = document.createElement('div');
@@ -2759,6 +2816,7 @@ $(window).bind("load resize slid.bs.carousel", function () {
 
 //Funcionalidades
 
+//carga de JSON's
 function cargarJSON() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", "json/Bodegas.json", false);
@@ -2772,7 +2830,7 @@ function cargarJSON() {
     xmlhttp.send();
 }
 
-
+//Funcionalidad del tiempo
 function weather(latitud, longitud) {
     const apiKey = "598a45ea6dd5cf5f91f03b503538d27e";
     const url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitud + "&lon=" + longitud + "&appid=" + apiKey + "&units=metric&lang=es";
@@ -2823,4 +2881,42 @@ function iconoTiempo(id) {
             return "bi bi-wind";
 
     }
+}
+
+//Funcionalidad de 'Está Abierto'
+function estaAbierto(horario) {
+    const semana = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+    var fechaActual = new Date();
+    var diaSemana = semana[fechaActual.getDay() - 1];
+    var horaActual = fechaActual.getHours();
+    var minutosActual = fechaActual.getMinutes();
+    if (horario.includes(diaSemana)) {
+        var horaApertura = obtenerHora(horario.split(' ')[1].split('-')[0]);
+        var minutosApertura = obtenerMinutos(horario.split(' ')[1].split('-')[0]);
+        var horaCierre = obtenerHora(horario.split(' ')[1].split('-')[1]);
+        var minutosCierre = obtenerMinutos(horario.split(' ')[1].split('-')[1]);
+
+        if (horaActual > horaApertura && horaActual < horaCierre) {
+            return true;
+        } else if (horaActual === horaApertura && minutosActual >= minutosApertura) {
+            if (horaActual === horaCierre && minutosActual >= minutosCierre) {
+                return false;
+            }
+            return true;
+        } else if (horaActual === horaCierre && minutosActual <= minutosCierre) {
+            if (horaActual === horaApertura && minutosActual < minutosApertura) {
+                return false;
+            }
+            return true;
+        }
+    }
+    return false;
+}
+
+function obtenerHora(hora) {
+    return parseInt(hora.split(':')[0]);
+}
+
+function obtenerMinutos(hora) {
+    return parseInt(hora.split(':')[1]);
 }
