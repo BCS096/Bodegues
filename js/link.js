@@ -1593,13 +1593,16 @@ function filtrado2() {
 }
 
 function botonesNav(navState) {
-    var navAux = document.getElementById('ul-nav');
+
     if (document.getElementById('navbar').hasChildNodes()) {
-        document.getElementById('navbar').removeChild(navAux); // borramos los botones
+        while (document.getElementById('navbar').childNodes.length >= 1) {
+            document.getElementById('navbar').removeChild(document.getElementById('navbar').firstChild);
+        }
     }
 
     var ul = document.createElement('ul');
     ul.setAttribute('id', 'ul-nav');
+    ul.setAttribute('style','margin-right: 100px');
     switch (navState) {
         case 0:
             var busqueda = document.createElement('li');
@@ -1609,29 +1612,44 @@ function botonesNav(navState) {
             refb.innerText = 'Búsqueda';
             busqueda.appendChild(refb);
 
-            var ruta = document.createElement('li');
-            var refr = document.createElement('a');
-            refr.setAttribute('id', 'ruta');
-            refr.setAttribute('href', '');
-            refr.innerText = 'Hazme una ruta';
-            ruta.appendChild(refr);
-
             var contacto = document.createElement('li');
             var refc = document.createElement('a');
-            refc.setAttribute('id', 'contacto');
-            refc.setAttribute('href', '');
-            refc.innerText = 'Contacto';
+            refc.setAttribute('id', '¿Quiénes Somos?');
+            refc.setAttribute('href', 'javascript:gestorVisionado(4)');
+            refc.innerText = '¿Quiénes Somos?';
             contacto.appendChild(refc);
 
             ul.appendChild(busqueda);
-            ul.appendChild(ruta);
             ul.appendChild(contacto);
+            document.getElementById('navbar').appendChild(ul);
             break;
         case 1:
+
+            var busqueda = document.createElement('li');
+            var refb = document.createElement('a');
+            refb.setAttribute('id', 'busqueda');
+            refb.setAttribute('href', 'javascript:gestorVisionado(0)');
+            refb.innerText = 'Búsqueda';
+            busqueda.appendChild(refb);
+
+            var contacto = document.createElement('li');
+            var refc = document.createElement('a');
+            refc.setAttribute('id', '¿Quiénes Somos?');
+            refc.setAttribute('href', 'javascript:gestorVisionado(4)');
+            refc.innerText = '¿Quiénes Somos?';
+            contacto.appendChild(refc);
+
+            ul.appendChild(busqueda);
+            ul.appendChild(contacto);
+
+            var ul1 = document.createElement('ul');
+            ul1.setAttribute('id', 'ul-nav1');
+            ul1.className = "granate aplicar-borde margen";
 
             var node_1 = document.createElement('LI');
             var node_2 = document.createElement('A');
             node_2.setAttribute('href', '#hero');
+            node_2.setAttribute('style','color:white');
             node_1.appendChild(node_2);
             var node_3 = document.createTextNode((new String("Inicio")));
             node_2.appendChild(node_3);
@@ -1639,6 +1657,7 @@ function botonesNav(navState) {
             var node_4 = document.createElement('LI');
             var node_5 = document.createElement('A');
             node_5.setAttribute('href', '#about');
+            node_5.setAttribute('style','color:white');
             node_4.appendChild(node_5);
             var node_6 = document.createTextNode((new String("Descripción")));
             node_5.appendChild(node_6);
@@ -1646,6 +1665,7 @@ function botonesNav(navState) {
             var node_7 = document.createElement('LI');
             var node_8 = document.createElement('A');
             node_8.setAttribute('href', '#weather');
+            node_8.setAttribute('style','color:white');
             node_7.appendChild(node_8);
             var node_9 = document.createTextNode((new String("Tiempo")));
             node_8.appendChild(node_9);
@@ -1653,20 +1673,15 @@ function botonesNav(navState) {
             var node_10 = document.createElement('LI');
             var node_11 = document.createElement('A');
             node_11.setAttribute('href', '#menu');
+            node_11.setAttribute('style','color:white');
             node_10.appendChild(node_11);
             var node_12 = document.createTextNode((new String("Vinos")));
             node_11.appendChild(node_12);
 
-            var node_13 = document.createElement('LI');
-            var node_14 = document.createElement('A');
-            node_14.setAttribute('href', '#events');
-            node_13.appendChild(node_14);
-            var node_15 = document.createTextNode((new String("Events")));
-            node_14.appendChild(node_15);
-
             var node_19 = document.createElement('LI');
             var node_20 = document.createElement('A');
             node_20.setAttribute('href', '#gallery');
+            node_20.setAttribute('style','color:white');
             node_19.appendChild(node_20);
             var node_21 = document.createTextNode((new String("Fotos")));
             node_20.appendChild(node_21);
@@ -1674,21 +1689,25 @@ function botonesNav(navState) {
             var node_22 = document.createElement('LI');
             var node_23 = document.createElement('A');
             node_23.setAttribute('href', '#contact');
+            node_23.setAttribute('style','color:white');
+            node_22.setAttribute('style','margin-right: 25px');
             node_22.appendChild(node_23);
             var node_24 = document.createTextNode((new String("Contacto")));
             node_23.appendChild(node_24);
 
-            ul.appendChild(node_1);
-            ul.appendChild(node_4);
-            ul.appendChild(node_7);
-            ul.appendChild(node_10);
-            ul.appendChild(node_13);
-            ul.appendChild(node_19);
-            ul.appendChild(node_22);
+            ul1.appendChild(node_1);
+            ul1.appendChild(node_4);
+            ul1.appendChild(node_7);
+            ul1.appendChild(node_10);
+            ul1.appendChild(node_19);
+            ul1.appendChild(node_22);
 
+            document.getElementById('navbar').appendChild(ul);
+            document.getElementById('navbar').appendChild(ul1);
             break;
     }
-    document.getElementById('navbar').appendChild(ul);
+    
+    
 
     const icono = document.getElementById("icono");
     icono.onclick = function () {
@@ -1714,248 +1733,243 @@ function paginaPrincipal() {
     }
 }
 
-function aboutUs() {
+function about() {
+    var seccion = document.getElementById("seccion");
 
-    var node_1 = document.createElement('SECTION');
-    node_1.setAttribute('class', 'section about-section gray-bg');
-    node_1.setAttribute('id', 'about');
+    var about_1 = document.createElement('SECTION');
+    about_1.setAttribute('class', 'section about-section gray-bg');
+    about_1.setAttribute('id', 'about');
+    seccion.appendChild(about_1);
 
-    var node_2 = document.createElement('DIV');
-    node_2.setAttribute('class', 'container granate aplicar-borde margen');
-    node_1.appendChild(node_2);
+    var about_2 = document.createElement('DIV');
+    about_2.setAttribute('class', 'container granate aplicar-borde margen');
+    about_1.appendChild(about_2);
 
-    var node_3 = document.createElement('DIV');
-    node_3.setAttribute('class', 'container');
-    node_2.appendChild(node_3);
+    var about_3 = document.createElement('DIV');
+    about_3.setAttribute('class', 'container');
+    about_2.appendChild(about_3);
 
-    var node_4 = document.createElement('DIV');
-    node_4.setAttribute('class', 'row align-items-center flex-row-reverse');
-    node_3.appendChild(node_4);
+    var about_4 = document.createElement('DIV');
+    about_4.setAttribute('class', 'row align-items-center flex-row-reverse');
+    about_3.appendChild(about_4);
 
-    var node_5 = document.createElement('DIV');
-    node_5.setAttribute('class', 'col-lg-6');
-    node_4.appendChild(node_5);
+    var about_5 = document.createElement('DIV');
+    about_5.setAttribute('class', 'col-lg-6');
+    about_4.appendChild(about_5);
 
-    var node_6 = document.createElement('DIV');
-    node_6.setAttribute('class', 'about-text go-to margen bg-white aplicar-borde');
-    node_5.appendChild(node_6);
+    var about_6 = document.createElement('DIV');
+    about_6.setAttribute('class', 'about-text go-to margen bg-white aplicar-borde');
+    about_5.appendChild(about_6);
 
-    var node_7 = document.createElement('DIV');
-    node_7.setAttribute('style', 'text-align: center;');
-    node_6.appendChild(node_7);
+    var about_7 = document.createElement('DIV');
+    about_7.setAttribute('style', 'text-align: center;');
+    about_6.appendChild(about_7);
 
-    var node_8 = document.createElement('H3');
-    node_7.appendChild(node_8);
+    var about_8 = document.createElement('H3');
+    about_8.innerHTML = '¿Quiénes Somos?';
+    about_7.appendChild(about_8);
 
-    var node_9 = document.createElement('H6');
-    node_9.setAttribute('class', 'lead');
-    node_7.appendChild(node_9);
+    var about_9 = document.createElement('H6');
+    about_9.setAttribute('class', 'lead');
+    about_7.appendChild(about_9);
 
-    var node_10 = document.createTextNode((new String("Equipo")));
-    node_9.appendChild(node_10);
+    var about_10 = document.createTextNode((new String("Equipo")));
+    about_9.appendChild(about_10);
 
-    var node_11 = document.createElement('P');
-    node_7.appendChild(node_11);
+    var about_11 = document.createElement('P');
+    about_7.appendChild(about_11);
 
-    var node_12 = document.createTextNode((new String("Esta webApp pertenece a la elaboración de la práctica de Tecnología Multimedia de la\\n                                Universidad de las Islas Baleares.\\n                                Este equipo está formado por un solo integrante que ha llevado a cabo toda la\\n                                implementación de la webApp en honor a\\n                                todas las bodegas de alta cualidad que habitan en la isla de Mallorca. ")));
-    node_11.appendChild(node_12);
+    var about_12 = document.createTextNode((new String("Esta webApp pertenece a la elaboración de la práctica de Tecnología Multimedia de la Universidad de las Islas Baleares. Este equipo está formado por un solo integrante que ha llevado a cabo toda la implementación de la webApp en honor a todas las bodegas de alta cualidad que habitan en la isla de Mallorca. ")));
+    about_11.appendChild(about_12);
 
-    var node_13 = document.createElement('DIV');
-    node_13.setAttribute('class', 'row about-list');
-    node_7.appendChild(node_13);
+    var about_13 = document.createElement('DIV');
+    about_13.setAttribute('class', 'row about-list');
+    about_7.appendChild(about_13);
 
-    var node_14 = document.createElement('DIV');
-    node_14.setAttribute('class', 'col-md-6');
-    node_13.appendChild(node_14);
+    var about_14 = document.createElement('DIV');
+    about_14.setAttribute('class', 'col-md-6');
+    about_13.appendChild(about_14);
 
-    var node_15 = document.createElement('DIV');
-    node_15.setAttribute('class', 'media');
-    node_14.appendChild(node_15);
+    var about_15 = document.createElement('DIV');
+    about_15.setAttribute('class', 'media');
+    about_14.appendChild(about_15);
 
-    var node_16 = document.createElement('LABEL');
-    node_15.appendChild(node_16);
+    var about_16 = document.createElement('LABEL');
+    about_15.appendChild(about_16);
 
-    var node_17 = document.createTextNode((new String("Age")));
-    node_16.appendChild(node_17);
+    var about_17 = document.createTextNode((new String("Edad")));
+    about_16.appendChild(about_17);
 
-    var node_18 = document.createElement('P');
-    node_15.appendChild(node_18);
+    var about_18 = document.createElement('P');
+    about_15.appendChild(about_18);
 
-    var node_19 = document.createTextNode((new String("23 años")));
-    node_18.appendChild(node_19);
+    var about_19 = document.createTextNode((new String("23 años")));
+    about_18.appendChild(about_19);
 
-    var node_20 = document.createElement('DIV');
-    node_20.setAttribute('class', 'media');
-    node_14.appendChild(node_20);
+    var about_20 = document.createElement('DIV');
+    about_20.setAttribute('class', 'media');
+    about_14.appendChild(about_20);
 
-    var node_21 = document.createElement('LABEL');
-    node_20.appendChild(node_21);
+    var about_21 = document.createElement('LABEL');
+    about_20.appendChild(about_21);
 
-    var node_22 = document.createTextNode((new String("Residencia")));
-    node_21.appendChild(node_22);
+    var about_22 = document.createTextNode((new String("Residencia")));
+    about_21.appendChild(about_22);
 
-    var node_23 = document.createElement('P');
-    node_20.appendChild(node_23);
+    var about_23 = document.createElement('P');
+    about_20.appendChild(about_23);
 
-    var node_24 = document.createTextNode((new String("Mallorca")));
-    node_23.appendChild(node_24);
+    var about_24 = document.createTextNode((new String("Mallorca")));
+    about_23.appendChild(about_24);
 
-    var node_25 = document.createElement('DIV');
-    node_25.setAttribute('class', 'media');
-    node_14.appendChild(node_25);
+    var about_25 = document.createElement('DIV');
+    about_25.setAttribute('class', 'media');
+    about_14.appendChild(about_25);
 
-    var node_26 = document.createElement('LABEL');
-    node_25.appendChild(node_26);
+    var about_26 = document.createElement('LABEL');
+    about_25.appendChild(about_26);
 
-    var node_27 = document.createTextNode((new String("Dirección")));
-    node_26.appendChild(node_27);
+    var about_27 = document.createTextNode((new String("Dirección")));
+    about_26.appendChild(about_27);
 
-    var node_28 = document.createElement('P');
-    node_25.appendChild(node_28);
+    var about_28 = document.createElement('P');
+    about_25.appendChild(about_28);
 
-    var node_29 = document.createTextNode((new String("Pollensa, ES")));
-    node_28.appendChild(node_29);
+    var about_29 = document.createTextNode((new String("Pollensa, ES")));
+    about_28.appendChild(about_29);
 
-    var node_30 = document.createElement('DIV');
-    node_30.setAttribute('class', 'col-md-6');
-    node_13.appendChild(node_30);
+    var about_30 = document.createElement('DIV');
+    about_30.setAttribute('class', 'col-md-6');
+    about_13.appendChild(about_30);
 
-    var node_31 = document.createElement('DIV');
-    node_31.setAttribute('class', 'media');
-    node_30.appendChild(node_31);
+    var about_31 = document.createElement('DIV');
+    about_31.setAttribute('class', 'media');
+    about_30.appendChild(about_31);
 
-    var node_32 = document.createElement('LABEL');
-    node_31.appendChild(node_32);
+    var about_32 = document.createElement('LABEL');
+    about_31.appendChild(about_32);
 
-    var node_33 = document.createTextNode((new String("E-mail")));
-    node_32.appendChild(node_33);
+    var about_33 = document.createTextNode((new String("E-mail")));
+    about_32.appendChild(about_33);
 
-    var node_34 = document.createElement('P');
-    node_31.appendChild(node_34);
+    var about_34 = document.createElement('P');
+    about_31.appendChild(about_34);
 
-    var node_35 = document.createTextNode((new String("bartomeu.capo2@estudiant.uib.cat")));
-    node_34.appendChild(node_35);
+    var about_35 = document.createTextNode((new String("bartomeu.capo2@estudiant.uib.cat")));
+    about_34.appendChild(about_35);
 
-    var node_36 = document.createElement('DIV');
-    node_36.setAttribute('class', 'media');
-    node_30.appendChild(node_36);
+    var about_36 = document.createElement('DIV');
+    about_36.setAttribute('class', 'media');
+    about_30.appendChild(about_36);
 
-    var node_37 = document.createElement('LABEL');
-    node_36.appendChild(node_37);
+    var about_37 = document.createElement('LABEL');
+    about_36.appendChild(about_37);
 
-    var node_38 = document.createTextNode((new String("Telefono")));
-    node_37.appendChild(node_38);
+    var about_38 = document.createTextNode((new String("Telefono")));
+    about_37.appendChild(about_38);
 
-    var node_39 = document.createElement('P');
-    node_36.appendChild(node_39);
-
-    var node_40 = document.createTextNode((new String("638 346 523")));
-    node_39.appendChild(node_40);
-
-    var node_41 = document.createElement('DIV');
-    node_41.setAttribute('class', 'col-lg-4 col-sm-6 col-xs-12 wow fadeInUp');
-    node_41.setAttribute('data-wow-duration', '1s');
-    node_41.setAttribute('data-wow-delay', '0.2s');
-    node_41.setAttribute('data-wow-offset', '0');
-    node_41.setAttribute('style', ' margin-right: 100px; visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;');
-    node_4.appendChild(node_41);
-
-    var node_42 = document.createElement('DIV');
-    node_42.setAttribute('class', 'our-team');
-    node_41.appendChild(node_42);
-
-    var node_43 = document.createElement('IMG');
-    node_43.setAttribute('src', 'img/profile.jpg');
-    node_43.setAttribute('alt', 'Bartomeu Capó Salas');
-    node_42.appendChild(node_43);
-
-    var node_44 = document.createElement('DIV');
-    node_44.setAttribute('class', 'team-content');
-    node_42.appendChild(node_44);
-
-    var node_45 = document.createElement('H3');
-    node_45.setAttribute('class', 'title');
-    node_44.appendChild(node_45);
-
-    var node_46 = document.createTextNode((new String("Bartomeu Capó Salas")));
-    node_45.appendChild(node_46);
-
-    var node_47 = document.createElement('SPAN');
-    node_47.setAttribute('class', 'post');
-    node_44.appendChild(node_47);
-
-    var node_48 = document.createTextNode((new String("Developer")));
-    node_47.appendChild(node_48);
-
-    var node_49 = document.createElement('BR');
-    node_3.appendChild(node_49);
-
-    var node_50 = document.createElement('DIV');
-    node_50.setAttribute('class', 'row');
-    node_2.appendChild(node_50);
-
-    var node_51 = document.createElement('DIV');
-    node_51.setAttribute('class', 'col container');
-    node_50.appendChild(node_51);
-
-    var node_52 = document.createElement('DIV');
-    node_52.setAttribute('class', 'col');
-    node_52.setAttribute('style', 'text-align: right');
-    node_51.appendChild(node_52);
-
-    var node_53 = document.createElement('DIV');
-    node_53.setAttribute('class', 'ibox float-e-margins');
-    node_52.appendChild(node_53);
-
-    var node_54 = document.createElement('DIV');
-    node_54.setAttribute('class', 'ibox-title margen');
-    node_53.appendChild(node_54);
-
-    var node_55 = document.createElement('DIV');
-    node_55.setAttribute('class', 'ibox-content');
-    node_53.appendChild(node_55);
-
-    var node_56 = document.createElement('FIGURE');
-    node_55.appendChild(node_56);
-
-    var node_57 = document.createElement('IFRAME');
-    node_57.setAttribute('src', 'https://www.youtube.com/embed/ESXgJ9-H-2U');
-    node_57.setAttribute('frameborder', '0');
-    node_57.setAttribute('allowfullscreen', '');
-    node_57.setAttribute('data-aspectratio', '0.8211764705882353');
-    node_57.setAttribute('style', 'width: 523px; height: 429.475px;');
-    node_56.appendChild(node_57);
-
-    var node_58 = document.createElement('DIV');
-    node_58.setAttribute('class', 'col container');
-    node_50.appendChild(node_58);
-
-    var node_59 = document.createElement('DIV');
-    node_59.setAttribute('class', 'col');
-    node_58.appendChild(node_59);
-
-    var node_60 = document.createElement('DIV');
-    node_60.setAttribute('class', 'ibox float-e-margins');
-    node_59.appendChild(node_60);
-
-    var node_61 = document.createElement('DIV');
-    node_61.setAttribute('class', 'ibox-title margen');
-    node_60.appendChild(node_61);
-
-    var node_62 = document.createElement('DIV');
-    node_62.setAttribute('class', 'ibox-content');
-    node_60.appendChild(node_62);
-
-    var node_63 = document.createElement('FIGURE');
-    node_62.appendChild(node_63);
-
-    var node_64 = document.createElement('IFRAME');
-    node_64.setAttribute('src', 'https://www.youtube.com/embed/ESXgJ9-H-2U');
-    node_64.setAttribute('frameborder', '0');
-    node_64.setAttribute('allowfullscreen', '');
-    node_64.setAttribute('data-aspectratio', '0.8211764705882353');
-    node_64.setAttribute('style', 'width: 523px; height: 429.475px;');
-    node_63.appendChild(node_64);
+    var about_39 = document.createElement('P');
+    about_36.appendChild(about_39);
+
+    var about_40 = document.createTextNode((new String("638 346 523")));
+    about_39.appendChild(about_40);
+
+    var about_41 = document.createElement('DIV');
+    about_41.setAttribute('class', 'col-lg-4 col-sm-6 col-xs-12 wow fadeInUp');
+    about_41.setAttribute('data-wow-duration', '1s');
+    about_41.setAttribute('data-wow-delay', '0.2s');
+    about_41.setAttribute('data-wow-offset', '0');
+    about_41.setAttribute('style', ' margin-right: 100px; visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;');
+    about_4.appendChild(about_41);
+
+    var about_42 = document.createElement('DIV');
+    about_42.setAttribute('class', 'our-team');
+    about_41.appendChild(about_42);
+
+    var about_43 = document.createElement('IMG');
+    about_43.setAttribute('src', 'img/profile.jpg');
+    about_43.setAttribute('alt', 'Bartomeu Capó Salas');
+    about_42.appendChild(about_43);
+
+    var about_44 = document.createElement('DIV');
+    about_44.setAttribute('class', 'team-content');
+    about_42.appendChild(about_44);
+
+    var about_45 = document.createElement('H3');
+    about_45.setAttribute('class', 'title');
+    about_44.appendChild(about_45);
+
+    var about_46 = document.createTextNode((new String("Bartomeu Capó Salas")));
+    about_45.appendChild(about_46);
+
+    var about_47 = document.createElement('SPAN');
+    about_47.setAttribute('class', 'post');
+    about_44.appendChild(about_47);
+
+    var about_48 = document.createTextNode((new String("Developer")));
+    about_47.appendChild(about_48);
+
+    var about_49 = document.createElement('BR');
+    about_3.appendChild(about_49);
+
+    var about_50 = document.createElement('DIV');
+    about_50.setAttribute('class', 'row');
+    about_50.setAttribute('style', 'text-align: center;');
+    about_2.appendChild(about_50);
+
+    var about_51 = document.createElement('DIV');
+    about_51.setAttribute('class', 'col');
+    about_50.appendChild(about_51);
+
+    var about_52 = document.createElement('DIV');
+    about_52.setAttribute('class', 'ibox float-e-margins');
+    about_51.appendChild(about_52);
+
+    var about_53 = document.createElement('DIV');
+    about_53.setAttribute('class', 'ibox-title margen');
+    about_52.appendChild(about_53);
+
+    var about_54 = document.createElement('DIV');
+    about_54.setAttribute('class', 'ibox-content');
+    about_52.appendChild(about_54);
+
+    var about_55 = document.createElement('FIGURE');
+    about_54.appendChild(about_55);
+
+    var about_56 = document.createElement('IFRAME');
+    about_56.setAttribute('src', 'https://www.youtube.com/embed/ESXgJ9-H-2U');
+    about_56.setAttribute('frameborder', '0');
+    about_56.setAttribute('allowfullscreen', '');
+    about_56.setAttribute('data-aspectratio', '0.8211764705882353');
+    about_56.setAttribute('style', 'width: 523px; height: 429.475px;');
+    about_55.appendChild(about_56);
+
+    var about_57 = document.createElement('DIV');
+    about_57.setAttribute('class', 'col');
+    about_50.appendChild(about_57);
+
+    var about_58 = document.createElement('DIV');
+    about_58.setAttribute('class', 'ibox float-e-margins');
+    about_57.appendChild(about_58);
+
+    var about_59 = document.createElement('DIV');
+    about_59.setAttribute('class', 'ibox-title margen');
+    about_58.appendChild(about_59);
+
+    var about_60 = document.createElement('DIV');
+    about_60.setAttribute('class', 'ibox-content');
+    about_58.appendChild(about_60);
+
+    var about_61 = document.createElement('FIGURE');
+    about_60.appendChild(about_61);
+
+    var about_62 = document.createElement('IFRAME');
+    about_62.setAttribute('src', 'https://www.youtube.com/embed/ESXgJ9-H-2U');
+    about_62.setAttribute('frameborder', '0');
+    about_62.setAttribute('allowfullscreen', '');
+    about_62.setAttribute('data-aspectratio', '0.8211764705882353');
+    about_62.setAttribute('style', 'width: 523px; height: 429.475px;');
+    about_61.appendChild(about_62);
 
 }
 
@@ -2659,17 +2673,20 @@ function gestorVisionado(vision, producto) {
         seccion.removeChild(car);
     }
 
-
     if (seccion.hasChildNodes()) {
         while (seccion.childNodes.length >= 1) {
             seccion.removeChild(seccion.firstChild);
         }
     }
-    if (vision >= 3) {
 
+    if (vision >= 3) {
         if (vision == 3) {
             botonesNav(1);
             paginaProducto2(producto);
+        }
+        if (vision == 4) {
+            botonesNav(0);
+            about();
         }
     } else {
         botonesNav(0);
