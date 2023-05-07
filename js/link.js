@@ -1755,7 +1755,6 @@ function botonesNav(navState) {
 }
 
 function paginaPrincipal() {
-    const h = document.getElementById("header");
     var seccion = document.getElementById("seccion");
     botonesNav(0);
 
@@ -2722,12 +2721,18 @@ function hasNode(dad, child) {
 }
 
 function gestorVisionado(vision, producto) {
+    var body = document.getElementById("cuerpo");
+    var modal = document.getElementById('ventanaModal');
     var seccion = document.getElementById("seccion");
     var car = document.getElementById("carouselPrincipal");
 
     if (hasNode(seccion, car)) {
         carrusel = car;
         seccion.removeChild(car);
+    }
+
+    if(hasNode(body,modal)){
+        body.removeChild(modal);
     }
 
     if (seccion.hasChildNodes()) {
