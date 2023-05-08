@@ -618,6 +618,306 @@
 
             ],
             "url": "https://bodegasvirei.com/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Ángel",
+            "description": "Bodegas Angel elabora vinos con identidad y carácter propio gracias a las uvas autóctonas de la región. Si bien contamos también con uvas foráneas, el Prensal Blanc y el Manto Negro, reinas de las variedades mallorquinas de la comarca, son las responsables de tal carácter e identidad y las protagonistas en cada uno de los vinos.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Santa María",
+                "postalCode": "07320",
+                "streetAddress": "Ctra. Santa Maria-Sencelles Km. 4,8"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/6NIlU6rs_ug"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/AVWHzVAeVik"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Angel Negre",
+                                "description": "Variedades: Manto negro, Cabernet Sauvignon, Merlot, Syrah y Gorgollassa. Con un 13,5% de alcohol.",
+                                "image": "https://www.bodegasangel.com/wp-content/uploads/2020/04/basica-bodegas_angel-negre-76x300.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "10.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Gran Selecció",
+                                "description": "Variedades: Cabernet Sauvignon, Merlot y Manto Negro. Con un 13,5% de alcohol.",
+                                "image": "https://www.bodegasangel.com/wp-content/uploads/2020/04/prestigi-bodegas_angel-gran_seleccion.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Cabernet Sauvignon",
+                                "description": "Variedades: 100% Cabernet Sauvignon. Con un 13,5% de alcohol.",
+                                "image": "https://www.bodegasangel.com/wp-content/uploads/2020/04/prestigi-bodegas_angel-cabernet-68x300.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Manto Negro 500",
+                                "description": "Variedades: 100% Manto Negro. Con un 13,5% de alcohol.",
+                                "image": "https://www.bodegasangel.com/wp-content/uploads/2022/01/prestigi-bodegas_angel-manto_negro.jpg-69x300.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "32.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }     
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Blanc de Blanca",
+                                "description": "Variedades: Premsal blanc, Viognier, Chardonnay. Con un 13% de alcohol.",
+                                "image": "https://www.bodegasangel.com/wp-content/uploads/2020/04/basica-bodegas_angel_canela.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "11.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Viognier",
+                                "description": "Variedades: 100% Viognier. Con un 14% de alcohol.",
+                                "image": "https://www.bodegasangel.com/wp-content/uploads/2020/04/viognier15.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "14.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Angel Rosat",
+                                "description": "Variedades: Manto negro y Merlot. Con un 12,5% de alcohol.",
+                                "image": "https://www.bodegasangel.com/wp-content/uploads/2020/04/basica-bodegas_angel-rosat.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "10.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr,Sa 10:00-17:00",
+            "telephone": "971180118",
+            "isAccessibleForFree": false,
+            "email": "info@bodegasangel.com",
+            "logo": "https://www.bodegasangel.com/wp-content/uploads/elementor/thumbs/logo-web-pxpnoqfka93o2b5c4qh2qdq26egiu4mv0pvmv332ue.jpg",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.637729982731884,
+                "longitude" : 2.7899330778502645
+            },
+            "image": [
+                "https://www.bodegasangel.com/wp-content/uploads/2020/04/Bodega_Angel-14.jpg",
+                "https://www.bodegasangel.com/wp-content/uploads/2020/04/Bodega_Angel-8b.jpg",
+                "https://www.bodegasangel.com/wp-content/uploads/2020/04/Bodega_Angel-15.jpg",
+                "https://www.bodegasangel.com/wp-content/uploads/2020/04/Bodega_Angel-9.jpg",
+                "https://www.bodegasangel.com/wp-content/uploads/2020/04/Bodega_Angel-1b.jpg",
+                "https://www.bodegasangel.com/wp-content/uploads/2020/04/Bodega_Angel-3.jpg",
+                "https://www.bodegasangel.com/wp-content/uploads/2020/04/Bodega_Angel-11.jpg",
+                "https://www.bodegasangel.com/wp-content/uploads/2020/04/Bodega_Angel-10.jpg",
+                "https://www.bodegasangel.com/wp-content/uploads/2020/04/Bodega_Angel-5.jpg"
+            ],
+            "url": "https://www.bodegasangel.com"
+        },
+        {
+            "@type": "Winery",
+            "name": "Ca'n Vidalet",
+            "description": "Propiedad de un empresario alemán de Hamburgo, Can Vidalet se inició en 1996 con la primera viña plantada, con el objetivo de recuperar el patrimonio vitivinícola e histórico de la isla de Mallorca. Nuestros vinos reposan y evolucionan en una bodega de piedra bajo una loma para aprovechar el frescor natural que proporciona el entorno. En nuestro propio alambique producimos aguardientes, resultado de una selección de orujos de variedades de uvas (blancas y tintas) y ginebra proveniente de los más selectos botánicos y cítricos de la Sierra de Tramuntana.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Pollença",
+                "postalCode": "07460",
+                "streetAddress": "Ctra. Alcudia-Pollença, km 4,85"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/EqIqQRjyEnQ"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/j5wjznWsA1s"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "So del Xiprer 2017",
+                                "description": "Variedades: Merlot, Cabernet Sauvignon y Syrah.",
+                                "image": "https://www.canvidalet.com/wp-content/uploads/2018/07/so-de-xiprer.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Terra Fusca 2017",
+                                "description": "Variedades: Syrah.",
+                                "image": "https://www.canvidalet.com/wp-content/uploads/2023/04/terra_fusca17_DEF.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "24.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Blanc de Blancs 2018",
+                                "description": "Variedades: Chardonnay, Sauvignon Blanc, Moscatell, Malvasia y Prensal.",
+                                "image": "https://www.canvidalet.com/wp-content/uploads/2019/11/botellas-can-vidalet-11-600x600.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "12.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Ses Pedres 2018",
+                                "description": "Variedades: 100 % Chardonnay.",
+                                "image": "https://www.canvidalet.com/wp-content/uploads/2018/07/Disseny-sense-t%C3%ADtol-50-600x503.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Blanc de Negres 2019",
+                                "description": "Variedades: Merlot, Callet, ull de Llebre, Cabernet Sauvignon y Gorgollassa.",
+                                "image": "https://www.canvidalet.com/wp-content/uploads/2019/11/botellas-can-vidalet-13-600x600.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "12.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00",
+            "telephone": "971531719",
+            "isAccessibleForFree": false,
+            "email": "info@canvidalet.com",
+            "logo": "https://www.canvidalet.com/wp-content/uploads/2022/02/LOGO-CAN-VIDALET-CON-CORONA-Y-SIN-MASIA1.png",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.87056720080701, 
+                "longitude" : 3.042778749074585
+            },
+            "image": [
+                "https://www.canvidalet.com/wp-content/uploads/2018/07/bodega-can-vidalet-06.jpg",
+                "https://www.canvidalet.com/wp-content/uploads/2018/07/bodega-can-vidalet-03.jpg",
+                "https://www.canvidalet.com/wp-content/uploads/2018/11/bodega-can-vidalet-05.jpg",
+                "https://www.canvidalet.com/wp-content/uploads/2018/11/bodega-can-vidalet-09.jpg",
+                "https://www.canvidalet.com/wp-content/uploads/2018/08/bodega-en-mallorca-can-vidalet.jpg"
+            ],
+            "url": "https://www.canvidalet.com"
         }
     ]
 }
