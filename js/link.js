@@ -1900,11 +1900,11 @@ function about() {
     about_39.appendChild(about_40);
 
     var about_41 = document.createElement('DIV');
-    about_41.setAttribute('class', 'col-lg-4 col-sm-6 col-xs-12 wow fadeInUp');
+    about_41.setAttribute('class', 'col col-sm-6 col-xs-12 wow fadeInUp');
     about_41.setAttribute('data-wow-duration', '1s');
     about_41.setAttribute('data-wow-delay', '0.2s');
     about_41.setAttribute('data-wow-offset', '0');
-    about_41.setAttribute('style', ' margin-right: 100px; visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;');
+    about_41.setAttribute('style', 'visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;');
     about_4.appendChild(about_41);
 
     var about_42 = document.createElement('DIV');
