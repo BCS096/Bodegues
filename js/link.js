@@ -153,7 +153,7 @@ function paginaProducto2(pos) {
     aux.appendChild(contImg2);
 
     const contImg3 = document.createElement('div');
-    contImg3.className = "box1 tamañoImgProductoMain";
+    contImg3.className = "box2 tamañoImgProductoMain";
     contImg2.appendChild(contImg3);
 
 
@@ -190,6 +190,7 @@ function paginaProducto2(pos) {
     node_20.appendChild(node_21);
 
     var node_22 = document.createElement('SPAN');
+    node_22.className = 'margen granate aplicar-borde';
     node_21.appendChild(node_22);
 
     var node_23 = document.createTextNode((new String("Descripción")));
@@ -276,6 +277,7 @@ function paginaProducto2(pos) {
     node_41.appendChild(node_42);
 
     var node_43 = document.createElement('SPAN');
+    node_43.className = 'margen granate aplicar-borde';
     node_42.appendChild(node_43);
 
     var node_44 = document.createTextNode((new String("El tiempo")));
@@ -388,6 +390,7 @@ function paginaProducto2(pos) {
     node_98.appendChild(node_101);
 
     var node_102 = document.createElement('SPAN');
+    node_102.className = 'margen granate aplicar-borde';
     node_101.appendChild(node_102);
 
     var node_103 = document.createTextNode((new String("tu vino favorito")));
@@ -668,10 +671,11 @@ function paginaProducto2(pos) {
     var nodo_1 = document.createElement('SECTION');
     nodo_1.setAttribute('id', 'testimonials');
     nodo_1.setAttribute('class', 'testimonials section-bg');
+    nodo_1.setAttribute('style','padding-bottom: 10px');
     node_17.appendChild(nodo_1);
 
     var nodo_2 = document.createElement('DIV');
-    nodo_2.setAttribute('class', 'container granate aplicar-borde margen');
+    nodo_2.setAttribute('class', 'container granate aplicar-borde margen'); 
     nodo_1.appendChild(nodo_2);
 
     var nodo_3 = document.createElement('DIV');
@@ -1084,7 +1088,7 @@ function paginaProducto2(pos) {
 
     var node_350 = document.createElement('SECTION');
     node_350.setAttribute('id', 'gallery');
-    node_350.setAttribute('class', 'gallery section-bg');
+    node_350.setAttribute('class', 'gallery');
     node_17.appendChild(node_350);
 
     var node_351 = document.createElement('DIV');
@@ -1099,16 +1103,17 @@ function paginaProducto2(pos) {
     var node_353 = document.createElement('H2');
     node_352.appendChild(node_353);
 
-    var node_354 = document.createTextNode((new String("gallery")));
+    var node_354 = document.createTextNode((new String("Fotos")));
     node_353.appendChild(node_354);
 
     var node_355 = document.createElement('P');
     node_352.appendChild(node_355);
 
     var node_356 = document.createElement('SPAN');
+    node_356.className = 'margen aplicar-borde granate';
     node_355.appendChild(node_356);
 
-    var node_357 = document.createTextNode((new String("Our Gallery")));
+    var node_357 = document.createTextNode((new String("Fotos")));
     node_356.appendChild(node_357);
 
 
@@ -1146,7 +1151,7 @@ function paginaProducto2(pos) {
 
     var node_412 = document.createElement('SECTION');
     node_412.setAttribute('id', 'contact');
-    node_412.setAttribute('class', 'contact');
+    node_412.setAttribute('class', 'contact section-bg');
     node_17.appendChild(node_412);
 
     var node_413 = document.createElement('DIV');
@@ -1162,14 +1167,20 @@ function paginaProducto2(pos) {
     node_414.appendChild(node_417);
 
     var node_418 = document.createElement('SPAN');
+    node_418.className = 'margen granate aplicar-borde';
     node_417.appendChild(node_418);
 
     var node_419 = document.createTextNode((new String("Contacto")));
     node_418.appendChild(node_419);
 
+    var contacte = document.createElement('div');
+    contacte.className='container margen aplicar-borde granate';
+
+    node_413.appendChild(contacte);
+
     var node_420 = document.createElement('DIV');
     node_420.setAttribute('class', 'mb-3');
-    node_413.appendChild(node_420);
+    contacte.appendChild(node_420);
 
     //funcionamiento de la API de mapa
 
@@ -1178,11 +1189,12 @@ function paginaProducto2(pos) {
     node_421.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6124.477589966659!2d2.913765460252749!3d39.86888869177018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297d6a0a43e5afd%3A0x1dccff5305e308a0!2sVinyes%20Mortitx!5e0!3m2!1ses!2ses!4v1681571881672!5m2!1ses!2ses");
     node_421.setAttribute('frameborder', '0');
     node_421.setAttribute('allowfullscreen', '');
+    node_421.className='margen';
     node_420.appendChild(node_421);
 
     var node_422 = document.createElement('DIV');
     node_422.setAttribute('class', 'row gy-4');
-    node_413.appendChild(node_422);
+    contacte.appendChild(node_422);
 
     var node_423 = document.createElement('DIV');
     node_423.setAttribute('class', 'col-md-6');
@@ -1357,7 +1369,7 @@ function paginaProducto2(pos) {
     node_481.appendChild(node_482);
 
     var node_457 = document.createElement('DIV');
-    node_457.setAttribute('class', 'col-md-6');
+    node_457.setAttribute('class', 'col-md-6 margen');
     node_422.appendChild(node_457);
 
     var node_458 = document.createElement('DIV');
@@ -1571,30 +1583,6 @@ function filtrado2() {
 
     f1.appendChild(submit);
     f.appendChild(f1);
-
-    const f2 = document.createElement('div');
-    f2.className = 'col-sm';
-
-    const checkboxDiv = document.createElement('div');
-    checkboxDiv.classList.add('form-check');
-
-    const checkboxInput = document.createElement('input');
-    checkboxInput.classList.add('form-check-input');
-    checkboxInput.type = 'checkbox';
-    checkboxInput.value = '';
-    checkboxInput.id = 'flexCheckChecked';
-    checkboxInput.checked = true;
-
-    const checkboxLabel = document.createElement('label');
-    checkboxLabel.classList.add('form-check-label');
-    checkboxLabel.setAttribute('for', 'flexCheckChecked');
-    checkboxLabel.textContent = 'Favoritos';
-
-    checkboxDiv.appendChild(checkboxInput);
-    checkboxDiv.appendChild(checkboxLabel);
-
-    f2.appendChild(checkboxDiv);
-    f.appendChild(f2);
 
     const f3 = document.createElement('div');
     f3.className = 'col-sm';
@@ -1954,21 +1942,21 @@ function about() {
     about_50.setAttribute('style', 'text-align: center;');
     about_2.appendChild(about_50);
 
-    var about_51 = document.createElement('DIV');
-    about_51.setAttribute('class', 'col');
-    about_50.appendChild(about_51);
+    var col1 = document.createElement('div');
+    col1.className = 'col-sm';
+    about_50.appendChild(col1);
 
-    var about_52 = document.createElement('DIV');
-    about_52.setAttribute('class', 'ibox float-e-margins');
-    about_51.appendChild(about_52);
+    var col2 = document.createElement('div');
+    col2.className = 'col-sm';
+    about_50.appendChild(col2);
 
     var about_53 = document.createElement('DIV');
     about_53.setAttribute('class', 'ibox-title margen');
-    about_52.appendChild(about_53);
+    col1.appendChild(about_53);
 
     var about_54 = document.createElement('DIV');
     about_54.setAttribute('class', 'ibox-content');
-    about_52.appendChild(about_54);
+    col1.appendChild(about_54);
 
     var about_55 = document.createElement('FIGURE');
     about_54.appendChild(about_55);
@@ -1981,33 +1969,23 @@ function about() {
     about_56.setAttribute('style', 'width: 523px; height: 429.475px;');
     about_55.appendChild(about_56);
 
-    var about_57 = document.createElement('DIV');
-    about_57.setAttribute('class', 'col');
-    about_50.appendChild(about_57);
+   //grafico
+   const contImg2 = document.createElement('div');
+   contImg2.className = "caja margen";
+   col2.appendChild(contImg2);
 
-    var about_58 = document.createElement('DIV');
-    about_58.setAttribute('class', 'ibox float-e-margins');
-    about_57.appendChild(about_58);
+   const contImg3 = document.createElement('div');
+   contImg3.className = "box1 tamañoImgGraphic";
+   contImg2.appendChild(contImg3);
 
-    var about_59 = document.createElement('DIV');
-    about_59.setAttribute('class', 'ibox-title margen');
-    about_58.appendChild(about_59);
 
-    var about_60 = document.createElement('DIV');
-    about_60.setAttribute('class', 'ibox-content');
-    about_58.appendChild(about_60);
-
-    var about_61 = document.createElement('FIGURE');
-    about_60.appendChild(about_61);
-
-    var about_62 = document.createElement('IFRAME');
-    about_62.setAttribute('src', 'https://www.youtube.com/embed/ESXgJ9-H-2U');
-    about_62.setAttribute('frameborder', '0');
-    about_62.setAttribute('allowfullscreen', '');
-    about_62.setAttribute('data-aspectratio', '0.8211764705882353');
-    about_62.setAttribute('style', 'width: 523px; height: 429.475px;');
-    about_61.appendChild(about_62);
-
+   var aux1 = document.createElement('img');
+   aux1.setAttribute('src', 'img/graphic.png');
+   aux1.setAttribute('class', 'im aos-init aos-animate');
+   aux1.setAttribute('data-aos', 'zoom-out');
+   aux1.setAttribute('data-aos-delay', '300');
+   aux1.setAttribute('style', 'height: auto');
+   contImg3.appendChild(aux1);
 }
 
 function listadoCardXL() {
@@ -2274,17 +2252,20 @@ function listadoCardXL() {
             gestorVisionado(3, i);
         };
 
-        const boton2 = document.createElement('button');
-        boton2.classList.add('like', 'btn', 'btn-default', 'margen');
-        boton2.type = 'button';
+        const starsOut = document.createElement('div');
+        starsOut.className = "stars-outer";
 
-        const spanboton = document.createElement('span');
-        spanboton.classList.add('fa', 'fa-heart');
+        const starsIn = document.createElement('div');
+        starsIn.className = "stars-inner";
 
-        boton2.appendChild(spanboton);
+        starsOut.appendChild(starsIn);
+        colSmDiv.appendChild(starsOut);
 
-        colSmDiv.appendChild(moreInfoButton);
-        colSmDiv.appendChild(boton2);
+        const conte = document.createElement('div');
+        conte.className = 'container margen';
+        conte.appendChild(moreInfoButton);
+
+        colSmDiv.appendChild(conte);
 
         row2.appendChild(col4);
         row2.appendChild(colSmDiv);
@@ -2389,14 +2370,6 @@ function listadoCard() {
 
         starsOut.appendChild(starsIn);
 
-        const boton2 = document.createElement('button');
-        boton2.classList.add('like', 'btn', 'btn-default', 'margen');
-        boton2.type = 'button';
-
-        const spanboton = document.createElement('span');
-        spanboton.classList.add('fa', 'fa-heart');
-
-        boton2.appendChild(spanboton);
 
         const button = document.createElement('button');
         button.className = "add-to-cart margen";
@@ -2412,7 +2385,6 @@ function listadoCard() {
         cardBody.appendChild(desc);
         cardBody.appendChild(open);
         cardBody.appendChild(starsOut);
-        cardBody.appendChild(boton2);
         cardBody.appendChild(button);
 
         card.appendChild(cardBody);
@@ -2670,24 +2642,28 @@ function listadoMap() {
     containerDiv.appendChild(customScrollbarDiv);
     colSmDiv.appendChild(containerDiv);
 
+    const starsOut = document.createElement('div');
+    starsOut.className = "stars-outer";
+
+    const starsIn = document.createElement('div');
+    starsIn.className = "stars-inner";
+
+    starsOut.appendChild(starsIn);
+    colSmDiv.appendChild(starsOut);
+
+    const conte = document.createElement('div');
+    conte.className = 'container margen';
+    
+
+    colSmDiv.appendChild(conte);
+
     const moreInfoButton = document.createElement('button');
     moreInfoButton.className = 'add-to-cart margen';
     moreInfoButton.textContent = 'Más información';
     moreInfoButton.onclick = function () {
         gestorVisionado(3, 0);
     };
-
-    const boton2 = document.createElement('button');
-    boton2.classList.add('like', 'btn', 'btn-default', 'margen');
-    boton2.type = 'button';
-
-    const spanboton = document.createElement('span');
-    spanboton.classList.add('fa', 'fa-heart');
-
-    boton2.appendChild(spanboton);
-
-    colSmDiv.appendChild(moreInfoButton);
-    colSmDiv.appendChild(boton2);
+    conte.appendChild(moreInfoButton);
 
     row2.appendChild(col4);
     row2.appendChild(colSmDiv);
