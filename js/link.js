@@ -41,7 +41,7 @@ function paginaProducto2(pos) {
     var node_6 = document.createElement('H2');
     node_6.setAttribute('data-aos', 'fade-up');
     node_6.setAttribute('style', 'text-align-last: center');
-    node_6.setAttribute('class', 'aos-init aos-animate');
+    node_6.setAttribute('class', 'aos-init aos-animate margen');
     node_5.appendChild(node_6);
 
     var node_7 = document.createTextNode((new String("Bodegas")));
@@ -57,7 +57,7 @@ function paginaProducto2(pos) {
     node_10.setAttribute('class', 'd-flex aos-init aos-animate');
     node_10.setAttribute('data-aos', 'fade-up');
     node_10.setAttribute('data-aos-delay', '200');
-    node_10.setAttribute('style','justify-content: center');
+    node_10.setAttribute('style', 'justify-content: center');
     node_5.appendChild(node_10);
 
     //modal
@@ -75,7 +75,7 @@ function paginaProducto2(pos) {
 
     var button_4 = document.createElement('DIV');
     button_4.setAttribute('class', 'contenido-modal aplicar-borde margen');
-    button_4.setAttribute('style','text-align-last: center; background-color: #6a1a21');
+    button_4.setAttribute('style', 'text-align-last: center; background-color: #6a1a21');
     button_3.appendChild(button_4);
 
     var button_5 = document.createElement('SPAN');
@@ -83,7 +83,7 @@ function paginaProducto2(pos) {
     button_4.appendChild(button_5);
 
     var button_6 = document.createElement('IFRAME');
-    button_6.setAttribute('width', '800');
+    button_6.setAttribute('width', '100%');
     button_6.setAttribute('height', '500');
     button_6.setAttribute('src', json.itemListElement[pos].subjectOf.video[0].contentUrl);
     button_6.setAttribute('title', 'YouTube video player');
@@ -245,7 +245,7 @@ function paginaProducto2(pos) {
     node_32.appendChild(node_35);
 
     var video_1 = document.createElement('IFRAME');
-    video_1.setAttribute('width', '450');
+    video_1.setAttribute('width', '100%');
     video_1.setAttribute('height', '350');
     video_1.setAttribute('src', json.itemListElement[pos].subjectOf.video[1].contentUrl);
     video_1.setAttribute('title', 'YouTube video player');
@@ -671,11 +671,11 @@ function paginaProducto2(pos) {
     var nodo_1 = document.createElement('SECTION');
     nodo_1.setAttribute('id', 'testimonials');
     nodo_1.setAttribute('class', 'testimonials section-bg');
-    nodo_1.setAttribute('style','padding-bottom: 10px');
+    nodo_1.setAttribute('style', 'padding-bottom: 10px');
     node_17.appendChild(nodo_1);
 
     var nodo_2 = document.createElement('DIV');
-    nodo_2.setAttribute('class', 'container granate aplicar-borde margen'); 
+    nodo_2.setAttribute('class', 'container granate aplicar-borde margen');
     nodo_1.appendChild(nodo_2);
 
     var nodo_3 = document.createElement('DIV');
@@ -1174,7 +1174,7 @@ function paginaProducto2(pos) {
     node_418.appendChild(node_419);
 
     var contacte = document.createElement('div');
-    contacte.className='container margen aplicar-borde granate';
+    contacte.className = 'container margen aplicar-borde granate';
 
     node_413.appendChild(contacte);
 
@@ -1189,8 +1189,16 @@ function paginaProducto2(pos) {
     node_421.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6124.477589966659!2d2.913765460252749!3d39.86888869177018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297d6a0a43e5afd%3A0x1dccff5305e308a0!2sVinyes%20Mortitx!5e0!3m2!1ses!2ses!4v1681571881672!5m2!1ses!2ses");
     node_421.setAttribute('frameborder', '0');
     node_421.setAttribute('allowfullscreen', '');
-    node_421.className='margen';
-    node_420.appendChild(node_421);
+    node_421.className = 'margen';
+
+    var map_1 = document.createElement('DIV');
+    map_1.setAttribute('id', 'map');
+
+    //var map_2 = document.createElement('SCRIPT');
+    //map_2.setAttribute('src', 'https://unpkg.com/leaflet/dist/leaflet.js');
+    node_420.appendChild(map_1);
+    //node_420.appendChild(map_2);
+    initMap(json.itemListElement[pos].geo.latitude,json.itemListElement[pos].geo.longitude);
 
     var node_422 = document.createElement('DIV');
     node_422.setAttribute('class', 'row gy-4');
@@ -1908,7 +1916,7 @@ function about() {
     about_4.appendChild(about_41);
 
     var about_42 = document.createElement('DIV');
-    about_42.setAttribute('class', 'our-team');
+    about_42.setAttribute('class', 'our-team margen');
     about_41.appendChild(about_42);
 
     var about_43 = document.createElement('IMG');
@@ -1966,26 +1974,26 @@ function about() {
     about_56.setAttribute('frameborder', '0');
     about_56.setAttribute('allowfullscreen', '');
     about_56.setAttribute('data-aspectratio', '0.8211764705882353');
-    about_56.setAttribute('style', 'width: 523px; height: 429.475px;');
+    about_56.setAttribute('style', 'width: 100%; height: 429.475px;');
     about_55.appendChild(about_56);
 
-   //grafico
-   const contImg2 = document.createElement('div');
-   contImg2.className = "caja margen";
-   col2.appendChild(contImg2);
+    //grafico
+    const contImg2 = document.createElement('div');
+    contImg2.className = "caja margen";
+    col2.appendChild(contImg2);
 
-   const contImg3 = document.createElement('div');
-   contImg3.className = "box1 tamañoImgGraphic";
-   contImg2.appendChild(contImg3);
+    const contImg3 = document.createElement('div');
+    contImg3.className = "box1 tamañoImgGraphic";
+    contImg2.appendChild(contImg3);
 
 
-   var aux1 = document.createElement('img');
-   aux1.setAttribute('src', 'img/graphic.png');
-   aux1.setAttribute('class', 'im aos-init aos-animate');
-   aux1.setAttribute('data-aos', 'zoom-out');
-   aux1.setAttribute('data-aos-delay', '300');
-   aux1.setAttribute('style', 'height: auto');
-   contImg3.appendChild(aux1);
+    var aux1 = document.createElement('img');
+    aux1.setAttribute('src', 'img/graphic.png');
+    aux1.setAttribute('class', 'im aos-init aos-animate');
+    aux1.setAttribute('data-aos', 'zoom-out');
+    aux1.setAttribute('data-aos-delay', '300');
+    aux1.setAttribute('style', 'height: auto');
+    contImg3.appendChild(aux1);
 }
 
 function listadoCardXL() {
@@ -2653,7 +2661,7 @@ function listadoMap() {
 
     const conte = document.createElement('div');
     conte.className = 'container margen';
-    
+
 
     colSmDiv.appendChild(conte);
 
@@ -2707,7 +2715,7 @@ function gestorVisionado(vision, producto) {
         seccion.removeChild(car);
     }
 
-    if(hasNode(body,modal)){
+    if (hasNode(body, modal)) {
         body.removeChild(modal);
     }
 
@@ -2900,4 +2908,16 @@ function obtenerHora(hora) {
 
 function obtenerMinutos(hora) {
     return parseInt(hora.split(':')[1]);
+}
+
+function initMap(latitud, longitud) {
+    var map = L.map('map').setView([latitud, longitud], 12);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+      maxZoom: 18,
+    }).addTo(map);
+
+    L.marker([latitud, longitud]).addTo(map);
+
 }
