@@ -821,7 +821,7 @@ function paginaProducto2(pos) {
 
     var nodo_39 = document.createElement('P');
     nodo_39.setAttribute('class', 'lh-lg');
-    nodo_39.innerHTML="Localización perfecta y una cata de vinos exquisíta."
+    nodo_39.innerHTML = "Localización perfecta y una cata de vinos exquisíta."
     nodo_37.appendChild(nodo_39);
 
     var nodo_40 = document.createElement('I');
@@ -900,7 +900,7 @@ function paginaProducto2(pos) {
 
     var nodo_60 = document.createElement('P');
     nodo_60.setAttribute('class', 'lh-lg');
-    nodo_60.innerText="Excelente Bodega."
+    nodo_60.innerText = "Excelente Bodega."
     nodo_58.appendChild(nodo_60);
 
     var nodo_61 = document.createElement('I');
@@ -1201,7 +1201,7 @@ function paginaProducto2(pos) {
     //map_2.setAttribute('src', 'https://unpkg.com/leaflet/dist/leaflet.js');
     node_420.appendChild(map_1);
     //node_420.appendChild(map_2);
-    initMap(json.itemListElement[pos].geo.latitude,json.itemListElement[pos].geo.longitude);
+    initMap(json.itemListElement[pos].geo.latitude, json.itemListElement[pos].geo.longitude);
 
     var node_422 = document.createElement('DIV');
     node_422.setAttribute('class', 'row gy-4');
@@ -2910,13 +2910,34 @@ function obtenerMinutos(hora) {
 }
 
 function initMap(latitud, longitud) {
-    var map = L.map('map').setView([latitud, longitud], 12);
+    var map = L.map('map').setView([latitud, longitud], 11);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-      maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+        maxZoom: 18,
     }).addTo(map);
 
     L.marker([latitud, longitud]).addTo(map);
+
+    if (navigator.geolocation) {
+        // El navegador soporta geolocalización
+        navigator.geolocation.getCurrentPosition(function (position) {
+            // Se obtiene la posición actual del usuario
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            var marca = L.marker([lat, lon]).addTo(map);
+            marca.setIcon(L.icon({
+                iconColor: 'red'  // Color del icono del marcador (puedes utilizar cualquier color)
+              }));
+            // Aquí puedes utilizar los datos de latitud y longitud como desees
+            console.log("Latitud: " + lat + ", Longitud: " + lon);
+        }, function (error) {
+            // Ocurrió un error al obtener la geolocalización
+            console.error("Error al obtener la geolocalización: " + error.message);
+        });
+    } else {
+        // El navegador no soporta geolocalización
+        console.error("Geolocalización no soportada por este navegador");
+    }
 
 }
