@@ -1,0 +1,9 @@
+logo svg
+grafico svg
+video propio
+filtros
+comentarios
+ruta
+mapa busqueda
+supermercado cercano
+restaurante cercano
