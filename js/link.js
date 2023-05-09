@@ -690,7 +690,7 @@ function paginaProducto2(pos) {
     nodo_5.setAttribute('class', 'display-3 fw-bold text-white');
     nodo_4.appendChild(nodo_5);
 
-    var nodo_6 = document.createTextNode((new String("Testimonials")));
+    var nodo_6 = document.createTextNode((new String("Comentarios")));
     nodo_5.appendChild(nodo_6);
 
     var nodo_7 = document.createElement('HR');
@@ -702,7 +702,7 @@ function paginaProducto2(pos) {
     nodo_8.setAttribute('class', 'p-text text-white');
     nodo_4.appendChild(nodo_8);
 
-    var nodo_9 = document.createTextNode((new String("What our clients are saying")));
+    var nodo_9 = document.createTextNode((new String("Opiniones")));
     nodo_8.appendChild(nodo_9);
 
     var nodo_10 = document.createElement('DIV');
@@ -742,6 +742,7 @@ function paginaProducto2(pos) {
 
     var nodo_18 = document.createElement('P');
     nodo_18.setAttribute('class', 'lh-lg');
+    nodo_18.innerText = 'Volveré sin ninguna duda !!';
     nodo_16.appendChild(nodo_18);
 
     var nodo_19 = document.createElement('I');
@@ -820,6 +821,7 @@ function paginaProducto2(pos) {
 
     var nodo_39 = document.createElement('P');
     nodo_39.setAttribute('class', 'lh-lg');
+    nodo_39.innerHTML="Localización perfecta y una cata de vinos exquisíta."
     nodo_37.appendChild(nodo_39);
 
     var nodo_40 = document.createElement('I');
@@ -867,7 +869,7 @@ function paginaProducto2(pos) {
     var nodo_51 = document.createElement('SPAN');
     nodo_50.appendChild(nodo_51);
 
-    var nodo_52 = document.createTextNode((new String("\\n                digital strategist")));
+    var nodo_52 = document.createTextNode((new String("digital strategist")));
     nodo_51.appendChild(nodo_52);
 
     var nodo_53 = document.createElement('BR');
@@ -898,6 +900,7 @@ function paginaProducto2(pos) {
 
     var nodo_60 = document.createElement('P');
     nodo_60.setAttribute('class', 'lh-lg');
+    nodo_60.innerText="Excelente Bodega."
     nodo_58.appendChild(nodo_60);
 
     var nodo_61 = document.createElement('I');
@@ -1639,7 +1642,7 @@ function botonesNav(navState) {
 
     var ul = document.createElement('ul');
     ul.setAttribute('id', 'ul-nav');
-    ul.setAttribute('style', 'margin-right: 100px');
+    //ul.setAttribute('style', 'margin-right: 100%');
     switch (navState) {
         case 0:
             var busqueda = document.createElement('li');
@@ -1679,14 +1682,10 @@ function botonesNav(navState) {
             ul.appendChild(busqueda);
             ul.appendChild(contacto);
 
-            var ul1 = document.createElement('ul');
-            ul1.setAttribute('id', 'ul-nav1');
-            ul1.className = "granate aplicar-borde margen";
-
             var node_1 = document.createElement('LI');
             var node_2 = document.createElement('A');
             node_2.setAttribute('href', '#hero');
-            node_2.setAttribute('style', 'color:white');
+            //node_2.setAttribute('style', 'color:white');
             node_1.appendChild(node_2);
             var node_3 = document.createTextNode((new String("Inicio")));
             node_2.appendChild(node_3);
@@ -1694,7 +1693,7 @@ function botonesNav(navState) {
             var node_4 = document.createElement('LI');
             var node_5 = document.createElement('A');
             node_5.setAttribute('href', '#about');
-            node_5.setAttribute('style', 'color:white');
+            //node_5.setAttribute('style', 'color:white');
             node_4.appendChild(node_5);
             var node_6 = document.createTextNode((new String("Descripción")));
             node_5.appendChild(node_6);
@@ -1702,7 +1701,7 @@ function botonesNav(navState) {
             var node_7 = document.createElement('LI');
             var node_8 = document.createElement('A');
             node_8.setAttribute('href', '#weather');
-            node_8.setAttribute('style', 'color:white');
+            //node_8.setAttribute('style', 'color:white');
             node_7.appendChild(node_8);
             var node_9 = document.createTextNode((new String("Tiempo")));
             node_8.appendChild(node_9);
@@ -1710,7 +1709,7 @@ function botonesNav(navState) {
             var node_10 = document.createElement('LI');
             var node_11 = document.createElement('A');
             node_11.setAttribute('href', '#menu');
-            node_11.setAttribute('style', 'color:white');
+            //node_11.setAttribute('style', 'color:white');
             node_10.appendChild(node_11);
             var node_12 = document.createTextNode((new String("Vinos")));
             node_11.appendChild(node_12);
@@ -1718,7 +1717,7 @@ function botonesNav(navState) {
             var node_19 = document.createElement('LI');
             var node_20 = document.createElement('A');
             node_20.setAttribute('href', '#gallery');
-            node_20.setAttribute('style', 'color:white');
+            //node_20.setAttribute('style', 'color:white');
             node_19.appendChild(node_20);
             var node_21 = document.createTextNode((new String("Fotos")));
             node_20.appendChild(node_21);
@@ -1726,21 +1725,21 @@ function botonesNav(navState) {
             var node_22 = document.createElement('LI');
             var node_23 = document.createElement('A');
             node_23.setAttribute('href', '#contact');
-            node_23.setAttribute('style', 'color:white');
-            node_22.setAttribute('style', 'margin-right: 25px');
+            //node_23.setAttribute('style', 'color:white');
+            //node_22.setAttribute('style', 'margin-right: 25%');
             node_22.appendChild(node_23);
             var node_24 = document.createTextNode((new String("Contacto")));
             node_23.appendChild(node_24);
 
-            ul1.appendChild(node_1);
-            ul1.appendChild(node_4);
-            ul1.appendChild(node_7);
-            ul1.appendChild(node_10);
-            ul1.appendChild(node_19);
-            ul1.appendChild(node_22);
+            ul.appendChild(node_1);
+            ul.appendChild(node_4);
+            ul.appendChild(node_7);
+            ul.appendChild(node_10);
+            ul.appendChild(node_19);
+            ul.appendChild(node_22);
 
             document.getElementById('navbar').appendChild(ul);
-            document.getElementById('navbar').appendChild(ul1);
+            //document.getElementById('navbar').appendChild(ul1);
             break;
     }
     const icono = document.getElementById("icono");
@@ -1970,7 +1969,7 @@ function about() {
     about_54.appendChild(about_55);
 
     var about_56 = document.createElement('IFRAME');
-    about_56.setAttribute('src', 'https://www.youtube.com/embed/ESXgJ9-H-2U');
+    about_56.setAttribute('src', 'https://www.youtube.com/embed/EqIqQRjyEnQ');
     about_56.setAttribute('frameborder', '0');
     about_56.setAttribute('allowfullscreen', '');
     about_56.setAttribute('data-aspectratio', '0.8211764705882353');

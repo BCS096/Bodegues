@@ -45,7 +45,7 @@
 
 }
 .tamañoImgCard{
-  width: 60%;
+  width: 100%;
   height: 100px;
 }
 
@@ -1966,7 +1966,7 @@ section {
   }
 
   .mobile-nav-hide {
-    color: var(--color-secondary);
+    color: gray;
     font-size: 32px;
     cursor: pointer;
     line-height: 0;
