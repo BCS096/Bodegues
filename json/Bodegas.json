@@ -918,6 +918,499 @@
                 "https://www.canvidalet.com/wp-content/uploads/2018/08/bodega-en-mallorca-can-vidalet.jpg"
             ],
             "url": "https://www.canvidalet.com"
+        },
+        {
+            "@type": "Winery",
+            "name": "José Luís Ferrer",
+            "description": "Bodegas José L. Ferrer es un referente de tradición e innovación en la elaboración de vinos en Binissalem. Cuatro generaciones que desde 1931 seguimos trabajado para que el sabor mallorquín de nuestras uvas se disfrute alrededor del mundo a través de cada uno de nuestros vinos. En 1931 José L. Ferrer con 28 años fundó esta bodega bajo el nombre de Vinícola de Binissalem, siendo pionero en Mallorca: introduciendo nuevas técnicas de cultivo de la vid, embotellando vinos para su comercialización, envejeciendo los vinos en barricas de roble, elaborando vinos blancos a partir de variedades autóctonas y posteriormente, exportando vinos a Europa y Estados Unidos.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Binissalem",
+                "postalCode": "07350",
+                "streetAddress": "Carrer del Conquistador, 103"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/eTCxjd7q0kE"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/MIcYnMka57A"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Crianza",
+                                "description": "Variedades: Mantonegro, Cabernet Sauvignon, Tempranillo, Callet y Sirah.",
+                                "image": "https://www.vinosferrer.com/wp-content/themes/vinosferrer/assets/botellas/jlf_crianza.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "8.45",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Añada Roble",
+                                "description": "Variedades: Mantonegro, Callet, Tempranillo y Cabernet Sauvignon.",
+                                "image": "https://www.vinosferrer.com/wp-content/themes/vinosferrer/assets/botellas/jlf_anyada_roure.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "4.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Reserva",
+                                "description": "Variedades: Mantonegro, Callet y Cabernet Sauvignon.",
+                                "image": "https://www.vinosferrer.com/wp-content/themes/vinosferrer/assets/botellas/jlf_reserva.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "17.95",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Blanc de Blancs",
+                                "description": "Variedades: Moll, Chardonnay, Moscatel y otras.",
+                                "image": "https://www.vinosferrer.com/wp-content/themes/vinosferrer/assets/botellas/jlf_blanc_blancs.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "9.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Dues Chardonnay-Giró Ros",
+                                "description": "Variedades: Chardonnay y Giró Ros.",
+                                "image": "https://www.vinosferrer.com/wp-content/themes/vinosferrer/assets/botellas/dues_chardonay_giroros_2020.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "7.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Rosat",
+                                "description": "Variedades: Mantonegro, Callet, Tempranillo, Cabernet Sauvignon y Sirah.",
+                                "image": "https://www.vinosferrer.com/wp-content/themes/vinosferrer/assets/botellas/jlf_rosat.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Pedra de Binissalem Rosat",
+                                "description": "Variedades: Mantonegro y Cabernet Sauvignon.",
+                                "image": "https://www.vinosferrer.com/wp-content/themes/vinosferrer/assets/botellas/pedra_rosat.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "9.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 10:00-15:30",
+            "telephone": "971100100",
+            "isAccessibleForFree": false,
+            "email": "info@vinosferrer.com",
+            "logo": "https://www.vinosferrer.com/wp-content/themes/vinosferrer/assets/logo_ferrer_black.png",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.68245269520121, 
+                "longitude" : 2.843565108597079
+            },
+            "image": [
+                "https://www.vinosferrer.com/wp-content/gallery/tienda/thumbs/thumbs_vinos-tienda-02.jpg",
+                "https://www.vinosferrer.com/wp-content/gallery/tienda/thumbs/thumbs_vinos-tienda-04.jpg",
+                "https://www.vinosferrer.com/wp-content/gallery/tienda/thumbs/thumbs_vinos-tienda-03.jpg",
+                "https://www.vinosferrer.com/wp-content/gallery/gal-eventos/thumbs/thumbs_atrezzo_bodegas_palet.jpg",
+                "https://www.vinosferrer.com/wp-content/gallery/gal-eventos/thumbs/thumbs_evento_brindis_copas.jpg",
+                "https://www.vinosferrer.com/wp-content/gallery/gal-eventos/thumbs/thumbs_boda_bodegas.jpg"
+            ],
+            "url": "https://www.vinosferrer.com/es/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Ribas",
+            "description": "Situada en Consell, en una comarca vinícola histórica, nuestra bodega complementa el respeto por las tradiciones con la inversión en investigación. El equipo tiene un objetivo común: producir uva de la mejor calidad de forma sostenible para elaborar vinos personales y con marcada tipicidad.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Consell",
+                "postalCode": "07330",
+                "streetAddress": "C/ MUNTANYA Nº2"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/3gUYPxiX_WQ"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/glTYGCoMzZo"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Ribas Negre",
+                                "description": "Variedades : 55% Mantonegro, 35% Syrah, 5% Callet, 5% Merlot. Con un 14,5% de alcohol.",
+                                "image": "https://bodegaribas.com/wp-content/uploads/2021/07/Vino-RIBAS-Negre-2018.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15,95",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sió Negre",
+                                "description": "Variedades : 60% Mantonegro, 35% Syrah, 5% Gargollassa. Con un 14,5% de alcohol.",
+                                "image": "https://bodegaribas.com/wp-content/uploads/2021/07/Vino-Ribas-Sio%CC%81.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "23,35",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Ribas de Cabrera",
+                                "description": "Variedades : 80% Mantonegro, 20% Syrah. Con un 14,5% de alcohol.",
+                                "image": "https://bodegaribas.com/wp-content/uploads/2021/07/Vino-Ribas-de-Cabrera.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "72,50",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Ribas Blanc",
+                                "description": "Variedades : 90% Prensal Blanc, 10% Giró Ros. Con un 12,5% de alcohol.",
+                                "image": "https://bodegaribas.com/wp-content/uploads/2021/07/Vino-RIBAS-Blanc-2018.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15,95",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sió Blanc",
+                                "description": "Variedades : 35% Prensal Blanc, 30% Giró ros, 35% Viognier. Con un 13,5% de alcohol.",
+                                "image": "https://bodegaribas.com/wp-content/uploads/2021/07/Vino-RIBAS-sio-blanc.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "20,95",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sioneta Blanc",
+                                "description": "Variedades : 100% Moscatel de grano menudo. Con un 14% de alcohol.",
+                                "image": "https://bodegaribas.com/wp-content/uploads/2021/07/Vino-Ribas-Sioneta-Blanc.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "18,80",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Ribas Rosat",
+                                "description": "Variedades : 100% Mantonegro. Con un 13,5% de alcohol.",
+                                "image": "https://bodegaribas.com/wp-content/uploads/2021/07/Vino-RIBAS-Rosat-2018.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15,95",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sió Rosat",
+                                "description": "Variedades : 100% Gargollassa. Con un 13,5% de alcohol.",
+                                "image": "https://bodegaribas.com/wp-content/uploads/2023/03/Vino-Ribas-Sio-Rosat.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "14,00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr,Sa 10:00-18:00",
+            "telephone": "971622673",
+            "isAccessibleForFree": false,
+            "email": "info@bodegaribas.com",
+            "logo": "https://bodegaribas.com/wp-content/uploads/2021/07/logos.png",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.66782681210734,
+                "longitude" : 2.8144797527762417
+            },
+            "image": [
+                "https://bodegaribas.com/wp-content/uploads/2021/07/clima.jpg",
+                "https://bodegaribas.com/wp-content/uploads/2021/07/variedad.jpg",
+                "https://bodegaribas.com/wp-content/uploads/2021/07/tradicion.jpg",
+                "https://bodegaribas.com/wp-content/uploads/2021/07/grano-1.jpg",
+                "https://bodegaribas.com/wp-content/uploads/2021/07/gas.jpg",
+                "https://bodegaribas.com/wp-content/uploads/2021/07/laboratorio.jpg",
+                "https://bodegaribas.com/wp-content/uploads/2021/07/intalacion.jpg",
+                "https://bodegaribas.com/wp-content/uploads/2021/09/HISTORIA-BODEGA-RIBAS.jpg"
+            ],
+            "url": "https://bodegaribas.com/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Vins Nadal",
+            "description": "VINS NADAL es una bodega familiar, defensora del medio ambiente, las variedades nativas y la cultura mallorquina. Valores todos ellos que queremos transmitir a todos los que nos visitan, ofreciendo una experiencia familiar y una atención personalizada para hacerles sentir nuestro amor por el vino y por Mallorca.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Binissalem",
+                "postalCode": "07350",
+                "streetAddress": "C/ Ramón Llull ,Nº2"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/5owGUhaSMFc"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/yMxZ1k8JDtI"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Albaflor 2019",
+                                "description": "Variedades: Mantonegro, Cabernet, Merlot y Syrah.Con un 13,30% de alcohol.",
+                                "image": "https://www.vinsnadal.es/wp-content/uploads/2022/09/Crianza-Albaflor-2019-scaled.webp",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "14.95",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Reserva Albaflor 2017",
+                                "description": "Variedades: Manto Negro, Cabernet Sauvignon, Merlot y Syrah. Con un 12,5% de alcohol.",
+                                "image": "https://www.vinsnadal.es/wp-content/uploads/2022/09/Reserva-Albaflor-2017-scaled.webp",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "22,50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "COUPAGE 110 2019",
+                                "description": "Variedades: Manto Negro, Cabernet Sauvignon, Merlot y Syrah. Con un 12,5% de alcohol.",
+                                "image": "https://www.vinsnadal.es/wp-content/uploads/2022/09/Coupage-110-2017-scaled.webp",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "25.30",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Albaflor 2022",
+                                "description": "Variedades: Prensal Blanc, Giro Ros y Moscatel. Con un 13% de alcohol.",
+                                "image": "https://www.vinsnadal.es/wp-content/uploads/2022/09/Albaflor-Blanco-scaled.webp",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "11.70",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "110 2022",
+                                "description": "Variedades: Sauvignon Blanc. Con 13% de alcohol.",
+                                "image": "https://www.vinsnadal.es/wp-content/uploads/2022/09/Blanc-110-2021-scaled.webp",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Albaflor 2022",
+                                "description": "Variedades: Merlot, Mantonegro, Cabernet Sauvignon, Giro Ros, Syrah y Monastrell. Con un 13% de alcohol.",
+                                "image": "https://www.vinsnadal.es/wp-content/uploads/2022/09/Rosado-Albaflor-2021-scaled.webp",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "10.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "110 2022",
+                                "description": "Variedades: Manto Negro. Con un 12% de alcohol.",
+                                "image": "https://www.vinsnadal.es/wp-content/uploads/2022/09/Rosat-110-2021-scaled.webp",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr 09:30-14:30",
+            "telephone": "971511058",
+            "isAccessibleForFree": false,
+            "email": "info@vinsnadal.es",
+            "logo": "https://www.vinsnadal.es/wp-content/themes/genesis-sample/images/logo_normal.svg",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.68576139665263,
+                "longitude" : 2.8443589202357664
+            },
+            "image": [
+                "https://www.vinsnadal.es/wp-content/uploads/2021/10/Sostenibilidad-702x526.jpg",
+                "https://www.vinsnadal.es/wp-content/uploads/2021/10/Nosotros-2.jpg",
+                "https://www.vinsnadal.es/wp-content/uploads/2021/10/Nosotros-3.jpg",
+                "https://www.vinsnadal.es/wp-content/uploads/2021/10/nosostros-4.jpg",
+                "https://www.vinsnadal.es/wp-content/uploads/2021/10/Visita-Sarmiento.jpg"
+            ],
+            "url": "https://www.vinsnadal.es"
         }
     ]
 }
