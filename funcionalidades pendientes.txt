@@ -5,6 +5,5 @@ filtros
 ordenar por
 comentarios
 ruta
-mapa busqueda
 supermercado cercano
 restaurante cercano

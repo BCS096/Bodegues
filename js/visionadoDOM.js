@@ -32,7 +32,6 @@ function paginaProducto2(pos) {
     node_3.appendChild(node_4);
 
     var node_5 = document.createElement('DIV');
-    //node_5.setAttribute('class', 'col-sm order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start m-auto');
     node_5.setAttribute('class', 'col-sm');
     node_5.setAttribute('style', "align-self: center");
     node_4.appendChild(node_5);
@@ -135,7 +134,6 @@ function paginaProducto2(pos) {
     var node_16 = document.createElement('IMG');
 
     node_16.setAttribute('src', json.itemListElement[pos].image[json.itemListElement[pos].image.length - 1]);
-    //node_16.setAttribute('class', 'im2 margen2 aos-init aos-animate');  
     node_16.setAttribute('alt', '');
     node_16.setAttribute('data-aos', 'zoom-out');
     node_16.setAttribute('data-aos-delay', '300');
@@ -154,7 +152,6 @@ function paginaProducto2(pos) {
     const contImg3 = document.createElement('div');
     contImg3.className = "box2 tamañoImgProductoMain";
     contImg2.appendChild(contImg3);
-
 
     var aux1 = document.createElement('img');
     aux1.setAttribute('src', json.itemListElement[pos].logo);
@@ -2394,8 +2391,6 @@ function listadoCard() {
     dad.appendChild(container1);
 }
 
-//funcion buscar a través del mapa
-//pensar que no está conectado al JSON
 function listadoMap() {
     const dad = document.getElementById('seccion');
     const container = document.createElement('div');
@@ -2725,214 +2720,4 @@ function gestorVisionado(vision, producto) {
 
 }
 
-(function () {
-    /* Rounded Dots Dark */
-    $("#content-1").mCustomScrollbar({
-        theme: "rounded-dots-dark"
-    });
 
-    /* Rounded Dark */
-    $("#content-2").mCustomScrollbar({
-        theme: "rounded-dark"
-    });
-
-    /* Inset Dark */
-    $("#content-3").mCustomScrollbar({
-        theme: "inset-3-dark"
-    });
-
-    /* 3d Dark */
-    $("#content-4").mCustomScrollbar({
-        theme: "3d-dark"
-    });
-
-    /* Dark Thin */
-    $("#content-5").mCustomScrollbar({
-        theme: "dark-thin"
-    });
-});
-
-$('.owl-carousel').owlCarousel({
-    loop: true,
-    margin: 10,
-    dots: false,
-    nav: true,
-    mouseDrag: false,
-    autoplay: true,
-    animateOut: 'slideOutUp',
-    responsive: {
-        0: {
-            items: 1
-        },
-        600: {
-            items: 1
-        },
-        1000: {
-            items: 1
-        }
-    }
-});
-
-$(window).bind("load resize slid.bs.carousel", function () {
-    var imageHeight = $(".active .holder").height();
-    $(".controllers").height(imageHeight);
-    console.log("Slid");
-});
-
-//Funcionalidades
-
-//carga de JSON's
-function cargarJSON() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "json/Bodegas.json", false);
-    xmlhttp.setRequestHeader("Content-Type", "application/json");
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            json = JSON.parse(this.responseText);
-            console.log(json);
-        }
-    };
-    xmlhttp.send();
-}
-
-//Funcionalidad del tiempo
-function weather(latitud, longitud) {
-    const apiKey = "598a45ea6dd5cf5f91f03b503538d27e";
-    const url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitud + "&lon=" + longitud + "&appid=" + apiKey + "&units=metric&lang=es";
-    const request = new XMLHttpRequest();
-    request.open('GET', url, false);
-    request.send();
-    if (request.status === 200) {
-        const data = JSON.parse(request.responseText);
-        console.log(data);
-        return data;
-    } else {
-        console.error(`Error ${request.status}: ${request.statusText}`);
-    }
-}
-
-function h12h(cadena) {
-    return cadena.includes("12:00:00");
-}
-
-function iconoTiempo(id) {
-    switch (id) {
-        case "01d":
-        case "01n":
-            return "bi bi-brightness-high-fill";
-        case "02d":
-        case "02n":
-            return " bi bi-cloud-sun";
-        case "03d":
-        case "03n":
-            return "bi bi-cloud";
-        case "04d":
-        case "04n":
-            return "bi bi-clouds-fill";
-        case "09d":
-        case "09n":
-            return "bi bi-cloud-drizzle-fill";
-        case "10d":
-        case "10n":
-            return "fa-solid fa-cloud-sun-rain";
-        case "11d":
-        case "11n":
-            return "bi bi-cloud-lightning-rain-fill";
-        case "13d":
-        case "13n":
-            return "bi bi-snow";
-        case "50d":
-        case "50n":
-            return "bi bi-wind";
-
-    }
-}
-
-//Funcionalidad de 'Está Abierto'
-function estaAbierto(horario) {
-    const semana = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
-    var fechaActual = new Date();
-    var diaSemana = semana[fechaActual.getDay() - 1];
-    var horaActual = fechaActual.getHours();
-    var minutosActual = fechaActual.getMinutes();
-    if (horario.includes(diaSemana)) {
-        var horaApertura = obtenerHora(horario.split(' ')[1].split('-')[0]);
-        var minutosApertura = obtenerMinutos(horario.split(' ')[1].split('-')[0]);
-        var horaCierre = obtenerHora(horario.split(' ')[1].split('-')[1]);
-        var minutosCierre = obtenerMinutos(horario.split(' ')[1].split('-')[1]);
-
-        if (horaActual > horaApertura && horaActual < horaCierre) {
-            return true;
-        } else if (horaActual === horaApertura && minutosActual >= minutosApertura) {
-            if (horaActual === horaCierre && minutosActual >= minutosCierre) {
-                return false;
-            }
-            return true;
-        } else if (horaActual === horaCierre && minutosActual <= minutosCierre) {
-            if (horaActual === horaApertura && minutosActual < minutosApertura) {
-                return false;
-            }
-            return true;
-        }
-    }
-    return false;
-}
-
-function obtenerHora(hora) {
-    return parseInt(hora.split(':')[0]);
-}
-
-function obtenerMinutos(hora) {
-    return parseInt(hora.split(':')[1]);
-}
-
-//funcionalidad mapas
-
-function initMap(latitud, longitud) {
-    var map = L.map('map').setView([latitud, longitud], 11);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-        maxZoom: 18,
-    }).addTo(map);
-
-    L.marker([latitud, longitud]).addTo(map);
-
-    if (navigator.geolocation) {
-        // El navegador soporta geolocalización
-        navigator.geolocation.getCurrentPosition(function (position) {
-            // Se obtiene la posición actual del usuario
-            var lat = position.coords.latitude;
-            var lon = position.coords.longitude;
-            var marca = L.marker([lat, lon]).addTo(map);
-            marca.setIcon(L.icon({
-                iconColor: 'red'  // Color del icono del marcador (puedes utilizar cualquier color)
-            }));
-            // Aquí puedes utilizar los datos de latitud y longitud como desees
-            console.log("Latitud: " + lat + ", Longitud: " + lon);
-        }, function (error) {
-            // Ocurrió un error al obtener la geolocalización
-            console.error("Error al obtener la geolocalización: " + error.message);
-        });
-    } else {
-        // El navegador no soporta geolocalización
-        console.error("Geolocalización no soportada por este navegador");
-    }
-
-}
-
-function initMap2() {
-    var map = L.map('map').setView([39.639482525079316, 2.9700955197758736], 9);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-        maxZoom: 18,
-    }).addTo(map);
-
-    for (let i = 0; i < json.itemListElement.length; i++) {
-        var marcador = L.marker([json.itemListElement[i].geo.latitude, json.itemListElement[i].geo.longitude], { title: 'Bodegas ' + json.itemListElement[i].name }).addTo(map);
-        marcador.on('click', function (e) {
-            infoMapa(i);
-        });
-    }
-}
