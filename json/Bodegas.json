@@ -1411,6 +1411,343 @@
                 "https://www.vinsnadal.es/wp-content/uploads/2021/10/Visita-Sarmiento.jpg"
             ],
             "url": "https://www.vinsnadal.es"
+        },
+        {
+            "@type": "Winery",
+            "name": "Son Prim",
+            "description": "A principios de los noventa, Jaime Llabrés plantó una pequeña parcela con un “tutifruti” de cepas, entre otras, Chardonnay, Syrah, Cabernet y Merlot, con el objetivo de estudiar su adaptación al clima y al suelo de Mallorca. Para vinificar los primeros resultados de las diversas variedades de vid utilizamos pequeños depósitos de inox equipados con sistema de frío, que colocamos bajo un enorme algarrobo. Curiosamente los resultados fueron muy satisfactorios. La crianza se hizo en barricas acomodadas en el fresco sótano de un garaje de Palma. De esta aventura se obtuvieron algunas barricas con vinos de muy buena calidad y también algunos vinagres que eran muy apropiados para aliño de ensaladas.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Sencelles",
+                "postalCode": "07140",
+                "streetAddress": "Crta. Inca – Sencelles Km. 4,9."
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/SbUGoWTvMiw"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/Z0h4QQCP9Bk"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Cabernet Sauvignon 2020",
+                                "description": "Variedades: Cabernet Sauvignon. Con un 15% de alcohol.",
+                                "image": "https://www.sonprim.com/wp-content/uploads/2020/03/CabernetSauvignon.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "18.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Cup 2020",
+                                "description": "Variedades: 55% Merlot, 30% Cabernet Sauvignon y 15% Syrah. Con un 15% de alcohol.",
+                                "image": "https://www.sonprim.com/wp-content/uploads/2020/03/Cup.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "18.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Es negre 2022",
+                                "description": "Variedades: Cabernet Sauvignon y Merlot. Con un 13,5% de alcohol.",
+                                "image": "https://www.sonprim.com/wp-content/uploads/2020/03/EsNegre1.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "13.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Merlot 2020",
+                                "description": "Variedades: Merlot. Con un 15,5% de alcohol",
+                                "image": "https://www.sonprim.com/wp-content/uploads/2020/03/Merlot.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "19.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Blanc de Merlot 2022",
+                                "description": "Variedades: Merlot. Con un 14% de alcohol.",
+                                "image": "https://www.sonprim.com/wp-content/uploads/2020/03/BlancdeMerlot.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "14.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Es Blanc 2022",
+                                "description": "Variedades: Chardonnay. Con un 14,5% de alcohol.",
+                                "image": "https://www.sonprim.com/wp-content/uploads/2020/03/EsBlanc.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "13.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Maria José 2021",
+                                "description": "Variedades: Chardonnay. Con un 15,5% de alcohol.",
+                                "image": "https://www.sonprim.com/wp-content/uploads/2020/03/MariaJose1.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "18.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }  
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Roset 2022",
+                                "description": "",
+                                "image": "https://www.sonprim.com/wp-content/uploads/2022/06/ROSET-para-web.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "14.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr,Sa 10:00-17:00",
+            "telephone": "658524573",
+            "isAccessibleForFree": false,
+            "email": "visit@sonprim.com",
+            "logo": "https://www.sonprim.com/wp-content/uploads/2022/03/logo_navegador_completo-removebg-preview.png",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.686672324526185,
+                "longitude" : 2.9184771820159536
+            },
+            "image": [
+                "https://www.sonprim.com/wp-content/uploads/2022/06/9.png",
+                "https://www.sonprim.com/wp-content/uploads/2022/06/8.png",
+                "https://www.sonprim.com/wp-content/uploads/2022/06/4.png",
+                "https://www.sonprim.com/wp-content/uploads/2022/06/3.png",
+                "https://www.sonprim.com/wp-content/uploads/2022/06/10.png",
+                "https://www.sonprim.com/wp-content/uploads/2022/06/2.png",
+                "https://www.sonprim.com/wp-content/uploads/2022/06/1.png",
+                "https://www.sonprim.com/wp-content/uploads/2018/02/2-e1669301473306.png"
+            ],
+            "url": "https://www.sonprim.com/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Bordoy",
+            "description": "El proceso de nuestros vinos comienza en el mes de febrero, cuando realizamos la poda de la viña, proceso que nos permite controlar la producción. A mediados de marzo las cepas empiezan a brotar y en mayo se realiza la poda en verde, eliminando el exceso de vegetación y producción. De la floración podemos disfrutar a mediados de mayo y en el mes de junio tiene lugar el envero, donde las uvas inicialmente verdes cambian a negro o amarillo en su caso.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Llucmajor",
+                "postalCode": "07620",
+                "streetAddress": "Camí de Muntanya s/n"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/KK3Dr8TE8MI"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/o1oGo4CkT1M"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sa Rota Añada",
+                                "description": "Variedades: Merlot (59%), Cabernet Sauvingnon (37,5%), Callet (2%), Gargallossa ( 0,5%), Syrah ( 0,5%) y Fogoneu ( 0,5%). Con un 14% de alcohol.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/5295/1831/4E41/1137/D71B/C0A8/2BB8/A87F/SA-ROTA-JOVEN-NEGRO_ANADA_ml.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "7.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sa Rota Crianza",
+                                "description": "Variedades: Cabernet Sauvignon (45%), Merlot (41%), Syrah (10%) Callet (2%) y Gargallossa ( 2%). Con un 13,5% de alcohol.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/5295/1A24/FB44/680C/3EC1/C0A8/28BE/E041/SA-ROTA-CRIANZA_BORDOY_ml.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "10.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Terra de Marès",
+                                "description": "Variedades: Cabernet Sauvingnon (34%) Merlot (33%) y Syrah (33%). Con un 14,5% de alcohol.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/5382/FE2D/EC8E/0090/6636/C0A8/2ABB/7C44/Tierra-de-Mares-210x634_ml.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "32.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sa Rota Blanc",
+                                "description": "Variedades: Chardonnay (65%), Giró Ros (17%) y Prensal (28%). Con un 13% de alcohol.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/5295/13B8/5D07/CEBC/C4DD/C0A8/28B8/E7A8/SA-ROTA-JOVEN-BLANCO_bordoy_ml.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "10.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sa Rota Blanc Barrica",
+                                "description": "Variedades: Chardonnay (82%) , Giró Ros (13%) y Prensal Blanc (5%). Con un 12,4% de alcohol.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/5295/1668/3239/F5FF/FDC6/C0A8/28BE/CC7C/SA-ROTA-BLANCO-BARRICA_BORDOY_ml.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "13.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Fermança Blanc 2021",
+                                "description": "Variedades: Giró Ros (80%) y Prensal Blanc (20%). Con un 12,5% de alcohol.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/598A/BA89/5D0B/FBFB/40FC/C0A8/2BBA/D471/BlancoFermanca_BORDOY_ml.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "13.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sa Rota Rosat",
+                                "description": "Variedades: Cabernet Sauvingnon (63%), Merlot (34%) y Callet (4%). Con un 13,5% de alcohol.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/5295/2145/06B7/F37D/75A0/C0A8/29BA/BCDA/SA-ROTA-JOVEN-ROSADO_BORDOY_ml.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "9.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr 09:00-16:00",
+            "telephone": "971774702",
+            "isAccessibleForFree": false,
+            "email": "promocion@bodegasbordoy.com",
+            "logo": "https://www.bodegasbordoy.es/wp-content/uploads/2020/10/logo-trazado-bordoy.png",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.45789895763916,
+                "longitude" : 2.7940763592265023
+            },
+            "image": [
+                "https://www.bodegasbordoy.es/wp-content/uploads/2019/04/BodegasBordoy_LaPoda-768x576.jpg",
+                "https://www.bodegasbordoy.es/wp-content/uploads/2019/06/BODEGASBORDOY_Esporga-768x576.jpg",
+                "https://www.bodegasbordoy.es/wp-content/uploads/2019/07/poda-en-verde-768x576.jpg",
+                "https://www.bodegasbordoy.es/wp-content/uploads/2019/07/Bodegas-Bordoy-Envero-768x576.jpg",
+                "https://www.bodegasbordoy.es/wp-content/uploads/2019/04/BodegasBordoy_Vendimia-768x576.jpg",
+                "https://www.bodegasbordoy.es/wp-content/uploads/2019/04/BodegasBordorMesaSeleccion-768x576.jpg",
+                "https://www.bodegasbordoy.es/wp-content/uploads/2019/04/BodegasBordoyProcesado-768x576.jpg",
+                "https://www.bodegasbordoy.es/wp-content/uploads/2019/04/BodegasBordorFermentacion-768x576.jpg",
+                "https://www.bodegasbordoy.es/wp-content/uploads/2019/04/BodegasBordoyCrianza-768x576.jpg"
+
+            ],
+            "url": "https://www.bodegasbordoy.es/"
         }
     ]
 }

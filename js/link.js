@@ -13,7 +13,6 @@ function paginaProducto2(pos) {
     const fechaActual = new Date();
     const diaActual = diasSemana[fechaActual.getDay()];
 
-
     //cargar el tiempo
     var tiempo = weather(json.itemListElement[pos].geo.latitude, json.itemListElement[pos].geo.longitude);
     console.log(tiempo);
@@ -301,7 +300,6 @@ function paginaProducto2(pos) {
         } else {
             node_47.setAttribute('class', 'margen aos-init aos-animate');
         }
-
 
         node_47.setAttribute('data-aos', 'fade-up');
         node_47.setAttribute('data-aos-delay', '200');
@@ -1186,21 +1184,9 @@ function paginaProducto2(pos) {
     contacte.appendChild(node_420);
 
     //funcionamiento de la API de mapa
-
-    var node_421 = document.createElement('IFRAME');
-    node_421.setAttribute('style', 'border:0; width: 100%; height: 350px;');
-    node_421.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6124.477589966659!2d2.913765460252749!3d39.86888869177018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297d6a0a43e5afd%3A0x1dccff5305e308a0!2sVinyes%20Mortitx!5e0!3m2!1ses!2ses!4v1681571881672!5m2!1ses!2ses");
-    node_421.setAttribute('frameborder', '0');
-    node_421.setAttribute('allowfullscreen', '');
-    node_421.className = 'margen';
-
     var map_1 = document.createElement('DIV');
     map_1.setAttribute('id', 'map');
-
-    //var map_2 = document.createElement('SCRIPT');
-    //map_2.setAttribute('src', 'https://unpkg.com/leaflet/dist/leaflet.js');
     node_420.appendChild(map_1);
-    //node_420.appendChild(map_2);
     initMap(json.itemListElement[pos].geo.latitude, json.itemListElement[pos].geo.longitude);
 
     var node_422 = document.createElement('DIV');
@@ -2414,10 +2400,10 @@ function listadoMap() {
     const dad = document.getElementById('seccion');
     const container = document.createElement('div');
     container.classList.add('container', 'granate', 'aplicar-borde', 'margen');
-
+    dad.appendChild(container);
     const row = document.createElement('div');
     row.classList.add('row');
-
+    container.appendChild(row);
     const containerIcons = document.createElement('div');
     containerIcons.className = 'container';
 
@@ -2446,12 +2432,17 @@ function listadoMap() {
     row.appendChild(containerIcons);
 
     const col1 = document.createElement('div');
-    col1.classList.add('col-auto');
+    col1.classList.add('mb-3');
+    row.appendChild(col1);
+    var map_1 = document.createElement('DIV');
+    map_1.setAttribute('id', 'map');
+    col1.appendChild(map_1);
+    initMap2();
 
-    const img = document.createElement('img');
-    img.classList.add('margen');
-    img.setAttribute('src', '/img/maps.png');
-    col1.appendChild(img);
+    //const img = document.createElement('img');
+    //img.classList.add('margen');
+    //img.setAttribute('src', '/img/maps.png');
+    //col1.appendChild(img);
 
     const col2 = document.createElement('div');
     col2.classList.add('col-sm');
@@ -2683,13 +2674,6 @@ function listadoMap() {
     col3.appendChild(colLabel);
 
     col2.appendChild(col3);
-
-    row.appendChild(col1);
-    row.appendChild(col2);
-
-    container.appendChild(row);
-
-    dad.appendChild(container);
 }
 
 function hasNode(dad, child) {
@@ -2938,6 +2922,20 @@ function initMap(latitud, longitud) {
     } else {
         // El navegador no soporta geolocalización
         console.error("Geolocalización no soportada por este navegador");
+    }
+
+}
+
+function initMap2() {
+    var map = L.map('map').setView([39.639482525079316, 2.9700955197758736], 9);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+    }).addTo(map);
+
+    for(let i = 0; i < json.itemListElement.length; i++){
+        L.marker([json.itemListElement[i].geo.latitude, json.itemListElement[i].geo.longitude]).addTo(map);
     }
 
 }

@@ -2,6 +2,7 @@ logo svg
 grafico svg
 video propio
 filtros
+ordenar por
 comentarios
 ruta
 mapa busqueda
