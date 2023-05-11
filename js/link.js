@@ -2403,6 +2403,7 @@ function listadoMap() {
     dad.appendChild(container);
     const row = document.createElement('div');
     row.classList.add('row');
+    row.setAttribute('id', 'infoMap')
     container.appendChild(row);
     const containerIcons = document.createElement('div');
     containerIcons.className = 'container';
@@ -2432,20 +2433,30 @@ function listadoMap() {
     row.appendChild(containerIcons);
 
     const col1 = document.createElement('div');
-    col1.classList.add('mb-3');
+    col1.setAttribute('id','mapa');
+    col1.className = 'mb-3';
     row.appendChild(col1);
     var map_1 = document.createElement('DIV');
     map_1.setAttribute('id', 'map');
+    map_1.setAttribute('class', 'margen');
     col1.appendChild(map_1);
     initMap2();
 
-    //const img = document.createElement('img');
-    //img.classList.add('margen');
-    //img.setAttribute('src', '/img/maps.png');
-    //col1.appendChild(img);
+}
+
+function infoMapa(pos) {
+
+    const row = document.getElementById('infoMap');
+
+    if(hasNode(row,document.getElementById('info'))){
+        row.removeChild(document.getElementById('info'));
+    }
+
+    document.getElementById('mapa').classList.add('col');
 
     const col2 = document.createElement('div');
     col2.classList.add('col-sm');
+    col2.setAttribute('id','info');
 
     const col3 = document.createElement('div');
     col3.classList.add('col-lg-auto', 'bg-white', 'aplicar-borde', 'margen');
@@ -2464,33 +2475,15 @@ function listadoMap() {
     const carouselInner = document.createElement('div');
     carouselInner.classList.add('carousel-inner', 'redimension');
 
-    const carouselItem1 = document.createElement('div');
-    carouselItem1.classList.add('carousel-item', 'active');
-
-    const img1 = document.createElement('img');
-    img1.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_QQ6A0199-1.jpg');
-    img1.classList.add('d-block', 'w-100');
-    carouselItem1.appendChild(img1);
-
-    const carouselItem2 = document.createElement('div');
-    carouselItem2.classList.add('carousel-item');
-
-    const img2 = document.createElement('img');
-    img2.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_20140228_172220.jpg');
-    img2.classList.add('d-block', 'w-100');
-    carouselItem2.appendChild(img2);
-
-    const carouselItem3 = document.createElement('div');
-    carouselItem3.classList.add('carousel-item');
-
-    const img3 = document.createElement('img');
-    img3.setAttribute('src', 'http://www.vinyesmortitx.com/img_blog/21_P1090717.jpg');
-    img3.classList.add('d-block', 'w-100');
-    carouselItem3.appendChild(img3);
-
-    carouselInner.appendChild(carouselItem1);
-    carouselInner.appendChild(carouselItem2);
-    carouselInner.appendChild(carouselItem3);
+    for (let i = 0; i < json.itemListElement[pos].image.length; i++) {
+        const carouselItem1 = document.createElement('div');
+        carouselItem1.classList.add('carousel-item', 'active');
+        const img1 = document.createElement('img');
+        img1.setAttribute('src', json.itemListElement[pos].image[i]);
+        img1.classList.add('d-block', 'w-100');
+        carouselItem1.appendChild(img1);
+        carouselInner.appendChild(carouselItem1);
+    }
 
     const prevButton = document.createElement('button');
     prevButton.setAttribute('type', 'button');
@@ -2541,45 +2534,45 @@ function listadoMap() {
     contImg1.className = "box1 tamañoImgCard";
 
     const logoimg = document.createElement('img');
-    logoimg.setAttribute('src', 'http://www.vinyesmortitx.com/img/logo-mo-vinyes-mortitx.png');
+    logoimg.setAttribute('src', json.itemListElement[pos].logo);
 
     const dl = document.createElement('dl');
 
     const dt1 = document.createElement('dt');
     dt1.textContent = 'Horario: ';
     const dd1 = document.createElement('dd');
-    dd1.textContent = 'Mo,Tu,We,Th,Fr 08:00-16:00';
+    dd1.textContent = json.itemListElement[pos].openingHours;
 
     const dt2 = document.createElement('dt');
     dt2.textContent = 'Teléfono: ';
     const dd2 = document.createElement('dd');
-    dd2.textContent = '971533889';
+    dd2.textContent = json.itemListElement[pos].telephone;
 
     const dt3 = document.createElement('dt');
     dt3.textContent = 'Email: ';
     const dd3 = document.createElement('dd');
     const a = document.createElement('a');
-    a.setAttribute('href', '#');
     a.classList.add('text-navy');
-    a.textContent = 'info@vinyesmortitx.com';
+    a.textContent = json.itemListElement[pos].email;
     dd3.appendChild(a);
 
     const dt4 = document.createElement('dt');
     dt4.textContent = 'Web: ';
     const dd4 = document.createElement('dd');
     const a2 = document.createElement('a');
-    a2.setAttribute('href', 'http://www.vinyesmortitx.com');
+    a2.setAttribute('href', json.itemListElement[pos].url);
     a2.classList.add('text-navy');
-    a2.textContent = 'http://www.vinyesmortitx.com';
+    a2.textContent = json.itemListElement[pos].url;
     dd4.appendChild(a2);
 
     const dt5 = document.createElement('dt');
     dt5.textContent = 'Dirección: ';
     const br = document.createElement('br');
     const dd5_1 = document.createElement('dd');
-    dd5_1.textContent = 'Ctra. Pollença - Lluc- Km 10,9';
+    dd5_1.textContent = json.itemListElement[pos].address.streetAddress;
     const dd5_2 = document.createElement('dd');
-    dd5_2.textContent = 'Mallorca, Escorca, 07315';
+    
+    dd5_2.textContent = json.itemListElement[pos].address.addressLocality + ", " + json.itemListElement[pos].address.addressRegion + ", " + json.itemListElement[pos].address.postalCode;
 
     dl.appendChild(dt1);
     const iconHorario = document.createElement('i');
@@ -2634,7 +2627,7 @@ function listadoMap() {
 
     const italicPara = document.createElement('p');
     italicPara.className = 'font-italic';
-    italicPara.textContent = 'El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.';
+    italicPara.textContent = json.itemListElement[pos].description;
 
     customScrollbarDiv.appendChild(italicPara);
     containerDiv.appendChild(customScrollbarDiv);
@@ -2659,7 +2652,7 @@ function listadoMap() {
     moreInfoButton.className = 'add-to-cart margen';
     moreInfoButton.textContent = 'Más información';
     moreInfoButton.onclick = function () {
-        gestorVisionado(3, 0);
+        gestorVisionado(3, pos);
     };
     conte.appendChild(moreInfoButton);
 
@@ -2674,6 +2667,7 @@ function listadoMap() {
     col3.appendChild(colLabel);
 
     col2.appendChild(col3);
+    row.appendChild(col2);
 }
 
 function hasNode(dad, child) {
@@ -2718,12 +2712,11 @@ function gestorVisionado(vision, producto) {
             about();
         }
     } else {
-        botonesNav(0);
-        filtrado2();
+        botonesNav(0);        
         switch (vision) {
-            case 1: listadoCardXL();
+            case 1: filtrado2(); listadoCardXL();
                 break;
-            case 0: listadoCard();
+            case 0: filtrado2(); listadoCard();
                 break;
             case 2: listadoMap();
                 break;
@@ -2893,6 +2886,8 @@ function obtenerMinutos(hora) {
     return parseInt(hora.split(':')[1]);
 }
 
+//funcionalidad mapas
+
 function initMap(latitud, longitud) {
     var map = L.map('map').setView([latitud, longitud], 11);
 
@@ -2912,7 +2907,7 @@ function initMap(latitud, longitud) {
             var marca = L.marker([lat, lon]).addTo(map);
             marca.setIcon(L.icon({
                 iconColor: 'red'  // Color del icono del marcador (puedes utilizar cualquier color)
-              }));
+            }));
             // Aquí puedes utilizar los datos de latitud y longitud como desees
             console.log("Latitud: " + lat + ", Longitud: " + lon);
         }, function (error) {
@@ -2934,8 +2929,10 @@ function initMap2() {
         maxZoom: 18,
     }).addTo(map);
 
-    for(let i = 0; i < json.itemListElement.length; i++){
-        L.marker([json.itemListElement[i].geo.latitude, json.itemListElement[i].geo.longitude]).addTo(map);
+    for (let i = 0; i < json.itemListElement.length; i++) {
+        var marcador = L.marker([json.itemListElement[i].geo.latitude, json.itemListElement[i].geo.longitude], { title: 'Bodegas ' + json.itemListElement[i].name }).addTo(map);
+        marcador.on('click', function (e) {
+            infoMapa(i);
+        });
     }
-
 }
