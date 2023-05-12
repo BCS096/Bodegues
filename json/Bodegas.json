@@ -1748,6 +1748,385 @@
 
             ],
             "url": "https://www.bodegasbordoy.es/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Son Bordils",
+            "description": "En 1991, cien años después de que filoxera invadiera Mallorca, la finca cambia de nuevo de propiedad y se reinicia la actividad agrícola en los terrenos denominados antiguamente como Ses Cinquanta Quarteradas de vinya , donde se han replantado, desde el año 1996 hasta este año 2000, un total de 25 Has. de diferentes variedades de vid, tanto blancas, como chardonnay, moscatel y prensal, como tintas, cabernet sauvignon, merlot, manto negro, monastrell, callet y syrah. En 1998, el nuevo Celler de Son Bordils elaboró y embotelló los primeros vinos de la nueva etapa vitivínicola de la finca. Esta es la historia conocida de la Finca Son Bordils, de sus personajes y sus avatares, de sus viñas y sus vinos, y en definitiva de la lucha de los hombres y las mujeres para obtener el fruto de esta tierra desde hace más de cinco siglos. De la misma tierra donde hoy se producen los vinos de la marca Son Bordils.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Inca",
+                "postalCode": "07300",
+                "streetAddress": "Ctra. Inca - Sineu Km. 4,1"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/D-h4suHANc8"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/5bI9BXN4iwE"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Negre",
+                                "description": "Variedades:  Merlot 67 %, Cabernet Sauvignon 22 %, Syrah 11 %.",
+                                "image": "http://www.sonbordils.es/images/f5fa47354931f273b1e693a748b1fd2b.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "11.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Bisbals",
+                                "description": "Variedades: Merlot,Syrah,Callet",
+                                "image": "http://www.sonbordils.es/images/721b2c141c1ac0d1d945096420c0d8b8.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "7.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Merlot",
+                                "description": "Variedades: Merlot Finca Son Bordils.",
+                                "image": "http://www.sonbordils.es/images/52e1c013faa4b56646f8d1fb8ee2e6b4.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "12.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Syrah",
+                                "description": "Variedades: Syrah (95%), Cabernet Sauvignon (5%)",
+                                "image": "http://www.sonbordils.es/images/6d78f4ffd286794a6b00d4598705c9c9.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Cabernet",
+                                "description": "Variedades: Cabernet Sauvignon.",
+                                "image": "http://www.sonbordils.es/images/6b394dc9c199015447aa99b47c46f611.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "14.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Blanc",
+                                "description": "Variedades: Prensal 100%",
+                                "image": "http://www.sonbordils.es/images/61bce8a1a94e8c49892a204763c5baa6.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "12.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Chardonnay",
+                                "description": "Variedades: Chardonnay 93,2% Riesling 4,7% Viognier 2,1%",
+                                "image": "http://www.sonbordils.es/images/c9750448090367b449b62f2e6b780d94.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "12.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Muscat",
+                                "description": "Variedades: Moscatel.",
+                                "image": "http://www.sonbordils.es/images/2d65e2b708f2fb6c65c00d8ec42eead4.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "11.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Rosat",
+                                "description": "Variedades: Monastrell 51,7%, Merlot48,3%",
+                                "image": "http://www.sonbordils.es/images/f663cd225d3c00ac59742f805304464b.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "9.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr 10:00-18:00",
+            "telephone": "971182200",
+            "isAccessibleForFree": false,
+            "email": "info@sonbordils.es",
+            "logo": "http://www.sonbordils.es/i/logo3.png",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.68822114280923,
+                "longitude" : 2.943103319973539
+            },
+            "image": [
+                "http://www.sonbordils.es/images/photos/mid_630d9b8cdadf99789706d631b501c263.jpg",
+                "http://www.sonbordils.es/images/photos/mid_df522db5b6dfdc41eb33362b2be442c8.jpg",
+                "http://www.sonbordils.es/images/photos/mid_47fbcebc0b65a4332e6636dcb0b428be.jpg",
+                "http://www.sonbordils.es/images/gallery/top_3e0f4aaea1678dbc6d72a9ec669cd454.jpg",
+                "http://www.sonbordils.es/images/photos/thumb_dd41ad206896d0b7c9c0e2ae93982835.jpg",
+                "http://www.sonbordils.es/images/photos/thumb_fa0600fd6ac12661b813d7a0606f6ae3.jpg",
+                "http://www.sonbordils.es/images/photos/thumb_e25e094f6ced62405f53827e6f1c6a67.jpg",
+                "http://www.sonbordils.es/images/photos/thumb_07295308c631368c17759818b7dae094.jpg"
+            ],
+            "url": "http://www.sonbordils.es/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Miquel Oliver",
+            "description": "Nuestra bodega marida con expertos, con aficionados y con recién iniciados en el mundo del vino. Pero también marida con quienes (todavía) no lo son. Lo sabrás cuando nos visites, reserves un tour u organices un evento.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Petra",
+                "postalCode": "07520",
+                "streetAddress": "Ctra. Petra - Santa Margalida Km 1,8"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/PRNUnpkB_uo"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/EvAtAY8NZ68"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "1912",
+                                "description": "",
+                                "image": "https://miqueloliver.com/wp-content/uploads/2019/10/miquel-oliver-1912.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "36.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Ses Ferritges",
+                                "description": "Variedades: CALLET, MERLOT, CABERNET SAUVIGNON, SYRAH.",
+                                "image": "https://miqueloliver.com/wp-content/uploads/2022/12/vino-mallorca-ferritges.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "12.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Syrah",
+                                "description": "Variedades: Syrah.",
+                                "image": "https://miqueloliver.com/wp-content/uploads/2023/01/vino-mallorca-syrah.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "21.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Aia",
+                                "description": "Variedades: Merlot.",
+                                "image": "https://miqueloliver.com/wp-content/uploads/2019/10/miquel-oliver-ses-aia.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "50.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Mont Ferrutx",
+                                "description": "Variedades: CALLET, MANTO NEGRO, FOGONEU.",
+                                "image": "https://miqueloliver.com/wp-content/uploads/2019/10/miquel-oliver-ses-mont-ferrutx.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "9.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Son Caló",
+                                "description": "Variedades: Callet, Fogoneu.",
+                                "image": "https://miqueloliver.com/wp-content/uploads/2022/12/vino-mallorca-son-calo-negre.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "8.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "011001",
+                                "description": "Variedades: Giró.",
+                                "image": "https://miqueloliver.com/wp-content/uploads/2019/10/miquel-oliver-ses-qbq.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "12.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Muscat",
+                                "description": "Variedades: Moscatel.",
+                                "image": "https://miqueloliver.com/wp-content/uploads/2022/12/vino-mallorca-muscat.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "10.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Alegria",
+                                "description": "Variedades: Merlot.",
+                                "image": "https://miqueloliver.com/wp-content/uploads/2023/01/vino-mallorca-alegria.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "10.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Son Caló",
+                                "description": "Variedades: Callet, Fogoneu.",
+                                "image": "https://miqueloliver.com/wp-content/uploads/2023/01/vino-mallorca-son-calo-rosat-2.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "8.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr 10:00-18:00",
+            "telephone": "971561117",
+            "isAccessibleForFree": false,
+            "email": "bodega@miqueloliver.com",
+            "logo": "https://miqueloliver.com/wp-content/uploads/2019/09/miquel-oliver.svg",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.63636490240316,
+                "longitude" : 3.1086317227466433
+            },
+            "image": [
+                "https://miqueloliver.com/wp-content/uploads/2019/10/miquel-oliver-bodegas-tira4.jpg",
+                "https://miqueloliver.com/wp-content/uploads/2019/10/miquel-oliver-vinyas-tira1.jpg",
+                "https://miqueloliver.com/wp-content/uploads/2019/10/miquel-oliver-vinyas-tira2.jpg",
+                "https://miqueloliver.com/wp-content/uploads/2019/10/miquel-oliver-vinyas-tira3.jpg",
+                "https://miqueloliver.com/wp-content/uploads/2020/03/portada.jpg",
+                "https://miqueloliver.com/wp-content/uploads/2019/10/miquel-oliver-emotive-tour.jpg-768x255.jpg",
+                "https://miqueloliver.com/wp-content/uploads/2019/10/miquel-oliver-enologic-tour-768x255.jpg",
+                "https://miqueloliver.com/wp-content/uploads/2020/03/eventos-miqueloliver5.jpg"
+            ],
+            "url": "https://miqueloliver.com/"
         }
     ]
 }
