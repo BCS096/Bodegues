@@ -2127,6 +2127,932 @@
                 "https://miqueloliver.com/wp-content/uploads/2020/03/eventos-miqueloliver5.jpg"
             ],
             "url": "https://miqueloliver.com/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Miquel Gelabert",
+            "description": "En el año 1985 en Mallorca, Miquel Gelabert y su esposa Maria Miquel, enamorados del buen vino, empiezan a elaborar vino de los viñedos de la familia como un pasatiempo. Ante la excelente calidad obtenida, empiezan a comercializarlo en su propio restaurante y acaban fundando la bodega de elaboración de vinos que hoy lleva su nombre. Vins Miquel Gelabert nace como una pequeña empresa familiar destinada a investigar y profundizar en el cuidado de la vid y en la elaboración de vinos de alta calidad, pues solamente elabora de 40.000 a 45.000 litros al año dependiendo de la cosecha.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Manacor",
+                "postalCode": "07500",
+                "streetAddress": "C/. Salas, 50"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/wc6spl8jBBg"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/skW-rSW7FMY"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Autonom",
+                                "description": "Variedades de uva: Callet, Manto Negro, Fogoneu y Gorgollassa (todo de viñas viejas)",
+                                "image": "https://www.vinsmiquelgelabert.com/wp-content/uploads/2015/10/AUT%C3%92NOM-4.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "30.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Golós 2018",
+                                "description": "Variedades de uva: callet, manto negro, fogoneu.",
+                                "image": "https://www.vinsmiquelgelabert.com/wp-content/uploads/2015/10/Gol%C3%B3s-Negre.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "24.40",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Cabernet Sauvignon 2018",
+                                "description": "Variedades de uva: cabernet sauvignon, merlot y callet",
+                                "image": "https://www.vinsmiquelgelabert.com/wp-content/uploads/2015/10/plantilla_vins_woocommerce-ok-2.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.30",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Chardonnay Roure 2022",
+                                "description": "Variedades de uva: chardonnay 100%",
+                                "image": "https://www.vinsmiquelgelabert.com/wp-content/uploads/2015/10/CHARDONAY-ROURE-II.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "26.90",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sa Vall - Selecció Privada 2018",
+                                "description": "Variedades de uva: Giró Blanc, Viognier y un poco de Pinot Noir.",
+                                "image": "https://www.vinsmiquelgelabert.com/wp-content/uploads/2015/10/SA-VALL-7.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "25.75",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Son Caules ",
+                                "description": "Variedades de uva: Macabeo, Moscatel y Prensal Blanc.",
+                                "image": "https://www.vinsmiquelgelabert.com/wp-content/uploads/2015/10/SON-CAULES-BLANC-web-retallada-ok-250x671.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "8.55",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Golós 2021",
+                                "description": "Variedades de uva: pinot noir 100%",
+                                "image": "https://www.vinsmiquelgelabert.com/wp-content/uploads/2015/10/Gol%C3%B3s-Rosat.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "12.20",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Son Caules 2022",
+                                "description": "Variedades de uva: manto negro, callet, tempranillo, syrah y pinot noir.",
+                                "image": "https://www.vinsmiquelgelabert.com/wp-content/uploads/2015/10/SON-CAULES-ROSAT-3-web-retallada-ok-1-250x701.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "7.40",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00",
+            "telephone": "971821444",
+            "isAccessibleForFree": false,
+            "email": "info@vinsmiquelgelabert.com",
+            "logo": "https://www.vinsmiquelgelabert.com/wp-content/uploads/2014/09/logotranssupinferior.png",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.58310723905273, 
+                "longitude" : 3.2119938235741348
+            },
+            "image": [
+                "https://www.vinsmiquelgelabert.com/wp-content/uploads/2019/08/slider9.jpg",
+                "https://www.vinsmiquelgelabert.com/wp-content/uploads/2019/08/slider8.jpg",
+                "https://www.vinsmiquelgelabert.com/wp-content/uploads/2019/08/slider7.jpg",
+                "https://www.vinsmiquelgelabert.com/wp-content/uploads/2019/08/slider6.jpg",
+                "https://www.vinsmiquelgelabert.com/wp-content/uploads/2019/08/slider5.jpg",
+                "https://www.vinsmiquelgelabert.com/wp-content/uploads/2019/08/slider4.jpg",
+                "https://www.vinsmiquelgelabert.com/wp-content/uploads/2019/08/slider1.jpg"
+
+            ],
+            "url": "https://www.vinsmiquelgelabert.com/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Tianna Negre",
+            "description": "La etiqueta de nuestro primer vino, Ses Nines, muestra a nuestra madre cuando era niña jugando en la calle de su pueblo natal, Consell, uno de esos pueblos con tradición viticultora de la zona de la comarca del Raiguer. Aquella niña, nuestra madre, procedente de familia de payeses, heredó un pequeño viñedo en Consell de más de 35 años, sembrado exclusivamente con la uva autóctona Manto Negro y al estilo tradicional, con “politxó” (en vaso entutorado). ",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Binissalem",
+                "postalCode": "07350",
+                "streetAddress": "Cami Des Mitjans"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/l_8hg_onrbM"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/IKuPrios98M"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Callet",
+                                "description": "Variedades: Callet.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/54E8/5C26/4A48/4577/1132/C0A8/2AB9/7457/TiannaNegre1549839a3bbb83_285x255_m.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "35.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Puntes Cal Negre",
+                                "description": "Variedades: Manto negro, Syrah, Merlot, Callet y Cabernet Sauvignon.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/5F02/03F3/2142/8D24/3913/0A0C/6D10/56CE/puntes_de_cal_negre_tianna_negre_m.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "27.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Randemar Negre",
+                                "description": "Variedades: 22% Merlot, 31% Manto Negro, 20% Syrah, 27% Cabernet Sauvignon.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/532E/C085/7CB5/BCD3/5B25/C0A8/2BB8/598F/botella_randemar_negre_m.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "8.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Ses Nines",
+                                "description": "Variedades: 43% Manto Negro, 4% Cabernet Sauvignon, 14% Syrah, 11% Callet, y 28% Merlot.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/532E/C64C/A0E6/2CEE/8A0B/C0A8/2BB9/4834/botella_ses_nines_negre_2012_m.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "10.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "El Columpio",
+                                "description": "Variedades:  63.4 % Prensal Blanc , 18,7 % Sauvignon Blanc , Chardonnay 14,6 % , 9 % Giró Ros y 4,4 % Muscat de Frontignan.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/532D/6FFB/6CB8/195A/AA93/C0A8/2ABB/77CD/botella_el_columpio_blanc_m.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "11.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Km.1",
+                                "description": "Variedades: Prensal blanco ecológico.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/54DF/4578/1FCB/03E4/04F1/C0A8/2ABA/F99D/blanc_km1_720x600_m.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "11.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Randemar Rosat",
+                                "description": "Variedades: 67 % Syrah, 29 % Manto Negro y 4% Cabernet Sauvignon.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/532D/72F9/D1FE/858D/8D21/C0A8/2ABB/87E3/botella_randemar_rosat_m.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "8.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr 10:00-18:00",
+            "telephone": "971886826",
+            "isAccessibleForFree": false,
+            "email": "info@tiannanegre.com",
+            "logo": "https://www.tiannanegre.com/es/img/logo_tn.png",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.69365230435187, 
+                "longitude" : 2.8607338700379823
+            },
+            "image": [
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/5f/97/94/schones-und-besonders.jpg",
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/45/4b/62/celler-tianna-negre.jpg",
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1f/ff/46/f8/tapas.jpg",
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1f/ff/46/f6/ready-for-wine-tasting.jpg",
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1f/ff/46/f3/the-vineyard.jpg",
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/8e/31/7f/img-20190729-wa0001-largejpg.jpg",
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/55/2f/66/velo-rose-superb-wine.jpg",
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/42/b3/8e/photo1jpg.jpg"
+            ],
+            "url": "https://www.tiannanegre.com/es/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Son Vich",
+            "description": "En Son Vich de Superna producimos vinos de alta gama, elegantes y estructurados, con una gran tipicidad. En ellos encontramos la Serra de Tramuntana a través de la mineralidad, salinidad y frescura que los caracteriza. Son vinos con una identidad única dentro de Mallorca.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Puigpunyent",
+                "postalCode": "07194",
+                "streetAddress": "Ctra.Esporles-Puigpunyent km, 8"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/gW2cfx4pkRM"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/gGR8TVvyfKM"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Expresión 2016",
+                                "description": "",
+                                "image": "https://www.sonvichdesuperna.es/wp-content/uploads/2020/10/22Expresio%CC%81n.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "13.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Supernins 2021",
+                                "description": "",
+                                "image": "https://www.sonvichdesuperna.es/wp-content/uploads/2021/07/Supernins-1.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Esencia 2015",
+                                "description": "",
+                                "image": "https://www.sonvichdesuperna.es/wp-content/uploads/2020/10/22Esencia.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "24.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Costers 2015",
+                                "description": "",
+                                "image": "https://www.sonvichdesuperna.es/wp-content/uploads/2020/10/22Costers.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "18.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Viognier 2022",
+                                "description": "",
+                                "image": "https://www.sonvichdesuperna.es/wp-content/uploads/2021/04/Viognier.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "16.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Viognier Barrica 2021",
+                                "description": "",
+                                "image": "https://www.sonvichdesuperna.es/wp-content/uploads/2022/09/Viognier-Barrica_Banda-new-1.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "28.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Marges 2022",
+                                "description": "",
+                                "image": "https://www.sonvichdesuperna.es/wp-content/uploads/2020/09/Marges.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Llàgrima de Superna 2022",
+                                "description": "",
+                                "image": "https://www.sonvichdesuperna.es/wp-content/uploads/2020/09/Llagrima-de-Superna.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "13.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr 09:00-15:00",
+            "telephone": "971765523",
+            "isAccessibleForFree": false,
+            "email": "bodega@sonvichdesuperna.es",
+            "logo": "https://www.sonvichdesuperna.es/wp-content/themes/c3po-theme-child/assets/logo/logo-color.svg",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.6628911920924, 
+                "longitude" : 2.5396925752144948
+            },
+            "image": [
+                "https://www.sonvichdesuperna.es/wp-content/themes/c3po-theme-child/assets/backs_v2/historia/vinyas_tejado.jpg",
+                "https://www.sonvichdesuperna.es/wp-content/themes/c3po-theme-child/assets/images/history/bodega_escala_grises.jpg",
+                "https://www.sonvichdesuperna.es/wp-content/themes/c3po-theme-child/assets/backs_v2/historia/marges.jpg",
+                "https://www.sonvichdesuperna.es/wp-content/themes/c3po-theme-child/assets/backs_v2/bodega/barricas_v2.jpg",
+                "https://www.sonvichdesuperna.es/wp-content/themes/c3po-theme-child/assets/backs_v2/bodega/edificio_tienda.jpg",
+                "https://www.sonvichdesuperna.es/wp-content/themes/c3po-theme-child/assets/backs_v2/catas/cata_basica.jpg"
+            ],
+            "url": "https://www.sonvichdesuperna.es/es/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Dalt Turó",
+            "description": "Los vinos Dalt Turó expresan el carácter de unas condiciones singulares y el esfuerzo de una familia viticultora que cree en la producción integrada y el equilibrio ambiental. Dunas fosilizadas, call vermell, embat, artesanía y respeto varietal marcan las diferencias con las que nuestros vinos quieren llegar a tu copa.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Campos",
+                "postalCode": "07630",
+                "streetAddress": "Ctra.Campos-Santanyí,km 43"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/e1PmAp5xXYU"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/e1PmAp5xXYU"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Brescat 2020",
+                                "description": "",
+                                "image": "https://www.daltturo.com/wp-content/uploads/2021/03/brescat-dalt-turo-3.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "15.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Granat 2020",
+                                "description": "",
+                                "image": "https://www.daltturo.com/wp-content/uploads/2021/03/granat-daltturo-1.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "11.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Sauló 2020",
+                                "description": "",
+                                "image": "https://www.daltturo.com/wp-content/uploads/2021/03/saulo-dalt-turo-2.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "24.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Acopinyat 2020",
+                                "description": "",
+                                "image": "https://www.daltturo.com/wp-content/uploads/2021/03/acopinyat-dalt-turo.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "10.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Roget 2022",
+                                "description": "",
+                                "image": "https://www.daltturo.com/wp-content/uploads/2021/03/roget-daltturo.png",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "11.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [ ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr,Sa 10:00-17:30",
+            "telephone": "971583657",
+            "isAccessibleForFree": false,
+            "email": "daltturo@daltturo.com",
+            "logo": "https://www.daltturo.com/wp-content/uploads/2020/07/logo.png",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.41722521795554, 
+                "longitude" : 3.082191745911803
+            },
+            "image": [
+                "https://www.daltturo.com/wp-content/uploads/2020/12/MARES1_FINCA.jpg",
+                "https://www.daltturo.com/wp-content/uploads/2020/12/BANNER3_FINCA.jpg",
+                "https://www.daltturo.com/wp-content/uploads/2020/12/mares.jpg",
+                "https://www.daltturo.com/wp-content/uploads/2020/11/Catas.jpg",
+                "https://www.daltturo.com/wp-content/uploads/2020/12/TOUR-COPINYA_ENOTURISMO.jpg",
+                "https://www.daltturo.com/wp-content/uploads/2020/12/TOUR_TURO_ENOTURISMO.jpg"
+
+            ],
+            "url": "https://www.daltturo.com/es/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Can Feliu",
+            "description": "Bodega Can Feliu es una bodega en Mallorca dedicada a la elaboración, crianza, embotellado y comercialización de vinos blancos, rosados jóvenes y vinos tintos de crianza. Todos los vinos están elaborados bajo el amparo de la Indicación Geográfica Protegida Vi de la Terra de Mallorca.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Porreres",
+                "postalCode": "07260",
+                "streetAddress": "Camí de Sa Serra, km 1,2"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/zDKTBvDnAAI"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/R6NcH5ilMEI"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Merlot 2018",
+                                "description": "VARIEDADES DE UVA: Merlot 100%",
+                                "image": "https://bodega.canfeliu.es/wp-content/uploads/aledemerlot-1-scaled-e1683801264615-430x860.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "19.90",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Cabernet Sauvignon 2019",
+                                "description": "VARIEDADES: Cabernet Sauvignon.",
+                                "image": "https://bodega.canfeliu.es/wp-content/uploads/Ale-de-Cabernet-Sauvignon-scaled-e1683801133107.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "21.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Bulfish Magnum",
+                                "description": "VARIEDADES: Cabernet Sauvignon, Merlot y Petit Verdot",
+                                "image": "https://bodega.canfeliu.es/wp-content/uploads/bullfish_tinto-scaled-e1683801754331.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "100.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Blanc d'Alens 2022",
+                                "description": "VARIEDADES: Chardonnay, Sauvignon Blanc, Prensal y Viognier.",
+                                "image": "https://bodega.canfeliu.es/wp-content/uploads/bodega-can-feliu-vino-blanco-mallorca-blanc-dalens-e1683802372289.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "16.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Bullfish 2021",
+                                "description": "VARIEDADES: Sauvignon Blanc",
+                                "image": "https://bodega.canfeliu.es/wp-content/uploads/bullfish_blanc1-430x430.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "31.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Bullfish 2021",
+                                "description": "VARIEDADES: Merlot.",
+                                "image": "https://bodega.canfeliu.es/wp-content/uploads/bullfish_rosat3-430x430.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "31.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            },
+                            {
+                                "@type": "MenuItem",
+                                "name": "Rosat d'Alens Magnum",
+                                "description": "VARIEDADES: Cabernet Sauvignon, Merlot, Sauvignon Blanc.",
+                                "image": "https://bodega.canfeliu.es/wp-content/uploads/bodega-can-feliu-vino-rosad-e1683802179863.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "37.50",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr 08:00-16:00",
+            "telephone": "971944153",
+            "isAccessibleForFree": false,
+            "email": "bodega@canfeliu.es",
+            "logo": "https://www.canfeliu.es/images/custom/iconos/logo-can-feliu.svg",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.5338169210003, 
+                "longitude" : 3.0339480353131205
+            },
+            "image": [
+                "https://www.canfeliu.es/images/custom/bodega/historia-bodega.webp",
+                "https://www.canfeliu.es/images/blog/posts/como_elegir_miniatura.jpg",
+                "https://www.canfeliu.es/images/blog/posts/consejos_miniatura.jpg",
+                "https://www.canfeliu.es/images/blog/posts/sacacorchos_miniatura.jpg",
+                "https://www.canfeliu.es/images/blog/posts/variedades_miniatura.jpg",
+                "https://www.canfeliu.es/images/blog/posts/turismo_miniatura.jpg",
+                "https://www.canfeliu.es/images/blog/posts/denominacion_miniatura.jpg",
+                "https://www.canfeliu.es/images/blog/posts/diferencias_barricas_miniatura.jpg",
+                "https://www.canfeliu.es/images/blog/posts/temperatura_vino_miniatura.jpg",
+                "https://www.canfeliu.es/images/blog/posts/demeter_miniatura.jpg"
+            ],
+            "url": "https://www.canfeliu.es/"
+        },
+        {
+            "@type": "Winery",
+            "name": "Vinya Taujana",
+            "description": "La Bodega VINYA TAUJANA fue creada por la familia Crespí en 2001, siendo la tercera generación dedicada a la elaboración de vinos de forma artesanal. La bodega cuenta con capacidad para elaborar 115.000 litros de caldos bajo las más extrictas normas de sanidad e higiene,  disponiendo de una cava subterranea con capacidad para 10.000 litros de vino distribuido en botas de roble americano y francés. Nuestras instalaciones combinan modernidad y tradición, utilizando últimas tecnologías de fermentación controlada así como una recogida manual y selectiva de la uva.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ES",
+                "addressLocality": "Mallorca",
+                "addressRegion": "Santa Eugènia",
+                "postalCode": "07142",
+                "streetAddress": "c/Balanguera, 40"
+            },
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":"https://www.youtube.com/embed/vlUlTATKwPo"
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl": "https://www.youtube.com/embed/-doUAoY9-EM"
+                    }
+                ],
+                "audio": [
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio 1",
+                        "contentUrl": "url"
+                    },
+                    {
+                        "@type": "AudioObject",
+                        "name": "Audio2",
+                        "contentUrl": "url"
+                    }
+                ]
+            },
+            "acceptsReservations": true,
+            "hasMenu": {
+                "@type": "Menu",
+                "hasMenuSection": [
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Tinto",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Torrent Fals 2019",
+                                "description": "Variedad de la uva; 52% Manto negro, 24% Cabernet Sauvingnon, 16 % Syrah y 8% Merlot.",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/529A/2C79/A3B8/EE1E/2E6B/C0A8/2BB9/B9AD/tinto_m.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "9.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Blanco",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Blanc de Blancs 2021",
+                                "description": "Variedad: Uva 70% Moll o Premsal Blanc - 30% chardonnay",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/528F/BC43/171C/D559/D3E7/C0A8/28B8/45D3/blancc_m.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "8.00",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "MenuSection",
+                        "name": "Vino Rosado",
+                        "hasMenuItem": [
+                            {
+                                "@type": "MenuItem",
+                                "name": "Rosat 2021",
+                                "description": "Variedad de la uva: 70% Manto negro Y SYRAH",
+                                "image": "https://www.comprarvinomallorquin.com/WebRoot/StoreES2/Shops/64458733/529A/2F25/E0C4/F67C/4129/C0A8/2AB8/F8F8/rosado_m.jpg",
+                                "offers":{
+                                    "@type": "Offer",
+                                    "price": "7.35",
+                                    "priceCurrency": "EUR"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "openingHours": "Tu,We,Th,Fr,Sa 09:00-20:00",
+            "telephone": "971144494",
+            "isAccessibleForFree": false,
+            "email": "vinyataujana@gmail.com",
+            "logo": "https://static.wixstatic.com/media/3d4dc2_f7a668049dc2400095ea7b6df7048918.jpg/v1/fill/w_270,h_172,al_c,lg_1,q_80,enc_auto/3d4dc2_f7a668049dc2400095ea7b6df7048918.jpg",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 39.63085182620629,
+                "longitude" : 2.8346793136040347
+            },
+            "image": [
+                "https://static.wixstatic.com/media/1f66ba_a7e400a3af564bd5bdb93f334989f5e5~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_886,h_590,al_c,q_85,usm_0.66_1.00_0.01/1f66ba_a7e400a3af564bd5bdb93f334989f5e5~mv2_d_5184_3456_s_4_2.jpg",
+                "https://static.wixstatic.com/media/1f66ba_f216afd4e3ae40b4b6dd92a993ae6f9c~mv2_d_2316_2976_s_2.jpg/v1/fill/w_886,h_1138,al_c,q_85,usm_0.66_1.00_0.01/1f66ba_f216afd4e3ae40b4b6dd92a993ae6f9c~mv2_d_2316_2976_s_2.jpg",
+                "https://static.wixstatic.com/media/1f66ba_77421fe678c04d3e8b1cf44a672d1b30~mv2_d_2184_1446_s_2.jpg/v1/fill/w_886,h_586,al_c,q_85,usm_0.66_1.00_0.01/1f66ba_77421fe678c04d3e8b1cf44a672d1b30~mv2_d_2184_1446_s_2.jpg",
+                "https://static.wixstatic.com/media/1f66ba_9304482be60347dd931f6038bf8296c0~mv2_d_3118_4676_s_4_2.jpg/v1/fill/w_886,h_1328,al_c,q_85,usm_0.66_1.00_0.01/1f66ba_9304482be60347dd931f6038bf8296c0~mv2_d_3118_4676_s_4_2.jpg",
+                "https://static.wixstatic.com/media/1f66ba_cab3bb91224344deb87df1a185f8cdf3~mv2_d_3049_4573_s_4_2.jpg/v1/fill/w_886,h_1328,al_c,q_85,usm_0.66_1.00_0.01/1f66ba_cab3bb91224344deb87df1a185f8cdf3~mv2_d_3049_4573_s_4_2.jpg",
+                "https://static.wixstatic.com/media/1f66ba_577bc54536ed43dbb61827e99b5a2931~mv2_d_2209_4609_s_2.jpg/v1/fill/w_886,h_1848,al_c,q_85,usm_0.66_1.00_0.01/1f66ba_577bc54536ed43dbb61827e99b5a2931~mv2_d_2209_4609_s_2.jpg",
+                "https://static.wixstatic.com/media/3d4dc2_0cb895d43edd4bd99f39411fb8145119.jpg/v1/fill/w_886,h_590,al_c,q_85,usm_0.66_1.00_0.01/3d4dc2_0cb895d43edd4bd99f39411fb8145119.jpg",
+                "https://static.wixstatic.com/media/3d4dc2_3bb5f4930e234c1d9e39fec35392728f.jpg/v1/fill/w_886,h_664,al_c,q_85,usm_0.66_1.00_0.01/3d4dc2_3bb5f4930e234c1d9e39fec35392728f.jpg"
+            ],
+            "url": "https://www.vinyataujana.es/"
         }
     ]
 }

@@ -2717,7 +2717,6 @@ function gestorVisionado(vision, producto) {
                 break;
         }
     }
-
 }
 
 
