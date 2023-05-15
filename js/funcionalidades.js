@@ -123,12 +123,7 @@ function initMap(latitud, longitud) {
             // Se obtiene la posición actual del usuario
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
-            var marca = L.marker([lat, lon]).addTo(map);
-            marca.setIcon(L.icon({
-                iconColor: 'red'  // Color del icono del marcador (puedes utilizar cualquier color)
-            }));
-            // Aquí puedes utilizar los datos de latitud y longitud como desees
-            console.log("Latitud: " + lat + ", Longitud: " + lon);
+            L.marker([lat, lon]).addTo(map);
         }, function (error) {
             // Ocurrió un error al obtener la geolocalización
             console.error("Error al obtener la geolocalización: " + error.message);

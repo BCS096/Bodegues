@@ -15,7 +15,6 @@ function paginaProducto2(pos) {
 
     //cargar el tiempo
     var tiempo = weather(json.itemListElement[pos].geo.latitude, json.itemListElement[pos].geo.longitude);
-    console.log(tiempo);
     var node_1 = document.getElementById('seccion');
 
     var node_2 = document.createElement('SECTION');
@@ -309,8 +308,6 @@ function paginaProducto2(pos) {
         var node_49 = document.createElement('H3');
         node_48.appendChild(node_49);
 
-
-        console.log((diaa + i) % 7);
         var node_50 = document.createTextNode(new String(diasSemana[(diaa + i) % 7]));
         node_49.appendChild(node_50);
 
