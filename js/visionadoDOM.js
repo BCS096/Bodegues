@@ -1,6 +1,7 @@
 var carrusel = null;
 var json = null;
-
+var jsonS = null;
+var jsonR = null;
 
 window.onload = function () {
     botonesNav(0);
@@ -8,6 +9,12 @@ window.onload = function () {
 }
 
 function paginaProducto2(pos) {
+    //carga de JSON's externos
+    cargarJSONSupermercado();
+    cargarJSONRestaurante();
+    //supermercado cercano
+    var supermercado = establecimientoMasCercano(jsonS, pos);
+    var restaurante = establecimientoMasCercano(jsonR, pos);
     //dias de la semana
     const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
     const fechaActual = new Date();
@@ -1181,7 +1188,7 @@ function paginaProducto2(pos) {
     var map_1 = document.createElement('DIV');
     map_1.setAttribute('id', 'map');
     node_420.appendChild(map_1);
-    initMap(json.itemListElement[pos].geo.latitude, json.itemListElement[pos].geo.longitude);
+    initMap(pos, json.itemListElement[pos].geo.latitude, json.itemListElement[pos].geo.longitude, supermercado, restaurante);
 
     var node_422 = document.createElement('DIV');
     node_422.setAttribute('class', 'row gy-4');
@@ -1322,14 +1329,36 @@ function paginaProducto2(pos) {
     var node_472 = document.createTextNode((new String("Restaurante cercano")));
     node_471.appendChild(node_472);
 
-    var node_473 = document.createElement('DIV');
+    var node_473 = document.createElement('div');
+    node_473.className = 'row';
     node_470.appendChild(node_473);
 
-    var node_474 = document.createElement('img');
-    node_474.src = 'img/restaurante.png';
-    node_474.className = "margen";
+    var node_474 = document.createElement('DIV');
+    node_474.className = 'col-sm textoIcon';
+    node_474.innerText = restaurante.name;
     node_473.appendChild(node_474);
 
+    var imaDiv = document.createElement('div');
+    imaDiv.className = 'col-sm';
+    
+    node_473.appendChild(imaDiv);
+
+    const contImg11 = document.createElement('div');
+    contImg11.className = "caja margen";
+
+    const contImg121 = document.createElement('div');
+    contImg121.className = "box1 tamañoIcon";
+
+    var node_16 = document.createElement('IMG');
+
+    node_16.setAttribute('src', restaurante.image[0].contentUrl);
+    node_16.setAttribute('alt', '');
+    node_16.setAttribute('data-aos', 'zoom-out');
+    node_16.setAttribute('data-aos-delay', '300');
+    contImg121.appendChild(node_16);
+    contImg11.appendChild(contImg121);
+    imaDiv.appendChild(contImg11);
+    
     var node_475 = document.createElement('DIV');
     node_475.setAttribute('class', 'col-md-6');
     node_422.appendChild(node_475);
@@ -1351,13 +1380,35 @@ function paginaProducto2(pos) {
     var node_480 = document.createTextNode((new String("Supermercado cercano")));
     node_479.appendChild(node_480);
 
-    var node_481 = document.createElement('DIV');
-    node_478.appendChild(node_481);
+    var node_473_2 = document.createElement('div');
+    node_473_2.className = 'row';
+    node_476.appendChild(node_473_2);
 
-    var node_482 = document.createElement('img');
-    node_482.src = 'img/supermercado.png';
-    node_482.className = "margen";
-    node_481.appendChild(node_482);
+    var node_474_2 = document.createElement('DIV');
+    node_474_2.className = 'col-sm textoIcon';
+    node_474_2.innerText = supermercado.name;
+    node_473_2.appendChild(node_474_2);
+
+    var imaDiv_2 = document.createElement('div');
+    imaDiv_2.className = 'col-sm';
+    
+    node_473_2.appendChild(imaDiv_2);
+
+    const contImg11_2 = document.createElement('div');
+    contImg11_2.className = "caja margen";
+
+    const contImg121_2 = document.createElement('div');
+    contImg121_2.className = "box1 tamañoIcon";
+
+    var node_16_2 = document.createElement('IMG');
+
+    node_16_2.setAttribute('src', supermercado.image);
+    node_16_2.setAttribute('alt', '');
+    node_16_2.setAttribute('data-aos', 'zoom-out');
+    node_16_2.setAttribute('data-aos-delay', '300');
+    contImg121_2.appendChild(node_16_2);
+    contImg11_2.appendChild(contImg121_2);
+    imaDiv_2.appendChild(contImg11_2);
 
     var node_457 = document.createElement('DIV');
     node_457.setAttribute('class', 'col-md-6 margen');

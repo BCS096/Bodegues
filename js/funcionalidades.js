@@ -8,7 +8,30 @@ function cargarJSON() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             json = JSON.parse(this.responseText);
-            console.log(json);
+        }
+    };
+    xmlhttp.send();
+}
+
+function cargarJSONSupermercado() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "json/supermercat.json", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            jsonS = JSON.parse(this.responseText);
+        }
+    };
+    xmlhttp.send();
+}
+
+function cargarJSONRestaurante() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "json/restaurante.json", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            jsonR = JSON.parse(this.responseText);
         }
     };
     xmlhttp.send();
@@ -107,7 +130,7 @@ function obtenerMinutos(hora) {
 
 //funcionalidades mapas
 
-function initMap(latitud, longitud) {
+function initMap(pos, latitud, longitud, supermercado, restaurante) {
     var map = L.map('map').setView([latitud, longitud], 11);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -115,15 +138,29 @@ function initMap(latitud, longitud) {
         maxZoom: 18,
     }).addTo(map);
 
-    L.marker([latitud, longitud]).addTo(map);
+    var myIcon = L.icon({
+        iconUrl: "img/iconMap-1.png",
+      });
+    L.marker([latitud, longitud], { title: 'Bodegas ' + json.itemListElement[pos].name, icon:myIcon }).addTo(map);
+    var myIcon = L.icon({
+        iconUrl: "img/iconMap-2.png",
+      });
+    L.marker([supermercado.geo.latitude, supermercado.geo.longitude], { title: supermercado.name, icon:myIcon}).addTo(map);
+    var myIcon = L.icon({
+        iconUrl: "img/iconMap-3.png",
+      });
+    L.marker([restaurante.geo.latitude, restaurante.geo.longitude], { title: restaurante.name, icon:myIcon}).addTo(map);
 
+    var myIcon = L.icon({
+        iconUrl: "img/iconMap-4.png",
+      });
     if (navigator.geolocation) {
         // El navegador soporta geolocalización
         navigator.geolocation.getCurrentPosition(function (position) {
             // Se obtiene la posición actual del usuario
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
-            L.marker([lat, lon]).addTo(map);
+            L.marker([lat, lon], { title: "Tu ubicación actual", icon:myIcon }).addTo(map);
         }, function (error) {
             // Ocurrió un error al obtener la geolocalización
             console.error("Error al obtener la geolocalización: " + error.message);
@@ -149,4 +186,56 @@ function initMap2() {
             infoMapa(i);
         });
     }
+}
+
+//funcionalidad establecimientos cercanos
+
+//fórmula de Haversine para calcular la distancia entre dos coordenadas geográficas en kilómetros:
+
+
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+  const radioTierra = 6371; // Radio de la Tierra en kilómetros
+  
+  // Convertir las coordenadas a radianes
+  const radianesLat1 = degToRad(lat1);
+  const radianesLon1 = degToRad(lon1);
+  const radianesLat2 = degToRad(lat2);
+  const radianesLon2 = degToRad(lon2);
+  
+  // Diferencias de latitud y longitud
+  const diferenciaLat = radianesLat2 - radianesLat1;
+  const diferenciaLon = radianesLon2 - radianesLon1;
+  
+  // Calcular la distancia utilizando la fórmula de Haversine
+  const a = Math.sin(diferenciaLat / 2) * Math.sin(diferenciaLat / 2) +
+    Math.cos(radianesLat1) * Math.cos(radianesLat2) *
+    Math.sin(diferenciaLon / 2) * Math.sin(diferenciaLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const distancia = radioTierra * c;
+  
+  return distancia;
+}
+
+function degToRad(degrees) {
+  return degrees * (Math.PI / 180);
+}
+//En este código, lat1 y lon1 son las coordenadas de latitud y longitud del primer punto, y lat2 y lon2 son las coordenadas de latitud y
+//longitud del segundo punto. El método realiza los cálculos necesarios utilizando la fórmula de Haversine y devuelve la distancia resultante en kilómetros.
+
+function establecimientoMasCercano(establecimiento, idBodega){
+    var posResult = 0;
+    var distancia = calcularDistancia(json.itemListElement[idBodega].geo.latitude, json.itemListElement[idBodega].geo.latitude,
+                                     establecimiento.itemListElement[posResult].geo.latitude, establecimiento.itemListElement[posResult].geo.latitude);
+
+    for(let i = 1; i < establecimiento.itemListElement.length; i++){
+
+        var distanciaAux = calcularDistancia(json.itemListElement[idBodega].geo.latitude, json.itemListElement[idBodega].geo.latitude,
+            establecimiento.itemListElement[i].geo.latitude, establecimiento.itemListElement[i].geo.latitude);
+
+        if(distancia > distanciaAux){
+            posResult = i;
+            distancia = distanciaAux;
+        }
+    }
+    return establecimiento.itemListElement[posResult];
 }
