@@ -1351,7 +1351,9 @@ function paginaProducto2(pos) {
 
     var node_16 = document.createElement('IMG');
 
-    node_16.setAttribute('src', restaurante.image[0].contentUrl);
+    var url = "https://www.mllcarestaurantes.com/";
+
+    node_16.setAttribute('src', url + restaurante.image[0].contentUrl);
     node_16.setAttribute('alt', '');
     node_16.setAttribute('data-aos', 'zoom-out');
     node_16.setAttribute('data-aos-delay', '300');

@@ -1,9 +1,5 @@
-logo svg
 grafico svg
 video propio
 filtros
 ordenar por
 comentarios
-ruta
-supermercado cercano
-restaurante cercano

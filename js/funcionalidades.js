@@ -131,36 +131,32 @@ function obtenerMinutos(hora) {
 //funcionalidades mapas
 
 function initMap(pos, latitud, longitud, supermercado, restaurante) {
-    var map = L.map('map').setView([latitud, longitud], 11);
+    var map = L.map('map').setView([latitud, longitud], 10);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
         maxZoom: 18,
     }).addTo(map);
 
-    var myIcon = L.icon({
-        iconUrl: "img/iconMap-1.png",
-      });
-    L.marker([latitud, longitud], { title: 'Bodegas ' + json.itemListElement[pos].name, icon:myIcon }).addTo(map);
-    var myIcon = L.icon({
-        iconUrl: "img/iconMap-2.png",
-      });
-    L.marker([supermercado.geo.latitude, supermercado.geo.longitude], { title: supermercado.name, icon:myIcon}).addTo(map);
-    var myIcon = L.icon({
-        iconUrl: "img/iconMap-3.png",
-      });
-    L.marker([restaurante.geo.latitude, restaurante.geo.longitude], { title: restaurante.name, icon:myIcon}).addTo(map);
+    var endMarker = L.marker([latitud, longitud], { title: 'Bodegas ' + json.itemListElement[pos].name}).addTo(map);
 
-    var myIcon = L.icon({
-        iconUrl: "img/iconMap-4.png",
-      });
+    L.marker([supermercado.geo.latitude, supermercado.geo.longitude], { title: supermercado.name}).addTo(map);
+
+    L.marker([restaurante.geo.latitude, restaurante.geo.longitude], { title: restaurante.name}).addTo(map);
+
     if (navigator.geolocation) {
         // El navegador soporta geolocalización
         navigator.geolocation.getCurrentPosition(function (position) {
             // Se obtiene la posición actual del usuario
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
-            L.marker([lat, lon], { title: "Tu ubicación actual", icon:myIcon }).addTo(map);
+            var startMarker = L.marker([lat, lon], { title: "Tu ubicación actual"}).addTo(map);
+            var control = L.Routing.control({
+                waypoints: [
+                  L.latLng(startMarker.getLatLng()),
+                  L.latLng(endMarker.getLatLng())
+                ],
+              }).addTo(map);
         }, function (error) {
             // Ocurrió un error al obtener la geolocalización
             console.error("Error al obtener la geolocalización: " + error.message);
