@@ -1,5 +1,4 @@
 grafico svg
 video propio
-filtros
 ordenar por
 comentarios
