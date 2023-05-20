@@ -220,13 +220,13 @@ function degToRad(degrees) {
 
 function establecimientoMasCercano(establecimiento, idBodega){
     var posResult = 0;
-    var distancia = calcularDistancia(json.itemListElement[idBodega].geo.latitude, json.itemListElement[idBodega].geo.latitude,
-                                     establecimiento.itemListElement[posResult].geo.latitude, establecimiento.itemListElement[posResult].geo.latitude);
+    var distancia = calcularDistancia(json.itemListElement[idBodega].geo.latitude, json.itemListElement[idBodega].geo.longitude,
+                                     establecimiento.itemListElement[posResult].geo.latitude, establecimiento.itemListElement[posResult].geo.longitude);
 
     for(let i = 1; i < establecimiento.itemListElement.length; i++){
 
-        var distanciaAux = calcularDistancia(json.itemListElement[idBodega].geo.latitude, json.itemListElement[idBodega].geo.latitude,
-            establecimiento.itemListElement[i].geo.latitude, establecimiento.itemListElement[i].geo.latitude);
+        var distanciaAux = calcularDistancia(json.itemListElement[idBodega].geo.latitude, json.itemListElement[idBodega].geo.longitude,
+            establecimiento.itemListElement[i].geo.latitude, establecimiento.itemListElement[i].geo.longitude);
 
         if(distancia > distanciaAux){
             posResult = i;
@@ -235,3 +235,6 @@ function establecimientoMasCercano(establecimiento, idBodega){
     }
     return establecimiento.itemListElement[posResult];
 }
+
+var expanded = false;
+

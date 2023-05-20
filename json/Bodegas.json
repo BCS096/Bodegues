@@ -4,6 +4,7 @@
     "itemListElement": [
         {
             "@type": "Winery",
+            "identifier": 0,
             "name": "Mortitx",
             "description": "El proyecto nació a partir de la idea de un grupo de personas aficionadas al vino, el cual se materializó en junio de 2001, constituyendo la sociedad Vinyes Mortitx S.A. y la compra de una parte de la finca de Mortitx, con un objetivo principal: la elaboración de vinos de calidad, donde se manifiesten las peculiaridades y carácter propio de la tierra de donde proceden. Actualmente esta sociedad está formada por 53 socios.",
             "address": {
@@ -174,6 +175,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 1,
             "name": "Macià Batle",
             "description": "Nuestras bodegas, situadas en Santa María del Camí (Mallorca) y dotadas de las más modernas instalaciones, maquinaria y alta tecnología, cultivan 70 Has de viñedo con el objetivo de elaborar excelentes caldos que muestren las peculiaridades de la tierra y de las variedades autóctonas de la isla (Mantonegro y Prensal), disponiendo para ello de un equipo de enólogos y viticultores altamente cualificado que hace de Macià Batle las bodegas mallorquinas de referencia.",
             "address": {
@@ -370,6 +372,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 2,
             "name": "Vi Rei",
             "description": "La bodega fue fundada en el año 2014 por el conocido arquitecto mallorquín Rafael Munar quien aposta por la integración de la arquitectura en el paisaje mediterráneo. La bodega fue fundada con un claro objetivo: la producción de vinos de alta calidad, introduciendo la última tecnología aplicada a la vinificación.",
             "address": {
@@ -621,6 +624,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 3,
             "name": "Ángel",
             "description": "Bodegas Angel elabora vinos con identidad y carácter propio gracias a las uvas autóctonas de la región. Si bien contamos también con uvas foráneas, el Prensal Blanc y el Manto Negro, reinas de las variedades mallorquinas de la comarca, son las responsables de tal carácter e identidad y las protagonistas en cada uno de los vinos.",
             "address": {
@@ -784,6 +788,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 4,
             "name": "Ca'n Vidalet",
             "description": "Propiedad de un empresario alemán de Hamburgo, Can Vidalet se inició en 1996 con la primera viña plantada, con el objetivo de recuperar el patrimonio vitivinícola e histórico de la isla de Mallorca. Nuestros vinos reposan y evolucionan en una bodega de piedra bajo una loma para aprovechar el frescor natural que proporciona el entorno. En nuestro propio alambique producimos aguardientes, resultado de una selección de orujos de variedades de uvas (blancas y tintas) y ginebra proveniente de los más selectos botánicos y cítricos de la Sierra de Tramuntana.",
             "address": {
@@ -921,6 +926,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 5,
             "name": "José Luís Ferrer",
             "description": "Bodegas José L. Ferrer es un referente de tradición e innovación en la elaboración de vinos en Binissalem. Cuatro generaciones que desde 1931 seguimos trabajado para que el sabor mallorquín de nuestras uvas se disfrute alrededor del mundo a través de cada uno de nuestros vinos. En 1931 José L. Ferrer con 28 años fundó esta bodega bajo el nombre de Vinícola de Binissalem, siendo pionero en Mallorca: introduciendo nuevas técnicas de cultivo de la vid, embotellando vinos para su comercialización, envejeciendo los vinos en barricas de roble, elaborando vinos blancos a partir de variedades autóctonas y posteriormente, exportando vinos a Europa y Estados Unidos.",
             "address": {
@@ -1081,6 +1087,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 6,
             "name": "Ribas",
             "description": "Situada en Consell, en una comarca vinícola histórica, nuestra bodega complementa el respeto por las tradiciones con la inversión en investigación. El equipo tiene un objetivo común: producir uva de la mejor calidad de forma sostenible para elaborar vinos personales y con marcada tipicidad.",
             "address": {
@@ -1255,6 +1262,7 @@
         },
         {
             "@type": "Winery",
+            "identifier":7,
             "name": "Vins Nadal",
             "description": "VINS NADAL es una bodega familiar, defensora del medio ambiente, las variedades nativas y la cultura mallorquina. Valores todos ellos que queremos transmitir a todos los que nos visitan, ofreciendo una experiencia familiar y una atención personalizada para hacerles sentir nuestro amor por el vino y por Mallorca.",
             "address": {
@@ -1414,6 +1422,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 8,
             "name": "Son Prim",
             "description": "A principios de los noventa, Jaime Llabrés plantó una pequeña parcela con un “tutifruti” de cepas, entre otras, Chardonnay, Syrah, Cabernet y Merlot, con el objetivo de estudiar su adaptación al clima y al suelo de Mallorca. Para vinificar los primeros resultados de las diversas variedades de vid utilizamos pequeños depósitos de inox equipados con sistema de frío, que colocamos bajo un enorme algarrobo. Curiosamente los resultados fueron muy satisfactorios. La crianza se hizo en barricas acomodadas en el fresco sótano de un garaje de Palma. De esta aventura se obtuvieron algunas barricas con vinos de muy buena calidad y también algunos vinagres que eran muy apropiados para aliño de ensaladas.",
             "address": {
@@ -1587,6 +1596,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 9,
             "name": "Bordoy",
             "description": "El proceso de nuestros vinos comienza en el mes de febrero, cuando realizamos la poda de la viña, proceso que nos permite controlar la producción. A mediados de marzo las cepas empiezan a brotar y en mayo se realiza la poda en verde, eliminando el exceso de vegetación y producción. De la floración podemos disfrutar a mediados de mayo y en el mes de junio tiene lugar el envero, donde las uvas inicialmente verdes cambian a negro o amarillo en su caso.",
             "address": {
@@ -1751,6 +1761,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 10,
             "name": "Son Bordils",
             "description": "En 1991, cien años después de que filoxera invadiera Mallorca, la finca cambia de nuevo de propiedad y se reinicia la actividad agrícola en los terrenos denominados antiguamente como Ses Cinquanta Quarteradas de vinya , donde se han replantado, desde el año 1996 hasta este año 2000, un total de 25 Has. de diferentes variedades de vid, tanto blancas, como chardonnay, moscatel y prensal, como tintas, cabernet sauvignon, merlot, manto negro, monastrell, callet y syrah. En 1998, el nuevo Celler de Son Bordils elaboró y embotelló los primeros vinos de la nueva etapa vitivínicola de la finca. Esta es la historia conocida de la Finca Son Bordils, de sus personajes y sus avatares, de sus viñas y sus vinos, y en definitiva de la lucha de los hombres y las mujeres para obtener el fruto de esta tierra desde hace más de cinco siglos. De la misma tierra donde hoy se producen los vinos de la marca Son Bordils.",
             "address": {
@@ -1935,6 +1946,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 11,
             "name": "Miquel Oliver",
             "description": "Nuestra bodega marida con expertos, con aficionados y con recién iniciados en el mundo del vino. Pero también marida con quienes (todavía) no lo son. Lo sabrás cuando nos visites, reserves un tour u organices un evento.",
             "address": {
@@ -2130,6 +2142,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 12,
             "name": "Miquel Gelabert",
             "description": "En el año 1985 en Mallorca, Miquel Gelabert y su esposa Maria Miquel, enamorados del buen vino, empiezan a elaborar vino de los viñedos de la familia como un pasatiempo. Ante la excelente calidad obtenida, empiezan a comercializarlo en su propio restaurante y acaban fundando la bodega de elaboración de vinos que hoy lleva su nombre. Vins Miquel Gelabert nace como una pequeña empresa familiar destinada a investigar y profundizar en el cuidado de la vid y en la elaboración de vinos de alta calidad, pues solamente elabora de 40.000 a 45.000 litros al año dependiendo de la cosecha.",
             "address": {
@@ -2303,6 +2316,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 13,
             "name": "Tianna Negre",
             "description": "La etiqueta de nuestro primer vino, Ses Nines, muestra a nuestra madre cuando era niña jugando en la calle de su pueblo natal, Consell, uno de esos pueblos con tradición viticultora de la zona de la comarca del Raiguer. Aquella niña, nuestra madre, procedente de familia de payeses, heredó un pequeño viñedo en Consell de más de 35 años, sembrado exclusivamente con la uva autóctona Manto Negro y al estilo tradicional, con “politxó” (en vaso entutorado). ",
             "address": {
@@ -2465,6 +2479,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 14,
             "name": "Son Vich",
             "description": "En Son Vich de Superna producimos vinos de alta gama, elegantes y estructurados, con una gran tipicidad. En ellos encontramos la Serra de Tramuntana a través de la mineralidad, salinidad y frescura que los caracteriza. Son vinos con una identidad única dentro de Mallorca.",
             "address": {
@@ -2636,6 +2651,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 15,
             "name": "Dalt Turó",
             "description": "Los vinos Dalt Turó expresan el carácter de unas condiciones singulares y el esfuerzo de una familia viticultora que cree en la producción integrada y el equilibrio ambiental. Dunas fosilizadas, call vermell, embat, artesanía y respeto varietal marcan las diferencias con las que nuestros vinos quieren llegar a tu copa.",
             "address": {
@@ -2774,6 +2790,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 16,
             "name": "Can Feliu",
             "description": "Bodega Can Feliu es una bodega en Mallorca dedicada a la elaboración, crianza, embotellado y comercialización de vinos blancos, rosados jóvenes y vinos tintos de crianza. Todos los vinos están elaborados bajo el amparo de la Indicación Geográfica Protegida Vi de la Terra de Mallorca.",
             "address": {
@@ -2938,6 +2955,7 @@
         },
         {
             "@type": "Winery",
+            "identifier": 17,
             "name": "Vinya Taujana",
             "description": "La Bodega VINYA TAUJANA fue creada por la familia Crespí en 2001, siendo la tercera generación dedicada a la elaboración de vinos de forma artesanal. La bodega cuenta con capacidad para elaborar 115.000 litros de caldos bajo las más extrictas normas de sanidad e higiene,  disponiendo de una cava subterranea con capacidad para 10.000 litros de vino distribuido en botas de roble americano y francés. Nuestras instalaciones combinan modernidad y tradición, utilizando últimas tecnologías de fermentación controlada así como una recogida manual y selectiva de la uva.",
             "address": {

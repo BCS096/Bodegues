@@ -2,6 +2,11 @@ var carrusel = null;
 var json = null;
 var jsonS = null;
 var jsonR = null;
+var idsFiltrado = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+var visionActive = 0;
+var filtro = null;
+var abiertoCheck = false;
+var diasSelected = [false,false,false,false,false,false,false];
 
 window.onload = function () {
     botonesNav(0);
@@ -1340,7 +1345,7 @@ function paginaProducto2(pos) {
 
     var imaDiv = document.createElement('div');
     imaDiv.className = 'col-sm';
-    
+
     node_473.appendChild(imaDiv);
 
     const contImg11 = document.createElement('div');
@@ -1360,7 +1365,7 @@ function paginaProducto2(pos) {
     contImg121.appendChild(node_16);
     contImg11.appendChild(contImg121);
     imaDiv.appendChild(contImg11);
-    
+
     var node_475 = document.createElement('DIV');
     node_475.setAttribute('class', 'col-md-6');
     node_422.appendChild(node_475);
@@ -1393,7 +1398,7 @@ function paginaProducto2(pos) {
 
     var imaDiv_2 = document.createElement('div');
     imaDiv_2.className = 'col-sm';
-    
+
     node_473_2.appendChild(imaDiv_2);
 
     const contImg11_2 = document.createElement('div');
@@ -1439,229 +1444,342 @@ function paginaProducto2(pos) {
     node_463.setAttribute('href', json.itemListElement[pos].url);
 }
 
+function gestFiltrado(nombre, localidad, abierto, dias) {
+    idsFiltrado = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+    gestfiltradoNombre(nombre);
+    gestfiltradoLocalidad(localidad);
+    gestfiltradoAbierto(abierto);
+    gestfiltradoDias(dias);
+    gestorVisionado(visionActive);
+}
+
+function gestfiltradoNombre(value) {
+    var aux = [];
+    var posAux = 0;
+    if(value != ""){
+        for (let i = 0; i < idsFiltrado.length; i++) {
+            if (json.itemListElement[idsFiltrado[i]].name.toLowerCase().includes(value.toLowerCase())) {
+                aux[posAux++] = json.itemListElement[idsFiltrado[i]].identifier;
+            }
+        }
+        idsFiltrado = aux;
+    }
+    
+}
+
+function gestfiltradoLocalidad(value) {
+    var aux = [];
+    var posAux = 0;
+    if(value != ""){
+        for (let i = 0; i < idsFiltrado.length; i++) {
+            if (json.itemListElement[idsFiltrado[i]].address.addressRegion.toLowerCase().includes(value.toLowerCase())) {
+                aux[posAux++] = json.itemListElement[idsFiltrado[i]].identifier;
+            }
+        }
+        idsFiltrado = aux;
+    }
+    
+
+}
+
+function gestfiltradoAbierto(abierto) {
+    if (abierto) {
+        var aux = [];
+        var posAux = 0;
+        for (let i = 0; i < idsFiltrado.length; i++) {
+            if (estaAbierto(json.itemListElement[idsFiltrado[i]].openingHours)) {
+                aux[posAux++] = json.itemListElement[idsFiltrado[i]].identifier;
+            }
+        }
+        idsFiltrado = aux;
+    }
+}
+
+function gestfiltradoDias(dias){
+    if (dias.length > 0) {
+        var aux = [];
+        var posAux = 0;
+        for (let i = 0; i < idsFiltrado.length; i++) {
+            if(diasAbierto(dias,json.itemListElement[idsFiltrado[i]].openingHours)){
+                aux[posAux++] = json.itemListElement[idsFiltrado[i]].identifier;
+            }
+        }
+        idsFiltrado = aux;
+    }
+}
+function diasAbierto(dias, horario){
+    const semana = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+    for(let i = 0; i < dias.length; i++){
+        if(dias[i] && !horario.includes(semana[i])){
+            return false;
+        }
+    }
+    return true;
+}
+
 function filtrado2() {
     const dad = document.getElementById("seccion");
     // Crear el elemento contenedor y añadir las clases necesarias
-    const containerMain = document.createElement('div');
-    containerMain.classList.add('container', 'granate', 'aplicar-borde');
 
-    const container = document.createElement("div");
-    container.classList.add("container");
+    var filtrado_1 = document.createElement('DIV');
+    filtrado_1.setAttribute('class', 'container granate aplicar-borde margen');
+    filtrado_1.setAttribute('id', 'filtrado');
 
-    const row = document.createElement("div");
-    row.classList.add("row", "justify-content-center", "margen");
+    var filtrado_2 = document.createElement('DIV');
+    filtrado_2.setAttribute('class', 'row');
+    filtrado_1.appendChild(filtrado_2);
 
-    const title = document.createElement("h3");
-    title.classList.add("card-title", "margen");
-    //title.textContent = " ";
+    var filtrado_3 = document.createElement('DIV');
+    filtrado_3.setAttribute('class', 'col-sm');
+    filtrado_2.appendChild(filtrado_3);
 
-    const form = document.createElement("form");
-    form.classList.add("form-inline");
+    var filtrado_4 = document.createElement('DIV');
+    filtrado_4.setAttribute('class', 'form-floating');
+    filtrado_3.appendChild(filtrado_4);
 
-    const locationFormGroup = document.createElement("div");
-    locationFormGroup.classList.add("form-group", "mx-3");
+    var filtrado_5 = document.createElement('INPUT');
+    filtrado_5.setAttribute('type', 'nombre');
+    filtrado_5.setAttribute('class', 'form-control');
+    filtrado_5.setAttribute('id', 'nombre');
+    filtrado_5.setAttribute('placeholder', 'Nombre');
 
-    const locationLabel = document.createElement("label");
-    locationLabel.setAttribute("for", "location-filter");
-    locationLabel.classList.add("sr-only");
-    locationLabel.textContent = "Ubicación:";
+    filtrado_4.appendChild(filtrado_5);
 
-    const locationInput = document.createElement("input");
-    locationInput.setAttribute("type", "text");
-    locationInput.setAttribute("id", "location-filter");
-    locationInput.setAttribute("name", "location");
-    locationInput.classList.add("form-control", "mr-3", "margen");
-    locationInput.setAttribute("placeholder", "Ingrese una ubicación");
+    var filtrado_6 = document.createElement('LABEL');
+    filtrado_6.setAttribute('for', 'nombre');
+    filtrado_4.appendChild(filtrado_6);
 
-    locationFormGroup.appendChild(locationLabel);
-    locationFormGroup.appendChild(locationInput);
+    var filtrado_7 = document.createTextNode((new String("Nombre")));
+    filtrado_6.appendChild(filtrado_7);
 
-    const ratingFormGroup = document.createElement("div");
-    ratingFormGroup.classList.add("form-group", "margen", "mx-3");
+    var filtrado_8 = document.createElement('DIV');
+    filtrado_8.setAttribute('class', 'col-sm');
+    filtrado_2.appendChild(filtrado_8);
 
-    const ratingLabel = document.createElement("label");
-    ratingLabel.setAttribute("for", "rating-filter");
-    ratingLabel.classList.add("sr-only");
-    ratingLabel.textContent = "Valoración:";
+    var filtrado_9 = document.createElement('DIV');
+    filtrado_9.setAttribute('class', 'form-floating');
+    filtrado_8.appendChild(filtrado_9);
 
-    const ratingSelect = document.createElement("select");
-    ratingSelect.setAttribute("id", "rating-filter");
-    ratingSelect.setAttribute("name", "rating");
-    ratingSelect.classList.add("form-select", "margen", "mr-3");
+    var filtrado_10 = document.createElement('INPUT');
+    filtrado_10.setAttribute('type', 'localidad');
+    filtrado_10.setAttribute('class', 'form-control');
+    filtrado_10.setAttribute('id', 'localidad');
+    filtrado_10.setAttribute('placeholder', 'Localidad');
+    filtrado_9.appendChild(filtrado_10);
 
-    const option0 = document.createElement("option");
-    option0.setAttribute("value", "0");
-    option0.textContent = "Seleccione una valoración";
+    var filtrado_11 = document.createElement('LABEL');
+    filtrado_11.setAttribute('for', 'localidad');
+    filtrado_9.appendChild(filtrado_11);
 
-    const option1 = document.createElement("option");
-    option1.setAttribute("value", "1");
-    option1.textContent = "1 estrella";
+    var filtrado_12 = document.createTextNode((new String("Localidad")));
+    filtrado_11.appendChild(filtrado_12);
 
-    const option2 = document.createElement("option");
-    option2.setAttribute("value", "2");
-    option2.textContent = "2 estrellas";
+    var filtrado_13 = document.createElement('DIV');
+    filtrado_13.setAttribute('class', 'col-md-auto');
+    filtrado_13.setAttribute('style','align-self: center');
+    filtrado_2.appendChild(filtrado_13);
 
-    const option3 = document.createElement("option");
-    option3.setAttribute("value", "3");
-    option3.textContent = "3 estrellas";
+    var filtrado_14 = document.createElement('DIV');
+    filtrado_14.setAttribute('class', 'multiselect');
+    filtrado_13.appendChild(filtrado_14);
 
-    const option4 = document.createElement("option");
-    option4.setAttribute("value", "4");
-    option4.textContent = "4 estrellas";
+    var filtrado_15 = document.createElement('DIV');
+    filtrado_15.setAttribute('class', 'selectBox');
+    filtrado_15.setAttribute('onclick', 'showCheckboxes()');
+    filtrado_14.appendChild(filtrado_15);
 
-    const option5 = document.createElement("option");
-    option5.setAttribute("value", "5");
-    option5.textContent = "5 estrellas";
+    var filtrado_16 = document.createElement('SELECT');
+    filtrado_16.setAttribute('class', 'form-select');
+    filtrado_16.setAttribute('aria-label', 'Default select example');
+    filtrado_15.appendChild(filtrado_16);
 
-    ratingSelect.appendChild(option0);
-    ratingSelect.appendChild(option1);
-    ratingSelect.appendChild(option2);
-    ratingSelect.appendChild(option3);
-    ratingSelect.appendChild(option4);
-    ratingSelect.appendChild(option5);
+    var filtrado_17 = document.createElement('OPTION');
+    filtrado_16.appendChild(filtrado_17);
 
-    ratingFormGroup.appendChild(ratingLabel);
-    ratingFormGroup.appendChild(ratingSelect);
+    var filtrado_18 = document.createTextNode((new String("Elige los días")));
+    filtrado_17.appendChild(filtrado_18);
 
-    const timeFormGroup = document.createElement("div");
-    timeFormGroup.classList.add("form-group", "margen", "mx-3");
+    var filtrado_19 = document.createElement('DIV');
+    filtrado_19.setAttribute('class', 'overSelect');
+    filtrado_15.appendChild(filtrado_19);
 
-    const timeLabel = document.createElement("label");
-    timeLabel.setAttribute("for", "time-filter");
-    timeLabel.classList.add("sr-only");
-    timeLabel.textContent = "Horario de apertura:";
+    var filtrado_20 = document.createElement('DIV');
+    filtrado_20.setAttribute('id', 'checkboxes');
+    filtrado_14.appendChild(filtrado_20);
 
-    const timeInputGroup = document.createElement("div");
-    timeInputGroup.classList.add("input-group");
+    var filtrado_21 = document.createElement('LABEL');
+    filtrado_21.setAttribute('for', 'one');
+    filtrado_20.appendChild(filtrado_21);
 
-    const openingTimeInput = document.createElement("input");
-    openingTimeInput.setAttribute("type", "time");
-    openingTimeInput.setAttribute("id", "time-filter");
-    openingTimeInput.setAttribute("name", "opening-time");
-    openingTimeInput.classList.add("form-control", "mr-2");
+    var filtrado_22 = document.createElement('INPUT');
+    filtrado_22.setAttribute('type', 'checkbox');
+    filtrado_22.setAttribute('id', 'one');
+    filtrado_21.appendChild(filtrado_22);
 
-    const toLabel = document.createElement("span");
-    toLabel.classList.add("input-group-text");
-    toLabel.textContent = "a";
+    var filtrado_23 = document.createTextNode((new String("Lunes")));
+    filtrado_21.appendChild(filtrado_23);
 
-    const closingTimeInput = document.createElement("input");
-    closingTimeInput.setAttribute("type", "time");
-    closingTimeInput.setAttribute("id", "time-filter");
-    closingTimeInput.setAttribute("name", "closing-time");
-    closingTimeInput.classList.add("form-control", "ml-2");
+    var filtrado_24 = document.createElement('LABEL');
+    filtrado_24.setAttribute('for', 'two');
+    filtrado_20.appendChild(filtrado_24);
 
-    timeInputGroup.appendChild(openingTimeInput);
-    timeInputGroup.appendChild(toLabel);
-    timeInputGroup.appendChild(closingTimeInput);
+    var filtrado_25 = document.createElement('INPUT');
+    filtrado_25.setAttribute('type', 'checkbox');
+    filtrado_25.setAttribute('id', 'two');
+    filtrado_24.appendChild(filtrado_25);
 
-    timeFormGroup.appendChild(timeLabel);
-    timeFormGroup.appendChild(timeInputGroup);
+    var filtrado_26 = document.createTextNode((new String("Martes")));
+    filtrado_24.appendChild(filtrado_26);
 
-    const weekFormGroup = document.createElement("div");
-    weekFormGroup.classList.add("form-group", "margen", "mx-3");
+    var filtrado_27 = document.createElement('LABEL');
+    filtrado_27.setAttribute('for', 'three');
+    filtrado_20.appendChild(filtrado_27);
 
-    const weekLabel = document.createElement("label");
-    weekLabel.setAttribute("for", "rating-filter");
-    weekLabel.classList.add("sr-only");
-    weekLabel.textContent = "Días de la semana:";
+    var filtrado_28 = document.createElement('INPUT');
+    filtrado_28.setAttribute('type', 'checkbox');
+    filtrado_28.setAttribute('id', 'three');
+    filtrado_27.appendChild(filtrado_28);
 
-    const weekSelect = document.createElement("select");
-    weekSelect.setAttribute("id", "rating-filter");
-    weekSelect.setAttribute("name", "rating");
-    weekSelect.classList.add("form-select", "mr-3");
+    var filtrado_29 = document.createTextNode((new String("Miercoles")));
+    filtrado_27.appendChild(filtrado_29);
 
-    const option0w = document.createElement("option");
-    option0w.setAttribute("value", "0");
-    option0w.textContent = "Seleccione los días";
+    var filtrado_30 = document.createElement('LABEL');
+    filtrado_30.setAttribute('for', 'four');
+    filtrado_20.appendChild(filtrado_30);
 
-    const option1w = document.createElement("option");
-    option1w.setAttribute("value", "lunes");
-    option1w.textContent = "Lunes";
+    var filtrado_31 = document.createElement('INPUT');
+    filtrado_31.setAttribute('type', 'checkbox');
+    filtrado_31.setAttribute('id', 'four');
+    filtrado_30.appendChild(filtrado_31);
 
-    const option2w = document.createElement("option");
-    option2w.setAttribute("value", "martes");
-    option2w.textContent = "Martes";
+    var filtrado_32 = document.createTextNode((new String("Jueves")));
+    filtrado_30.appendChild(filtrado_32);
 
-    const option3w = document.createElement("option");
-    option3w.setAttribute("value", "miercoles");
-    option3w.textContent = "Miercoles";
+    var filtrado_33 = document.createElement('LABEL');
+    filtrado_33.setAttribute('for', 'five');
+    filtrado_20.appendChild(filtrado_33);
 
-    const option4w = document.createElement("option");
-    option4w.setAttribute("value", "jueves");
-    option4w.textContent = "Jueves";
+    var filtrado_34 = document.createElement('INPUT');
+    filtrado_34.setAttribute('type', 'checkbox');
+    filtrado_34.setAttribute('id', 'five');
+    filtrado_33.appendChild(filtrado_34);
 
-    const option5w = document.createElement("option");
-    option5w.setAttribute("value", "viernes");
-    option5w.textContent = "Viernes";
+    var filtrado_35 = document.createTextNode((new String("Viernes")));
+    filtrado_33.appendChild(filtrado_35);
 
-    const option6w = document.createElement("option");
-    option6w.setAttribute("value", "sabado");
-    option6w.textContent = "Sabado";
+    var filtrado_36 = document.createElement('LABEL');
+    filtrado_36.setAttribute('for', 'six');
+    filtrado_20.appendChild(filtrado_36);
 
-    const option7w = document.createElement("option");
-    option7w.setAttribute("value", "domingo");
-    option7w.textContent = "Domingo";
+    var filtrado_37 = document.createElement('INPUT');
+    filtrado_37.setAttribute('type', 'checkbox');
+    filtrado_37.setAttribute('id', 'six');
+    filtrado_36.appendChild(filtrado_37);
 
-    weekSelect.appendChild(option0w);
-    weekSelect.appendChild(option1w);
-    weekSelect.appendChild(option2w);
-    weekSelect.appendChild(option3w);
-    weekSelect.appendChild(option4w);
-    weekSelect.appendChild(option5w);
-    weekSelect.appendChild(option6w);
-    weekSelect.appendChild(option7w);
+    var filtrado_38 = document.createTextNode((new String("Sabado")));
+    filtrado_36.appendChild(filtrado_38);
 
-    weekFormGroup.appendChild(weekLabel);
-    weekFormGroup.appendChild(weekSelect);
+    var filtrado_39 = document.createElement('LABEL');
+    filtrado_39.setAttribute('for', 'seven');
+    filtrado_20.appendChild(filtrado_39);
 
-    const f = document.createElement('div');
-    f.className = 'row';
+    var filtrado_40 = document.createElement('INPUT');
+    filtrado_40.setAttribute('type', 'checkbox');
+    filtrado_40.setAttribute('id', 'seven');
+    filtrado_39.appendChild(filtrado_40);
 
-    const f1 = document.createElement('div');
-    f1.className = 'col-sm';
+    var filtrado_41 = document.createTextNode((new String("Domingo")));
+    filtrado_39.appendChild(filtrado_41);
 
-    const submit = document.createElement('button');
-    submit.setAttribute('type', 'submit');
-    submit.className = "btn btn-primary mx-3";
-    submit.textContent = "Buscar";
+    var filtrado_42 = document.createElement('DIV');
+    filtrado_42.setAttribute('class', 'col-md-auto');
+    filtrado_42.setAttribute('style','align-self: center');
+    filtrado_2.appendChild(filtrado_42);
 
-    f1.appendChild(submit);
-    f.appendChild(f1);
+    var filtrado_43 = document.createElement('DIV');
+    filtrado_43.setAttribute('class', 'form-check form-switch');
+    filtrado_42.appendChild(filtrado_43);
 
-    const f3 = document.createElement('div');
-    f3.className = 'col-sm';
+    var filtrado_44 = document.createElement('INPUT');
+    filtrado_44.setAttribute('class', 'form-check-input');
+    filtrado_44.setAttribute('type', 'checkbox');
+    filtrado_44.setAttribute('id', 'flexSwitchCheckDefault');
+    filtrado_43.appendChild(filtrado_44);
 
-    const checkboxDiv2 = document.createElement('div');
-    checkboxDiv2.classList.add('form-check');
+    var filtrado_45 = document.createElement('LABEL');
+    filtrado_45.setAttribute('class', 'form-check-label letraEstilo');
+    filtrado_45.setAttribute('for', 'flexSwitchCheckDefault');
+    filtrado_43.appendChild(filtrado_45);
 
-    const checkboxInput2 = document.createElement('input');
-    checkboxInput2.classList.add('form-check-input');
-    checkboxInput2.type = 'checkbox';
-    checkboxInput2.value = '';
-    checkboxInput2.id = 'flexCheckChecked';
-    checkboxInput2.checked = true;
+    var filtrado_46 = document.createTextNode((new String("Abierto")));
+    filtrado_45.appendChild(filtrado_46);
 
-    const checkboxLabel2 = document.createElement('label');
-    checkboxLabel2.classList.add('form-check-label');
-    checkboxLabel2.setAttribute('for', 'flexCheckChecked');
-    checkboxLabel2.textContent = 'Abierto';
+    //instancia de eventos
+    filtrado_5.oninput = function () {
+        const nombre = filtrado_5.value;
+        const localidad = filtrado_10.value;
+        gestFiltrado(nombre, localidad, abiertoCheck, diasSelected);
+    }
 
-    checkboxDiv2.appendChild(checkboxInput2);
-    checkboxDiv2.appendChild(checkboxLabel2);
+    filtrado_10.oninput = function () {
+        const nombre = filtrado_5.value;
+        const localidad = filtrado_10.value;
+        gestFiltrado(nombre, localidad, abiertoCheck, diasSelected);
+    }
 
-    f3.appendChild(checkboxDiv2);
-    f.appendChild(f3);
+    filtrado_44.oninput = function () {
+        const nombre = filtrado_5.value;
+        const localidad = filtrado_10.value;
+        abiertoCheck = !abiertoCheck;
+        gestFiltrado(nombre, localidad, abiertoCheck, diasSelected);
+    }
 
-    form.appendChild(locationFormGroup);
-    form.appendChild(ratingFormGroup);
-    form.appendChild(timeFormGroup);
-    form.appendChild(weekFormGroup);
-    form.appendChild(f);
-    title.appendChild(form);
-    row.appendChild(title);
-    container.appendChild(row);
-    containerMain.appendChild(container);
-    dad.appendChild(containerMain);
+    filtrado_22.oninput = function () {
+        const nombre = filtrado_5.value;
+        const localidad = filtrado_10.value;
+        diasSelected[0] = !diasSelected[0];
+        gestFiltrado(nombre, localidad, abiertoCheck, diasSelected);
+    }
+    filtrado_25.oninput = function () {
+        const nombre = filtrado_5.value;
+        const localidad = filtrado_10.value;
+        diasSelected[1] = !diasSelected[1];
+        gestFiltrado(nombre, localidad, abiertoCheck, diasSelected);
+    }
+    filtrado_28.oninput = function () {
+        const nombre = filtrado_5.value;
+        const localidad = filtrado_10.value;
+        diasSelected[2] = !diasSelected[2];
+        gestFiltrado(nombre, localidad, abiertoCheck, diasSelected);
+    }
+    filtrado_31.oninput = function () {
+        const nombre = filtrado_5.value;
+        const localidad = filtrado_10.value;
+        diasSelected[3] = !diasSelected[3];
+        gestFiltrado(nombre, localidad, abiertoCheck, diasSelected);
+    }
+    filtrado_34.oninput = function () {
+        const nombre = filtrado_5.value;
+        const localidad = filtrado_10.value;
+        diasSelected[4] = !diasSelected[4];
+        gestFiltrado(nombre, localidad, abiertoCheck, diasSelected);
+    }
+
+    filtrado_37.oninput = function () {
+        const nombre = filtrado_5.value;
+        const localidad = filtrado_10.value;
+        diasSelected[5] = !diasSelected[5];
+        gestFiltrado(nombre, localidad, abiertoCheck, diasSelected);
+    }
+
+    filtrado_40.oninput = function () {
+        const nombre = filtrado_5.value;
+        const localidad = filtrado_10.value;
+        diasSelected[6] = !diasSelected[6];
+        gestFiltrado(nombre, localidad, abiertoCheck, diasSelected);
+    }
+    
+    dad.appendChild(filtrado_1);
 
 }
 
@@ -1681,14 +1799,14 @@ function botonesNav(navState) {
             var busqueda = document.createElement('li');
             var refb = document.createElement('a');
             refb.setAttribute('id', 'busqueda');
-            refb.setAttribute('href', 'javascript:gestorVisionado(0)');
+            refb.setAttribute('href', 'javascript:prepararBusqueda()');
             refb.innerText = 'Búsqueda';
             busqueda.appendChild(refb);
 
             var contacto = document.createElement('li');
             var refc = document.createElement('a');
             refc.setAttribute('id', '¿Quiénes Somos?');
-            refc.setAttribute('href', 'javascript:gestorVisionado(4)');
+            refc.setAttribute('href', 'javascript:prepararQuienesSomos()');
             refc.innerText = '¿Quiénes Somos?';
             contacto.appendChild(refc);
 
@@ -1701,14 +1819,14 @@ function botonesNav(navState) {
             var busqueda = document.createElement('li');
             var refb = document.createElement('a');
             refb.setAttribute('id', 'busqueda');
-            refb.setAttribute('href', 'javascript:gestorVisionado(0)');
+            refb.setAttribute('href', 'javascript:prepararBusqueda()');
             refb.innerText = 'Búsqueda';
             busqueda.appendChild(refb);
 
             var contacto = document.createElement('li');
             var refc = document.createElement('a');
             refc.setAttribute('id', '¿Quiénes Somos?');
-            refc.setAttribute('href', 'javascript:gestorVisionado(4)');
+            refc.setAttribute('href', 'javascript:prepararQuienesSomos()');
             refc.innerText = '¿Quiénes Somos?';
             contacto.appendChild(refc);
 
@@ -2031,6 +2149,7 @@ function about() {
 function listadoCardXL() {
     const dad = document.getElementById("seccion");
     const container1 = document.createElement("div");
+    container1.setAttribute("id", "tabla");
     container1.className = "container granate aplicar-borde margen";
 
     const row = document.createElement("div");
@@ -2071,7 +2190,7 @@ function listadoCardXL() {
     const col = document.createElement('div');
     col.className = 'col margen';
 
-    for (let i = 0; i < json.itemListElement.length; i++) {
+    for (let i = 0; i < idsFiltrado.length; i++) {
         const container = document.createElement('div');
         container.classList.add('container', 'bg-white', 'aplicar-borde', 'margen');
 
@@ -2093,7 +2212,7 @@ function listadoCardXL() {
         carouselItem1.classList.add('carousel-item', 'active');
 
         const img1 = document.createElement('img');
-        img1.setAttribute('src', json.itemListElement[i].image[0]);
+        img1.setAttribute('src', json.itemListElement[idsFiltrado[i]].image[0]);
         img1.classList.add('d-block', 'w-100');
         carouselItem1.appendChild(img1);
 
@@ -2101,7 +2220,7 @@ function listadoCardXL() {
         carouselItem2.classList.add('carousel-item');
 
         const img2 = document.createElement('img');
-        img2.setAttribute('src', json.itemListElement[i].image[1]);
+        img2.setAttribute('src', json.itemListElement[idsFiltrado[i]].image[1]);
         img2.classList.add('d-block', 'w-100');
         carouselItem2.appendChild(img2);
 
@@ -2109,7 +2228,7 @@ function listadoCardXL() {
         carouselItem3.classList.add('carousel-item');
 
         const img3 = document.createElement('img');
-        img3.setAttribute('src', json.itemListElement[i].image[2]);
+        img3.setAttribute('src', json.itemListElement[idsFiltrado[i]].image[2]);
         img3.classList.add('d-block', 'w-100');
         carouselItem3.appendChild(img3);
 
@@ -2171,19 +2290,19 @@ function listadoCardXL() {
         contImg1.className = 'box1 tamañoImgCard';
 
         const logoimg = document.createElement('img');
-        logoimg.setAttribute('src', json.itemListElement[i].logo);
+        logoimg.setAttribute('src', json.itemListElement[idsFiltrado[i]].logo);
 
         const dl = document.createElement('dl');
 
         const dt1 = document.createElement('dt');
         dt1.textContent = 'Horario: ';
         const dd1 = document.createElement('dd');
-        dd1.textContent = json.itemListElement[i].openingHours;
+        dd1.textContent = json.itemListElement[idsFiltrado[i]].openingHours;
 
         const dt2 = document.createElement('dt');
         dt2.textContent = 'Teléfono: ';
         const dd2 = document.createElement('dd');
-        dd2.textContent = json.itemListElement[i].telephone;
+        dd2.textContent = json.itemListElement[idsFiltrado[i]].telephone;
 
         const dt3 = document.createElement('dt');
         dt3.textContent = 'Email: ';
@@ -2191,25 +2310,25 @@ function listadoCardXL() {
         const a = document.createElement('a');
         a.setAttribute('href', '#');
         a.classList.add('text-navy');
-        a.textContent = json.itemListElement[i].email;
+        a.textContent = json.itemListElement[idsFiltrado[i]].email;
         dd3.appendChild(a);
 
         const dt4 = document.createElement('dt');
         dt4.textContent = 'Web: ';
         const dd4 = document.createElement('dd');
         const a2 = document.createElement('a');
-        a2.setAttribute('href', json.itemListElement[i].url);
+        a2.setAttribute('href', json.itemListElement[idsFiltrado[i]].url);
         a2.classList.add('text-navy');
-        a2.textContent = json.itemListElement[i].url;
+        a2.textContent = json.itemListElement[idsFiltrado[i]].url;
         dd4.appendChild(a2);
 
         const dt5 = document.createElement('dt');
         dt5.textContent = 'Dirección: ';
         const br = document.createElement('br');
         const dd5_1 = document.createElement('dd');
-        dd5_1.textContent = json.itemListElement[i].address.streetAddress;
+        dd5_1.textContent = json.itemListElement[idsFiltrado[i]].address.streetAddress;
         const dd5_2 = document.createElement('dd');
-        dd5_2.textContent = json.itemListElement[i].address.addressLocality + " " + json.itemListElement[i].address.addressRegion + " " + json.itemListElement[i].address.postalCode;
+        dd5_2.textContent = json.itemListElement[idsFiltrado[i]].address.addressLocality + " " + json.itemListElement[idsFiltrado[i]].address.addressRegion + " " + json.itemListElement[idsFiltrado[i]].address.postalCode;
 
 
         dl.appendChild(dt1);
@@ -2265,7 +2384,7 @@ function listadoCardXL() {
 
         const italicPara = document.createElement('p');
         italicPara.className = 'font-italic';
-        italicPara.textContent = json.itemListElement[i].description
+        italicPara.textContent = json.itemListElement[idsFiltrado[i]].description
 
         customScrollbarDiv.appendChild(italicPara);
         containerDiv.appendChild(customScrollbarDiv);
@@ -2275,7 +2394,7 @@ function listadoCardXL() {
         colSmDiv.appendChild(openDiv);
 
         var open = document.createElement('p');
-        if (estaAbierto(json.itemListElement[i].openingHours)) {
+        if (estaAbierto(json.itemListElement[idsFiltrado[i]].openingHours)) {
             open.innerText = 'Abierto ahora';
             open.setAttribute('style', 'color: #37eb05');
         } else {
@@ -2289,7 +2408,7 @@ function listadoCardXL() {
         moreInfoButton.className = 'add-to-cart margen';
         moreInfoButton.textContent = 'Más información';
         moreInfoButton.onclick = function () {
-            gestorVisionado(3, i);
+            prepararPaginaProducto(json.itemListElement[idsFiltrado[i]].identifier);
         };
 
         const starsOut = document.createElement('div');
@@ -2319,6 +2438,10 @@ function listadoCardXL() {
         col.appendChild(container);
         //end for
     }
+    if(idsFiltrado.length == 0){
+        col.className = "col margen textoGrande"
+        col.innerText = "NO HAY RESULTADOS PARA ESTOS FILTROS."
+    }
     row.appendChild(col);
 
 
@@ -2327,6 +2450,7 @@ function listadoCardXL() {
 function listadoCard() {
     const dad = document.getElementById("seccion");
     const container1 = document.createElement("div");
+    container1.setAttribute("id", "tabla");
     container1.className = "container granate aplicar-borde margen";
 
     const row = document.createElement("div");
@@ -2362,8 +2486,7 @@ function listadoCard() {
     const rowCard = document.createElement('div');
     rowCard.className = "row ";
 
-
-    for (let i = 0; i < json.itemListElement.length; i++) {
+    for (let i = 0; i < idsFiltrado.length; i++) {
 
 
         const colCard = document.createElement('div');
@@ -2383,18 +2506,18 @@ function listadoCard() {
 
         const imgCard = document.createElement('img');
         imgCard.className = "";
-        imgCard.setAttribute('src', json.itemListElement[i].logo);
+        imgCard.setAttribute('src', json.itemListElement[idsFiltrado[i]].logo);
 
         const h5 = document.createElement('h5');
-        h5.innerText = json.itemListElement[i].name
+        h5.innerText = json.itemListElement[idsFiltrado[i]].name
 
         const desc = document.createElement('p');
         desc.className = "small text-muted font-italic";
-        desc.innerText = json.itemListElement[i].address.streetAddress + " " + json.itemListElement[i].address.postalCode + " " + json.itemListElement[i].address.addressRegion + ", " + json.itemListElement[i].address.addressLocality;
+        desc.innerText = json.itemListElement[idsFiltrado[i]].address.streetAddress + " " + json.itemListElement[idsFiltrado[i]].address.postalCode + " " + json.itemListElement[idsFiltrado[i]].address.addressRegion + ", " + json.itemListElement[idsFiltrado[i]].address.addressLocality;
 
         const open = document.createElement('p');
         open.className = "small  font-italic";
-        if (estaAbierto(json.itemListElement[i].openingHours)) {
+        if (estaAbierto(json.itemListElement[idsFiltrado[i]].openingHours)) {
             open.innerText = 'Abierto ahora';
             open.setAttribute('style', 'color: #37eb05');
         } else {
@@ -2415,7 +2538,7 @@ function listadoCard() {
         button.className = "add-to-cart margen";
         button.innerText = "Más información";
         button.onclick = function () {
-            gestorVisionado(3, i);
+            prepararPaginaProducto(json.itemListElement[idsFiltrado[i]].identifier);
         };
 
         contImg1.appendChild(imgCard);
@@ -2434,6 +2557,11 @@ function listadoCard() {
         rowCard.appendChild(colCard);
     }
 
+    if(idsFiltrado.length == 0){
+        rowCard.className = "col margen textoGrande"
+        rowCard.innerText = "NO HAY RESULTADOS PARA ESTOS FILTROS."
+    }
+
     row.appendChild(rowCard);
 
     container1.appendChild(row);
@@ -2444,6 +2572,7 @@ function listadoCard() {
 function listadoMap() {
     const dad = document.getElementById('seccion');
     const container = document.createElement('div');
+    container.setAttribute("id", "tabla");
     container.classList.add('container', 'granate', 'aplicar-borde', 'margen');
     dad.appendChild(container);
     const row = document.createElement('div');
@@ -2478,7 +2607,7 @@ function listadoMap() {
     row.appendChild(containerIcons);
 
     const col1 = document.createElement('div');
-    col1.setAttribute('id','mapa');
+    col1.setAttribute('id', 'mapa');
     col1.className = 'mb-3';
     row.appendChild(col1);
     var map_1 = document.createElement('DIV');
@@ -2493,7 +2622,7 @@ function infoMapa(pos) {
 
     const row = document.getElementById('infoMap');
 
-    if(hasNode(row,document.getElementById('info'))){
+    if (hasNode(row, document.getElementById('info'))) {
         row.removeChild(document.getElementById('info'));
     }
 
@@ -2501,7 +2630,7 @@ function infoMapa(pos) {
 
     const col2 = document.createElement('div');
     col2.classList.add('col-sm');
-    col2.setAttribute('id','info');
+    col2.setAttribute('id', 'info');
 
     const col3 = document.createElement('div');
     col3.classList.add('col-lg-auto', 'bg-white', 'aplicar-borde', 'margen');
@@ -2616,7 +2745,7 @@ function infoMapa(pos) {
     const dd5_1 = document.createElement('dd');
     dd5_1.textContent = json.itemListElement[pos].address.streetAddress;
     const dd5_2 = document.createElement('dd');
-    
+
     dd5_2.textContent = json.itemListElement[pos].address.addressLocality + ", " + json.itemListElement[pos].address.addressRegion + ", " + json.itemListElement[pos].address.postalCode;
 
     dl.appendChild(dt1);
@@ -2697,7 +2826,7 @@ function infoMapa(pos) {
     moreInfoButton.className = 'add-to-cart margen';
     moreInfoButton.textContent = 'Más información';
     moreInfoButton.onclick = function () {
-        gestorVisionado(3, pos);
+        prepararPaginaProducto(pos);
     };
     conte.appendChild(moreInfoButton);
 
@@ -2732,6 +2861,8 @@ function gestorVisionado(vision, producto) {
     var seccion = document.getElementById("seccion");
     var car = document.getElementById("carouselPrincipal");
 
+
+
     if (hasNode(seccion, car)) {
         carrusel = car;
         seccion.removeChild(car);
@@ -2741,32 +2872,75 @@ function gestorVisionado(vision, producto) {
         body.removeChild(modal);
     }
 
+    if (hasNode(seccion, document.getElementById('tabla'))) {
+        seccion.removeChild(document.getElementById('tabla'));
+    }
+
+    if (filtro != null) {
+        seccion.appendChild(filtro);
+        filtro = null;
+    }
+
+    if (vision == 2) {
+        filtro = document.getElementById('filtrado');
+        seccion.removeChild(filtro);
+
+    }
+    botonesNav(0);
+    switch (vision) {
+        case 1: listadoCardXL();
+            break;
+        case 0: listadoCard();
+            break;
+        case 2: listadoMap();
+            break;
+    }
+    visionActive = vision;
+
+
+}
+
+
+function prepararBusqueda() {
+
+    var seccion = document.getElementById("seccion");
+
+    idsFiltrado = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+
     if (seccion.hasChildNodes()) {
         while (seccion.childNodes.length >= 1) {
             seccion.removeChild(seccion.firstChild);
         }
     }
-
-    if (vision >= 3) {
-        if (vision == 3) {
-            botonesNav(1);
-            paginaProducto2(producto);
-        }
-        if (vision == 4) {
-            botonesNav(0);
-            about();
-        }
-    } else {
-        botonesNav(0);        
-        switch (vision) {
-            case 1: filtrado2(); listadoCardXL();
-                break;
-            case 0: filtrado2(); listadoCard();
-                break;
-            case 2: listadoMap();
-                break;
-        }
-    }
+    filtrado2();
+    gestorVisionado(0);
 }
 
+function prepararQuienesSomos() {
+    var body = document.getElementById("cuerpo");
+    var modal = document.getElementById('ventanaModal');
+    var seccion = document.getElementById("seccion");
 
+    if (hasNode(body, modal)) {
+        body.removeChild(modal);
+    }
+    if (seccion.hasChildNodes()) {
+        while (seccion.childNodes.length >= 1) {
+            seccion.removeChild(seccion.firstChild);
+        }
+    }
+    botonesNav(0);
+    about();
+}
+
+function prepararPaginaProducto(producto) {
+    var seccion = document.getElementById("seccion");
+
+    if (seccion.hasChildNodes()) {
+        while (seccion.childNodes.length >= 1) {
+            seccion.removeChild(seccion.firstChild);
+        }
+    }
+    botonesNav(1);
+    paginaProducto2(producto);
+}
