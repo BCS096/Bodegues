@@ -1389,7 +1389,7 @@ function paginaProducto2(pos) {
 
     var node_473_2 = document.createElement('div');
     node_473_2.className = 'row';
-    node_476.appendChild(node_473_2);
+    node_478.appendChild(node_473_2);
 
     var node_474_2 = document.createElement('DIV');
     node_474_2.className = 'col-sm textoIcon';
@@ -1530,7 +1530,7 @@ function filtrado2() {
     filtrado_1.appendChild(filtrado_2);
 
     var filtrado_3 = document.createElement('DIV');
-    filtrado_3.setAttribute('class', 'col-sm');
+    filtrado_3.setAttribute('class', 'col-sm margen');
     filtrado_2.appendChild(filtrado_3);
 
     var filtrado_4 = document.createElement('DIV');
@@ -1553,7 +1553,7 @@ function filtrado2() {
     filtrado_6.appendChild(filtrado_7);
 
     var filtrado_8 = document.createElement('DIV');
-    filtrado_8.setAttribute('class', 'col-sm');
+    filtrado_8.setAttribute('class', 'col-sm margen');
     filtrado_2.appendChild(filtrado_8);
 
     var filtrado_9 = document.createElement('DIV');
@@ -1575,7 +1575,7 @@ function filtrado2() {
     filtrado_11.appendChild(filtrado_12);
 
     var filtrado_13 = document.createElement('DIV');
-    filtrado_13.setAttribute('class', 'col-md-auto');
+    filtrado_13.setAttribute('class', 'col-md-auto margen');
     filtrado_13.setAttribute('style','align-self: center');
     filtrado_2.appendChild(filtrado_13);
 
@@ -1692,7 +1692,7 @@ function filtrado2() {
     filtrado_39.appendChild(filtrado_41);
 
     var filtrado_42 = document.createElement('DIV');
-    filtrado_42.setAttribute('class', 'col-md-auto');
+    filtrado_42.setAttribute('class', 'col-md-auto margen');
     filtrado_42.setAttribute('style','align-self: center');
     filtrado_2.appendChild(filtrado_42);
 
