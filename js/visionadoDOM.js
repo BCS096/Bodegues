@@ -967,7 +967,7 @@ function paginaProducto2(pos) {
     form_4.setAttribute("class", "col-sm-2 control-label text-white");
     form_3.appendChild(form_4);
 
-    var form_5 = document.createTextNode(new String("Name"));
+    var form_5 = document.createTextNode(new String("Nombre"));
     form_4.appendChild(form_5);
 
     var form_6 = document.createElement("DIV");
@@ -990,7 +990,7 @@ function paginaProducto2(pos) {
     form_9.setAttribute("class", "col-sm-2 control-label text-white");
     form_8.appendChild(form_9);
 
-    var form_10 = document.createTextNode(new String("Comment"));
+    var form_10 = document.createTextNode(new String("Comentario"));
     form_9.appendChild(form_10);
 
     var form_11 = document.createElement("DIV");
@@ -1013,7 +1013,7 @@ function paginaProducto2(pos) {
     form_14.setAttribute("class", "col-sm-2 control-label text-white");
     form_13.appendChild(form_14);
 
-    var form_15 = document.createTextNode(new String("Upload media"));
+    var form_15 = document.createTextNode(new String("Valoración [0-5]"));
     form_14.appendChild(form_15);
 
     var form_16 = document.createElement("DIV");
@@ -1056,7 +1056,7 @@ function paginaProducto2(pos) {
     form_23.setAttribute("class", "glyphicon glyphicon-send");
     form_22.appendChild(form_23);
 
-    var form_24 = document.createTextNode(new String(" Summit comment"));
+    var form_24 = document.createTextNode(new String("Guardar"));
     form_22.appendChild(form_24);
 
     form_22.onclick = function () {
@@ -1873,6 +1873,14 @@ function botonesNav(navState) {
             var node_12 = document.createTextNode(new String("Vinos"));
             node_11.appendChild(node_12);
 
+            var node_10x = document.createElement("LI");
+            var node_11x = document.createElement("A");
+            node_11x.setAttribute("href", "#testimonials");
+            //node_11.setAttribute('style', 'color:white');
+            node_10x.appendChild(node_11x);
+            var node_12x = document.createTextNode(new String("Comentarios"));
+            node_11x.appendChild(node_12x);
+
             var node_19 = document.createElement("LI");
             var node_20 = document.createElement("A");
             node_20.setAttribute("href", "#gallery");
@@ -1894,6 +1902,7 @@ function botonesNav(navState) {
             ul.appendChild(node_4);
             ul.appendChild(node_7);
             ul.appendChild(node_10);
+            ul.appendChild(node_10x);
             ul.appendChild(node_19);
             ul.appendChild(node_22);
 

@@ -302,7 +302,7 @@ function añadirComentario(autor, texto, nota, bodegaId) {
   var jsonString = JSON.stringify(jsonC);
 
   // Realizar la solicitud POST al archivo PHP
-  fetch("php/prueba.php", {
+  fetch("php/addComentario.php", {
     method: "POST",
     body: jsonString,
     headers: {
@@ -315,7 +315,4 @@ function añadirComentario(autor, texto, nota, bodegaId) {
     .then(function (data) {
       alert(data); // Muestra la respuesta del servidor en la consola
     });
-
-    //volvemos a cargar el json con el comentario nuevo
-    //cargarJSOComentarios();
 }

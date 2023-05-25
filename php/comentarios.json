@@ -1,6 +1,6 @@
 [
     {
-        "id": 3,
+        "id": 0,
         "comentarios": [
             {
                 "author": "John Doe",
@@ -8,9 +8,9 @@
                 "rate": 2
             },
             {
-                "author": "John Puta",
+                "author": "John Wick",
                 "text": "UwU",
-                "rate": 2
+                "rate": 3
             }
         ]
     },
