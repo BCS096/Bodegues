@@ -11,6 +11,7 @@ var diasSelected = [false,false,false,false,false,false,false];
 window.onload = function () {
     botonesNav(0);
     cargarJSON();
+    añadirComentario();
 }
 
 function paginaProducto2(pos) {
