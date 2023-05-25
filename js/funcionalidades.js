@@ -37,6 +37,19 @@ function cargarJSONRestaurante() {
   xmlhttp.send();
 }
 
+function cargarJSOComentarios() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("GET", "php/comentarios.json", false);
+  xmlhttp.setRequestHeader("Content-Type", "application/json");
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      jsonC = JSON.parse(this.responseText);
+      console.log(jsonC);
+    }
+  };
+  xmlhttp.send();
+}
+
 //Funcionalidades del tiempo
 function weather(latitud, longitud) {
   const apiKey = "598a45ea6dd5cf5f91f03b503538d27e";
@@ -275,18 +288,18 @@ function establecimientoMasCercano(establecimiento, idBodega) {
 var expanded = false;
 
 //comentarios
-function añadirComentario() {
-  // Archivo JavaScript
+function añadirComentario(autor, texto, nota, bodegaId) {
 
-  // Objeto JSON a enviar
+  // Objeto JSON a añadir
   var jsonData = {
-    nombre: "John Doe",
-    edad: 30,
-    correo: "johndoe@example.com",
+    author: autor,
+    text: texto,
+    rate: nota,
   };
 
+  jsonC[bodegaId].comentarios.push(jsonData)
   // Convertir el objeto JSON en una cadena
-  var jsonString = JSON.stringify(jsonData);
+  var jsonString = JSON.stringify(jsonC);
 
   // Realizar la solicitud POST al archivo PHP
   fetch("php/prueba.php", {
@@ -300,6 +313,9 @@ function añadirComentario() {
       return response.text();
     })
     .then(function (data) {
-      console.log(data); // Muestra la respuesta del servidor en la consola
+      alert(data); // Muestra la respuesta del servidor en la consola
     });
+
+    //volvemos a cargar el json con el comentario nuevo
+    //cargarJSOComentarios();
 }

@@ -6,7 +6,7 @@
   $jsonData = json_decode($jsonString);
 
   // Directorio de destino para guardar el archivo JSON
-  $directorio = '/json';
+  $directorio = '';
 
   // Nombre de archivo para el JSON
   $nombreArchivo = 'comentarios.json';
@@ -18,8 +18,8 @@
   $resultado = file_put_contents($rutaArchivo, $jsonString);
 
   if ($resultado !== false) {
-    echo 'Archivo JSON guardado correctamente.';
+    echo 'Comentario guardado con éxito';
   } else {
-    echo 'Error al guardar el archivo JSON.';
+    echo 'Error al guardar el comentario';
   }
 ?>
