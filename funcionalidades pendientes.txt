@@ -1,4 +1,2 @@
 grafico svg
 video propio
-ordenar por
-comentarios
