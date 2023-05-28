@@ -4,6 +4,22 @@
 
 /*Mi código*/
 
+.axis-bar {
+  fill: lightgray;
+}
+
+.text {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  text-anchor: middle;
+  fill:white;
+}
+.star-text {
+  font-size: 12px;
+  text-anchor: middle;
+  fill:white;
+}
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* Proporción 16:9 (divide la altura por el ancho y multiplica por 100) */

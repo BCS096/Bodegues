@@ -289,7 +289,6 @@ var expanded = false;
 
 //comentarios
 function añadirComentario(autor, texto, nota, bodegaId) {
-
   // Objeto JSON a añadir
   var jsonData = {
     author: autor,
@@ -297,7 +296,7 @@ function añadirComentario(autor, texto, nota, bodegaId) {
     rate: nota,
   };
 
-  jsonC[bodegaId].comentarios.push(jsonData)
+  jsonC[bodegaId].comentarios.push(jsonData);
   // Convertir el objeto JSON en una cadena
   var jsonString = JSON.stringify(jsonC);
 
@@ -316,3 +315,105 @@ function añadirComentario(autor, texto, nota, bodegaId) {
       alert(data); // Muestra la respuesta del servidor en la consola
     });
 }
+
+//grafico
+
+function createGrafico(){
+  var num = [0,0,0,0,0];
+  for(let i = 0; i < jsonC.length; i++){
+    num[calcularMedia(i)]++;
+  }
+  console.log(num);
+  grafico(num);
+}
+
+function calcularMedia(bod){
+  var result = 0;
+  for(let i = 0; i < jsonC[bod].comentarios.length; i++){
+    result =+ jsonC[bod].comentarios[i].rate;
+  }
+  return (result/jsonC[bod].comentarios.length).toFixed() > 0 ? (result/jsonC[bod].comentarios.length) .toFixed() - 1 : 0;
+}
+
+function grafico(num) {
+  // Datos del gráfico de barras
+  const data = [
+    { label: "A", value: num[0] },
+    { label: "B", value: num[1] },
+    { label: "C", value: num[2] },
+    { label: "D", value: num[3] },
+    { label: "E", value: num[4] },
+  ];
+
+  // Dimensiones del gráfico
+  const width = 300;
+  const height = 300;
+  const heightReal = 350;
+  const margin = 20; // Margen entre las barras y los ejes
+
+  // Escala para el eje Y
+  const yScale = d3
+    .scaleLinear()
+    .domain([0, d3.max(data, (d) => d.value)])
+    .range([heightReal - margin, margin]);
+
+  // Crear el contenedor SVG
+  const svg = d3
+    .select("#chart")
+    .append("svg")
+    .attr("width", width + 10)
+    .attr("height", heightReal);
+
+    const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+
+  // Agregar barras de datos
+  const bars = svg
+    .selectAll("rect")
+    .data(data)
+    .enter()
+    .append("rect")
+    .attr("class", "bar")
+    .attr("x", (d, i) => i * (width / data.length))
+    .attr("y", (d) => yScale(d.value))
+    .attr("width", width / data.length - 5)
+    .attr("height", (d) => height - yScale(d.value))
+    .attr("fill", (d, i) => colorScale(i));
+
+  // Agregar etiquetas de texto
+  svg
+    .selectAll(".text")
+    .data(data)
+    .enter()
+    .append("text")
+    .text((d) => d.value)
+    .attr("class", "text")
+    .attr("x", (d, i) => (i + 0.5) * (width / data.length))
+    .attr("y", (d) => yScale(d.value) - 5)
+    .attr("text-anchor", "middle");
+
+  // Agregar texto de estrellas
+  svg
+    .selectAll(".star-text")
+    .data(data)
+    .enter()
+    .append("text")
+    .text((d, i) => {
+      const starCount = 5 - i;
+      return `${starCount} estrella${starCount !== 1 ? "s" : ""}`;
+    })
+    .attr("class", "star-text")
+    .attr("x", (d, i) => (i + 0.5) * (width / data.length + 72))
+    .attr("y", 320)
+    .attr("text-anchor", "middle")
+    .attr("alignment-baseline", "middle");
+
+  // Ajustar posición del texto de estrellas
+  const starTexts = svg.selectAll(".star-text");
+  starTexts.each(function (d, i) {
+    const textWidth = this.getBBox().width;
+    const barWidth = (width - 2 * margin) / data.length;
+    const xPosition = (i + 0.8) * (barWidth + 10) - textWidth / 2;
+    d3.select(this).attr("x", xPosition);
+  });
+}
+

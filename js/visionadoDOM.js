@@ -1932,6 +1932,8 @@ function paginaPrincipal() {
 }
 
 function about() {
+
+    
   var seccion = document.getElementById("seccion");
 
   var about_1 = document.createElement("SECTION");
@@ -2128,7 +2130,7 @@ function about() {
   about_2.appendChild(about_50);
 
   var col1 = document.createElement("div");
-  col1.className = "col-sm ";
+  col1.className = "col-sm margen";
   about_50.appendChild(col1);
 
   var col2 = document.createElement("div");
@@ -2160,20 +2162,10 @@ function about() {
 
   //grafico
   const contImg2 = document.createElement("div");
-  contImg2.className = "caja margen";
+  contImg2.setAttribute('id','chart');
   col2.appendChild(contImg2);
 
-  const contImg3 = document.createElement("div");
-  contImg3.className = "box1 tamañoImgGraphic";
-  contImg2.appendChild(contImg3);
-
-  var aux1 = document.createElement("img");
-  aux1.setAttribute("src", "img/graphic.png");
-  aux1.setAttribute("class", "im aos-init aos-animate");
-  aux1.setAttribute("data-aos", "zoom-out");
-  aux1.setAttribute("data-aos-delay", "300");
-  aux1.setAttribute("style", "height: auto");
-  contImg3.appendChild(aux1);
+  createGrafico();
 }
 
 function listadoCardXL() {
