@@ -21,6 +21,11 @@
                 "author": "Pepe",
                 "text": "Nasheeeeeee",
                 "rate": 3
+            },
+            {
+                "author": "Alberto Vaso",
+                "text": "\nMe sumergí en la atmósfera encantadora de la bodega, rodeado de barricas y botellas que guardaban secretos y sabores incomparables. Cada rincón exudaba la pasión y dedicación de quienes trabajaban allí, y cada sorbo de vino era un viaje sensorial que me transportaba a tierras lejanas y cosechas excepcionales. Fue una experiencia inolvidable, donde el arte y la historia se fundían en cada gota, convirtiendo mi visita a la bodega en un verdadero deleite para los sentidos.",
+                "rate": "5"
             }
         ]
     },
@@ -53,9 +58,9 @@
         "id": 4,
         "comentarios": [
             {
-                "author": "Pepe",
-                "text": "Nasheeeeeee",
-                "rate": 3
+                "author": "Los mejores vinos que he degustado en toda mi vida. Vaya cebollón llevo.",
+                "text": "Javier Bellota",
+                "rate": "5"
             }
         ]
     },
@@ -96,6 +101,11 @@
                 "author": "Pepe",
                 "text": "Nasheeeeeee",
                 "rate": 3
+            },
+            {
+                "author": "Aliii",
+                "text": "10/10, la hostia",
+                "rate": "5"
             }
         ]
     },
@@ -116,6 +126,11 @@
                 "author": "Pepe",
                 "text": "Nasheeeeeee",
                 "rate": 3
+            },
+            {
+                "author": "Ignacio Garbanzo",
+                "text": "Bon preu/calidad. Molt recomanable.",
+                "rate": "4"
             }
         ]
     },

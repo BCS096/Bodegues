@@ -376,7 +376,7 @@ function grafico(num) {
     .attr("x", (d, i) => i * (width / data.length))
     .attr("y", (d) => yScale(d.value))
     .attr("width", width / data.length - 5)
-    .attr("height", (d) => height - yScale(d.value))
+    .attr("height", (d) => height - yScale(d.value) + 15)
     .attr("fill", (d, i) => colorScale(i));
 
   // Agregar etiquetas de texto
@@ -398,12 +398,12 @@ function grafico(num) {
     .enter()
     .append("text")
     .text((d, i) => {
-      const starCount = 5 - i;
+      const starCount = i + 1;
       return `${starCount} estrella${starCount !== 1 ? "s" : ""}`;
     })
     .attr("class", "star-text")
     .attr("x", (d, i) => (i + 0.5) * (width / data.length + 72))
-    .attr("y", 320)
+    .attr("y", 325)
     .attr("text-anchor", "middle")
     .attr("alignment-baseline", "middle");
 
