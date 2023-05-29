@@ -1450,7 +1450,7 @@ function gestFiltrado(nombre, localidad, abierto, dias) {
   gestfiltradoLocalidad(localidad);
   gestfiltradoAbierto(abierto);
   gestfiltradoDias(dias);
-  gestorVisionado(visionActive);
+  gestorVisionado(visionActive, false);
 }
 
 function gestfiltradoNombre(value) {
@@ -1542,7 +1542,7 @@ function filtrado2() {
   filtrado_2.appendChild(filtrado_3);
 
   var filtrado_4 = document.createElement("DIV");
-  filtrado_4.setAttribute("class", "form-floating");
+  filtrado_4.setAttribute("class", "form-floating margen");
   filtrado_3.appendChild(filtrado_4);
 
   var filtrado_5 = document.createElement("INPUT");
@@ -1565,7 +1565,7 @@ function filtrado2() {
   filtrado_2.appendChild(filtrado_8);
 
   var filtrado_9 = document.createElement("DIV");
-  filtrado_9.setAttribute("class", "form-floating");
+  filtrado_9.setAttribute("class", "form-floating margen");
   filtrado_8.appendChild(filtrado_9);
 
   var filtrado_10 = document.createElement("INPUT");
@@ -2183,19 +2183,19 @@ function listadoCardXL() {
   const icon1 = document.createElement("i");
   icon1.className = "fa-solid fa-map-location iconosVisionado";
   icon1.onclick = function () {
-    gestorVisionado(2);
+    gestorVisionado(2,false);
   };
 
   const icon2 = document.createElement("i");
   icon2.className = "fa-solid fa-table-cells iconosVisionado";
   icon2.onclick = function () {
-    gestorVisionado(0);
+    gestorVisionado(0,false);
   };
 
   const icon3 = document.createElement("i");
   icon3.className = "fa-solid fa-list iconosVisionado";
   icon3.onclick = function () {
-    gestorVisionado(1);
+    gestorVisionado(1,false);
   };
 
   containerIcons.appendChild(icon1);
@@ -2227,7 +2227,7 @@ function listadoCardXL() {
     carousel.setAttribute("data-bs-ride", "carousel");
 
     const carouselInner = document.createElement("div");
-    carouselInner.classList.add("carousel-inner", "redimension2");
+    carouselInner.classList.add("carousel-inner");
 
     const carouselItem1 = document.createElement("div");
     carouselItem1.classList.add("carousel-item", "active");
@@ -2436,14 +2436,17 @@ function listadoCardXL() {
       prepararPaginaProducto(json.itemListElement[idsFiltrado[i]].identifier);
     };
 
-    const starsOut = document.createElement("div");
-    starsOut.className = "stars-outer";
+    var nodo_22 = document.createElement("DIV");
+    nodo_22.setAttribute("class", "col-sm");
+    colSmDiv.appendChild(nodo_22);
 
-    const starsIn = document.createElement("div");
-    starsIn.className = "stars-inner";
+    for (let j = 0; j < calcularMedia(i) + 1; j++) {
+      var star = document.createElement("I");
+      star.setAttribute("class", "fa-solid fa-star");
+      star.setAttribute("style", "color: #ffea00;");
 
-    starsOut.appendChild(starsIn);
-    colSmDiv.appendChild(starsOut);
+      nodo_22.appendChild(star);
+    }
 
     const conte = document.createElement("div");
     conte.className = "container margen";
@@ -2485,19 +2488,19 @@ function listadoCard() {
   const icon1 = document.createElement("i");
   icon1.className = "fa-solid fa-map-location iconosVisionado";
   icon1.onclick = function () {
-    gestorVisionado(2);
+    gestorVisionado(2,false);
   };
 
   const icon2 = document.createElement("i");
   icon2.className = "fa-solid fa-table-cells iconosVisionado";
   icon2.onclick = function () {
-    gestorVisionado(0);
+    gestorVisionado(0,false);
   };
 
   const icon3 = document.createElement("i");
   icon3.className = "fa-solid fa-list iconosVisionado";
   icon3.onclick = function () {
-    gestorVisionado(1);
+    gestorVisionado(1,false);
   };
 
   containerIcons.appendChild(icon1);
@@ -2553,14 +2556,6 @@ function listadoCard() {
       open.setAttribute("style", "color: #da1616");
     }
 
-    const starsOut = document.createElement("div");
-    starsOut.className = "stars-outer";
-
-    const starsIn = document.createElement("div");
-    starsIn.className = "stars-inner";
-
-    starsOut.appendChild(starsIn);
-
     const button = document.createElement("button");
     button.className = "add-to-cart margen";
     button.innerText = "Más información";
@@ -2574,7 +2569,18 @@ function listadoCard() {
     cardBody.appendChild(h5);
     cardBody.appendChild(desc);
     cardBody.appendChild(open);
-    cardBody.appendChild(starsOut);
+
+    var nodo_22 = document.createElement("DIV");
+    nodo_22.setAttribute("class", "col-sm");
+    cardBody.appendChild(nodo_22);
+
+    for (let j = 0; j < calcularMedia(i) + 1; j++) {
+      var star = document.createElement("I");
+      star.setAttribute("class", "fa-solid fa-star");
+      star.setAttribute("style", "color: #ffea00;");
+
+      nodo_22.appendChild(star);
+    }
     cardBody.appendChild(button);
 
     card.appendChild(cardBody);
@@ -2612,19 +2618,19 @@ function listadoMap() {
   const icon1 = document.createElement("i");
   icon1.className = "fa-solid fa-map-location iconosVisionado";
   icon1.onclick = function () {
-    gestorVisionado(2);
+    gestorVisionado(2,false);
   };
 
   const icon2 = document.createElement("i");
   icon2.className = "fa-solid fa-table-cells iconosVisionado";
   icon2.onclick = function () {
-    gestorVisionado(0);
+    gestorVisionado(0,false);
   };
 
   const icon3 = document.createElement("i");
   icon3.className = "fa-solid fa-list iconosVisionado";
   icon3.onclick = function () {
-    gestorVisionado(1);
+    gestorVisionado(1,false);
   };
 
   containerIcons.appendChild(icon1);
@@ -2672,7 +2678,7 @@ function infoMapa(pos) {
   carousel.setAttribute("data-bs-ride", "carousel");
 
   const carouselInner = document.createElement("div");
-  carouselInner.classList.add("carousel-inner", "redimension");
+  carouselInner.classList.add("carousel-inner");
 
   for (let i = 0; i < json.itemListElement[pos].image.length; i++) {
     const carouselItem1 = document.createElement("div");
@@ -2836,14 +2842,17 @@ function infoMapa(pos) {
   containerDiv.appendChild(customScrollbarDiv);
   colSmDiv.appendChild(containerDiv);
 
-  const starsOut = document.createElement("div");
-  starsOut.className = "stars-outer";
+  var nodo_22 = document.createElement("DIV");
+  nodo_22.setAttribute("class", "col-sm");
+  colSmDiv.appendChild(nodo_22);
 
-  const starsIn = document.createElement("div");
-  starsIn.className = "stars-inner";
+  for (let j = 0; j < calcularMedia(pos) + 1; j++) {
+    var star = document.createElement("I");
+    star.setAttribute("class", "fa-solid fa-star");
+    star.setAttribute("style", "color: #ffea00;");
 
-  starsOut.appendChild(starsIn);
-  colSmDiv.appendChild(starsOut);
+    nodo_22.appendChild(star);
+  }
 
   const conte = document.createElement("div");
   conte.className = "container margen";
@@ -2883,7 +2892,7 @@ function hasNode(dad, child) {
   return false;
 }
 
-function gestorVisionado(vision, producto) {
+function gestorVisionado(vision, reset) {
   var body = document.getElementById("cuerpo");
   var modal = document.getElementById("ventanaModal");
   var seccion = document.getElementById("seccion");
@@ -2903,7 +2912,7 @@ function gestorVisionado(vision, producto) {
   }
 
   if (filtro != null) {
-    seccion.appendChild(filtro);
+    if(!reset) seccion.appendChild(filtro);
     filtro = null;
   }
 
@@ -2931,13 +2940,13 @@ function prepararBusqueda() {
 
   idsFiltrado = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-  if (seccion.hasChildNodes()) {
-    while (seccion.childNodes.length >= 1) {
+
+    while (seccion.hasChildNodes()) {
       seccion.removeChild(seccion.firstChild);
     }
-  }
+
   filtrado2();
-  gestorVisionado(0);
+  gestorVisionado(0, true);
 }
 
 function prepararQuienesSomos() {

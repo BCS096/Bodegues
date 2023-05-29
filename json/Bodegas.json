@@ -147,7 +147,7 @@
             "telephone": "971533889",
             "isAccessibleForFree": false,
             "email": "info@vinyesmortitx.com",
-            "logo": "/img/logo.png",
+            "logo": "img/logo.png",
             "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": 39.86897927148171,
@@ -2295,7 +2295,7 @@
             "telephone": "971821444",
             "isAccessibleForFree": false,
             "email": "info@vinsmiquelgelabert.com",
-            "logo": "https://www.vinsmiquelgelabert.com/wp-content/uploads/2014/09/logotranssupinferior.png",
+            "logo": "img/logo_gelabert.jpg",
             "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": 39.58310723905273, 
@@ -2458,21 +2458,21 @@
             "telephone": "971886826",
             "isAccessibleForFree": false,
             "email": "info@tiannanegre.com",
-            "logo": "https://www.tiannanegre.com/es/img/logo_tn.png",
+            "logo": "img/logo_tianna.jpg",
             "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": 39.69365230435187, 
                 "longitude" : 2.8607338700379823
             },
             "image": [
-                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/5f/97/94/schones-und-besonders.jpg",
-                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/45/4b/62/celler-tianna-negre.jpg",
-                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1f/ff/46/f8/tapas.jpg",
-                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1f/ff/46/f6/ready-for-wine-tasting.jpg",
-                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1f/ff/46/f3/the-vineyard.jpg",
-                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/8e/31/7f/img-20190729-wa0001-largejpg.jpg",
-                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/55/2f/66/velo-rose-superb-wine.jpg",
-                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/42/b3/8e/photo1jpg.jpg"
+                "img/tianna1.jpg",
+                "img/tianna2.jpg",
+                "img/tianna3.jpg",
+                "img/tianna4.jpg",
+                "img/tianna5.jpg",
+                "img/tianna6.jpg",
+                "img/tianna7.jpg",
+                "img/tianna8.jpg"
             ],
             "url": "https://www.tiannanegre.com/es/"
         },
@@ -2770,7 +2770,7 @@
             "telephone": "971583657",
             "isAccessibleForFree": false,
             "email": "daltturo@daltturo.com",
-            "logo": "https://www.daltturo.com/wp-content/uploads/2020/07/logo.png",
+            "logo": "img/logo_dalt.jpg",
             "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": 39.41722521795554, 
@@ -2932,7 +2932,7 @@
             "telephone": "971944153",
             "isAccessibleForFree": false,
             "email": "bodega@canfeliu.es",
-            "logo": "https://www.canfeliu.es/images/custom/iconos/logo-can-feliu.svg",
+            "logo": "img/logo_feliu.jpg",
             "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": 39.5338169210003, 
