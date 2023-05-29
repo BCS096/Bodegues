@@ -116,7 +116,7 @@
 }
 
 .fondo {
-  background-image: url("http://www.vinyesmortitx.com/img_blog/21_1234231_569643109759057_294746408_n.jpg");
+  background-image: url("/img/fondo.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
