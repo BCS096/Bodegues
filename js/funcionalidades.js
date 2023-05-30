@@ -93,10 +93,10 @@ function iconoTiempo(id) {
       return "bi bi-clouds-fill";
     case "09d":
     case "09n":
-      return "bi bi-cloud-drizzle-fill";
+      return "bi bi-cloud-rain-heavy-fill";
     case "10d":
     case "10n":
-      return "fa-solid fa-cloud-sun-rain";
+      return "bi bi-cloud-drizzle-fill";
     case "11d":
     case "11n":
       return "bi bi-cloud-lightning-rain-fill";

@@ -1810,7 +1810,7 @@
                                 "@type": "MenuItem",
                                 "name": "Negre",
                                 "description": "Variedades:  Merlot 67 %, Cabernet Sauvignon 22 %, Syrah 11 %.",
-                                "image": "http://www.sonbordils.es/images/f5fa47354931f273b1e693a748b1fd2b.jpg",
+                                "image": "img/bordilsN1.jpg",
                                 "offers":{
                                     "@type": "Offer",
                                     "price": "11.00",
@@ -1821,7 +1821,7 @@
                                 "@type": "MenuItem",
                                 "name": "Bisbals",
                                 "description": "Variedades: Merlot,Syrah,Callet",
-                                "image": "http://www.sonbordils.es/images/721b2c141c1ac0d1d945096420c0d8b8.jpg",
+                                "image": "img/bordilsN2.jpg",
                                 "offers":{
                                     "@type": "Offer",
                                     "price": "7.00",
@@ -1832,7 +1832,7 @@
                                 "@type": "MenuItem",
                                 "name": "Merlot",
                                 "description": "Variedades: Merlot Finca Son Bordils.",
-                                "image": "http://www.sonbordils.es/images/52e1c013faa4b56646f8d1fb8ee2e6b4.jpg",
+                                "image": "img/bordilsN3.jpg",
                                 "offers":{
                                     "@type": "Offer",
                                     "price": "12.50",
@@ -1843,7 +1843,7 @@
                                 "@type": "MenuItem",
                                 "name": "Syrah",
                                 "description": "Variedades: Syrah (95%), Cabernet Sauvignon (5%)",
-                                "image": "http://www.sonbordils.es/images/6d78f4ffd286794a6b00d4598705c9c9.jpg",
+                                "image": "img/bordilsN4.jpg",
                                 "offers":{
                                     "@type": "Offer",
                                     "price": "15.00",
@@ -1854,7 +1854,7 @@
                                 "@type": "MenuItem",
                                 "name": "Cabernet",
                                 "description": "Variedades: Cabernet Sauvignon.",
-                                "image": "http://www.sonbordils.es/images/6b394dc9c199015447aa99b47c46f611.jpg",
+                                "image": "img/bordilsN5.jpg",
                                 "offers":{
                                     "@type": "Offer",
                                     "price": "14.50",
@@ -1871,7 +1871,7 @@
                                 "@type": "MenuItem",
                                 "name": "Blanc",
                                 "description": "Variedades: Prensal 100%",
-                                "image": "http://www.sonbordils.es/images/61bce8a1a94e8c49892a204763c5baa6.jpg",
+                                "image": "img/bordilsB1.jpg",
                                 "offers":{
                                     "@type": "Offer",
                                     "price": "12.50",
@@ -1882,7 +1882,7 @@
                                 "@type": "MenuItem",
                                 "name": "Chardonnay",
                                 "description": "Variedades: Chardonnay 93,2% Riesling 4,7% Viognier 2,1%",
-                                "image": "http://www.sonbordils.es/images/c9750448090367b449b62f2e6b780d94.jpg",
+                                "image": "img/bordilsB2.jpg",
                                 "offers":{
                                     "@type": "Offer",
                                     "price": "12.50",
@@ -1893,7 +1893,7 @@
                                 "@type": "MenuItem",
                                 "name": "Muscat",
                                 "description": "Variedades: Moscatel.",
-                                "image": "http://www.sonbordils.es/images/2d65e2b708f2fb6c65c00d8ec42eead4.jpg",
+                                "image": "img/bordilsB3.jpg",
                                 "offers":{
                                     "@type": "Offer",
                                     "price": "11.00",
@@ -1910,7 +1910,7 @@
                                 "@type": "MenuItem",
                                 "name": "Rosat",
                                 "description": "Variedades: Monastrell 51,7%, Merlot48,3%",
-                                "image": "http://www.sonbordils.es/images/f663cd225d3c00ac59742f805304464b.jpg",
+                                "image": "img/bordilsR1.jpg",
                                 "offers":{
                                     "@type": "Offer",
                                     "price": "9.00",
@@ -1925,21 +1925,20 @@
             "telephone": "971182200",
             "isAccessibleForFree": false,
             "email": "info@sonbordils.es",
-            "logo": "http://www.sonbordils.es/i/logo3.png",
+            "logo": "img/logo_bordils.png",
             "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": 39.68822114280923,
                 "longitude" : 2.943103319973539
             },
             "image": [
-                "http://www.sonbordils.es/images/photos/mid_630d9b8cdadf99789706d631b501c263.jpg",
-                "http://www.sonbordils.es/images/photos/mid_df522db5b6dfdc41eb33362b2be442c8.jpg",
-                "http://www.sonbordils.es/images/photos/mid_47fbcebc0b65a4332e6636dcb0b428be.jpg",
-                "http://www.sonbordils.es/images/gallery/top_3e0f4aaea1678dbc6d72a9ec669cd454.jpg",
-                "http://www.sonbordils.es/images/photos/thumb_dd41ad206896d0b7c9c0e2ae93982835.jpg",
-                "http://www.sonbordils.es/images/photos/thumb_fa0600fd6ac12661b813d7a0606f6ae3.jpg",
-                "http://www.sonbordils.es/images/photos/thumb_e25e094f6ced62405f53827e6f1c6a67.jpg",
-                "http://www.sonbordils.es/images/photos/thumb_07295308c631368c17759818b7dae094.jpg"
+                "img/bordils2.jpg",
+                "img/bordils3.jpg",
+                "img/bordils5.jpg",
+                "img/bordils1.jpg",
+                "img/bordils7.jpg",
+                "img/bordils8.jpg",
+                "img/bordils4.jpg"
             ],
             "url": "http://www.sonbordils.es/"
         },

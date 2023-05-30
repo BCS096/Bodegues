@@ -1,4 +1,5 @@
 var carrusel = null;
+var cargar = true;
 var json = null;
 var jsonS = null;
 var jsonR = null;
@@ -418,9 +419,9 @@ function paginaProducto2(pos) {
     node_48.appendChild(node_52);
     var node_53 = document.createTextNode(
       Math.round(tiempo.list[posTiempo].main.temp_max) +
-        " °C / " +
-        Math.round(tiempo.list[posTiempo].main.temp_min) +
-        " °C"
+      " °C / " +
+      Math.round(tiempo.list[posTiempo].main.temp_min) +
+      " °C"
     );
     node_52.appendChild(node_53);
     if (i == 0) {
@@ -617,9 +618,9 @@ function paginaProducto2(pos) {
     var node_130 = document.createTextNode(
       json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i].offers
         .price +
-        " " +
-        json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i]
-          .offers.priceCurrency
+      " " +
+      json.itemListElement[pos].hasMenu.hasMenuSection[0].hasMenuItem[i]
+        .offers.priceCurrency
     );
     node_129.appendChild(node_130);
   }
@@ -704,9 +705,9 @@ function paginaProducto2(pos) {
     var node_160 = document.createTextNode(
       json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i].offers
         .price +
-        " " +
-        json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i]
-          .offers.priceCurrency
+      " " +
+      json.itemListElement[pos].hasMenu.hasMenuSection[1].hasMenuItem[i]
+        .offers.priceCurrency
     );
     node_159.appendChild(node_160);
   }
@@ -791,9 +792,9 @@ function paginaProducto2(pos) {
     var node_174 = document.createTextNode(
       json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i].offers
         .price +
-        " " +
-        json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i]
-          .offers.priceCurrency
+      " " +
+      json.itemListElement[pos].hasMenu.hasMenuSection[2].hasMenuItem[i]
+        .offers.priceCurrency
     );
     node_173.appendChild(node_174);
   }
@@ -869,7 +870,8 @@ function paginaProducto2(pos) {
     nodo_15.appendChild(nodo_16);
 
     var nodo_17 = document.createElement("I");
-    nodo_17.setAttribute("class", "fa fa-quote-left");
+    
+    nodo_17.setAttribute("class", "bi bi-quote");
     nodo_17.setAttribute("aria-hidden", "true");
     nodo_16.appendChild(nodo_17);
 
@@ -879,7 +881,7 @@ function paginaProducto2(pos) {
     nodo_16.appendChild(nodo_18);
 
     var nodo_19 = document.createElement("I");
-    nodo_19.setAttribute("class", "fa fa-quote-right");
+    nodo_19.setAttribute("class", "bi bi-quote");
     nodo_19.setAttribute("aria-hidden", "true");
     nodo_16.appendChild(nodo_19);
 
@@ -897,7 +899,7 @@ function paginaProducto2(pos) {
     //stars
     for (let j = 0; j < jsonC[pos].comentarios[i].rate; j++) {
       var star = document.createElement("I");
-      star.setAttribute("class", "fa-solid fa-star");
+      star.setAttribute("class", "bi bi-star-fill");
       star.setAttribute("style", "color: #ffea00;");
 
       nodo_22.appendChild(star);
@@ -930,7 +932,7 @@ function paginaProducto2(pos) {
   var nodo_78 = document.createElement("A");
   nodo_78.setAttribute(
     "class",
-    "left fa fa-chevron-left text-white btn btn btn-outline-light"
+    "left bi bi-caret-left-fill text-white btn btn btn-outline-light"
   );
   nodo_78.setAttribute("href", "#carouselExampleCaptions");
   nodo_78.setAttribute("data-bs-slide", "prev");
@@ -939,7 +941,7 @@ function paginaProducto2(pos) {
   var nodo_79 = document.createElement("A");
   nodo_79.setAttribute(
     "class",
-    "right fa fa-chevron-right text-white btn btn btn-outline-light"
+    "right bi bi-caret-right-fill text-white btn btn btn-outline-light"
   );
   nodo_79.setAttribute("href", "#carouselExampleCaptions");
   nodo_79.setAttribute("data-bs-slide", "next");
@@ -1214,12 +1216,12 @@ function paginaProducto2(pos) {
   var node_430 = document.createTextNode(
     new String(
       json.itemListElement[pos].address.streetAddress +
-        " " +
-        json.itemListElement[pos].address.postalCode +
-        " " +
-        json.itemListElement[pos].address.addressRegion +
-        ", " +
-        json.itemListElement[pos].address.addressLocality
+      " " +
+      json.itemListElement[pos].address.postalCode +
+      " " +
+      json.itemListElement[pos].address.addressRegion +
+      ", " +
+      json.itemListElement[pos].address.addressLocality
     )
   );
   node_429.appendChild(node_430);
@@ -1322,7 +1324,7 @@ function paginaProducto2(pos) {
   node_467.appendChild(node_468);
 
   var node_469 = document.createElement("I");
-  node_469.setAttribute("class", "icon <i fa-solid fa-utensils flex-shrink-0");
+  node_469.setAttribute("class", "icon bi bi-egg-fried flex-shrink-0");
   node_468.appendChild(node_469);
 
   var node_470 = document.createElement("DIV");
@@ -1375,7 +1377,7 @@ function paginaProducto2(pos) {
   node_475.appendChild(node_476);
 
   var node_477 = document.createElement("I");
-  node_477.setAttribute("class", "icon <i fa-solid fa-utensils flex-shrink-0");
+  node_477.setAttribute("class", "icon bi bi-cart4 flex-shrink-0");
   node_476.appendChild(node_477);
 
   var node_478 = document.createElement("DIV");
@@ -1432,16 +1434,16 @@ function paginaProducto2(pos) {
   var node_460 = document.createElement("DIV");
   node_458.appendChild(node_460);
 
+  var node_463 = document.createElement("a");
+  node_460.appendChild(node_463);
+  node_463.setAttribute("href", json.itemListElement[pos].url);
+
   var node_461 = document.createElement("H3");
-  node_460.appendChild(node_461);
+  node_463.appendChild(node_461);
 
   var node_462 = document.createTextNode(new String("Página Web"));
   node_461.appendChild(node_462);
 
-  var node_463 = document.createElement("a");
-  node_460.appendChild(node_463);
-  node_463.innerText = json.itemListElement[pos].url;
-  node_463.setAttribute("href", json.itemListElement[pos].url);
 }
 
 function gestFiltrado(nombre, localidad, abierto, dias) {
@@ -1843,7 +1845,6 @@ function botonesNav(navState) {
       var node_1 = document.createElement("LI");
       var node_2 = document.createElement("A");
       node_2.setAttribute("href", "#hero");
-      //node_2.setAttribute('style', 'color:white');
       node_1.appendChild(node_2);
       var node_3 = document.createTextNode(new String("Inicio"));
       node_2.appendChild(node_3);
@@ -1851,7 +1852,6 @@ function botonesNav(navState) {
       var node_4 = document.createElement("LI");
       var node_5 = document.createElement("A");
       node_5.setAttribute("href", "#about");
-      //node_5.setAttribute('style', 'color:white');
       node_4.appendChild(node_5);
       var node_6 = document.createTextNode(new String("Descripción"));
       node_5.appendChild(node_6);
@@ -1859,7 +1859,6 @@ function botonesNav(navState) {
       var node_7 = document.createElement("LI");
       var node_8 = document.createElement("A");
       node_8.setAttribute("href", "#weather");
-      //node_8.setAttribute('style', 'color:white');
       node_7.appendChild(node_8);
       var node_9 = document.createTextNode(new String("Tiempo"));
       node_8.appendChild(node_9);
@@ -1867,7 +1866,6 @@ function botonesNav(navState) {
       var node_10 = document.createElement("LI");
       var node_11 = document.createElement("A");
       node_11.setAttribute("href", "#menu");
-      //node_11.setAttribute('style', 'color:white');
       node_10.appendChild(node_11);
       var node_12 = document.createTextNode(new String("Vinos"));
       node_11.appendChild(node_12);
@@ -1875,7 +1873,6 @@ function botonesNav(navState) {
       var node_10x = document.createElement("LI");
       var node_11x = document.createElement("A");
       node_11x.setAttribute("href", "#testimonials");
-      //node_11.setAttribute('style', 'color:white');
       node_10x.appendChild(node_11x);
       var node_12x = document.createTextNode(new String("Comentarios"));
       node_11x.appendChild(node_12x);
@@ -1883,7 +1880,6 @@ function botonesNav(navState) {
       var node_19 = document.createElement("LI");
       var node_20 = document.createElement("A");
       node_20.setAttribute("href", "#gallery");
-      //node_20.setAttribute('style', 'color:white');
       node_19.appendChild(node_20);
       var node_21 = document.createTextNode(new String("Fotos"));
       node_20.appendChild(node_21);
@@ -1891,8 +1887,6 @@ function botonesNav(navState) {
       var node_22 = document.createElement("LI");
       var node_23 = document.createElement("A");
       node_23.setAttribute("href", "#contact");
-      //node_23.setAttribute('style', 'color:white');
-      //node_22.setAttribute('style', 'margin-right: 25%');
       node_22.appendChild(node_23);
       var node_24 = document.createTextNode(new String("Contacto"));
       node_23.appendChild(node_24);
@@ -1906,7 +1900,6 @@ function botonesNav(navState) {
       ul.appendChild(node_22);
 
       document.getElementById("navbar").appendChild(ul);
-      //document.getElementById('navbar').appendChild(ul1);
       break;
   }
   const icono = document.getElementById("icono");
@@ -1933,7 +1926,7 @@ function paginaPrincipal() {
 
 function about() {
 
-    
+
   var seccion = document.getElementById("seccion");
 
   var about_1 = document.createElement("SECTION");
@@ -2020,7 +2013,7 @@ function about() {
   var about_21 = document.createElement("LABEL");
   about_20.appendChild(about_21);
 
-  var about_22 = document.createTextNode(new String("Residencia"));
+  var about_22 = document.createTextNode(new String("Origen"));
   about_21.appendChild(about_22);
 
   var about_23 = document.createElement("P");
@@ -2036,7 +2029,7 @@ function about() {
   var about_26 = document.createElement("LABEL");
   about_25.appendChild(about_26);
 
-  var about_27 = document.createTextNode(new String("Dirección"));
+  var about_27 = document.createTextNode(new String("Lugar"));
   about_26.appendChild(about_27);
 
   var about_28 = document.createElement("P");
@@ -2074,7 +2067,7 @@ function about() {
   var about_37 = document.createElement("LABEL");
   about_36.appendChild(about_37);
 
-  var about_38 = document.createTextNode(new String("Telefono"));
+  var about_38 = document.createTextNode(new String("Móvil"));
   about_37.appendChild(about_38);
 
   var about_39 = document.createElement("P");
@@ -2134,8 +2127,13 @@ function about() {
   about_50.appendChild(col1);
 
   var col2 = document.createElement("div");
-  col2.className = "col-sm";
+  col2.className = "col-sm margen bg-white aplicar-borde";
+  col2.setAttribute('style','margin-right: 10px');
   about_50.appendChild(col2);
+
+  var texto = document.createElement('h3');
+  texto.innerText = "Número de restaurantes con X estrellas";
+  col2.appendChild(texto);
 
   var video_0 = document.createElement('div');
   video_0.className = "video-container";
@@ -2162,7 +2160,7 @@ function about() {
 
   //grafico
   const contImg2 = document.createElement("div");
-  contImg2.setAttribute('id','chart');
+  contImg2.setAttribute('id', 'chart');
   col2.appendChild(contImg2);
 
   createGrafico();
@@ -2181,21 +2179,21 @@ function listadoCardXL() {
   containerIcons.className = "container";
 
   const icon1 = document.createElement("i");
-  icon1.className = "fa-solid fa-map-location iconosVisionado";
+  icon1.className = "bi bi-geo-alt iconosVisionado";
   icon1.onclick = function () {
-    gestorVisionado(2,false);
+    gestorVisionado(2, false);
   };
 
   const icon2 = document.createElement("i");
-  icon2.className = "fa-solid fa-table-cells iconosVisionado";
+  icon2.className = "bi bi-table iconosVisionado";
   icon2.onclick = function () {
-    gestorVisionado(0,false);
+    gestorVisionado(0, false);
   };
 
   const icon3 = document.createElement("i");
-  icon3.className = "fa-solid fa-list iconosVisionado";
+  icon3.className = "bi bi-layout-text-sidebar-reverse iconosVisionado";
   icon3.onclick = function () {
-    gestorVisionado(1,false);
+    gestorVisionado(1, false);
   };
 
   containerIcons.appendChild(icon1);
@@ -2359,27 +2357,27 @@ function listadoCardXL() {
 
     dl.appendChild(dt1);
     const iconHorario = document.createElement("i");
-    iconHorario.className = "fa-solid fa-clock";
+    iconHorario.className = "bi bi-clock";
     dt1.appendChild(iconHorario);
     dl.appendChild(dd1);
     dl.appendChild(dt2);
     const iconPhone = document.createElement("i");
-    iconPhone.className = "fa-solid fa-phone";
+    iconPhone.className = "bi bi-telephone-fill";
     dt2.appendChild(iconPhone);
     dl.appendChild(dd2);
     dl.appendChild(dt3);
     const iconEmail = document.createElement("i");
-    iconEmail.className = "fa-solid fa-envelope";
+    iconEmail.className = "bi bi-envelope-at";
     dt3.appendChild(iconEmail);
     dl.appendChild(dd3);
     dl.appendChild(dt4);
     const iconWeb = document.createElement("i");
-    iconWeb.className = "fa-solid fa-at";
+    iconWeb.className = "bi bi-globe";
     dt4.appendChild(iconWeb);
     dl.appendChild(dd4);
     dl.appendChild(dt5);
     const iconDir = document.createElement("i");
-    iconDir.className = "fa-solid fa-location-dot";
+    iconDir.className = "bi bi-geo-alt-fill";
     dt5.appendChild(iconDir);
     dl.appendChild(br);
     dl.appendChild(dd5_1);
@@ -2442,7 +2440,7 @@ function listadoCardXL() {
 
     for (let j = 0; j < calcularMedia(i) + 1; j++) {
       var star = document.createElement("I");
-      star.setAttribute("class", "fa-solid fa-star");
+      star.setAttribute("class", "bi bi-star-fill");
       star.setAttribute("style", "color: #ffea00;");
 
       nodo_22.appendChild(star);
@@ -2467,7 +2465,7 @@ function listadoCardXL() {
     //end for
   }
   if (idsFiltrado.length == 0) {
-    col.className = "col margen textoGrande";
+    col.className = "container margen textoGrande";
     col.innerText = "NO HAY RESULTADOS PARA ESTOS FILTROS.";
   }
   row.appendChild(col);
@@ -2486,21 +2484,21 @@ function listadoCard() {
   containerIcons.className = "container";
 
   const icon1 = document.createElement("i");
-  icon1.className = "fa-solid fa-map-location iconosVisionado";
+  icon1.className = "bi bi-geo-alt iconosVisionado";
   icon1.onclick = function () {
-    gestorVisionado(2,false);
+    gestorVisionado(2, false);
   };
 
   const icon2 = document.createElement("i");
-  icon2.className = "fa-solid fa-table-cells iconosVisionado";
+  icon2.className = "bi bi-table iconosVisionado";
   icon2.onclick = function () {
-    gestorVisionado(0,false);
+    gestorVisionado(0, false);
   };
 
   const icon3 = document.createElement("i");
-  icon3.className = "fa-solid fa-list iconosVisionado";
+  icon3.className = "bi bi-layout-text-sidebar-reverse iconosVisionado";
   icon3.onclick = function () {
-    gestorVisionado(1,false);
+    gestorVisionado(1, false);
   };
 
   containerIcons.appendChild(icon1);
@@ -2576,7 +2574,7 @@ function listadoCard() {
 
     for (let j = 0; j < calcularMedia(i) + 1; j++) {
       var star = document.createElement("I");
-      star.setAttribute("class", "fa-solid fa-star");
+      star.setAttribute("class", "bi bi-star-fill");
       star.setAttribute("style", "color: #ffea00;");
 
       nodo_22.appendChild(star);
@@ -2595,7 +2593,11 @@ function listadoCard() {
     rowCard.innerText = "NO HAY RESULTADOS PARA ESTOS FILTROS.";
   }
 
-  row.appendChild(rowCard);
+  var container = document.createElement('div');
+  container.className = "container";
+  row.appendChild(container);
+
+  container.appendChild(rowCard);
 
   container1.appendChild(row);
 
@@ -2616,21 +2618,21 @@ function listadoMap() {
   containerIcons.className = "container";
 
   const icon1 = document.createElement("i");
-  icon1.className = "fa-solid fa-map-location iconosVisionado";
+  icon1.className = "bi bi-geo-alt iconosVisionado";
   icon1.onclick = function () {
-    gestorVisionado(2,false);
+    gestorVisionado(2, false);
   };
 
   const icon2 = document.createElement("i");
-  icon2.className = "fa-solid fa-table-cells iconosVisionado";
+  icon2.className = "bi bi-table iconosVisionado";
   icon2.onclick = function () {
-    gestorVisionado(0,false);
+    gestorVisionado(0, false);
   };
 
   const icon3 = document.createElement("i");
-  icon3.className = "fa-solid fa-list iconosVisionado";
+  icon3.className = "bi bi-layout-text-sidebar-reverse iconosVisionado";
   icon3.onclick = function () {
-    gestorVisionado(1,false);
+    gestorVisionado(1, false);
   };
 
   containerIcons.appendChild(icon1);
@@ -2786,27 +2788,27 @@ function infoMapa(pos) {
 
   dl.appendChild(dt1);
   const iconHorario = document.createElement("i");
-  iconHorario.className = "fa-solid fa-clock";
+  iconHorario.className = "bi bi-clock";
   dt1.appendChild(iconHorario);
   dl.appendChild(dd1);
   dl.appendChild(dt2);
   const iconPhone = document.createElement("i");
-  iconPhone.className = "fa-solid fa-phone";
+  iconPhone.className = "bi bi-telephone-fill";
   dt2.appendChild(iconPhone);
   dl.appendChild(dd2);
   dl.appendChild(dt3);
   const iconEmail = document.createElement("i");
-  iconEmail.className = "fa-solid fa-envelope";
+  iconEmail.className = "bi bi-envelope-at";
   dt3.appendChild(iconEmail);
   dl.appendChild(dd3);
   dl.appendChild(dt4);
   const iconWeb = document.createElement("i");
-  iconWeb.className = "fa-solid fa-at";
+  iconWeb.className = "bi bi-globe";
   dt4.appendChild(iconWeb);
   dl.appendChild(dd4);
   dl.appendChild(dt5);
   const iconDir = document.createElement("i");
-  iconDir.className = "fa-solid fa-location-dot";
+  iconDir.className = "bi bi-geo-alt-fill";
   dt5.appendChild(iconDir);
   dl.appendChild(br);
   dl.appendChild(dd5_1);
@@ -2848,7 +2850,7 @@ function infoMapa(pos) {
 
   for (let j = 0; j < calcularMedia(pos) + 1; j++) {
     var star = document.createElement("I");
-    star.setAttribute("class", "fa-solid fa-star");
+    star.setAttribute("class", "bi bi-star-fill");
     star.setAttribute("style", "color: #ffea00;");
 
     nodo_22.appendChild(star);
@@ -2912,7 +2914,7 @@ function gestorVisionado(vision, reset) {
   }
 
   if (filtro != null) {
-    if(!reset) seccion.appendChild(filtro);
+    if (!reset) seccion.appendChild(filtro);
     filtro = null;
   }
 
@@ -2936,14 +2938,20 @@ function gestorVisionado(vision, reset) {
 }
 
 function prepararBusqueda() {
+
+  if(cargar){
+    cargarLibrerias();
+    cargar = false;
+  }
+
   var seccion = document.getElementById("seccion");
 
   idsFiltrado = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 
-    while (seccion.hasChildNodes()) {
-      seccion.removeChild(seccion.firstChild);
-    }
+  while (seccion.hasChildNodes()) {
+    seccion.removeChild(seccion.firstChild);
+  }
 
   filtrado2();
   gestorVisionado(0, true);
@@ -2976,4 +2984,78 @@ function prepararPaginaProducto(producto) {
   }
   botonesNav(1);
   paginaProducto2(producto);
+}
+
+function cargarLibrerias(){
+  
+var node_1 = document.getElementById('head');
+
+var node_2 = document.createElement('LINK');
+node_2.setAttribute('rel', 'preconnect');
+node_2.setAttribute('href', 'https://fonts.googleapis.com');
+node_1.appendChild(node_2);
+
+var node_3 = document.createElement('LINK');
+node_3.setAttribute('rel', 'preconnect');
+node_3.setAttribute('href', 'https://fonts.gstatic.com');
+node_3.setAttribute('crossorigin', '');
+node_1.appendChild(node_3);
+
+var node_4 = document.createElement('LINK');
+node_4.setAttribute('href', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+node_4.setAttribute('rel', 'stylesheet');
+node_1.appendChild(node_4);
+
+var node_5 = document.createElement('SCRIPT');
+node_5.setAttribute('src', 'https://unpkg.com/leaflet/dist/leaflet.js');
+node_1.appendChild(node_5);
+
+var node_6 = document.createElement('LINK');
+node_6.setAttribute('rel', 'stylesheet');
+node_6.setAttribute('href', 'https://unpkg.com/leaflet@1.2.0/dist/leaflet.css');
+node_1.appendChild(node_6);
+
+var node_7 = document.createElement('LINK');
+node_7.setAttribute('rel', 'stylesheet');
+node_7.setAttribute('href', 'https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css');
+node_1.appendChild(node_7);
+
+var node_8 = document.createElement('SCRIPT');
+node_8.setAttribute('src', 'https://unpkg.com/leaflet@1.2.0/dist/leaflet.js');
+node_1.appendChild(node_8);
+
+var node_9 = document.createElement('SCRIPT');
+node_9.setAttribute('src', 'https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js');
+node_1.appendChild(node_9);
+
+var node_10 = document.createElement('LINK');
+node_10.setAttribute('rel', 'stylesheet');
+node_10.setAttribute('href', 'https://unpkg.com/leaflet/dist/leaflet.css');
+node_1.appendChild(node_10);
+
+var node_11 = document.createElement('LINK');
+node_11.setAttribute('href', 'assets/vendor/bootstrap/css/bootstrap.min.css');
+node_11.setAttribute('rel', 'stylesheet');
+node_1.appendChild(node_11);
+
+var node_12 = document.createElement('LINK');
+node_12.setAttribute('href', 'assets/vendor/bootstrap-icons/bootstrap-icons.css');
+node_12.setAttribute('rel', 'stylesheet');
+node_1.appendChild(node_12);
+
+var node_13 = document.createElement('LINK');
+node_13.setAttribute('href', 'assets/vendor/aos/aos.css');
+node_13.setAttribute('rel', 'stylesheet');
+node_1.appendChild(node_13);
+
+var node_14 = document.createElement('LINK');
+node_14.setAttribute('href', 'assets/vendor/glightbox/css/glightbox.min.css');
+node_14.setAttribute('rel', 'stylesheet');
+node_1.appendChild(node_14);
+
+var node_15 = document.createElement('LINK');
+node_15.setAttribute('href', 'assets/vendor/swiper/swiper-bundle.min.css');
+node_15.setAttribute('rel', 'stylesheet');
+node_1.appendChild(node_15);
+
 }
