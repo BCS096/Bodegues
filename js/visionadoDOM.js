@@ -2474,7 +2474,7 @@ function listadoCardXL() {
     nodo_22.setAttribute("class", "col-sm");
     colSmDiv.appendChild(nodo_22);
 
-    var media = calcularMedia(i);
+    var media = calcularMedia(json.itemListElement[idsFiltrado[i]].identifier);
     for (let j = 0; j < media + 1; j++) {
       var star = document.createElement("I");
       star.setAttribute("class", "bi bi-star-fill");
@@ -2609,7 +2609,7 @@ function listadoCard() {
     nodo_22.setAttribute("class", "col-sm");
     cardBody.appendChild(nodo_22);
 
-    var media = calcularMedia(i);
+    var media = calcularMedia(json.itemListElement[idsFiltrado[i]].identifier);
     for (let j = 0; j < media + 1; j++) {
       var star = document.createElement("I");
       star.setAttribute("class", "bi bi-star-fill");
