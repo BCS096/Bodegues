@@ -45,10 +45,15 @@ function paginaProducto2(pos) {
   );
   var node_1 = document.getElementById("seccion");
 
+  var div = document.createElement('div');
+  div.setAttribute('vocab','https://schema.org/');
+  div.setAttribute('typeof','Winery');
+  node_1.appendChild(div);
+
   var node_2 = document.createElement("SECTION");
   node_2.setAttribute("id", "hero");
   node_2.setAttribute("class", "hero d-flex align-items-center section-bg");
-  node_1.appendChild(node_2);
+  div.appendChild(node_2);
 
   var node_3 = document.createElement("DIV");
   node_3.setAttribute("class", "container granate aplicar-borde margen");
@@ -59,6 +64,8 @@ function paginaProducto2(pos) {
   node_3.appendChild(node_4);
 
   var node_5 = document.createElement("DIV");
+  node_5.setAttribute('property','name');
+  node_5.setAttribute('content', json.itemListElement[pos].name);
   node_5.setAttribute("class", "col-sm");
   node_5.setAttribute("style", "align-self: center");
   node_4.appendChild(node_5);
@@ -99,8 +106,12 @@ function paginaProducto2(pos) {
   var button_3 = document.createElement("DIV");
   button_3.setAttribute("id", "ventanaModal");
   button_3.setAttribute("class", "modal");
+  button_3.setAttribute('property','subjectOf');
+  button_3.setAttribute('typeof','CreativeWork');
 
   var button_4 = document.createElement("DIV");
+  button_4.setAttribute('property','video');
+  button_4.setAttribute('typeof','VideoObject');
   button_4.setAttribute("class", "contenido-modal aplicar-borde margen");
   button_4.setAttribute(
     "style",
@@ -113,6 +124,8 @@ function paginaProducto2(pos) {
   button_4.appendChild(button_5);
 
   var button_6 = document.createElement("IFRAME");
+  button_6.setAttribute('property','contentUrl');
+  button_6.setAttribute('content',json.itemListElement[pos].subjectOf.video[0].contentUrl);
   button_6.setAttribute("width", "100%");
   button_6.setAttribute("height", "500");
   button_6.setAttribute(
@@ -167,9 +180,10 @@ function paginaProducto2(pos) {
 
   const contImg1 = document.createElement("div");
   contImg1.className = "box1 tamañoImgProductoMain";
+  
 
   var node_16 = document.createElement("IMG");
-
+  node_16.setAttribute('property','image');
   node_16.setAttribute(
     "src",
     json.itemListElement[pos].image[json.itemListElement[pos].image.length - 1]
@@ -194,6 +208,7 @@ function paginaProducto2(pos) {
   contImg2.appendChild(contImg3);
 
   var aux1 = document.createElement("img");
+  aux1.setAttribute('property','logo');
   aux1.setAttribute("src", json.itemListElement[pos].logo);
   aux1.setAttribute("class", "im aos-init aos-animate");
   aux1.setAttribute("data-aos", "zoom-out");
@@ -203,7 +218,7 @@ function paginaProducto2(pos) {
 
   var node_17 = document.createElement("MAIN");
   node_17.setAttribute("id", "main");
-  node_1.appendChild(node_17);
+  div.appendChild(node_17);
 
   var node_18 = document.createElement("SECTION");
   node_18.setAttribute("id", "about");
@@ -267,6 +282,8 @@ function paginaProducto2(pos) {
   node_26.appendChild(node_29);
 
   var node_30 = document.createTextNode(json.itemListElement[pos].telephone);
+  node_26.setAttribute('property','telephone');
+  node_26.setAttribute('content',json.itemListElement[pos].telephone);
   node_29.appendChild(node_30);
 
   var node_31 = document.createElement("DIV");
@@ -287,13 +304,23 @@ function paginaProducto2(pos) {
   node_32.appendChild(node_33);
 
   var node_34 = document.createTextNode(json.itemListElement[pos].description);
+  node_32.setAttribute('property','description');
+  node_32.setAttribute('content',json.itemListElement[pos].description);
   node_33.appendChild(node_34);
 
   var node_35 = document.createElement("DIV");
   node_35.setAttribute("class", "position-relative mt-4 margen");
+  node_35.setAttribute('property','subjectOf');
+  node_35.setAttribute('typeof','CreativeWork');
   node_32.appendChild(node_35);
 
+  var aux = document.createElement('div');
+  aux.setAttribute('property','video');
+  aux.setAttribute('typeof','VideoObject');
+  node_35.appendChild(aux);
+
   var video_1 = document.createElement("IFRAME");
+  video_1.setAttribute('property','contentUrl');
   video_1.setAttribute("width", "100%");
   video_1.setAttribute("height", "350");
   video_1.setAttribute(
@@ -308,7 +335,7 @@ function paginaProducto2(pos) {
   );
   video_1.setAttribute("allowfullscreen", "");
   video_1.setAttribute("controls", "2");
-  node_35.appendChild(video_1);
+  aux.appendChild(video_1);
 
   var node_38 = document.createElement("SECTION");
   node_38.setAttribute("id", "weather");
@@ -1130,7 +1157,7 @@ function paginaProducto2(pos) {
     contImg1x.className = "box1 tamañoImgProductoMenu";
 
     var gallery_4 = document.createElement("IMG");
-    //gallery_4.setAttribute('class', 'img-fluid img-thumbnail');
+    gallery_4.setAttribute('property','image');
     gallery_4.setAttribute("src", json.itemListElement[pos].image[i]);
     gallery_4.setAttribute("alt", "");
     contImg1x.appendChild(gallery_4);
@@ -1211,6 +1238,8 @@ function paginaProducto2(pos) {
   node_427.appendChild(node_428);
 
   var node_429 = document.createElement("P");
+  node_426.setAttribute('property','address');
+  node_426.setAttribute('typeof','PostalAddress');
   node_426.appendChild(node_429);
 
   var node_430 = document.createTextNode(
@@ -1251,6 +1280,8 @@ function paginaProducto2(pos) {
   node_434.appendChild(node_437);
 
   var node_438 = document.createTextNode(json.itemListElement[pos].email);
+  node_434.setAttribute('property','email');
+  node_434.setAttribute('content',json.itemListElement[pos].email);
   node_437.appendChild(node_438);
 
   var node_439 = document.createElement("DIV");
@@ -1278,6 +1309,8 @@ function paginaProducto2(pos) {
   node_442.appendChild(node_445);
 
   var node_446 = document.createTextNode(json.itemListElement[pos].telephone);
+  node_442.setAttribute('property','telephone');
+  node_442.setAttribute('content',json.itemListElement[pos].telephone);
   node_445.appendChild(node_446);
 
   var node_447 = document.createElement("DIV");
@@ -1313,6 +1346,8 @@ function paginaProducto2(pos) {
   var node_456 = document.createTextNode(
     json.itemListElement[pos].openingHours
   );
+  node_453.setAttribute('property','openingHours');
+  node_453.setAttribute('content',json.itemListElement[pos].openingHours);
   node_453.appendChild(node_456);
 
   var node_467 = document.createElement("DIV");
@@ -1435,6 +1470,8 @@ function paginaProducto2(pos) {
   node_458.appendChild(node_460);
 
   var node_463 = document.createElement("a");
+  node_463.setAttribute('property','url');
+  node_463.setAttribute('content',json.itemListElement[pos].url);
   node_460.appendChild(node_463);
   node_463.setAttribute("href", json.itemListElement[pos].url);
 
@@ -1925,8 +1962,7 @@ function paginaPrincipal() {
 }
 
 function about() {
-
-
+  
   var seccion = document.getElementById("seccion");
 
   var about_1 = document.createElement("SECTION");

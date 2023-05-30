@@ -44,7 +44,6 @@ function cargarJSOComentarios() {
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       jsonC = JSON.parse(this.responseText);
-      console.log(jsonC);
     }
   };
   xmlhttp.send();
@@ -66,7 +65,6 @@ function weather(latitud, longitud) {
   request.send();
   if (request.status === 200) {
     const data = JSON.parse(request.responseText);
-    console.log(data);
     return data;
   } else {
     console.error(`Error ${request.status}: ${request.statusText}`);
@@ -323,7 +321,6 @@ function createGrafico(){
   for(let i = 0; i < jsonC.length; i++){
     num[calcularMedia(i)]++;
   }
-  console.log(num);
   grafico(num);
 }
 
