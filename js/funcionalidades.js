@@ -327,7 +327,7 @@ function createGrafico(){
 function calcularMedia(bod){
   var result = 0;
   for(let i = 0; i < jsonC[bod].comentarios.length; i++){
-    result =+ jsonC[bod].comentarios[i].rate;
+    result = result + parseInt(jsonC[bod].comentarios[i].rate);
   }
   return (result/jsonC[bod].comentarios.length).toFixed() > 0 ? (result/jsonC[bod].comentarios.length) .toFixed() - 1 : 0;
 }

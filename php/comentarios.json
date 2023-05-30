@@ -5,12 +5,12 @@
             {
                 "author": "John Doe",
                 "text": "UwU",
-                "rate": 2
+                "rate": 5
             },
             {
                 "author": "John Wick",
                 "text": "UwU",
-                "rate": 3
+                "rate": 5
             }
         ]
     },
@@ -25,7 +25,7 @@
             {
                 "author": "Alberto Vaso",
                 "text": "\nMe sumergí en la atmósfera encantadora de la bodega, rodeado de barricas y botellas que guardaban secretos y sabores incomparables. Cada rincón exudaba la pasión y dedicación de quienes trabajaban allí, y cada sorbo de vino era un viaje sensorial que me transportaba a tierras lejanas y cosechas excepcionales. Fue una experiencia inolvidable, donde el arte y la historia se fundían en cada gota, convirtiendo mi visita a la bodega en un verdadero deleite para los sentidos.",
-                "rate": "5"
+                "rate": 5
             }
         ]
     },
